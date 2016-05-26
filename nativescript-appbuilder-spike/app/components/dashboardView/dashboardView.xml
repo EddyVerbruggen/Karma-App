@@ -37,7 +37,8 @@
             <!-- Each unit in the day -->
             <StackLayout orientation="horizontal" class="booking-row">
                 <StackLayout width="25%">
-                    <Label text="2:00PM" class="booking-time" />
+                    <!-- example of an icon. Add class ionicons-icon, then in text field, use the escaped HTML code from this page: http://ionicons.com/cheatsheet.html -->
+                    <Label text="2:00PM &#xf35a;" class="ionicons-icon booking-time" />
                     <Label text="1 HOUR" class="booking-length" />
                 </StackLayout>
                 
