@@ -1,0 +1,37 @@
+/* CSS docs: https://docs.nativescript.org/ui/styling */
+body {
+}
+
+.stats-number {
+    font-size: 40;
+}
+
+.stats-section {
+    background-color: #CCCCCC;
+}
+
+
+.today-section-title {
+    width: 100%;
+    text-align: center;
+}
+
+.booking-row {
+    
+}
+
+.booking-client-name {
+    
+}
+
+.booking-location {
+    
+}
+
+.booking-time {
+    
+}
+
+.booking-length {
+    
+}
