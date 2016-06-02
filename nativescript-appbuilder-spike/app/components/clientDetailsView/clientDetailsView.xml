@@ -1,9 +1,11 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd">
+    <!-- Actionbar with back button -->
     <Page.actionBar>
     	<ActionBar title="My ActionBar" />
 	</Page.actionBar>
     <TabView>
         <TabView.items>
+            <!-- Display a tab, and pull contents from external file -->
             <TabViewItem title="Info" xmlns:PersonalDetailsView="components/clientDetailsView/tabs/personalDetailsView">
                 <TabViewItem.view>
                     <PersonalDetailsView:personalDetailsView />
