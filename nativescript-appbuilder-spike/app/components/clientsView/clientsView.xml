@@ -1,0 +1,20 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+    <StackLayout class="client-rows">
+        <StackLayout orientation="horizontal" class="client-row">
+            <!-- Checkmark or exclamation mark -->
+            <Label class="status ionicons-icon" text="&#xf121;" width="10%" />
+            
+            <!-- Thumbnail -->
+            <Image src="~/images/placeholder/profile-client.png" width="20%" />
+                
+            <!-- Details -->
+            <StackLayout width="55%">
+                <Label text="Tom Brady" class="row-client-name" />
+                <Label text="1 Appointment Pending" class="row-client-bookings" />
+            </StackLayout>
+            
+            <!-- Status -->
+            <Label text="Pending" class="row-client-status" width="15%" />
+        </StackLayout>
+    </StackLayout>
+</Page>

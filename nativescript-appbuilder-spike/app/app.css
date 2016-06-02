@@ -1,11 +1,11 @@
-.ionicons-icon {
-	font-family: 'ionicons';
+.km-icon {
+    font-family: 'kendoui';
     vertical-align: center;
     horizontal-align: center;
 }
 
-.km-icon {
-    font-family: 'kendoui';
+.ionicons-icon {
+    font-family: 'ionicons';
     vertical-align: center;
     horizontal-align: center;
 }

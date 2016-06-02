@@ -1,0 +1,24 @@
+<StackLayout >
+    <!-- Informational boxes; only need to style 1 -->
+    <StackLayout class="info-box">
+        <Label class="info-box-title" text="PERSONAL" />
+
+        <StackLayout>
+            <StackLayout orientation="horizontal">
+                <Label class="info-box-label" text="Name:" />
+                <Label class="info-box-text" text="John Smith" />
+            </StackLayout>
+
+            <StackLayout orientation="horizontal">
+                <Label text="Residence:" />
+                <Label text="Miami, FL" />
+            </StackLayout>
+
+            <StackLayout orientation="horizontal">
+                <Label text="Age:" />
+                <Label text="45" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</StackLayout>

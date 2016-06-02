@@ -1,0 +1,34 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd">
+    <Page.actionBar>
+    	<ActionBar title="My ActionBar" />
+	</Page.actionBar>
+    <TabView>
+        <TabView.items>
+            <TabViewItem title="Info" xmlns:PersonalDetailsView="components/clientDetailsView/tabs/personalDetailsView">
+                <TabViewItem.view>
+                    <PersonalDetailsView:personalDetailsView />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Screening" xmlns:ScreeningView="components/clientDetailsView/tabs/screeningView">
+                <TabViewItem.view>
+                    <ScreeningView:screeningView />
+                </TabViewItem.view>
+            </TabViewItem>
+            <!--<TabViewItem title="References" xmlns:ReferencesView="components/clientDetailsView/tabs/referencesView">
+                <TabViewItem.view>
+					<ReferencesView:referencesView />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Background" xmlns:BackgroundCheckView="components/clientDetailsView/tabs/backgroundCheckView">
+                <TabViewItem.view>
+                    <BackgroundCheckView:backgroundCheckView />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="History" xmlns:HistoryView="components/clientDetailsView/tabs/historyView">
+                <TabViewItem.view>
+					<HistoryView:historyView />
+                </TabViewItem.view>
+            </TabViewItem>-->
+        </TabView.items>
+    </TabView>
+</Page>

@@ -4,10 +4,18 @@ var menuItems,
     navigationViewModel = new observable.Observable();
 
 menuItems = [{
-    //"title": "Home View",
-    //"moduleName": "components/homeView/homeView",
-    "title": "Dashboard",
+    "title": "dashboardView",
     "moduleName": "components/dashboardView/dashboardView",
+    "icon": "\ue0dd"
+},
+{
+    "title": "clientsView",
+    "moduleName": "components/clientsView/clientsView",
+    "icon": "\ue0dd"
+},
+{
+    "title": "clientDetailsView",
+    "moduleName": "components/clientDetailsView/clientDetailsView",
     "icon": "\ue0dd"
 }];
 

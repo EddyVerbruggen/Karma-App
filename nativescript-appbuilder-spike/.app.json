@@ -5,9 +5,8 @@
       "type": "NativeScript:view",
       "name": "homeView",
       "components": [],
-      "title": "Home View",
-      "addToNavigation": true,
-      "icon": "home"
+      "title": "clientDetailsView",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [],

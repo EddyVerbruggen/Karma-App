@@ -1,0 +1,48 @@
+.summary-stat-number {
+    font-size: 44;
+    text-align: center;
+}
+
+.summary-stat-label {
+    font-size: 12;
+    text-align: center;
+}
+
+.pending-appointment-button {
+    font-size: 10;
+    width: 80%;
+    margin-top:20;
+}
+
+/* Styles for the info box */
+.info-box {
+    margin-top: 10;
+}
+
+.info-table {
+    border-width: 1;
+	border-color: #CCCCCC;
+    border-radius: 3;
+}
+
+.info-table-label {
+	width: 100;
+    background-color: #ECECEC;
+    margin: 5;
+    margin-left: 8;
+}
+
+.info-table-label-layout {
+    background-color: #ECECEC;
+}
+
+.info-table-text {
+    margin: 5;
+    margin-left: 8;
+}
+
+.info-table-divider {
+    height: 1;
+    width: 100%;
+    background-color: #CCCCCC;
+}

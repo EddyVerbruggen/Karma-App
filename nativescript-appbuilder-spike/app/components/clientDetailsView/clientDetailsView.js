@@ -1,0 +1,1 @@
+var tabViewModule = require("ui/tab-view");

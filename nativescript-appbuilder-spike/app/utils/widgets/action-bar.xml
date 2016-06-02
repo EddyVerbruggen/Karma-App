@@ -10,10 +10,9 @@
     </ActionBar.actionItems>
 
     <ActionBar.titleView>
-        <GridLayout columns="auto, auto">
-          <!--<Image src="~/images/nativescript_logo.png" width="36" height="36" />-->
-          <SearchBar col="0" width="50%" />
-          <!--<Label col="1" text="{{ pageTitle }}" minWidth="100" />-->
+        <GridLayout columns="auto, 5, *">
+          <Image src="~/images/nativescript_logo.png" width="36" height="36" />
+          <Label col="2" text="{{ pageTitle }}" minWidth="100" />
         </GridLayout>
     </ActionBar.titleView>
 </ActionBar>

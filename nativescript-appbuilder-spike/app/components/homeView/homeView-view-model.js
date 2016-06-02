@@ -5,7 +5,7 @@ var ViewModel,
 
 ViewModel = new Observable({
 
-    pageTitle: 'Home View',
+    pageTitle: 'clientDetailsView',
     // additional properties
 });
 
