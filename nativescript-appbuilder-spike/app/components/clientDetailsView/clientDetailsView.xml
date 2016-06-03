@@ -1,7 +1,7 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd">
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
     <!-- Actionbar with back button -->
     <Page.actionBar>
-    	<ActionBar title="My ActionBar" />
+    	<widgets:action-bar />
 	</Page.actionBar>
     <TabView>
         <TabView.items>

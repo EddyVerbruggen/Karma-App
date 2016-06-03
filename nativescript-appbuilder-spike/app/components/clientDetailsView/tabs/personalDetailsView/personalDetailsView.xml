@@ -1,66 +1,68 @@
-<StackLayout width="100%">
-    <!-- Header portion -->
-    <StackLayout height="200" width="100%" horizontalAlign="center" verticalAlign="center" paddingTop="40">
-        <Image src="~/images/placeholder/profile-client.png" height="100" />
-        <Label text="APPROVED" textAlign="center" marginTop="30" />
-    </StackLayout>
-
-    <!-- Summary stats -->
-    <StackLayout orientation="horizontal">
-        <StackLayout width="33%">
-            <Label class="summary-stat-number" text="80" />
-            <Label class="summary-stat-label" text="karmascore" />
+<ScrollView>
+	<StackLayout width="100%">
+        <!-- Header portion -->
+        <StackLayout height="200" width="100%" horizontalAlign="center" verticalAlign="center" paddingTop="40">
+            <Image src="~/images/placeholder/profile-client.png" height="100" />
+            <Label text="APPROVED" textAlign="center" marginTop="30" />
         </StackLayout>
-        <StackLayout width="33%">
-            <Label class="summary-stat-number" text="1" />
-            <Label class="summary-stat-label" text="appointments" />
-        </StackLayout>
-        <StackLayout width="34%">
-            <Label class="summary-stat-number" text="0" />
-            <Label class="summary-stat-label" text="no-shows" />
-        </StackLayout>
-    </StackLayout>
 
-    <!-- Pending appointment(s) -->
-    <Button class="pending-appointment-button" text="Appointment: Jan 5 - 9:00PM PST" />
-
-    <!-- Informational boxes; only need to style 1 -->
-    <StackLayout class="info-box" width="80%" horizontalAlignment="center">
-        <Label class="info-box-title" text="PERSONAL" />
-        
-        <StackLayout class="info-table">
-            <!-- Display each row as a horizontal stack. The reason is we want padding plus background color in first cell -->
-            <StackLayout orientation="horizontal">
-                <!-- Need to use another layout here to add padding + background color -->
-                <AbsoluteLayout class="info-table-label-layout">
-                    <Label class="info-table-label" text="Name:" />
-                </AbsoluteLayout>
-                <Label class="info-table-text" text="John Smith" />
-            </StackLayout>
-            <Label class="info-table-divider"></Label>
-            <StackLayout orientation="horizontal">
-                <AbsoluteLayout class="info-table-label-layout">
-                	<Label class="info-table-label" text="Residence:" />
-                </AbsoluteLayout>
-                <Label class="info-table-text" text="Miami, FL" />
-            </StackLayout>
-            <Label class="info-table-divider"></Label>
-            <StackLayout orientation="horizontal">
-                <AbsoluteLayout class="info-table-label-layout">
-                	<Label class="info-table-label" text="Age:" />
-                </AbsoluteLayout>
-                <Label class="info-table-text" text="45" />
-            </StackLayout>
-        </StackLayout>
-    </StackLayout>
-
-    <!-- Tags -->
-    <StackLayout class="info-box">
-        <Label class="info-box-title" text="TAGS" />
-
+        <!-- Summary stats -->
         <StackLayout orientation="horizontal">
-            <Button text="los angeles" />
-            <Button text="new york" />
+            <StackLayout width="33%">
+                <Label class="summary-stat-number" text="80" />
+                <Label class="summary-stat-label" text="karmascore" />
+            </StackLayout>
+            <StackLayout width="33%">
+                <Label class="summary-stat-number" text="1" />
+                <Label class="summary-stat-label" text="appointments" />
+            </StackLayout>
+            <StackLayout width="34%">
+                <Label class="summary-stat-number" text="0" />
+                <Label class="summary-stat-label" text="no-shows" />
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
-</StackLayout>
+
+        <!-- Pending appointment(s) -->
+        <Button class="pending-appointment-button" text="Appointment: Jan 5 - 9:00PM PST" />
+
+        <!-- Informational boxes; only need to style 1 -->
+        <StackLayout class="info-box" width="80%" horizontalAlignment="center">
+            <Label class="info-box-title" text="PERSONAL" />
+
+            <StackLayout class="info-table">
+                <!-- Display each row as a horizontal stack. The reason is we want padding plus background color in first cell -->
+                <StackLayout orientation="horizontal">
+                    <!-- Need to use another layout here to add padding + background color -->
+                    <AbsoluteLayout class="info-table-label-layout">
+                        <Label class="info-table-label" text="Name:" />
+                    </AbsoluteLayout>
+                    <Label class="info-table-text" text="John Smith" />
+                </StackLayout>
+                <Label class="info-table-divider"></Label>
+                <StackLayout orientation="horizontal">
+                    <AbsoluteLayout class="info-table-label-layout">
+                        <Label class="info-table-label" text="Residence:" />
+                    </AbsoluteLayout>
+                    <Label class="info-table-text" text="Miami, FL" />
+                </StackLayout>
+                <Label class="info-table-divider"></Label>
+                <StackLayout orientation="horizontal">
+                    <AbsoluteLayout class="info-table-label-layout">
+                        <Label class="info-table-label" text="Age:" />
+                    </AbsoluteLayout>
+                    <Label class="info-table-text" text="45" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Tags -->
+        <StackLayout class="info-box">
+            <Label class="info-box-title" text="TAGS" />
+
+            <StackLayout orientation="horizontal">
+                <Button text="los angeles" />
+                <Button text="new york" />
+            </StackLayout>
+        </StackLayout>
+	</StackLayout>
+</ScrollView>
