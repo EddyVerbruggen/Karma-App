@@ -17,7 +17,18 @@ menuItems = [{
     "title": "clientDetailsView",
     "moduleName": "components/clientDetailsView/clientDetailsView",
     "icon": "\ue0dd"
-}];
+},
+{
+    "title": "appointmentsView",
+    "moduleName": "components/appointmentsView/appointmentsView",
+    "icon": "\ue0dd"
+},
+{
+    "title": "appointmentDetailsView",
+    "moduleName": "components/appointmentDetailsView/appointmentDetailsView",
+    "icon": "\ue0dd"
+}
+];
 
 navigationViewModel.set('menuItems', menuItems);
 navigationViewModel.set('backButtonHidden', true);
