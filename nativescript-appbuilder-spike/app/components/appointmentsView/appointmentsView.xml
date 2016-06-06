@@ -1,0 +1,63 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <GridLayout rows="*, 75" columns="*">
+        <!-- This gives a scrollbar only to this section -->
+        <ScrollView row="0" col="0">
+            <!-- The outer stacklayout is needed to hold all the inner stacklayouts for each date -->
+            <StackLayout>
+                <StackLayout class="section-date">    
+                    <Label text="Tuesday, February 23" class="title-date" />
+                    <StackLayout class="appointment-rows">
+                        <StackLayout orientation="horizontal" class="appointment-row">
+                            <!-- Time/Duration -->
+                            <StackLayout width="25%" class="appointment-time-length-layout">
+                                <Label text="2:00 PM" class="appointment-time" />
+                                <Label text="1 Hour" class="appointment-length" />
+                            </StackLayout>
+
+                            <!-- Checkmark or exclamation mark -->
+                            <StackLayout width="10%">
+                                <Label class="status ionicons-icon" text="&#xf120;" height="50%" />
+                            </StackLayout>
+
+                            <!-- Details -->
+                            <StackLayout width="55%">
+                                <Label text="John Smith" class="row-client-name" />
+                                <Label text="Incall" class="row-appointment-location" />
+                            </StackLayout>
+
+                            <!-- Revenue -->
+                            <Label text="$80" class="row-appointment-revenue" width="10%" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <!-- bottom toolbar -->
+        <StackLayout orientation="horizontal" row="1" col="0">
+            <Button text="+" class="add-appointment-button" width="20%" />
+            <StackLayout class="bottom-toolbar-button" width="20%">
+                <Label class="status ionicons-icon" text="&#xf120;" />
+                <Label text="Confirmed" />
+                <Label text="17" />
+            </StackLayout>
+            <StackLayout class="bottom-toolbar-button" width="20%">
+                <Label class="status ionicons-icon" text="&#xf120;" />
+                <Label text="Pending" />
+                <Label text="17" />
+            </StackLayout>
+            <StackLayout class="bottom-toolbar-button" width="20%">
+                <Label class="status ionicons-icon" text="&#xf120;" />
+                <Label text="Cancelled" />
+                <Label text="17" />
+            </StackLayout>
+            <StackLayout class="bottom-toolbar-button" width="20%">
+                <Label class="status ionicons-icon" text="&#xf120;" />
+                <Label text="Completed" />
+                <Label text="17" />
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

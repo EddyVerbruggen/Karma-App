@@ -1,0 +1,38 @@
+.title-date {
+    text-align: center;
+    font-weight: bold;
+}
+
+.appointment-row {
+    vertical-align: center;
+    background-color: #EFEFEF;
+    padding: 3;
+}
+
+.appointment-time-length-layout {
+    horizontal-align: center;
+    vertical-align: center;
+}
+.appointment-time {
+    font-size: 20;
+    text-align: center;
+}
+
+.appointment-length {
+    font-size: 12;
+    text-align: center;
+}
+
+
+.row-client-name {
+    font-size: 18;
+}
+.row-appointment-location {
+    font-size: 14;
+}
+
+.bottom-toolbar-button {
+    horizontal-align: center;
+    text-align: center;
+    vertical-align: center;
+}
