@@ -27,6 +27,11 @@ menuItems = [{
     "title": "appointmentDetailsView",
     "moduleName": "components/appointmentDetailsView/appointmentDetailsView",
     "icon": "\ue0dd"
+},
+{
+    "title": "settingsMainView",
+    "moduleName": "components/settingsMainView/settingsMainView",
+    "icon": "\ue0dd"
 }
 ];
 

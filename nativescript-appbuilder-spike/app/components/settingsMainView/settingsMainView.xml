@@ -1,0 +1,51 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
+    <!-- Actionbar with back button -->
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <ScrollView>
+        <StackLayout width="100%">
+            <!-- Header portion -->
+            <StackLayout height="100" width="100%" horizontalAlignment="center" verticalAlignment="center" paddingTop="40">
+                <Image src="~/images/placeholder/profile-client.png" height="75" />
+            </StackLayout>
+
+            <!-- Section -->
+            <StackLayout width="90%">
+                <StackLayout>
+                    <Label text="My Account" class="settings-section-header" />
+                    <Label height="3" width="100%" backgroundColor="blue" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Label text="Username" class="settings-label" />
+                    <Label text="kandygirl6" class="settings-field" />
+                    <Label height="1" width="100%" backgroundColor="#DDDDDD" />
+                </StackLayout>
+
+                <StackLayout>
+                    <Label text="Name" class="settings-label" />
+                    <Label text="Kandy" class="settings-field" />
+                    <Label height="1" width="100%" backgroundColor="#DDDDDD" />
+                </StackLayout>
+            </StackLayout>
+            
+
+            <!-- Section -->
+            <StackLayout width="90%">
+                <StackLayout>
+                    <Label text="All Settings" class="settings-section-header" />
+                    <Label height="3" width="100%" backgroundColor="blue" />
+                </StackLayout>
+
+                <StackLayout>
+                    <StackLayout orientation="horizontal" width="100%">
+                    	<Label text="&#xf101;  Services" class="ionicons-icon settings-section-link-label" width="95%" />
+                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
+                    </StackLayout>
+                    <Label height="1" width="100%" backgroundColor="#DDDDDD" />
+                </StackLayout>
+            </StackLayout>            
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,32 @@
+.settings-section-header {
+    font-size: 9;
+    color: blue;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 10;
+}
+
+.settings-label {
+    font-size: 9;
+    color: #AAAAAA;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 10;
+}
+
+.settings-field {
+    font-size: 14;
+    padding-bottom: 5;
+}
+
+.settings-section-link-label {
+	font-size: 16;
+    padding-bottom: 15;
+    padding-top: 15;
+    text-align: left;
+}
+.settings-section-link-arrow {
+	font-size: 20;
+    text-align: right;
+    right: 0;
+}
