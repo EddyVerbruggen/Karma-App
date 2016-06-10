@@ -14,35 +14,30 @@
     margin-top:20;
 }
 
-/* Styles for the info box */
+
 .info-box {
-    margin-top: 10;
+    
 }
 
 .info-table {
-    border-width: 1;
-	border-color: #CCCCCC;
-    border-radius: 3;
+    background-color:#fff;
 }
+
+
 
 .info-table-label {
-	width: 100;
-    background-color: #ECECEC;
-    margin: 5;
-    margin-left: 8;
+	width: 115;
+    background-color: #F8F8F8;
+    padding:8;
 }
 
-.info-table-label-layout {
-    background-color: #ECECEC;
-}
 
 .info-table-text {
-    margin: 5;
-    margin-left: 8;
+    padding:8;
 }
 
 .info-table-divider {
     height: 1;
     width: 100%;
-    background-color: #CCCCCC;
+    background-color: #eee;
 }

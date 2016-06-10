@@ -25,20 +25,20 @@
         <!-- Pending appointment(s) -->
         <Button class="pending-appointment-button" text="Appointment: Jan 5 - 9:00PM PST" />
 
-        <!-- Informational boxes; only need to style 1 -->
-        <StackLayout class="info-box" width="80%" horizontalAlignment="center">
-            <Label class="info-box-title" text="PERSONAL" />
+        <Label class="info-box-title" text="PERSONAL" />
+        <StackLayout class="info-table">
 
-            <StackLayout class="info-table">
-                <!-- Display each row as a horizontal stack. The reason is we want padding plus background color in first cell -->
-                <StackLayout orientation="horizontal">
-                    <!-- Need to use another layout here to add padding + background color -->
-                    <AbsoluteLayout class="info-table-label-layout">
-                        <Label class="info-table-label" text="Name:" />
-                    </AbsoluteLayout>
-                    <Label class="info-table-text" text="John Smith" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Name:" />
                 </StackLayout>
-                <Label class="info-table-divider"></Label>
+                <StackLayout class="info-table-text">
+                    <Label text="John Smith" />
+                </StackLayout>                
+            </StackLayout>
+            
+            <Label class="info-table-divider"></Label>
+
                 <StackLayout orientation="horizontal">
                     <AbsoluteLayout class="info-table-label-layout">
                         <Label class="info-table-label" text="Residence:" />
@@ -53,7 +53,7 @@
                     <Label class="info-table-text" text="45" />
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
+        
 
         <!-- Tags -->
         <StackLayout class="info-box">
