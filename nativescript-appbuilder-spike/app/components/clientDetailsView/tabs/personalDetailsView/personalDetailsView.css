@@ -19,25 +19,3 @@
     
 }
 
-.info-table {
-    background-color:#fff;
-}
-
-
-
-.info-table-label {
-	width: 115;
-    background-color: #F8F8F8;
-    padding:8;
-}
-
-
-.info-table-text {
-    padding:8;
-}
-
-.info-table-divider {
-    height: 1;
-    width: 100%;
-    background-color: #eee;
-}
