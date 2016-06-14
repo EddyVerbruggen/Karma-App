@@ -26,7 +26,7 @@
 
         <Label class="info-box-title" text="Personal" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="Name:" />
@@ -35,7 +35,7 @@
                     <Label text="John Smith" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>            
+            <Label class="info-table-divider" />            
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="Residence:" />
@@ -44,7 +44,7 @@
                     <Label text="Miami, FL" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="DOB:" />
@@ -57,7 +57,7 @@
 
         <Label class="info-box-title" text="Contact" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="Email:" />
@@ -66,7 +66,7 @@
                     <Label text="info@cuties-tools.com" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>            
+            <Label class="info-table-divider" />         
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="Phone:" />
@@ -79,7 +79,7 @@
 
         <Label class="info-box-title" text="Usernames" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="TER:" />
@@ -88,7 +88,7 @@
                     <Label text="sexyman7" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>            
+            <Label class="info-table-divider" />            
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="DateCheck:" />
@@ -97,7 +97,7 @@
                     <Label text="sexyman7" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="P411:" />
@@ -110,7 +110,7 @@
 
         <Label class="info-box-title" text="Signup Details" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="Date:" />
@@ -119,7 +119,7 @@
                     <Label text="May 1, 2016 - 4:37am" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>            
+            <Label class="info-table-divider" />           
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="Location:" />
@@ -128,7 +128,7 @@
                     <Label text="Orleans, Ontario" />
                 </StackLayout>                
             </StackLayout>            
-            <Label class="info-table-divider"></Label>
+            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
                     <Label class="" text="IP:" />
@@ -137,16 +137,15 @@
                     <Label text="67.546.56.38" />
                 </StackLayout>                
             </StackLayout>           
-        </StackLayout>         
+        </StackLayout>      
 
-        <!-- Tags -->
         <StackLayout class="info-box">
             <Label class="info-box-title" text="TAGS" />
-
             <StackLayout orientation="horizontal">
                 <Button text="los angeles" />
                 <Button text="new york" />
             </StackLayout>
         </StackLayout>
+
 	</StackLayout>
 </ScrollView>
