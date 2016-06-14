@@ -11,8 +11,8 @@
 
     <ActionBar.titleView>
         <GridLayout columns="auto, 5, *">
-          <Image src="~/images/nativescript_logo.png" width="36" height="36" />
-          <Label col="2" text="{{ pageTitle }}" minWidth="100" />
+            <Button text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" />
+			<Label col="2" text="{{ pageTitle }}" minWidth="100" />
         </GridLayout>
     </ActionBar.titleView>
 </ActionBar>
