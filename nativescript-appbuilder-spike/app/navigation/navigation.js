@@ -1,12 +1,15 @@
 'use strict';
-var helpers = require('../utils/widgets/helper'),
+var dialogs = require("ui/dialogs"),
+	Observable = require('data/observable').Observable,
+	helpers = require('../utils/widgets/helper'),
     navigationViewModel = require('./navigation-view-model');
 
-function pageLoaded(args) {
+function onNavigatingTo(args) {
     var page = args.object;
-
     helpers.platformInit(page);
-    page.bindingContext = navigationViewModel;
+    page.bindingContext = {
+        'navigationViewModel': navigationViewModel
+    };
     navigationViewModel.set('pageTitle', 'nativeScriptApp');
 }
 
@@ -14,5 +17,5 @@ function menuItemTap(args) {
     helpers.navigate(navigationViewModel.menuItems[args.index]);
 }
 
-exports.pageLoaded = pageLoaded;
+exports.onNavigatingTo = onNavigatingTo;
 exports.menuItemTap = menuItemTap;
