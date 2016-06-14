@@ -1,0 +1,61 @@
+<StackLayout class="drawer-menu-content" loaded="onLoad">
+    <Label text="&#xf448;  Dashboard" class="section-type-header ionicons-icon" tap="goToDashboard" />
+
+    <Label class="divider-line" />
+    
+    <Label text="&#xf117;  Appointments" class="section-type-header ionicons-icon" section="appointments" type="pending" tap="onTap" />
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="appointments" type="upcoming" tap="onTap">
+        <Label text="Upcoming " class="section-type-label" />
+        <Label text="{{bookingsUpcomingCount, '(' + bookingsUpcomingCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="appointments" type="pending" tap="onTap">
+        <Label text="Pending " class="section-type-label" />
+        <Label text="{{bookingsPendingCount, '(' + bookingsPendingCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="appointments" type="cancelled" tap="onTap">
+        <Label text="Cancelled " class="section-type-label" />
+        <Label text="{{bookingsCancelledCount, '(' + bookingsCancelledCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="appointments" type="all" tap="onTap">
+        <Label text="All " class="section-type-label" />
+        <Label text="{{bookingsAllCount, '(' + bookingsAllCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+
+    <Label class="divider-line" />
+    
+    <Label text="&#xf39e;  Clients" class="section-type-header ionicons-icon" section="clients" type="all" tap="onTap" />
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="clients" type="pending" tap="onTap">
+        <Label text="Pending " class="section-type-label" />
+        <Label text="{{clientsPendingCount, '(' + clientsPendingCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="clients" type="approved" tap="onTap">
+        <Label text="Approved " class="section-type-label" />
+        <Label text="{{clientsApprovedCount, '(' + clientsApprovedCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+    
+    <Label class="divider-line" />
+    
+    <StackLayout orientation="horizontal" class="section-type-row" section="clients" type="all" tap="onTap">
+        <Label text="All " class="section-type-label" />
+        <Label text="{{clientsAllCount, '(' + clientsAllCount + ')' }}" class="section-type-stat" />
+    </StackLayout>
+
+</StackLayout>
