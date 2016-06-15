@@ -1,0 +1,23 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      actionBarHidden="true"
+      backgroundSpanUnderStatusBar="true"
+      loaded="onLoaded">
+    <StackLayout>
+        <!-- Login form -->
+        <GridLayout rows="auto, auto" id="form-controls" translateY="50">
+            <TextField
+                    id="email" text="{{ user.email }}" hint="Email" keyboardType="email"
+                    returnKeyType="next" returnPress="focusPassword"
+                    autocorrect="false" autocapitalizationType="none"
+                    row="0"
+                    color="{{ isLogin ? 'black' : 'white' }}" />
+            <TextField id="password" secure="true" text="{{ user.password }}" hint="Password"
+                returnKeyType="done" returnPress="signIn"
+                row="1"
+                color="{{ isLogin ? 'black' : 'white' }}" />
+            <activity-indicator busy="{{ authenticating }}" rowSpan="2" />
+        </GridLayout>
+        
+        <Button text="Login" id="submit-button" tap="submit" />
+    </StackLayout>
+</Page>
