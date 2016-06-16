@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "tns-core-modules": "2.0.1",
-    "nativescript-telerik-ui": "1.*"
+    "nativescript-telerik-ui-pro": "1.*",
+    "email-validator": "^1.0.4"
   },
   "devDependencies": {}
 }
