@@ -1,6 +1,6 @@
-var config = require('../../config');
+var config = require('../config');
 var Observable = require('data/observable').Observable;
-//var validator = require('email-validator');
+var validator = require('email-validator');
 
 function User(info) {
 	info = info || {};
@@ -12,6 +12,7 @@ function User(info) {
 	});
 
 	viewModel.login = function() {
+        return true;
 		return fetch(config.apiUrl + "oauth/token", {
 			method: "POST",
 			body: JSON.stringify({

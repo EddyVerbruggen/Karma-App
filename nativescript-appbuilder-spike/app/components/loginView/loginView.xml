@@ -2,9 +2,9 @@
       actionBarHidden="true"
       backgroundSpanUnderStatusBar="true"
       loaded="onLoaded">
-    <StackLayout>
+    <StackLayout id="container">
         <!-- Login form -->
-        <GridLayout rows="auto, auto" id="form-controls" translateY="50">
+        <GridLayout rows="auto, auto" id="form-controls">
             <TextField
                     id="email" text="{{ user.email }}" hint="Email" keyboardType="email"
                     returnKeyType="next" returnPress="focusPassword"
@@ -15,7 +15,7 @@
                 returnKeyType="done" returnPress="signIn"
                 row="1"
                 color="{{ isLogin ? 'black' : 'white' }}" />
-            <activity-indicator busy="{{ authenticating }}" rowSpan="2" />
+            <ActivityIndicator busy="{{ authenticating }}" rowSpan="2" />
         </GridLayout>
         
         <Button text="Login" id="submit-button" tap="submit" />

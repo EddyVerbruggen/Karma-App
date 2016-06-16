@@ -1,12 +1,20 @@
 var dialogs = require('ui/dialogs');
-var Obervable = require('data/observable').Observable;
+var Observable = require('data/observable').Observable;
 var platform = require('platform');
-var UserViewModel = require('shared/viewModels/user-view-model');
+var UserViewModel = require('../../shared/viewModels/user-view-model');
+var navigation = require('../../shared/navigation');
+
+var pageData;
+var user;
+var page;
+var email;
+var password;
+var submitButton;
 
 exports.onLoaded = function (args) {
-    page = args.object
+    page = args.object;
     user = new UserViewModel({
-        email: 'username or email',
+        email: '',
         password: ''
     });
     pageData = new Observable({
@@ -16,8 +24,15 @@ exports.onLoaded = function (args) {
     page.bindingContext = pageData;
     // statusBarUtil.configure();
     
+	email = page.getViewById("email");
+	password = page.getViewById("password");
+	submitButton = page.getViewById("submit-button");
+	//formUtil.hideKeyboardOnBlur(page, [email, password]);
+
+	handleAndroidFocus();
+    
     setHintColors();
-}
+};
 
 exports.submit = function() {
     if (!user.isValidEmail()) {
@@ -27,13 +42,13 @@ exports.submit = function() {
         });
         return;
     }
-    disableForm();
+    toggleForm(false);
     login();
-}
+};
 
 exports.focusPassword = function() {
     password.focus();
-}
+};
 
 function toggleForm(enable) {
     email.isEnabled = enable;
@@ -59,6 +74,17 @@ function setHintColors() {
 	}
 }
 
+// Prevent the first textfield from receiving focus on Android
+// See http://stackoverflow.com/questions/5056734/android-force-edittext-to-remove-focus
+function handleAndroidFocus() {
+	var container = page.getViewById("container");
+	if (container.android) {
+		container.android.setFocusableInTouchMode(true);
+		container.android.setFocusable(true);
+		email.android.clearFocus();
+	}
+}
+
 function login() {
     user.login()
     	.catch(function() {
@@ -66,10 +92,9 @@ function login() {
                 message: 'Sorry, your username/password could not be found.',
                 okButtonText: 'OK'
             });
-        	enableForm();
+        	toggleForm(true);
         	return Promise.reject();
     	})
-    	.then(enableForm)
-    	.then(navigation.goToDashboard);
-    })
+    	.then(toggleForm(true))
+    	.then(navigation.goToDashboardView());
 }
