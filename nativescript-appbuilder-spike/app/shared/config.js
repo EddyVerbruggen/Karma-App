@@ -1,7 +1,7 @@
 var applicationSettingsModule = require("application-settings");
 
 var configObject = {
-	apiUrl: "https://api.everlive.com/v1/GWfRtXi1Lwt4jcqK/",
+	apiUrl: "https://api.karmascreen.com/v1/",
 	invalidateToken: function() {
 		this.token = "";
 	}
