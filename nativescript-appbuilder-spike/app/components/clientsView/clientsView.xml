@@ -1,33 +1,25 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
     <StackLayout class="client-rows">
-
-        <StackLayout orientation="horizontal" class="client-row">           
-            <StackLayout width="20%" verticalAlignment="center">
-                <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-row-thumbnail" />
-            </StackLayout>
-            <StackLayout width="60%" verticalAlignment="center">
-                <Label text="Tom Brady1" class="client-row-name" />
-            </StackLayout>            
-            <StackLayout width="20%" verticalAlignment="center">
-                <Label text="Pending..." class="row-client-status" />
-            </StackLayout>
-        </StackLayout>
-
-        <StackLayout orientation="horizontal" class="client-row">           
-            <StackLayout width="20%" verticalAlignment="center">
-                <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-row-thumbnail" />
-            </StackLayout>
-            <StackLayout width="60%" verticalAlignment="center">
-                <Label text="Tom Brady1" class="client-row-name" />
-                <Label text="1 Appointment Pending" class="client-row-appointment" />
-            </StackLayout>            
-            <StackLayout width="20%" verticalAlignment="center">
-                <Label text="Pending..." class="row-client-status" />
-            </StackLayout>
-        </StackLayout>
-
+        <!-- Loop through all clients and display each one -->
+        <ListView items="{{clientsList}}">
+            <ListView.itemTemplate>
+                <!-- Each row of clients. create different classes for the row depending on their status -->
+                <StackLayout orientation="horizontal" class="client-row">           
+                    <StackLayout width="20%" verticalAlignment="center">
+                        <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-row-thumbnail" />
+                    </StackLayout>
+                    <StackLayout width="60%" verticalAlignment="center">
+                        <Label text="{{client_name}}" class="client-row-name" />
+                    </StackLayout>            
+                    <StackLayout width="20%" verticalAlignment="center">
+                        <Label text="{{status_text}}" class="row-client-status" />
+                    </StackLayout>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        <ActivityIndicator busy="{{ isLoading }}" />
     </StackLayout>
 </Page>

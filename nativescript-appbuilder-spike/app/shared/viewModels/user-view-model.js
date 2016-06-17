@@ -12,7 +12,6 @@ function User(info) {
 	});
 
 	viewModel.login = function() {
-        return true;
 		return fetch(config.apiUrl + "oauth/token", {
 			method: "POST",
 			body: JSON.stringify({
