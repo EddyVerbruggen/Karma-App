@@ -86,7 +86,8 @@ function handleAndroidFocus() {
 }
 
 function login() {
-    user.login()
+    navigation.goToDashboard();
+    /*user.login()
     	.catch(function() {
         	dialogs.alert({
                 message: 'Sorry, your username/password could not be found.',
@@ -96,5 +97,5 @@ function login() {
         	return Promise.reject();
     	})
     	.then(toggleForm(true))
-    	.then(navigation.goToDashboardView());
+    	.then(navigation.goToDashboardView());*/
 }
