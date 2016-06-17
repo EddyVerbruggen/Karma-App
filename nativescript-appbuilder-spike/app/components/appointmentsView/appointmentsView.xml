@@ -3,39 +3,80 @@
     	<widgets:action-bar />
 	</Page.actionBar>
     <GridLayout rows="*, 75" columns="*">
-        <!-- This gives a scrollbar only to this section -->
-        <ScrollView row="0" col="0">
-            <!-- The outer stacklayout is needed to hold all the inner stacklayouts for each date -->
-            <StackLayout>
-                <StackLayout class="section-date">    
-                    <Label text="Tuesday, February 23" class="title-date" />
+        <ScrollView row="0" col="0">            
+              <StackLayout>    
+                    <Label text="Tuesday, February 23" class="appointment-calendar-date" />
                     <StackLayout class="appointment-rows">
-                        <StackLayout orientation="horizontal" class="appointment-row">
-                            <!-- Time/Duration -->
-                            <StackLayout width="25%" class="appointment-time-length-layout">
+
+                        <StackLayout orientation="horizontal" class="appointment-row">                            
+                            <StackLayout width="20%" verticalAlignment="center" class="appointment-time-details">
                                 <Label text="2:00 PM" class="appointment-time" />
                                 <Label text="1 Hour" class="appointment-length" />
-                            </StackLayout>
-
-                            <!-- Checkmark or exclamation mark -->
-                            <StackLayout width="10%">
-                                <Label class="status ionicons-icon" text="&#xf120;" height="50%" />
-                            </StackLayout>
-
-                            <!-- Details -->
-                            <StackLayout width="55%">
+                            </StackLayout>                            
+                            <StackLayout width="15%" verticalAlignment="center">
+                                <StackLayout class="appointment-status appointment-confirmed">
+                                    <Label class="ionicons-icon" text="&#xf122;" />
+                                </StackLayout>
+                            </StackLayout>                            
+                            <StackLayout width="65%" verticalAlignment="center">
                                 <Label text="John Smith" class="row-client-name" />
                                 <Label text="Incall" class="row-appointment-location" />
                             </StackLayout>
-
-                            <!-- Revenue -->
-                            <Label text="$80" class="row-appointment-revenue" width="10%" />
                         </StackLayout>
-                    </StackLayout>
+
+                        <StackLayout orientation="horizontal" class="appointment-row">                            
+                            <StackLayout width="20%" verticalAlignment="center" class="appointment-time-details">
+                                <Label text="9:00 PM" class="appointment-time" />
+                                <Label text="2 Hours" class="appointment-length" />
+                            </StackLayout>                            
+                            <StackLayout width="15%" verticalAlignment="center">
+                                <StackLayout class="appointment-status appointment-pending">
+                                    <Label class="ionicons-icon" text="&#xf3b1;" />
+                                </StackLayout>
+                            </StackLayout>                            
+                            <StackLayout width="65%" verticalAlignment="center">
+                                <Label text="John Smith" class="row-client-name" />
+                                <Label text="Outcall - Hilton Honors, Room 574" class="row-appointment-location" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout orientation="horizontal" class="appointment-row">                            
+                            <StackLayout width="20%" verticalAlignment="center" class="appointment-time-details">
+                                <Label text="2:00 PM" class="appointment-time" />
+                                <Label text="1 Hour" class="appointment-length" />
+                            </StackLayout>                            
+                            <StackLayout width="15%" verticalAlignment="center">
+                                <StackLayout class="appointment-status appointment-cancelled">
+                                    <Label class="ionicons-icon" text="&#xf129;" />
+                                </StackLayout>
+                            </StackLayout>                            
+                            <StackLayout width="65%" verticalAlignment="center">
+                                <Label text="John Smith" class="row-client-name" />
+                                <Label text="Incall" class="row-appointment-location" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!--<StackLayout orientation="horizontal" class="appointment-row">                            
+                            <StackLayout width="20%" verticalAlignment="center" class="appointment-time-details">
+                                <Label text="2:00 PM" class="appointment-time" />
+                                <Label text="1 Hour" class="appointment-length" />
+                            </StackLayout>                            
+                            <StackLayout width="15%" verticalAlignment="center">
+                                <StackLayout class="appointment-status appointment-completed">
+                                    <Label class="ionicons-icon" text="&#xf396;" />
+                                </StackLayout>
+                            </StackLayout>                            
+                            <StackLayout width="65%" verticalAlignment="center">
+                                <Label text="John Smith" class="row-client-name" />
+                                <Label text="Incall" class="row-appointment-location" />
+                            </StackLayout>
+                        </StackLayout>-->
+
+                    </StackLayout>               
                 </StackLayout>
-            </StackLayout>
         </ScrollView>
-        <!-- bottom toolbar -->
+
+
         <StackLayout orientation="horizontal" row="1" col="0">
             <Button text="+" class="add-appointment-button" width="20%" />
             <StackLayout class="bottom-toolbar-button" width="20%">

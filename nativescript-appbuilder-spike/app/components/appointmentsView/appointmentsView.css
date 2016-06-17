@@ -1,17 +1,19 @@
-.title-date {
-    text-align: center;
-    font-weight: bold;
-}
+.appointment-calendar-date {font-size:20;margin:10;text-align:center;color:#999;}
 
 .appointment-row {
     vertical-align: center;
-    background-color: #EFEFEF;
-    padding: 3;
+    background-color: #fff;
+    padding: 12 0;
+    margin:0 0 1 0;
 }
 
-.appointment-time-length-layout {
+.appointment-status {border-radius:100;width:35;height:35;padding:8;font-size:20;}
+.appointment-confirmed {background-color:#5BB98C;color:#fff;}
+.appointment-pending {background-color:#fafafa;color:#aaa;}
+.appointment-cancelled {background-color:#FC4545;color:#fff;}
+
+.appointment-time-details {
     horizontal-align: center;
-    vertical-align: center;
 }
 .appointment-time {
     font-size: 20;
@@ -25,7 +27,7 @@
 
 
 .row-client-name {
-    font-size: 18;
+    font-size: 25;
 }
 .row-appointment-location {
     font-size: 14;
@@ -36,3 +38,6 @@
     text-align: center;
     vertical-align: center;
 }
+
+
+

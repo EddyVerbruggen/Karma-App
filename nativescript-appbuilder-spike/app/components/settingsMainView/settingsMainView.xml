@@ -1,51 +1,84 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
-    <!-- Actionbar with back button -->
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
     <ScrollView>
         <StackLayout width="100%">
-            <!-- Header portion -->
-            <StackLayout height="100" width="100%" horizontalAlignment="center" verticalAlignment="center" paddingTop="40">
-                <Image src="~/images/placeholder/profile-client.png" height="75" />
-            </StackLayout>
+            
+            <StackLayout horizontalAlignment="center" class="settings-top">
+                <Image src="~/images/placeholder/temp-client-thumb.jpg" class="settings-thumb" />
+            </StackLayout>       
 
-            <!-- Section -->
-            <StackLayout width="90%">
+            <StackLayout class="settings-account">
                 <StackLayout>
                     <Label text="My Account" class="settings-section-header" />
-                    <Label height="3" width="100%" backgroundColor="blue" />
+                    <Label class="settings-section-divider" />
                 </StackLayout>
-
-                <StackLayout>
+                <StackLayout class="settings-input-row">
                     <Label text="Username" class="settings-label" />
-                    <Label text="kandygirl6" class="settings-field" />
-                    <Label height="1" width="100%" backgroundColor="#DDDDDD" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
                 </StackLayout>
-
-                <StackLayout>
+                <StackLayout class="settings-input-row">
                     <Label text="Name" class="settings-label" />
-                    <Label text="Kandy" class="settings-field" />
-                    <Label height="1" width="100%" backgroundColor="#DDDDDD" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
                 </StackLayout>
             </StackLayout>
             
-
-            <!-- Section -->
-            <StackLayout width="90%">
+            <StackLayout class="settings-all">
                 <StackLayout>
                     <Label text="All Settings" class="settings-section-header" />
-                    <Label height="3" width="100%" backgroundColor="blue" />
+                    <Label class="settings-section-divider" />
                 </StackLayout>
-
                 <StackLayout>
-                    <StackLayout orientation="horizontal" width="100%">
-                    	<Label text="&#xf101;  Services" class="ionicons-icon settings-section-link-label" width="95%" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
+                        <Label text="Services" class="settings-section-link-label" width="85%" />
                         <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
                     </StackLayout>
-                    <Label height="1" width="100%" backgroundColor="#DDDDDD" />
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
+                        <Label text="Notifications" class="settings-section-link-label" width="85%" />
+                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
+                        <Label text="Screening" class="settings-section-link-label" width="85%" />
+                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
+                        <Label text="Booking" class="settings-section-link-label" width="85%" />
+                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
+                        <Label text="Landing Page" class="settings-section-link-label" width="85%" />
+                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
                 </StackLayout>
-            </StackLayout>            
+
+            </StackLayout> 
+
+            <StackLayout class="settings-url">
+                <StackLayout>
+                    <Label text="My URLs" class="settings-section-header" />
+                    <Label class="settings-section-divider" />
+                </StackLayout>
+
+                <StackLayout class="settings-input-row">
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
+                </StackLayout>
+
+                <StackLayout class="settings-input-row">
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
+                </StackLayout>
+            </StackLayout>
+           
         </StackLayout>
     </ScrollView>
 </Page>

@@ -3,11 +3,17 @@ var frameModule = require("ui/frame");
 
 module.exports = {
 	goToLoginPage: function() {
-		frameModule.topmost().navigate("views/login/login");
+		frameModule.topmost().navigate("components/loginView/loginView");
 	},
 	goToPasswordPage: function() {
 		frameModule.topmost().navigate("views/password/password");
 	},
+    goToDashboard: function() {
+        frameModule.topmost().navigate({
+            moduleName: 'navigation/navigation',
+            clearHistory: true
+        });
+    },
 	goToListPage: function() {
 		frameModule.topmost().navigate({
 			moduleName: "views/list/list",
@@ -23,6 +29,6 @@ module.exports = {
 		});
 	},
 	startingPage: function() {
-		return config.token ? "views/list/list" : "views/login/login";
+		return config.token ? "views/list/list" : "components/loginView/loginView";
 	}
 };

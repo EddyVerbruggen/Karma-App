@@ -1,23 +1,25 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
     <StackLayout class="client-rows">
-        <StackLayout orientation="horizontal" class="client-row" verticalAlignment="center">
-            <!-- Checkmark or exclamation mark -->
-            <Label class="status ionicons-icon" text="&#xf121;" width="10%" />
-            
-            <!-- Thumbnail -->
-            <Image src="~/images/placeholder/profile-client.png" width="20%" />
-                
-            <!-- Details -->
-            <StackLayout width="55%" verticalAlignment="center">
-                <Label text="Tom Brady" class="row-client-name" />
-                <Label text="1 Appointment Pending" class="row-client-bookings" />
-            </StackLayout>
-            
-            <!-- Status -->
-            <Label text="Pending" class="row-client-status" width="15%" />
-        </StackLayout>
+        <!-- Loop through all clients and display each one -->
+        <ListView items="{{clientsList}}">
+            <ListView.itemTemplate>
+                <!-- Each row of clients. create different classes for the row depending on their status -->
+                <StackLayout orientation="horizontal" class="client-row">           
+                    <StackLayout width="20%" verticalAlignment="center">
+                        <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-row-thumbnail" />
+                    </StackLayout>
+                    <StackLayout width="60%" verticalAlignment="center">
+                        <Label text="{{client_name}}" class="client-row-name" />
+                    </StackLayout>            
+                    <StackLayout width="20%" verticalAlignment="center">
+                        <Label text="{{status_text}}" class="row-client-status" />
+                    </StackLayout>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        <ActivityIndicator busy="{{ isLoading }}" />
     </StackLayout>
 </Page>

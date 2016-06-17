@@ -14,35 +14,8 @@
     margin-top:20;
 }
 
-/* Styles for the info box */
-.info-box {
-    margin-top: 10;
-}
 
-.info-table {
-    border-width: 1;
-	border-color: #CCCCCC;
-    border-radius: 3;
-}
+.client-profile-top {background-color:#ccc;padding:50 0 50 0;}
 
-.info-table-label {
-	width: 100;
-    background-color: #ECECEC;
-    margin: 5;
-    margin-left: 8;
-}
+.client-profile-top-thumbnail {width:125;border-radius:200;}
 
-.info-table-label-layout {
-    background-color: #ECECEC;
-}
-
-.info-table-text {
-    margin: 5;
-    margin-left: 8;
-}
-
-.info-table-divider {
-    height: 1;
-    width: 100%;
-    background-color: #CCCCCC;
-}

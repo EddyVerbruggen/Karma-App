@@ -1,2 +1,22 @@
 body {
 }
+
+.client-row {
+    background-color:#fff;
+    margin-bottom: 1;
+    padding:7;
+}
+
+.client-row-thumbnail {
+  border-radius: 100;
+  width:60;
+}
+
+.client-row-name {
+  font-size: 20;
+}
+
+.client-row-appointment {
+  font-size:12;
+    color:#bbb;
+}

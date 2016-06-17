@@ -1,9 +1,8 @@
 <ScrollView>
-	<StackLayout width="100%">
-        <!-- Header portion -->
-        <StackLayout height="200" width="100%" horizontalAlign="center" verticalAlign="center" paddingTop="40">
-            <Image src="~/images/placeholder/profile-client.png" height="100" />
-            <Label text="APPROVED" textAlign="center" marginTop="30" />
+	<StackLayout>
+        <StackLayout class="client-profile-top">
+            <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-profile-top-thumbnail" />
+            <Label text="Approved" class="client-profile-top-status" />
         </StackLayout>
 
         <!-- Summary stats -->
@@ -25,44 +24,128 @@
         <!-- Pending appointment(s) -->
         <Button class="pending-appointment-button" text="Appointment: Jan 5 - 9:00PM PST" />
 
-        <!-- Informational boxes; only need to style 1 -->
-        <StackLayout class="info-box" width="80%" horizontalAlignment="center">
-            <Label class="info-box-title" text="PERSONAL" />
-
-            <StackLayout class="info-table">
-                <!-- Display each row as a horizontal stack. The reason is we want padding plus background color in first cell -->
-                <StackLayout orientation="horizontal">
-                    <!-- Need to use another layout here to add padding + background color -->
-                    <AbsoluteLayout class="info-table-label-layout">
-                        <Label class="info-table-label" text="Name:" />
-                    </AbsoluteLayout>
-                    <Label class="info-table-text" text="John Smith" />
+        <Label class="info-box-title" text="Personal" />
+        <StackLayout class="info-table">
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Name:" />
                 </StackLayout>
-                <Label class="info-table-divider"></Label>
-                <StackLayout orientation="horizontal">
-                    <AbsoluteLayout class="info-table-label-layout">
-                        <Label class="info-table-label" text="Residence:" />
-                    </AbsoluteLayout>
-                    <Label class="info-table-text" text="Miami, FL" />
+                <StackLayout class="info-table-text">
+                    <Label text="John Smith" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />            
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Residence:" />
                 </StackLayout>
-                <Label class="info-table-divider"></Label>
-                <StackLayout orientation="horizontal">
-                    <AbsoluteLayout class="info-table-label-layout">
-                        <Label class="info-table-label" text="Age:" />
-                    </AbsoluteLayout>
-                    <Label class="info-table-text" text="45" />
+                <StackLayout class="info-table-text">
+                    <Label text="Miami, FL" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="DOB:" />
                 </StackLayout>
-            </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="June 12, 1968" />
+                </StackLayout>                
+            </StackLayout>           
         </StackLayout>
 
-        <!-- Tags -->
+        <Label class="info-box-title" text="Contact" />
+        <StackLayout class="info-table">
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Email:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="info@cuties-tools.com" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />         
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Phone:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="(795) 697-5553" />
+                </StackLayout>              
+            </StackLayout>           
+        </StackLayout>
+
+        <Label class="info-box-title" text="Usernames" />
+        <StackLayout class="info-table">
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="TER:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="sexyman7" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />            
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="DateCheck:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="sexyman7" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="P411:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="-" />
+                </StackLayout>                
+            </StackLayout>           
+        </StackLayout> 
+
+        <Label class="info-box-title" text="Signup Details" />
+        <StackLayout class="info-table">
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Date:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="May 1, 2016 - 4:37am" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />           
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="Location:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="Orleans, Ontario" />
+                </StackLayout>                
+            </StackLayout>            
+            <Label class="info-table-divider" />
+            <StackLayout orientation="horizontal" class="info-table-row">
+                <StackLayout class="info-table-label">
+                    <Label class="" text="IP:" />
+                </StackLayout>
+                <StackLayout class="info-table-text">
+                    <Label text="67.546.56.38" />
+                </StackLayout>                
+            </StackLayout>           
+        </StackLayout>      
+
         <StackLayout class="info-box">
             <Label class="info-box-title" text="TAGS" />
-
             <StackLayout orientation="horizontal">
                 <Button text="los angeles" />
                 <Button text="new york" />
             </StackLayout>
         </StackLayout>
+
 	</StackLayout>
 </ScrollView>
