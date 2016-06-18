@@ -1,9 +1,17 @@
-var config = require("./config");
-var frameModule = require("ui/frame");
+var frameModule = require("ui/frame"),
+	config = require("./config"),
+	views = require('./views');
 
 module.exports = {
+    goToPage: function(view) {
+        if (views.hasOwnProperty(view)) {
+            frameModule.topmost().navigate(views[view]);
+        } else {
+            frameModule.topmost().navigate(views.dashboard);
+        }
+    },
 	goToLoginPage: function() {
-		frameModule.topmost().navigate("components/loginView/loginView");
+		frameModule.topmost().navigate(views.login);
 	},
 	goToPasswordPage: function() {
 		frameModule.topmost().navigate("views/password/password");

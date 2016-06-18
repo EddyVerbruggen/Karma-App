@@ -1,8 +1,8 @@
 var dialogs = require('ui/dialogs');
 var Observable = require('data/observable').Observable;
 var platform = require('platform');
-var UserViewModel = require('../../shared/viewModels/user-view-model');
-var navigation = require('../../shared/navigation');
+var UserViewModel = require('../../utils/view-models/user');
+var navigation = require('../../utils/navigation');
 
 var pageData;
 var user;
