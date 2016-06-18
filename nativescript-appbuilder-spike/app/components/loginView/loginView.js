@@ -58,7 +58,7 @@ function toggleForm(enable) {
 }
 
 function setHintColors() {
-	var placeHolderColor = pageData.get("isLogin") ? "#ACA6A7" : "#C4AFB4";
+	var placeHolderColor = pageData.get("isLogin") ? "#52545B" : "#52545B";
 
 	if (email.android) {
 		var color = android.graphics.Color.parseColor(placeHolderColor);
