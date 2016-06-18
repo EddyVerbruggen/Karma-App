@@ -1,0 +1,15 @@
+Page {
+    background-color: #222431;background-image: url('~/images/pattern-triangle.png');
+    background-repeat: repeat;color:#fff;}
+
+.login-area {margin:25 50;}
+.login-logo {width:200;margin-bottom:80;}
+.login-input {padding:12;font-size:20;margin-bottom:10;}
+.login-button {background-color: #3EC3D6;border-radius:6;padding:6;font-size:24;text-transform:uppercase;color:#fff;}
+
+.login-bottom-area {text-align:center;}
+.login-forget-password {margin-bottom:30;margin-top:25;opacity: 0.6;}
+.login-register {font-size:32;text-decoration: underline;text-transform:uppercase;margin-bottom:50;}
+
+.social-icons {text-align:center;}
+.social-icons Label {font-size:32;width:60;height:60;border-width:1;border-color:#fff;border-radius:100;margin:0 10;padding-top:13;opacity:0.6;}

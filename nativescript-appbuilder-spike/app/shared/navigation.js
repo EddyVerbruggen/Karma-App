@@ -29,6 +29,6 @@ module.exports = {
 		});
 	},
 	startingPage: function() {
-		return config.token ? "views/list/list" : "components/loginView/loginView";
+		return config.token ? "views/list/list" : "navigation/navigation";
 	}
 };
