@@ -1,0 +1,51 @@
+    <ScrollView>
+        <StackLayout width="100%">
+            <!-- Header portion -->
+            <StackLayout height="175" width="100%" verticalAlignment="center">
+                <StackLayout orientation="horizontal">
+                    <!-- avatar area -->
+                    <StackLayout width="33%" horizontalAlignment="center" padding="10">
+                        <Image src="~/images/placeholder/profile-client.png" width="100%" />
+                        <Label text="APPROVED" textAlignment="center" />
+                    </StackLayout>
+                    
+                    <!-- profile area -->
+                    <StackLayout width="66%" verticalAlignment="center">
+                        <Label text="Clayton Fox" />
+                        <Label text="(516) 618-8884" />
+                        <Label text="claytonfox@gmail.com" />
+                        <Button text="Profile" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            
+            <!-- Date portion -->
+            <StackLayout orientation="horizontal" height="100" width="80%">
+                <StackLayout width="30%" verticalAlignment="center">
+                	<Label class="ionicons-icon" text="&#xf3f3;" fontSize="80" textAlignment="center" />
+                </StackLayout>
+                <StackLayout width="70%" verticalAlignment="center">
+                	<Label class="details-date-text" text="Sunday, February 21" />
+                    <Label class="details-time-text" text="3:30PM" />
+                    <Label class="details-length-text" text="1hr - Incall" />
+                </StackLayout>
+            </StackLayout>
+            
+            <Label height="1" backgroundColor="#EFEFEF" width="80%" textAlignment="center" />
+            <Label text="No alternate dates selected" textAlignment="center" width="100%" marginTop="10" marginBottom="10" />
+            <Label height="1" backgroundColor="#EFEFEF" width="80%" textAlignment="center" marginBottom="30" />
+            
+            <!-- Status -->
+            <StackLayout orientation="horizontal" horizontalAlignment="center">
+            	<Label text="Status: " fontWeight="bold" />
+                <Label text="Waiting for you to accept or cancel appointment." />
+            </StackLayout>
+            
+            <!-- Action buttons -->
+            <GridLayout rows="*, *" columns="*, *" width="80%">
+                <Button class="ionicons-icon" text="&#xf373;  Accept Appointment" col="0" row="0" colSpan="2" width="100%" />
+                <Button text="Cancel" col="0" row="1" />
+                <Button text="Edit" col="1" row="1" />
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>

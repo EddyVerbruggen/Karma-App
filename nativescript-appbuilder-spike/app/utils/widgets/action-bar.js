@@ -1,8 +1,8 @@
 'use strict';
 
-var frameModule = require('ui/frame'),
-	view = require('ui/core/view'),
-	observable = require('data/observable');
+var frameModule = require('ui/frame');
+var view = require('ui/core/view');
+var observable = require('data/observable');
 
 function onBack() {
     // Android only
