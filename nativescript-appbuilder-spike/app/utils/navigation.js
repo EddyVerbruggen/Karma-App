@@ -1,6 +1,6 @@
-var frameModule = require("ui/frame"),
-	config = require("./config"),
-	views = require('./views');
+var frameModule = require("ui/frame");
+var config = require("./config");
+var views = require('./views');
 
 module.exports = {
     goToPage: function(view) {

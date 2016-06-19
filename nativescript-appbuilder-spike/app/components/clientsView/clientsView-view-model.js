@@ -2,17 +2,8 @@
 var config = require('../../utils/config'),
     ObservableArray = require('data/observable-array').ObservableArray,
     mock = require('../../utils/test-data'),
+    handleResponse = require('../../utils/api/helpers').handleResponse,
     navigation = require('../../utils/navigation');
-
-function indexOf(item) {
-	var match = -1;
-	this.forEach(function(loopItem, index) {
-		if (loopItem.id === item.id) {
-			match = index;
-		}
-	});
-	return match;
-}
 
 function ClientsViewModel(clients) {
     var viewModel = new ObservableArray(clients)
@@ -20,10 +11,8 @@ function ClientsViewModel(clients) {
     // Load all clients
     viewModel.load = function(status) {
         status = status || 'all';
-        
+
         var fetchData;
-        
-        
         if (mock !== 'undefined') {
             fetchData = new Promise(function(resolve, reject) {
                 return resolve(mock.clients);
@@ -37,10 +26,8 @@ function ClientsViewModel(clients) {
         }
 
         return fetchData
-            .then(handleErrors)
-            .then(function(response) {
-                return typeof(response) === 'string' ? response.json() : response;
-            }).then(function(data) {
+            .then(handleResponse)
+            .then(function(data) {
                 viewModel.empty();
                 data.Result.forEach(function(client) {
                     viewModel.push(client);
@@ -54,28 +41,7 @@ function ClientsViewModel(clients) {
         }
     };
     
-    // Update a client's status
-    /*
-    viewModel.updateStatus = function(index, status) {
-        // Find client by index
-        var client = viewModel.getItem(index);
-    };
-    */
-    
     return viewModel;
-}
-
-function handleErrors(response) {
-	if (!response.ok) {
-		console.log(JSON.stringify(response));
-
-		if (response.status === 403) {
-			navigation.signOut();
-		}
-
-		throw Error(response.statusText);
-	}
-	return response;
 }
 
 module.exports = ClientsViewModel;

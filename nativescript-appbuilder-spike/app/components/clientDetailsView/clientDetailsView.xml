@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
+<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="onLoaded">
     <!-- Actionbar with back button -->
     <Page.actionBar>
     	<widgets:action-bar />

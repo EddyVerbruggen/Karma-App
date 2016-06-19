@@ -1,28 +1,36 @@
-<ScrollView>
+<ScrollView loaded="onLoaded">
 	<StackLayout>
         <StackLayout class="client-profile-top">
             <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-profile-top-thumbnail" />
-            <Label text="Approved" class="client-profile-top-status" />
+            <Label text="{{clientDetails.Result.screening.status_text}}" class="client-profile-top-status" />
         </StackLayout>
 
         <!-- Summary stats -->
         <StackLayout orientation="horizontal">
             <StackLayout width="33%">
-                <Label class="summary-stat-number" text="80" />
+                <Label class="summary-stat-number" text="{{clientDetails.Result.screening.karmascore}}" />
                 <Label class="summary-stat-label" text="karmascore" />
             </StackLayout>
             <StackLayout width="33%">
-                <Label class="summary-stat-number" text="1" />
+                <Label class="summary-stat-number" text="{{clientDetails.Result.screening.num_bookings}}" />
                 <Label class="summary-stat-label" text="appointments" />
             </StackLayout>
             <StackLayout width="34%">
-                <Label class="summary-stat-number" text="0" />
+                <Label class="summary-stat-number" text="{{clientDetails.Result.screening.num_noshows}}" />
                 <Label class="summary-stat-label" text="no-shows" />
             </StackLayout>
         </StackLayout>
 
         <!-- Pending appointment(s) -->
-        <Button class="pending-appointment-button" text="Appointment: Jan 5 - 9:00PM PST" />
+        <Repeater items="{{clientDetails.Result.bookings}}">
+            <Repeater.itemsLayout>
+                <StackLayout />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <Button text="{{'Appointment: ' + date}}" class="pending-appointment-button" />
+            </Repeater.itemTemplate>
+        </Repeater>
+
 
         <Label class="info-box-title" text="Personal" />
         <StackLayout class="info-table">
@@ -32,7 +40,7 @@
                     <Label class="" text="Name:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="John Smith" />
+                    <Label text="{{clientDetails.Result.client_profile.name}}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />            
@@ -41,16 +49,16 @@
                     <Label class="" text="Residence:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="Miami, FL" />
+                    <Label text="{{clientDetails.Result.client_profile.residence}}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="DOB:" />
+                    <Label class="" text="Age:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="June 12, 1968" />
+                    <Label text="{{clientDetails.Result.client_profile.age}}" />
                 </StackLayout>                
             </StackLayout>           
         </StackLayout>
@@ -63,7 +71,7 @@
                     <Label class="" text="Email:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="info@cuties-tools.com" />
+                    <Label text="{{clientDetails.Result.client.email}}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />         
@@ -72,7 +80,7 @@
                     <Label class="" text="Phone:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="(795) 697-5553" />
+                    <Label text="{{clientDetails.Result.client.phone}}" />
                 </StackLayout>              
             </StackLayout>           
         </StackLayout>
@@ -85,7 +93,7 @@
                     <Label class="" text="TER:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="sexyman7" />
+                    <Label text="{{clientDetails.Result.client_profile.ter_username}}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />            
@@ -94,7 +102,7 @@
                     <Label class="" text="DateCheck:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="sexyman7" />
+                    <Label text="{{clientDetails.Result.client_profile.datecheck_username}}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />
@@ -103,7 +111,7 @@
                     <Label class="" text="P411:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="-" />
+                    <Label text="{{clientDetails.Result.client_profile.p411_username}}" />
                 </StackLayout>                
             </StackLayout>           
         </StackLayout> 
@@ -116,7 +124,7 @@
                     <Label class="" text="Date:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="May 1, 2016 - 4:37am" />
+                    <Label text="{{ clientDetails.Result.client.created_formatted }}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />           
@@ -125,7 +133,7 @@
                     <Label class="" text="Location:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="Orleans, Ontario" />
+                    <Label text="{{clientDetails.Result.client.location_signup}}" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />
@@ -134,17 +142,22 @@
                     <Label class="" text="IP:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="67.546.56.38" />
+                    <Label text="{{clientDetails.Result.client.ip_signup}}" />
+                    <Label text="{{clientDetails.Result.client.host_signup, ' (' + clientDetails.Result.client.host_signup + ')'}}" />
                 </StackLayout>                
             </StackLayout>           
         </StackLayout>      
 
         <StackLayout class="info-box">
             <Label class="info-box-title" text="TAGS" />
-            <StackLayout orientation="horizontal">
-                <Button text="los angeles" />
-                <Button text="new york" />
-            </StackLayout>
+            <Repeater items="{{clientDetails.Result.tags}}">
+                <Repeater.itemsLayout>
+                    <StackLayout orientation="horizontal" />
+                </Repeater.itemsLayout>
+                <Repeater.itemTemplate>
+                    <Button text="{{name}}" />
+                </Repeater.itemTemplate>
+            </Repeater>
         </StackLayout>
 
 	</StackLayout>

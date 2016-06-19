@@ -1,8 +1,8 @@
 'use strict';
-var dialogs = require("ui/dialogs"),
-	Observable = require('data/observable').Observable,
-	helpers = require('../utils/widgets/helper'),
-    navigationViewModel = require('./navigation-view-model');
+var dialogs = require("ui/dialogs");
+var Observable = require('data/observable').Observable;
+var helpers = require('../utils/widgets/helper');
+var navigationViewModel = require('./navigation-view-model');
 
 function onNavigatingTo(args) {
     var page = args.object;

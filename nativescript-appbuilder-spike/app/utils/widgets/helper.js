@@ -1,8 +1,9 @@
 'use strict';
-var frame = require('ui/frame'),
-    platform = require('platform');
+var frame = require('ui/frame');
+var dialogsModule = require('ui/dialogs');
+var platform = require('platform');
 
-function platformInit(page) {
+exports.platformInit = function(page) {
     var top = frame.topmost(),
         ios = top.ios,
         android = top.android;
@@ -20,15 +21,15 @@ function platformInit(page) {
     }
 }
 
-function back() {
+exports.back = function() {
     frame.topmost().goBack();
 }
 
-function navigate(location) {
+exports.navigate = function(location) {
     frame.topmost().navigate(location);
 }
 
-function onOpenUrl(url) {
+exports.onOpenUrl = function(url) {
     if (!url) {
         return;
     }
@@ -48,7 +49,15 @@ function onOpenUrl(url) {
     }
 }
 
-exports.back = back;
-exports.navigate = navigate;
-exports.platformInit = platformInit;
-exports.onOpenUrl = onOpenUrl;
+exports.togglePageLoadingIndicator = function(toggleValue, pageData) {
+    pageData.set("isLoading", toggleValue);
+}
+
+exports.handleLoadError = function(error, errorMessage) {
+    errorMessage = errorMessage || 'Sorry, there was an error loading information.'
+    console.log(error);
+    dialogsModule.alert({
+        message: errorMessage,
+        okButtonText: "OK"
+    });
+}

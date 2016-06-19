@@ -1,50 +1,31 @@
 'use strict';
-var isInit = true,
-    ClientsViewModel = require('./clientsView-view-model'),
-    Observable = require('data/observable').Observable,
-    helpers = require('../../utils/widgets/helper');
+var Observable = require('data/observable').Observable;
+var ClientsViewModel = require('./clientsView-view-model');
+var helpers = require('../../utils/widgets/helper');
 
+var isInit = true;
 var clientsList = new ClientsViewModel();
 var pageData = new Observable({
     clientsList: clientsList,
-    isLoading: false
+    isLoading: true
 });
 
-// additional functions
 function onLoaded(args) {
     var page = args.object;
     page.bindingContext = pageData;
-    //console.dump(pageData.clientsList);
-	showPageLoadingIndicator();
+    helpers.togglePageLoadingIndicator(true, pageData);
 	clientsList
 		.load()
 		.catch(function(error) {
-			console.log(error);
-			dialogsModule.alert({
-				message: "An error occurred while loading your grocery list.",
-				okButtonText: "OK"
-			});
-		})
+        	helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
+    	})
 		.then(function() {
-			hidePageLoadingIndicator();
-
-			// Fade in the ListView over 1 second
-			/*groceryListElement.animate({
-				opacity: 1,
-				duration: 1000
-			});*/
+        	helpers.togglePageLoadingIndicator(false, pageData);
 		});
-    /*helpers.platformInit(page);
+    helpers.platformInit(page);
     if (isInit) {
         isInit = false;
-    }*/
-}
-
-function showPageLoadingIndicator() {
-	pageData.set("isLoading", true);
-}
-function hidePageLoadingIndicator() {
-	pageData.set("isLoading", false);
+    }
 }
 
 exports.onLoaded = onLoaded;
