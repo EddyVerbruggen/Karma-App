@@ -9,7 +9,7 @@
                 <!-- Each row of clients. create different classes for the row depending on their status -->
                 <StackLayout orientation="horizontal" class="client-row">           
                     <StackLayout width="20%" verticalAlignment="center">
-                        <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-row-thumbnail" />
+                        <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" />
                     </StackLayout>
                     <StackLayout width="60%" verticalAlignment="center">
                         <Label text="{{client_name}}" class="client-row-name" />

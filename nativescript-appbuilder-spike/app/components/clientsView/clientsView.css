@@ -1,6 +1,3 @@
-body {
-}
-
 .client-row {
     background-color:#fff;
     margin-bottom: 1;
@@ -9,7 +6,11 @@ body {
 
 .client-row-thumbnail {
   border-radius: 100;
-  width:60;
+  width:50;
+  height:50;
+  background-repeat: no-repeat;
+  border-width:1;
+  border-color:#efefef;
 }
 
 .client-row-name {
@@ -18,5 +19,5 @@ body {
 
 .client-row-appointment {
   font-size:12;
-    color:#bbb;
+  color:#bbb;
 }

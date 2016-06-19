@@ -1,11 +1,66 @@
 <StackLayout class="drawer-menu-content" loaded="onLoad">
+    <StackLayout class="drawer-top-area" orientation="horizontal">
+        <StackLayout width="75" verticalAlignment="center">
+            <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="profile-thumbnail" />
+        </StackLayout>
+        <StackLayout verticalAlignment="center">
+            <Label text="Jenny Sinclair" class="" />
+        </StackLayout>
+    </StackLayout>
+    <StackLayout class="drawer-nav-area">
+        <StackLayout class="drawer-nav-item" orientation="horizontal" tap="goToDashboard">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf447;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Dashboard" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
+        <StackLayout class="drawer-nav-item" orientation="horizontal" section="appointments" type="all" tap="onTap">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf402;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Appointments (6)" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
+        <StackLayout class="drawer-nav-item" orientation="horizontal" section="clients" type="all" tap="onTap">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf47d;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Clients (265)" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
+        <StackLayout class="drawer-nav-item" orientation="horizontal" section="clients" type="all" tap="onTap">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf3f3;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Availability" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
+        <Label class="nav-divider" />
+        <StackLayout class="drawer-nav-item" orientation="horizontal">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf445;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Help" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>
+
+
+
+<!--
     <Label text="&#xf448;  Dashboard" class="section-type-header ionicons-icon" tap="goToDashboard" />
 
     <Label class="divider-line" />
     
     <Label text="&#xf117;  Appointments" class="section-type-header ionicons-icon" section="appointments" type="pending" tap="onTap" />
     
-    <Label class="divider-line" />
     
     <StackLayout orientation="horizontal" class="section-type-row" section="appointments" type="upcoming" tap="onTap">
         <Label text="Upcoming " class="section-type-label" />
@@ -58,4 +113,4 @@
         <Label text="{{clientsAllCount, '(' + clientsAllCount + ')' }}" class="section-type-stat" />
     </StackLayout>
 
-</StackLayout>
+-->

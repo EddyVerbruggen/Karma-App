@@ -139,7 +139,7 @@ switch {
 
 
 .info-table {
-    /*background-image: url('~/images/shadow-sm.png');*/
+    background-image: url('~/images/shadow-sm.png');
     background-repeat: repeat-x;
     background-position:bottom;
     padding: 0 0 7 0;
