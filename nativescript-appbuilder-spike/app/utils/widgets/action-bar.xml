@@ -11,7 +11,7 @@
 
     <ActionBar.titleView>
         <GridLayout columns="auto, 5, *">
-            <Button text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" />
+            <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" />
 			<Label col="2" text="{{ pageTitle }}" minWidth="100" />
         </GridLayout>
     </ActionBar.titleView>

@@ -4,33 +4,33 @@ var menuItems,
     navigationViewModel = new observable.Observable();
 
 menuItems = [{
-    "title": "dashboardView",
-    "moduleName": "components/dashboardView/dashboardView",
+    "title": "dashboard",
+    "moduleName": "components/dashboard/dashboard",
     "icon": "\ue0dd"
 },
 {
-    "title": "clientsView",
-    "moduleName": "components/clientsView/clientsView",
+    "title": "clients",
+    "moduleName": "components/clients/clients",
     "icon": "\ue0dd"
 },
 {
-    "title": "clientDetailsView",
-    "moduleName": "components/clientDetailsView/clientDetailsView",
+    "title": "clientDetails",
+    "moduleName": "components/clientDetails/clientDetails",
     "icon": "\ue0dd"
 },
 {
-    "title": "appointmentsView",
-    "moduleName": "components/appointmentsView/appointmentsView",
+    "title": "appointments",
+    "moduleName": "components/appointments/appointments",
     "icon": "\ue0dd"
 },
 {
-    "title": "appointmentDetailsView",
-    "moduleName": "components/appointmentDetailsView/appointmentDetailsView",
+    "title": "appointmentDetails",
+    "moduleName": "components/appointmentDetails/appointmentDetails",
     "icon": "\ue0dd"
 },
 {
-    "title": "settingsMainView",
-    "moduleName": "components/settingsMainView/settingsMainView",
+    "title": "settingsMain",
+    "moduleName": "components/settings/settingsMain",
     "icon": "\ue0dd"
 }
 ];

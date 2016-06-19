@@ -1,6 +1,6 @@
 'use strict';
 var Observable = require('data/observable').Observable;
-var ClientsViewModel = require('./clientsView-view-model');
+var ClientsViewModel = require('./clients-view-model');
 var helpers = require('../../utils/widgets/helper');
 
 var isInit = true;

@@ -1,9 +1,9 @@
 'use strict';
 
-exports.clientListing = 'components/clientsView/clientsView';
-exports.clientDetails = 'components/clientDetailsView/clientDetailsView';
-exports.appointmentListing = 'components/appointmentsView/appointmentsView';
-exports.appointmentDetails = 'components/appointmentDetailsView/appointmentDetailsView';
-exports.dashboard = 'components/dashboardView/dashboardView';
-exports.settingsMenu = 'components/settingsMainView/settingsMainView';
-exports.login = 'components/loginView/loginView';
+exports.clientListing = 'components/clients/clients';
+exports.clientDetails = 'components/clientDetails/clientDetails';
+exports.appointmentListing = 'components/appointments/appointments';
+exports.appointmentDetails = 'components/appointmentDetails/appointmentDetails';
+exports.dashboard = 'components/dashboard/dashboard';
+exports.settingsMenu = 'components/settingsMain/settingsMain';
+exports.login = 'components/login/login';

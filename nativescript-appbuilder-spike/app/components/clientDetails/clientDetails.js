@@ -1,7 +1,7 @@
 'use strict';
 
 var tabViewModule = require("ui/tab-view");
-var ClientDetailsViewModel = require('./clientDetailsView-view-model');
+var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 

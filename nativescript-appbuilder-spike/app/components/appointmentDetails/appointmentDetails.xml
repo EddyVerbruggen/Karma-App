@@ -5,14 +5,14 @@
     <TabView>
         <TabView.items>
             <!-- Display a tab, and pull contents from external file -->
-            <TabViewItem title="Details" xmlns:DetailsView="components/appointmentDetailsView/tabs/detailsView">
+            <TabViewItem title="Details" xmlns:Details="components/appointmentDetails/tabs/details">
                 <TabViewItem.view>
-                    <DetailsView:detailsView />
+                    <Details:details />
                 </TabViewItem.view>
             </TabViewItem>
-            <TabViewItem title="History" xmlns:HistoryView="components/appointmentDetailsView/tabs/historyView">
+            <TabViewItem title="History" xmlns:History="components/appointmentDetails/tabs/history">
                 <TabViewItem.view>
-                    <HistoryView:historyView />
+                    <History:history />
                 </TabViewItem.view>
             </TabViewItem>
         </TabView.items>

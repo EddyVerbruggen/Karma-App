@@ -6,14 +6,14 @@
     <TabView>
         <TabView.items>
             <!-- Display a tab, and pull contents from external file -->
-            <TabViewItem title="Info" xmlns:PersonalDetailsView="components/clientDetailsView/tabs/personalDetailsView">
+            <TabViewItem title="Info" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
                 <TabViewItem.view>
-                    <PersonalDetailsView:personalDetailsView />
+                    <PersonalDetails:personalDetails />
                 </TabViewItem.view>
             </TabViewItem>
-            <TabViewItem title="Screening" xmlns:ScreeningView="components/clientDetailsView/tabs/screeningView">
+            <TabViewItem title="Screening" xmlns:Screening="components/clientDetails/tabs/screening">
                 <TabViewItem.view>
-                    <ScreeningView:screeningView />
+                    <Screening:screening />
                 </TabViewItem.view>
             </TabViewItem>
             <!--<TabViewItem title="References" xmlns:ReferencesView="components/clientDetailsView/tabs/referencesView">
