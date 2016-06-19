@@ -1,36 +1,37 @@
 'use strict';
-var menuItems,
-    observable = require('data/observable'),
-    navigationViewModel = new observable.Observable();
+var menuItems;
+var observable = require('data/observable');
+var navigationViewModel = new observable.Observable();
+var views = require('../utils/views');
 
 menuItems = [{
     "title": "dashboard",
-    "moduleName": "components/dashboard/dashboard",
+    "moduleName": views.dashboard,
     "icon": "\ue0dd"
 },
 {
     "title": "clients",
-    "moduleName": "components/clients/clients",
+    "moduleName": views.clientListing,
     "icon": "\ue0dd"
 },
 {
     "title": "clientDetails",
-    "moduleName": "components/clientDetails/clientDetails",
+    "moduleName": views.clientDetails,
     "icon": "\ue0dd"
 },
 {
     "title": "appointments",
-    "moduleName": "components/appointments/appointments",
+    "moduleName": views.appointmentListing,
     "icon": "\ue0dd"
 },
 {
     "title": "appointmentDetails",
-    "moduleName": "components/appointmentDetails/appointmentDetails",
+    "moduleName": views.appointmentDetails,
     "icon": "\ue0dd"
 },
 {
     "title": "settingsMain",
-    "moduleName": "components/settings/settingsMain",
+    "moduleName": views.settingsMenu,
     "icon": "\ue0dd"
 }
 ];
