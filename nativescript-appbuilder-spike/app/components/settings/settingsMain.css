@@ -1,11 +1,15 @@
 
-.settings-top {width:100%;padding:20 0 20 0;background-color:#555;}
+.settings-head {width:100%;padding:20 0 20 0;background-color:#555;background-image: url('~/images/pattern-triangle-sm.png');}
 
-.settings-thumb {height:100;border-radius:250;}
+.settings-thumbnail {border-radius: 100;
+  width:100;
+  height:100;
+  border-width:2;
+  border-color:#666;  }
 
-.settings-account {margin:15 25;}
-.settings-all {margin:15 25;}
-.settings-url {margin:15 25;}
+.settings-account {margin:15;}
+.settings-all {margin:15;}
+.settings-url {margin:15;}
 
 
 
@@ -26,11 +30,14 @@
 
 .settings-input-row {margin: 10 0 0 0;}
 .settings-label {
-    font-size: 13;
+    font-size: 12;
     color: #999;
     text-transform: uppercase;
     font-weight: bold;
+    margin-left:10;
 }
+
+.settings-textfield {font-size:21;}
 
 
 

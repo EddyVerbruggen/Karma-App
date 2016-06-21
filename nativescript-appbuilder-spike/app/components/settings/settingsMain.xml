@@ -5,8 +5,8 @@
     <ScrollView>
         <StackLayout width="100%">
             
-            <StackLayout horizontalAlignment="center" class="settings-top">
-                <Image src="~/images/placeholder/temp-client-thumb.jpg" class="settings-thumb" />
+            <StackLayout horizontalAlignment="center" class="settings-head">
+                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
             </StackLayout>       
 
             <StackLayout class="settings-account">
@@ -16,11 +16,11 @@
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Username" class="settings-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy07" class="settings-textfield" />
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Name" class="settings-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Jenny Mathers" class="settings-textfield" />
                 </StackLayout>
             </StackLayout>
             

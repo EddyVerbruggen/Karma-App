@@ -15,7 +15,7 @@
                          </StackLayout>                            
                          <StackLayout width="60" verticalAlignment="center">
                              <StackLayout class="appointment-status appointment-confirmed">
-                                 <Label class="ionicons-icon" text="&#xf122;" />
+                                 <Label class="ionicons-icon" text="&#xf121;" />
                              </StackLayout>
                          </StackLayout>                            
                         <StackLayout verticalAlignment="center">
@@ -82,7 +82,7 @@
         <StackLayout orientation="horizontal" row="1" col="0" class="appointment-filtering">
             <!--<Button text="+" class="appointment-add-button" width="16%" />-->
             <StackLayout class="appointment-filter-button button-active" width="33%">
-                <Label class="ionicons-icon appointment-filter-icon" text="&#xf122;" />
+                <Label class="ionicons-icon appointment-filter-icon" text="&#xf121;" />
                 <Label text="Confirmed (21)" />
             </StackLayout>
             <StackLayout class="appointment-filter-button" width="33%">

@@ -1,0 +1,80 @@
+.send-message-button {
+    font-size:26;
+    color:#fff;
+    background-color:#3EC3D6;
+    height:75;
+    padding:0;
+    margin:0;
+}
+
+.send-message-textfield {background-color:#fff;border-width:1;border-color:#ddd;height:65;margin:4;margin-right:0;}
+
+.history-content-area {padding:25;}
+
+.status-update {margin-bottom:30;}
+.status-update-icon {font-size:30;color:#ccc;margin-right:10;}
+.status-update-text {font-size:16;}
+.status-update-date {font-size:12;color:#bbb;margin-top:2;}
+.status-update-text-new {font-size:21;}
+
+.client-message {
+    margin-bottom:30;
+}
+
+.client-message-thumbnail {
+  border-radius: 100;
+  width:65;
+  height:65;
+  border-width:2;
+  border-color:#ddd;    
+}
+
+.client-message-bubble {
+    background-color:#3EC3D6;
+    border-radius:5;
+    padding:12;
+    line-height:150%;
+}
+
+.client-message-text {
+    color:#fff;
+    font-size:20;
+    margin-bottom:3;
+}
+
+.client-message-date {
+    color:#C3ECF2;
+    font-size:12;
+}
+
+
+
+
+.my-message {
+    margin-bottom:30;
+}
+
+.my-message-thumbnail {
+  border-radius: 100;
+  width:65;
+  height:65;
+  border-width:2;
+  border-color:#ddd;    
+}
+
+.my-message-bubble {
+    background-color:#DDDDDD;
+    border-radius:5;
+    padding:12;
+}
+
+.my-message-text {
+    color:#666;
+    font-size:20;
+    margin-bottom:3;
+}
+
+.my-message-date {
+    color:#999;
+    font-size:12;
+}
