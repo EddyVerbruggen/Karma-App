@@ -2,36 +2,27 @@
     <Page.actionBar>
         <widgets:action-bar />
     </Page.actionBar>
-
-    <!-- Use StackLayout to organize the 3 dashboard sections -->
-    <!-- http://developer.telerik.com/featured/demystifying-nativescript-layouts/ -->
-    <!-- Docs for StackLayout: https://docs.nativescript.org/api-reference/classes/_ui_layouts_stack_layout_.stacklayout.html -->
-    <StackLayout>
-
-        <!-- Stats Section -->
-        <StackLayout orientation="horizontal" class="stats-section">
-            <!-- Each of these represent one of the stats sections -->
-            <StackLayout width="25%">
-                <Label text="326" class="stats-number" />
-                <Label text="Visitors" class="stats-label" />
+    <ScrollView>
+        <StackLayout>            
+            <StackLayout class="dashboard-head">
+                <Label text="What's New (Today)" class="dashboard-head-title" />
+                <StackLayout orientation="horizontal">                    
+                    <StackLayout width="33%">
+                        <Label text="3" class="stats-number" />
+                        <Label text="Appointments" class="stats-label" />
+                    </StackLayout>
+                    <StackLayout width="33%">
+                        <Label text="21" class="stats-number" />
+                        <Label text="Clients" class="stats-label" />
+                    </StackLayout>
+                    <StackLayout width="33%">
+                        <Label text="326" class="stats-number" />
+                        <Label text="Visitors" class="stats-label" />
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
-            <StackLayout width="25%">
-                <Label text="3" class="stats-number" />
-                <Label text="Bookings" class="stats-label" />
-            </StackLayout>
-            <StackLayout width="25%">
-                <Label text="21" class="stats-number" />
-                <Label text="Clients" class="stats-label" />
-            </StackLayout>
-            <!--<StackLayout width="25%">
-                <Label text="$750" class="stats-number" />
-                <Label text="Revenue" class="stats-label" />
-            </StackLayout>-->
-        </StackLayout>
 
-        
-        <!-- Today Section -->
-        <StackLayout>
+            <StackLayout>
             <Label text="TODAY" class="today-section-title" />
             
             <!-- Each unit in the day -->
@@ -60,5 +51,6 @@
         
         <!-- Top referrers: try this -->
         
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </Page>

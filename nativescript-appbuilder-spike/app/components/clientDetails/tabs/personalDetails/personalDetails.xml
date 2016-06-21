@@ -1,4 +1,4 @@
-<ScrollView loaded="onLoaded">
+<ScrollView loaded="onLoaded"> 
 	<StackLayout>
         <StackLayout class="client-profile-top">
             <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-profile-top-thumbnail" />

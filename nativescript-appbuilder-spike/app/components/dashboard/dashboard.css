@@ -1,37 +1,4 @@
-/* CSS docs: https://docs.nativescript.org/ui/styling */
-body {
-}
-
-.stats-number {
-    font-size: 40;
-}
-
-.stats-section {
-    background-color: #CCCCCC;
-}
-
-
-.today-section-title {
-    width: 100%;
-    text-align: center;
-}
-
-.booking-row {
-    
-}
-
-.booking-client-name {
-    
-}
-
-.booking-location {
-    
-}
-
-.booking-time {
-    
-}
-
-.booking-length {
-    
-}
+.dashboard-head {width:100%;padding:20 0 30 0;background-color:#31333F;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
+.dashboard-head-title {padding-bottom:5;font-size:21;color:#ADADB2;font-family: 'MyriadPro-Light';}
+.stats-number {font-size:56;font-family: 'MyriadPro-Light';}
+.stats-label {font-size:12;text-transform:uppercase;color:#ADADB2;}

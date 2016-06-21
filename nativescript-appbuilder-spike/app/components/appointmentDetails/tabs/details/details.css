@@ -1,0 +1,79 @@
+.appointment-details-head {
+    padding:20 25;
+    background-color:#777;background-image: url('~/images/pattern-triangle-sm.png');
+    color:#fff;
+}
+
+.client-thumbnail {
+    border-radius: 200;
+    width:135;
+    height:135;
+    border-width:4;
+    border-color:#e8e8e8;  
+    margin: 0 25 0 0;
+}
+
+.client-name {
+    font-size:29;
+    margin-bottom:2;
+}
+
+.client-phone,
+.client-email {
+    font-size:16;
+}
+
+.client-status {
+    font-size:14;
+    background-color: #81C7B4;
+    color:#fff;
+    padding: 3;
+    border-radius:100;
+    width:80;
+    margin-top:10;
+    text-align:center;
+}
+
+.appointment-details {
+    padding:15;
+}
+
+.appointment-input-row {
+    margin: 15 0 0 0;
+}
+
+.appointment-label {
+    font-size: 12;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left:10;
+}
+
+.appointment-textfield {
+    font-size: 21;
+    
+}
+
+.accept-save-button {
+    font-size:26;
+    color:#fff;
+    background-color:#3EC3D6;
+    height:75;
+    padding:0;
+    margin:0;
+}
+
+.cancel-button {
+    font-size:21;
+    height:75;
+    color:#888;
+    background-color:#bbb;
+}
+
+.delete-button {
+    font-size:26;
+    height:75;
+    color:#888;
+    background-color:#bbb;
+}

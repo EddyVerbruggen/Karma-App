@@ -1,2 +1,68 @@
-<ScrollView>
-</ScrollView>
+<GridLayout rows="*, 75" columns="*">
+    <ScrollView row="0" col="0">  
+        <StackLayout class="history-content-area">
+            
+            <StackLayout class="" orientation="horizontal" class="status-update">
+                <StackLayout>
+                    <Label text="&#xf3b3;" class="ionicons-icon status-update-icon" />
+                </StackLayout>
+                <StackLayout>
+                    <Label text="Appointment request from Clayton." class="status-update-text" textWrap="true" />
+                    <Label text="Monday, June 21 - 5:56 PM (PST)" class="status-update-date" />
+                </StackLayout> 
+            </StackLayout> 
+
+            <StackLayout class="" orientation="horizontal" class="status-update">
+                <StackLayout>
+                    <Label text="&#xf3b3;" class="ionicons-icon status-update-icon" />
+                </StackLayout>
+                <StackLayout>
+                    <Label text="You accepted Clayton's appointment." class="status-update-text" textWrap="true" />
+                    <Label text="Monday, June 21 - 5:56 PM (PST)" class="status-update-date" />
+                </StackLayout> 
+            </StackLayout>
+            
+            <GridLayout rows="*" columns="80,*" class="client-message">
+                <StackLayout row="0" col="0">
+                    <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-message-thumbnail" />
+                </StackLayout>
+                <StackLayout row="0" col="1" class="client-message-bubble">
+                    <Label text="i screwed up babe can we change our date to the wednesday instead?? that would be very helpful!!" class="client-message-text" textWrap="true" />
+                    <Label text="Monday, June 21 - 5:56 PM (PST)" class="client-message-date" />
+                </StackLayout>
+            </GridLayout>
+
+            <GridLayout rows="*" columns="*,80" class="my-message">                
+                <StackLayout row="0" col="0" class="my-message-bubble">
+                    <Label text="no problem i will make that change. xoxo" class="my-message-text" textWrap="true" />
+                    <Label text="Monday, June 21 - 5:56 PM (PST)" class="my-message-date" />
+                </StackLayout>
+                <StackLayout row="0" col="1">
+                    <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="my-message-thumbnail" />
+                </StackLayout>
+            </GridLayout>
+
+            <StackLayout class="" orientation="horizontal" class="status-update">
+                <StackLayout>
+                    <Label text="&#xf3b3;" class="ionicons-icon status-update-icon" />
+                </StackLayout>
+                <StackLayout>
+                    <Label text="You made a change:" class="status-update-text" textWrap="true" />
+                    <Label text="Wednesday, June 23, 2016" class="status-update-text-new" textWrap="true" />
+                    <Label text="Monday, June 21 - 5:56 PM (PST)" class="status-update-date" />
+                </StackLayout> 
+            </StackLayout> 
+                   
+
+        </StackLayout>
+    </ScrollView>
+
+    <StackLayout orientation="horizontal" row="1" col="0">
+        <StackLayout width="75%">
+            <TextField class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message for Clayton..." textWrap="true" />
+        </StackLayout>
+        <StackLayout width="25%">
+            <Button text="Send" class="send-message-button" width="100%" />
+        </StackLayout>
+    </StackLayout>    
+</GridLayout>
