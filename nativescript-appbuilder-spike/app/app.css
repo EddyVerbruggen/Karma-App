@@ -10,6 +10,10 @@
     horizontal-align: center;
 }
 
+.hidden {
+    visibility: collapse;
+}
+
 page {
     background-color: #F3F3F3;
     font-family: 'MyriadPro-SemiCn';

@@ -21,7 +21,7 @@ exports.clients = {
     ]
 };
 
-// Results of getting 
+// Results of getting client details
 exports.clientDetails = {
     success: true,
     Result: {
@@ -71,4 +71,57 @@ exports.clientDetails = {
             }
         ]
     }
+}
+
+// Results of getting all appointments
+exports.appointments = {
+    success: true,
+    Result: {
+        booking_dates: [
+            {
+                date: 'Tuesday, Febuary 12',
+                bookings: [
+                	{
+                		id: 1,
+                		time: '2:00pm',
+                		length: '1 hour',
+                		client_name: 'Peter Johnson',
+                		screening_id: 10,
+                		location: 'Incall',
+                		status: 'confirmed'
+            		},
+                	{
+                		id: 2,
+    					time: '8:00pm',
+                		length: '2 hours',
+                		client_name: 'Mitchell Jones',
+                		screening_id: 5,
+                		location: 'Incall',
+                		status: 'pending'
+            		}
+                ]
+            },
+            {
+                date: 'Friday, Febuary 16',
+                bookings: [
+                	{
+                		id: 5,
+    					time: '3:00pm',
+                		length: '30 minutes',
+                		client_name: 'John Dowdy',
+                		screening_id: 7,
+                		location: 'Outcall - downtown LA',
+                		status: 'accepted'
+            		}
+                ]
+            }
+        ],
+        types: {
+            confirmed: 12,
+            pending: 10,
+            cancelled: 1,
+            completed: 25
+        }
+    }
+
 }

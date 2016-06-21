@@ -1,9 +1,10 @@
 'use strict';
-var config = require('../../utils/config'),
-    ObservableArray = require('data/observable-array').ObservableArray,
-    mock = require('../../utils/test-data'),
-    handleResponse = require('../../utils/api/helpers').handleResponse,
-    navigation = require('../../utils/navigation');
+
+var config = require('../../utils/config');
+var ObservableArray = require('data/observable-array').ObservableArray;
+var mock = require('../../utils/test-data');
+var handleResponse = require('../../utils/api/helpers').handleResponse;
+var navigation = require('../../utils/navigation');
 
 function ClientsViewModel(clients) {
     var viewModel = new ObservableArray(clients)
