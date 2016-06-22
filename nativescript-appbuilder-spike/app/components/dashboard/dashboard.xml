@@ -23,34 +23,9 @@
             </StackLayout>
 
             <StackLayout>
-            <Label text="TODAY" class="today-section-title" />
-            
-            <!-- Each unit in the day -->
-            <StackLayout orientation="horizontal" class="booking-row">
-                <StackLayout width="25%">
-                    <!-- example of an icon. Add class ionicons-icon, then in text field, use the escaped HTML code from this page: http://ionicons.com/cheatsheet.html -->
-                    <Label text="2:00PM &#xf35a;" class="ionicons-icon booking-time" />
-                    <Label text="1 HOUR" class="booking-length" />
-                </StackLayout>
-                
-                <!-- Divider -->
-                <StackLayout width="15%">
-                </StackLayout>
-                
-                <StackLayout width="45%">
-                    <Label text="John Smith" class="booking-client-name" />
-                    <Label text="Incall" class="booking-location" />
-                </StackLayout>
-                
-                <StackLayout width="15%">
-                    <Label text="$80" />
-                </StackLayout>
-        	</StackLayout>
-        </StackLayout>
+                <!-- Insert code for todays appointments here -->
+            </StackLayout>
 
-        
-        <!-- Top referrers: try this -->
-        
         </StackLayout>
     </ScrollView>
 </Page>

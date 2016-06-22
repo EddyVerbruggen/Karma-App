@@ -2,12 +2,12 @@
     font-size:26;
     color:#fff;
     background-color:#3EC3D6;
-    height:75;
+    height:60;
     padding:0;
     margin:0;
 }
 
-.send-message-textfield {background-color:#fff;border-width:1;border-color:#ddd;height:65;margin:4;margin-right:0;}
+.send-message-textfield {background-color:#fff;border-width:1;border-color:#ddd;height:60;margin:4;margin-right:0;padding:10;}
 
 .history-content-area {padding:25;}
 

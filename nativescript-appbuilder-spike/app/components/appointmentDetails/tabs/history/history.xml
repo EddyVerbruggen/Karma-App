@@ -1,4 +1,4 @@
-<GridLayout rows="*, 75" columns="*">
+<GridLayout rows="*, 60" columns="*">
     <ScrollView row="0" col="0">  
         <StackLayout class="history-content-area">
             
@@ -59,7 +59,7 @@
 
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="75%">
-            <TextField class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message for Clayton..." textWrap="true" />
+            <TextView class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message for Clayton..." textWrap="true" />
         </StackLayout>
         <StackLayout width="25%">
             <Button text="Send" class="send-message-button" width="100%" />
