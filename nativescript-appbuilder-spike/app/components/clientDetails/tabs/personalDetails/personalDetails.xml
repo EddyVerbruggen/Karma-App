@@ -1,12 +1,24 @@
 <ScrollView loaded="onLoaded"> 
 	<StackLayout>
-        <StackLayout class="client-profile-top">
-            <Image src="~/images/placeholder/temp-client-thumb.jpg" class="client-profile-top-thumbnail" />
-            <Label text="{{clientDetails.Result.screening.status_text}}" class="client-profile-top-status" />
+        <StackLayout class="client-profile-head">
+            <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-profile-top-thumbnail" />
+            <WrapLayout class="client-status" horizontalAlignment="center">
+                <Label text="{{clientDetails.Result.screening.status_text}}" class="client-profile-top-status" />
+                <Label text="&#xf123;" class="ionicons-icon client-profile-top-status-icon" />
+            </WrapLayout>
         </StackLayout>
 
-        <!-- Summary stats -->
-        <StackLayout orientation="horizontal">
+        <!-- Pending appointment(s) -->
+        <Repeater items="{{clientDetails.Result.bookings}}">
+            <Repeater.itemsLayout>
+                <StackLayout />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <Button text="{{'Appointment: ' + date}}" class="ionicons-icon appointment-button" />
+            </Repeater.itemTemplate>
+        </Repeater>
+
+        <StackLayout orientation="horizontal" class="client-summary">
             <StackLayout width="33%">
                 <Label class="summary-stat-number" text="{{clientDetails.Result.screening.karmascore}}" />
                 <Label class="summary-stat-label" text="karmascore" />
@@ -21,41 +33,32 @@
             </StackLayout>
         </StackLayout>
 
-        <!-- Pending appointment(s) -->
-        <Repeater items="{{clientDetails.Result.bookings}}">
-            <Repeater.itemsLayout>
-                <StackLayout />
-            </Repeater.itemsLayout>
-            <Repeater.itemTemplate>
-                <Button text="{{'Appointment: ' + date}}" class="pending-appointment-button" />
-            </Repeater.itemTemplate>
-        </Repeater>
+        
 
 
         <Label class="info-box-title" text="Personal" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="Name:" />
+                    <Label text="Name:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.name}}" />
+                    <Label text="{{clientDetails.Result.client_profile.name}}" textWrap="true" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />            
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="Residence:" />
+                    <Label text="Residence:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.residence}}" />
+                    <Label text="{{clientDetails.Result.client_profile.residence}}" textWrap="true" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="Age:" />
+                    <Label text="Age:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{clientDetails.Result.client_profile.age}}" />
@@ -65,13 +68,12 @@
 
         <Label class="info-box-title" text="Contact" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="Email:" />
+                    <Label text="Email:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.email}}" />
+                    <Label text="{{clientDetails.Result.client.email}}" textWrap="true" />
                 </StackLayout>                
             </StackLayout>            
             <Label class="info-table-divider" />         
@@ -80,17 +82,16 @@
                     <Label class="" text="Phone:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.phone}}" />
+                    <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
                 </StackLayout>              
             </StackLayout>           
         </StackLayout>
 
         <Label class="info-box-title" text="Usernames" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="TER:" />
+                    <Label text="TER:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{clientDetails.Result.client_profile.ter_username}}" />
@@ -99,7 +100,7 @@
             <Label class="info-table-divider" />            
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="DateCheck:" />
+                    <Label text="DateCheck:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{clientDetails.Result.client_profile.datecheck_username}}" />
@@ -108,7 +109,7 @@
             <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="P411:" />
+                    <Label text="P411:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{clientDetails.Result.client_profile.p411_username}}" />
@@ -118,10 +119,9 @@
 
         <Label class="info-box-title" text="Signup Details" />
         <StackLayout class="info-table">
-            <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="Date:" />
+                    <Label text="Date:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{ clientDetails.Result.client.created_formatted }}" />
@@ -130,7 +130,7 @@
             <Label class="info-table-divider" />           
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="Location:" />
+                    <Label text="Location:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{clientDetails.Result.client.location_signup}}" />
@@ -139,17 +139,17 @@
             <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label class="" text="IP:" />
+                    <Label text="IP:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.ip_signup}}" />
-                    <Label text="{{clientDetails.Result.client.host_signup, ' (' + clientDetails.Result.client.host_signup + ')'}}" />
+                    <Label text="{{clientDetails.Result.client.ip_signup}}" textWrap="true" />
+                    <Label text="{{clientDetails.Result.client.host_signup, ' (' + clientDetails.Result.client.host_signup + ')'}}" textWrap="true" />
                 </StackLayout>                
             </StackLayout>           
         </StackLayout>      
 
         <StackLayout class="info-box">
-            <Label class="info-box-title" text="TAGS" />
+            <Label class="info-box-title" text="Tags" />
             <Repeater items="{{clientDetails.Result.tags}}">
                 <Repeater.itemsLayout>
                     <StackLayout orientation="horizontal" />

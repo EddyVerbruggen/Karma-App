@@ -16,21 +16,21 @@
                     <Screening:screening />
                 </TabViewItem.view>
             </TabViewItem>
-            <!--<TabViewItem title="References" xmlns:ReferencesView="components/clientDetailsView/tabs/referencesView">
+            <TabViewItem title="References" xmlns:References="components/clientDetails/tabs/references">
                 <TabViewItem.view>
-					<ReferencesView:referencesView />
+					<References:references />
                 </TabViewItem.view>
             </TabViewItem>
-            <TabViewItem title="Background" xmlns:BackgroundCheckView="components/clientDetailsView/tabs/backgroundCheckView">
+            <TabViewItem title="Background" xmlns:BackgroundCheck="components/clientDetails/tabs/backgroundCheck">
                 <TabViewItem.view>
-                    <BackgroundCheckView:backgroundCheckView />
+                    <BackgroundCheck:backgroundCheck />
                 </TabViewItem.view>
             </TabViewItem>
-            <TabViewItem title="History" xmlns:HistoryView="components/clientDetailsView/tabs/historyView">
+            <TabViewItem title="History" xmlns:History="components/clientDetails/tabs/history">
                 <TabViewItem.view>
-					<HistoryView:historyView />
+					<History:history />
                 </TabViewItem.view>
-            </TabViewItem>-->
+            </TabViewItem>
         </TabView.items>
     </TabView>
 </Page>
