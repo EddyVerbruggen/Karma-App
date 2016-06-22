@@ -6,7 +6,7 @@
         <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" />
         <lv:RadListView items="{{appointmentsList.booking_dates}}" row="1" col="0" >
             <lv:RadListView.listViewLayout>
-                <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
             </lv:RadListView.listViewLayout>
             <lv:RadListView.itemTemplate>
                 <StackLayout>
@@ -41,7 +41,6 @@
         </lv:RadListView>
 
         <StackLayout orientation="horizontal" row="2" col="0" class="appointment-filtering">
-            <Button text="+" class="appointment-add-button" width="16%" />
             <StackLayout class="{{ selectedStatusFilter === 'confirmed' ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="28%" tap="onTapStatusFilter" status="confirmed">
                 <Label class="ionicons-icon appointment-filter-icon" text="&#xf122;" />
                 <Label text="{{appointmentsList.types.confirmed, 'Confirmed (' + appointmentsList.types.confirmed + ')'}}" />
@@ -54,11 +53,6 @@
                 <Label class="ionicons-icon appointment-filter-icon" text="&#xf129;" />
                 <Label text="{{appointmentsList.types.cancelled, 'Cancelled (' + appointmentsList.types.cancelled + ')'}}" />
             </StackLayout>
-            <!--<StackLayout class="bottom-toolbar-button" width="20%">
-                <Label class="status ionicons-icon" text="&#xf120;" />
-                <Label text="Completed" />
-                <Label text="17" />
-            </StackLayout>-->
         </StackLayout>
     </GridLayout>
 </Page>

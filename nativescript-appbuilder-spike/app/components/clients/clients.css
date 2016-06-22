@@ -1,3 +1,5 @@
+/*@import url('~/components/appointments/appointments.css');*/
+
 .client-row {
     background-color:#fff;
     margin-bottom: 1;
@@ -20,4 +22,29 @@
 .client-row-appointment {
   font-size:12;
   color:#bbb;
+}
+
+/*
+.client-row-status-approved {
+    
+}
+
+.client-row-status-pending {
+    
+}
+
+.client-row-status-whitelist {
+    
+}
+*/
+.client-row-status-blacklist {
+    color: #ff0000;
+}
+/*
+.client-row-status-rejected {
+    
+}
+*/
+.client-row-status-noshow {
+    color: #ffa500;
 }

@@ -5,18 +5,52 @@ exports.clients = {
     success: true,
     Result: [
         {
-            client_id: 1,
             screening_id: 1,
             client_name: 'Client 1',
+            bookings: 1,
             profile_image: 'http://www.image.com',
-            status_text: 'Pending...'
+            status_text: 'Pending...',
+            status: 'pending'
         },
         {
-            client_id: 2,
             screening_id: 3,
             client_name: 'Client 2',
+            bookings: 0,
             profile_image: 'http://www.image.com',
-            status_text: 'Approved'
+            status_text: 'Approved',
+            status: 'approved'
+        },
+        {
+            screening_id: 4,
+            client_name: 'Client 3',
+            bookings: 2,
+            profile_image: 'http://www.image.com',
+            status_text: 'Whitelist',
+            status: 'whitelist'
+        },
+        {
+            screening_id: 6,
+            client_name: 'Client 4',
+            bookings: 0,
+            profile_image: 'http://www.image.com',
+            status_text: 'Blacklist',
+            status: 'blacklist'
+        },
+        {
+            screening_id: 8,
+            client_name: 'Client 5',
+            bookings: 0,
+            profile_image: 'http://www.image.com',
+            status_text: 'Rejected',
+            status: 'rejected'
+        },
+        {
+            screening_id: 9,
+            client_name: 'Client 6',
+            bookings: 0,
+            profile_image: 'http://www.image.com',
+            status_text: 'No-Show History',
+            status: 'noshow'
         }
     ]
 };
