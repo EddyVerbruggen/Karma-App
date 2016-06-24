@@ -10,9 +10,13 @@ function ClientsViewModel(clients) {
     var viewModel = new ObservableArray(clients)
     
     // Load all clients
-    viewModel.load = function(status) {
+    viewModel.load = function(status, tag, sortby) {
         status = status || 'all';
+        tag = tag || 'all';
+        sortby = sortby || 'createddesc';
 
+        console.log(tag);
+        
         var fetchData;
         if (mock !== 'undefined') {
             fetchData = new Promise(function(resolve, reject) {
