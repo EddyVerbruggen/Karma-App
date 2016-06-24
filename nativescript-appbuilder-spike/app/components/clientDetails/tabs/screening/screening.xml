@@ -1,5 +1,20 @@
 <ScrollView loaded="onLoaded">
     <StackLayout>
+        
+        <StackLayout orientation="horizontal" class="screening-summary">
+            <StackLayout width="33%">
+                <Label class="screening-stat-number" text="5" />
+                <Label class="screening-stat-label" text="Approved Screenings" />
+            </StackLayout>
+            <StackLayout width="33%">
+                <Label class="screening-stat-number" text="0" />
+                <Label class="screening-stat-label" text="Rejected Screenings" />
+            </StackLayout>
+            <StackLayout width="34%">
+                <Label class="screening-stat-number" text="1" />
+                <Label class="screening-stat-label" text="Whitelists" />
+            </StackLayout>
+        </StackLayout>
 
         <Label class="info-box-title" text="Employment" />
         <StackLayout class="info-table">

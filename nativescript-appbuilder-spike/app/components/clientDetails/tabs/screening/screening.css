@@ -1,0 +1,12 @@
+.screening-summary {width:100%;padding:20 0 20 0;background-color:#555;background-image: url('~/images/pattern-triangle-sm.png');color:#fff;text-align:center;}
+
+.screening-stat-number {
+    font-size:54;
+    font-family: 'MyriadPro-Light';
+    margin-bottom:5;
+}
+
+.screening-stat-label {
+    font-size:12;
+    text-transform:uppercase;
+}

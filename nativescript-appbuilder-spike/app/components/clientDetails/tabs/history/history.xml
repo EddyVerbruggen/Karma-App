@@ -1,6 +1,35 @@
 <ScrollView loaded="onLoaded"> 
-	<StackLayout>
-        
+	<StackLayout class="history-wrapper">
+
+        <StackLayout orientation="horizontal" class="history-appointment">
+            <StackLayout>
+                <Label text="&#xf3b3;" class="ionicons-icon history-appointment-icon" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Incall Appointment - 2 Hours" class="history-appointment-text" textWrap="true" />
+                <Label text="Monday, June 21 - 6:00 PM (PST)" class="history-appointment-date" />
+            </StackLayout> 
+        </StackLayout>     
+
+        <StackLayout orientation="horizontal" class="history-appointment">
+            <StackLayout>
+                <Label text="&#xf3b3;" class="ionicons-icon history-appointment-icon" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Incall Appointment - 2 Hours" class="history-appointment-text" textWrap="true" />
+                <Label text="Monday, June 21 - 6:00 PM (PST)" class="history-appointment-date" />
+            </StackLayout> 
+        </StackLayout>
+
+        <StackLayout orientation="horizontal" class="history-appointment">
+            <StackLayout>
+                <Label text="&#xf3b3;" class="ionicons-icon history-appointment-icon" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Incall Appointment - 2 Hours" class="history-appointment-text" textWrap="true" />
+                <Label text="Monday, June 21 - 6:00 PM (PST)" class="history-appointment-date" />
+            </StackLayout> 
+        </StackLayout>    
 
 	</StackLayout>
 </ScrollView>

@@ -9,6 +9,39 @@
                 <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
             </StackLayout>       
 
+            
+            
+            <StackLayout class="settings-all">
+                <StackLayout>
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                        <Label text="Services" class="settings-section-link-label" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                        <Label text="Notifications" class="settings-section-link-label" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                        <Label text="Screening" class="settings-section-link-label" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                        <Label text="Booking" class="settings-section-link-label" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                    <StackLayout orientation="horizontal" verticalAlignment="center">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                        <Label text="Landing Page" class="settings-section-link-label" />
+                    </StackLayout>
+                    <Label class="settings-all-divider" />
+                </StackLayout>
+
+            </StackLayout> 
+
             <StackLayout class="settings-account">
                 <StackLayout>
                     <Label text="My Account" class="settings-section-header" />
@@ -22,47 +55,11 @@
                     <Label text="Name" class="settings-label" />
                     <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Jenny Mathers" class="settings-textfield" />
                 </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Email" class="settings-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy857@gmail.com" class="settings-textfield" />
+                </StackLayout>
             </StackLayout>
-            
-            <StackLayout class="settings-all">
-                <StackLayout>
-                    <Label text="All Settings" class="settings-section-header" />
-                    <Label class="settings-section-divider" />
-                </StackLayout>
-                <StackLayout>
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
-                        <Label text="Services" class="settings-section-link-label" width="85%" />
-                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
-                    </StackLayout>
-                    <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
-                        <Label text="Notifications" class="settings-section-link-label" width="85%" />
-                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
-                    </StackLayout>
-                    <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
-                        <Label text="Screening" class="settings-section-link-label" width="85%" />
-                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
-                    </StackLayout>
-                    <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
-                        <Label text="Booking" class="settings-section-link-label" width="85%" />
-                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
-                    </StackLayout>
-                    <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf101;" class="ionicons-icon settings-section-link-icon" width="10%" />
-                        <Label text="Landing Page" class="settings-section-link-label" width="85%" />
-                        <Label text="&#xf3d1;" class="ionicons-icon settings-section-link-arrow" width="5%" horizontalAlignment="right" />
-                    </StackLayout>
-                    <Label class="settings-all-divider" />
-                </StackLayout>
-
-            </StackLayout> 
 
             <StackLayout class="settings-url">
                 <StackLayout>
@@ -71,11 +68,13 @@
                 </StackLayout>
 
                 <StackLayout class="settings-input-row">
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
+                    <Label text="Web" class="settings-label" />
+                    <TextField text="https://www.screeningmate.com/jenny" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
                 </StackLayout>
 
                 <StackLayout class="settings-input-row">
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" />
+                    <Label text="Short/Mobile" class="settings-label" />
+                    <TextField text="http://scrnmt.com/47556" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
                 </StackLayout>
             </StackLayout>
            

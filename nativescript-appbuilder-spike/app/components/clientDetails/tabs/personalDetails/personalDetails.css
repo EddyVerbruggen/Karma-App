@@ -18,7 +18,7 @@
 .summary-stat-label {
     font-size:12;
     text-transform:uppercase;
-    color:777;
+    color:#777;
 }
 
 .appointment-button {
@@ -48,6 +48,7 @@
     border-width:1;
     border-color:#dfdfdf;
     background-color:#fff;
+    margin-bottom:10;
 }
 
 .info-box-title {
@@ -56,7 +57,7 @@
     font-size:12;
     color:#999; 
     font-family: 'MyriadPro-Light';
-    margin-top:20;
+    margin-top:10;
 }
 
 .info-table-label {

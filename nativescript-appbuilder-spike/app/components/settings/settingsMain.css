@@ -31,7 +31,7 @@
 .settings-input-row {margin: 10 0 0 0;}
 .settings-label {
     font-size: 12;
-    color: #999;
+    color: #bbb;
     text-transform: uppercase;
     font-weight: bold;
     margin-left:5;
@@ -41,7 +41,7 @@
 
 
 
-.settings-section-link-icon {color:#ccc;font-size:28;horizontal-align:center;}
+.settings-section-link-icon {color:#ccc;font-size:32;text-align:center;}
 
 .settings-section-link-label {
 	font-size: 21;

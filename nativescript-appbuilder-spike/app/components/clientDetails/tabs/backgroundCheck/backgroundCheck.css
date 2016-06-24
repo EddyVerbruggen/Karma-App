@@ -1,0 +1,8 @@
+.background-wrapper {padding:20;}
+.background-title {font-size:28;font-family: 'MyriadPro-Light';margin-bottom:5;}
+.matches-text {font-size:18;font-family: 'MyriadPro-Light';margin-bottom:20;}
+
+.sex-offender-row {margin-bottom:10;padding:15;border-width:1;border-radius:3;border-color:#ddd;font-size:17;background-color:#fff;}
+.sex-offender-photo {width:85;margin-right:15;}
+
+.sex-offender-name {font-size:21;font-family: 'MyriadPro-Light';margin-bottom:6;}
