@@ -3,6 +3,12 @@
     "tns-core-modules": "2.0.1",
     "nativescript-telerik-ui-pro": "1.*",
     "email-validator": "^1.0.4"
-  },
-  "devDependencies": {}
+    //"nativescript-drop-down": "1.2.5"
+  }
+  /*
+  "devDependencies": {
+	"nativescript-dev-typescript": "^0.3.1",
+	"typescript": "^1.8.10"
+  }
+  */
 }
