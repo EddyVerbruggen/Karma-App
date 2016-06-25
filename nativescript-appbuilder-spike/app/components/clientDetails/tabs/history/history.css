@@ -1,5 +1,5 @@
-.history-wrapper {margin:20;}
-.history-appointment {margin-bottom:10;padding:15;border-width:1;border-color:#ddd;border-radius:3;font-size:15;background-color:#fff;}
-.history-appointment-icon {font-size:40;color:#ccc;margin-right:10;}
+.history-wrapper {margin:0;}
+.history-appointment {margin-bottom:1;padding:20 25;font-size:15;background-color:#fff;}
+.history-appointment-icon {font-size:40;color:#ccc;margin-right:15;}
 .history-appointment-text {font-size:16;}
 .history-appointment-date {font-size:12;color:#bbb;margin-top:2;}

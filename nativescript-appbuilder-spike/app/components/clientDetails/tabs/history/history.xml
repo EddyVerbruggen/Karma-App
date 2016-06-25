@@ -1,6 +1,6 @@
 <ScrollView loaded="onLoaded"> 
 	<StackLayout class="history-wrapper">
-
+        <Label class="info-box-title" text="3 appointments found" />
         <StackLayout orientation="horizontal" class="history-appointment">
             <StackLayout>
                 <Label text="&#xf3b3;" class="ionicons-icon history-appointment-icon" />

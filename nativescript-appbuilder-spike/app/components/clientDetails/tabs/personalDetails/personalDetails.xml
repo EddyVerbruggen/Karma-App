@@ -8,16 +8,6 @@
             </WrapLayout>
         </StackLayout>
 
-        <!-- Pending appointment(s) -->
-        <Repeater items="{{clientDetails.Result.bookings}}">
-            <Repeater.itemsLayout>
-                <StackLayout />
-            </Repeater.itemsLayout>
-            <Repeater.itemTemplate>
-                <Button text="{{'Appointment: ' + date}}" class="ionicons-icon appointment-button" />
-            </Repeater.itemTemplate>
-        </Repeater>
-
         <StackLayout orientation="horizontal" class="client-summary">
             <StackLayout width="33%">
                 <Label class="summary-stat-number" text="{{clientDetails.Result.screening.karmascore}}" />
@@ -33,8 +23,17 @@
             </StackLayout>
         </StackLayout>
 
-        
+        <!-- Pending appointment(s) 
+        <Repeater items="{{clientDetails.Result.bookings}}">
+            <Repeater.itemsLayout>
+                <StackLayout />
+            </Repeater.itemsLayout>
+            <Repeater.itemTemplate>
+                <Button text="{{'Appointment: ' + date}}" class="ionicons-icon appointment-button" />
+            </Repeater.itemTemplate>
+        </Repeater>-->
 
+        
 
         <Label class="info-box-title" text="Personal" />
         <StackLayout class="info-table">

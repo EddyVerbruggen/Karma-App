@@ -1,8 +1,6 @@
 <ScrollView loaded="onLoaded"> 
 	<StackLayout class="background-wrapper">
-        <Label text="Sex Offender Registry" class="background-title" />
-        <Label text="3 potential matches found." class="matches-text" textWrap="true" />
-        
+        <Label class="info-box-title" text="3 potential sex offender matches" />        
         <StackLayout orientation="horizontal" class="sex-offender-row">
             <StackLayout class="sex-offender-photo" verticalAlignment="center">
                 <Image src="~/images/placeholder/placeholder-offender.jpg" />    

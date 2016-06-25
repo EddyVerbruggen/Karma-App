@@ -1,26 +1,12 @@
+
 .client-summary {
     text-align:center;
-    margin:20 0;
+    padding:20 0;
+    background-color:#777;
+    color:#fff;
+    background-image: url('~/images/pattern-triangle-sm.png');
 }
     
-.summary-stat-number {
-    font-size:35;
-    font-family: 'MyriadPro-Light';
-    border-width:1;
-    border-color:#ccc;
-    border-radius:200;
-    height:70;
-    width:70;
-    padding-top:13;
-    margin-bottom:5;
-}
-
-.summary-stat-label {
-    font-size:12;
-    text-transform:uppercase;
-    color:#777;
-}
-
 .appointment-button {
     font-size: 12;
     background-color:#ACE8EE;
@@ -31,7 +17,25 @@
 }
 
 
-.client-profile-head {width:100%;padding:25 0;background-color:#98D2C2;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
+.summary-stat-number {
+    font-size:54;
+    font-family: 'MyriadPro-Light';
+    margin-bottom:5;
+}
+
+.summary-stat-label {
+    font-size:12;
+    text-transform:uppercase;
+}
+
+
+.client-profile-wrapper {padding:15;}
+.client-profile-head {width:100%;padding:20 0;background-color:#98D2C2;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
+
+
+.client-profile-box {margin-bottom: 20;border-width:1;border-radius:3;border-color:#ddd;background-color:#fff;}
+
+
 
 .client-profile-top-thumbnail {border-radius: 100;
   width:115;
@@ -44,30 +48,27 @@
 .client-profile-top-status-icon {font-size:16;}
 
 
+
 .info-table {
-    border-width:1;
-    border-color:#dfdfdf;
     background-color:#fff;
-    margin-bottom:10;
 }
 
 .info-box-title {
-    padding:8 0 8 20;
-    text-transform:uppercase;
-    font-size:12;
-    color:#999; 
-    font-family: 'MyriadPro-Light';
-    margin-top:10;
+    padding:13;
+    font-size:14;
+background-color:#999;
+    color:#fff;
+
 }
 
 .info-table-label {
 	width: 150;
-    background-color: #F8F8F8;
-    padding:15 0 15 20;  
+    padding:15 0 15 15;  
+    background-color:#fafafa;
 }
 
 .info-table-text {
-    padding:15 0 15 20;    
+    padding:15 0 15 15;    
     width:100%;
 }
 
