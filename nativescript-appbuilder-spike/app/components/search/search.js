@@ -17,6 +17,11 @@ exports.onLoaded = function(args) {
     closeCallback = args.closeCallback;
     page.getViewById('searchbar').focus();
     page.bindingContext = pageData;
+    
+    var searchResults = page.getViewById('searchResults');
+    searchResults.on('itemSelectedEvent', function(args) {
+        console.log('item selected!');
+    });
     if (isInit) {
         isInit = false;
     }
@@ -35,6 +40,11 @@ exports.onClose = function(args) {
 
 exports.onShownModally = function(args) {
     closeCallback = args.closeCallback
+}
+
+exports.onTapResult = function(args) {
+    var tappedResult = pageData.get('searchResultsList').getItem(args.itemIndex);
+    closeCallback(tappedResult.type, tappedResult.id);
 }
 
 function search(searchText) {

@@ -4,6 +4,7 @@ var frameModule = require('ui/frame');
 var view = require('ui/core/view');
 var observable = require('data/observable');
 var views = require('../views');
+var helpers = require('./helper');
 
 exports.onBack = function() {
     // Android only
@@ -17,15 +18,24 @@ exports.toggleDrawer = function() {
 }
 
 exports.onIndex = function() {
-    var topmost = frameModule.topmost();
     topmost.navigate('navigation/navigation');
 }
 
 /* Display search box when search icon is tapped */
 exports.onTapSearch = function() {
-    var topFrame = frameModule.topmost();
-    var currentPage = topFrame.currentPage;
-    currentPage.showModal(views.search, '', function closeCallback() {
+    var topmost = frameModule.topmost();
+    var currentPage = topmost.currentPage;
+    currentPage.showModal(views.search, '', function closeCallback(type, id) {
+        var targetComponent;
+        if (type == 'booking') {
+            targetComponent = views.appointmentDetails;
+        } else if (type == 'client') {
+            targetComponent = views.clientDetails;
+        } else {
+            return;
+        }
+        
+        helpers.navigate(targetComponent);
         
     }, true);
 }

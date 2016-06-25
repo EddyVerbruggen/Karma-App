@@ -1,6 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" 
       xmlns:widgets="utils/widgets"
+      loaded="onLoaded"
       navigatingTo="onNavigatingTo">
     <Page.actionBar>
         <widgets:action-bar />
