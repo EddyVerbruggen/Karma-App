@@ -3,6 +3,7 @@
 var frameModule = require('ui/frame');
 var view = require('ui/core/view');
 var observable = require('data/observable');
+var views = require('../views');
 
 exports.onBack = function() {
     // Android only
