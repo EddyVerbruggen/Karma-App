@@ -1,13 +1,14 @@
 .appointment-calendar-date {
-    font-size:20;
-    margin:10;
+    font-size:15;
+    margin:20 0;
     text-align:center;
     color:#999;
+    text-transform:uppercase;
 }
 
 .appointment-row {
     vertical-align: center;
-    background-color: #fff;
+    background-color: #fcfcfc;
     padding: 12 0;
     margin:0 0 1 0;
 }
@@ -58,29 +59,35 @@
 }
 
 .new-client {
-    font-size: 11;
-    background-color:#FFFFBF;
+    font-size: 10;
+    background-color:#999;
     margin-left:3;
-    padding:2;
-    border-radius:2;
+    padding:1 3;
+    border-radius:3;
+    color:#fff;
 }
 
 .appointment-filtering {
-    background-color:#ddd;
+    background-color:#444;
 }
 
 .appointment-filter-button {
     text-align:center;
-    padding-top:15;
+    padding-top:11;
     margin:1;
-    background-color:#eee;
+    background-color:#555;
+    opacity:0.8;
+    color:#fff;
+    height:60;
 }
 
 .button-active {
     background-color:#666;
     color:#fff;
+    opacity:1;
 }
 
 .appointment-filter-icon {
-    font-size:24;
+    font-size:20;
+    opacity:0.4;
 }

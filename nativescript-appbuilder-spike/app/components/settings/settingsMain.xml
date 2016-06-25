@@ -7,39 +7,33 @@
             
             <StackLayout horizontalAlignment="center" class="settings-head">
                 <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
-            </StackLayout>       
-
+            </StackLayout>
             
-            
-            <StackLayout class="settings-all">
-                <StackLayout>
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+            <StackLayout class="settings-all">                
+                    <WrapLayout class="settings-all-row">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                         <Label text="Services" class="settings-section-link-label" />
-                    </StackLayout>
+                    </WrapLayout>
                     <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                    <WrapLayout class="settings-all-row">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                         <Label text="Notifications" class="settings-section-link-label" />
-                    </StackLayout>
+                    </WrapLayout>
                     <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                    <WrapLayout class="settings-all-row">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                         <Label text="Screening" class="settings-section-link-label" />
-                    </StackLayout>
+                    </WrapLayout>
                     <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                    <WrapLayout class="settings-all-row">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                         <Label text="Booking" class="settings-section-link-label" />
-                    </StackLayout>
+                    </WrapLayout>
                     <Label class="settings-all-divider" />
-                    <StackLayout orientation="horizontal" verticalAlignment="center">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="40" />
+                    <WrapLayout class="settings-all-row">
+                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                         <Label text="Landing Page" class="settings-section-link-label" />
-                    </StackLayout>
-                    <Label class="settings-all-divider" />
-                </StackLayout>
-
+                    </WrapLayout>
             </StackLayout> 
 
             <StackLayout class="settings-account">
