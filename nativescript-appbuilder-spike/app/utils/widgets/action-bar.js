@@ -4,22 +4,27 @@ var frameModule = require('ui/frame');
 var view = require('ui/core/view');
 var observable = require('data/observable');
 
-function onBack() {
+exports.onBack = function() {
     // Android only
     var topmost = frameModule.topmost();
     topmost.goBack();
 }
 
-function toggleDrawer(args) {
+exports.toggleDrawer = function() {
     var sideDrawer = frameModule.topmost().getViewById('sideDrawer');
     sideDrawer.toggleDrawerState();
 }
 
-function onIndex() {
+exports.onIndex = function() {
     var topmost = frameModule.topmost();
     topmost.navigate('navigation/navigation');
 }
 
-exports.toggleDrawer = toggleDrawer;
-exports.onBack = onBack;
-exports.onIndex = onIndex;
+/* Display search box when search icon is tapped */
+exports.onTapSearch = function() {
+    var topFrame = frameModule.topmost();
+    var currentPage = topFrame.currentPage;
+    currentPage.showModal(views.search, '', function closeCallback() {
+        
+    }, true);
+}

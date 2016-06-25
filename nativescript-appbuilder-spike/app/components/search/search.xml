@@ -1,0 +1,55 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:lv="nativescript-telerik-ui-pro/listview"
+      shownModally="onShownModally"
+      loaded="onLoaded">
+    <GridLayout rows="90, auto, *" columns="*">
+        <StackLayout row="0" col="0" orientation="horizontal">
+            <Label class="ionicons-icon" text="&#xf2ca;" fontSize="30" marginLeft="20" marginRight="10" tap="onClose" />
+            <SearchBar id="searchbar" submit="onSearch" />
+        </StackLayout>
+        <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" />
+        <lv:RadListView row="2" col="0" items="{{searchResultsList}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+            </lv:RadListView.listViewLayout>
+            <lv:RadListView.itemTemplate>
+                <StackLayout width="100%">
+                    <!-- Bookings -->
+                    <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">
+                         <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
+                             <Label text="{{time}}" class="appointment-time" />
+                             <Label text="{{length}}" class="appointment-length" />
+                         </StackLayout>                            
+                         <StackLayout width="60" verticalAlignment="center">
+                             <StackLayout class="appointment-status appointment-confirmed">
+                                 <Label class="ionicons-icon" text="&#xf122;" />
+                             </StackLayout>
+                         </StackLayout>                            
+                         <StackLayout verticalAlignment="center">
+                            <WrapLayout>
+                                <Label text="{{client_name}}" class="row-client-name" />
+                                <Label text="New" horizontalAlignment="right" class="new-client" />
+                            </WrapLayout>
+                            <Label text="{{location}}" class="row-appointment-location" />
+                         </StackLayout>
+                    </StackLayout>
+
+                    <!-- Clients -->
+                    <StackLayout orientation="horizontal" class="client-row" visibility="{{type == 'client' ? 'visible' : 'collapse'}}">
+                        <StackLayout width="20%" verticalAlignment="center">
+                            <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" />
+                        </StackLayout>
+                        <StackLayout width="55%" orientation="vertical" verticalAlignment="center">
+                            <Label text="{{client_name}}" class="client-row-name" />
+                            <Label text="{{bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{bookings ? 'visible' : 'collapse'}}" />
+                        </StackLayout>
+                        <StackLayout width="25%" verticalAlignment="center">
+                            <Label text="{{status_text}}" class="{{'client-row-status-' + status}}" textWrap="true" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+
+    </GridLayout>
+</Page>

@@ -1,18 +1,33 @@
-<ActionBar title="Title">
-    <NavigationButton text="Back" android.systemIcon="ic_menu_back"
+<ActionBar>
+    <!--<NavigationButton text="Back" android.systemIcon="ic_menu_back"
         tap="onBack" visibility="{{ backButtonHidden ? 'collapsed' : 'visible' }}">
-    </NavigationButton>
+    </NavigationButton>-->
+    
+    <android>
+        <NavigationButton text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" />
+    </android>
+    <ios>
+        <ActionItem text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" ios.position="left" />
+    </ios>
 
-    <ActionBar.actionItems>
-        <ActionItem text="Index" ios.position="right"
-            tap="onIndex" visibility="{{ backButtonHidden ? 'collapsed' : 'visible' }}">
-        </ActionItem>
-    </ActionBar.actionItems>
 
     <ActionBar.titleView>
-        <GridLayout columns="auto, 5, *">
+        <!--<GridLayout columns="auto, 5, *">
             <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" />
 			<Label col="2" text="{{ pageTitle }}" minWidth="100" />
-        </GridLayout>
+        </GridLayout>-->
+        <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" />
     </ActionBar.titleView>
+
+
+    <ActionItem ios.position="right"
+        ios.systemIcon="13"
+        android.systemIcon="ic_menu_search"
+        tap="onTapSearch" />
+    <ActionItem tap="onDelete"
+        ios.systemIcon="16" ios.position="right"
+        text="delete" android.position="popup" />
+    <ActionItem tap="onDelete"
+        ios.systemIcon="16" ios.position="right"
+        text="settings" android.position="popup" />
 </ActionBar>

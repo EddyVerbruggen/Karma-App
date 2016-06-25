@@ -157,5 +157,40 @@ exports.appointments = {
             completed: 25
         }
     }
+}
 
+// Results of search
+exports.search_results = {
+    success: true,
+    Result: [
+        {
+            type: 'client',
+            screening_id: 1,
+            client_name: 'Client 1',
+            status_text: 'Approved',
+            status: 'approved',
+            profile_image: 'http',
+            bookings: 2,
+            no_shows: 0
+        },
+        {
+            type: 'client',
+            screening_id: 2,
+            client_name: 'Client 2',
+            status_text: 'Pending',
+            status: 'pending',
+            profile_image: 'http',
+            bookings: 0,
+            no_shows: 1
+        },
+        {
+            type: 'booking',
+            id: 1,
+            client_name: 'Client 1',
+            date: 'Nov 12',
+            time: '2:00pm PST',
+            location: 'Incall',
+            status: 'Approved'
+        }
+    ]
 }
