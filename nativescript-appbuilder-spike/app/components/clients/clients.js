@@ -11,10 +11,11 @@ var pageData = new Observable({
     clientsList: clientsList,
     statusList: [
         {status: 'All'},
+        {status: 'New'},
         {status: 'Approved'},
         {status: 'Rejected'},
-        {status: 'Whitelist'},
-        {status: 'Blacklist'}
+        //{status: 'Whitelist'},
+        {status: 'Blacklisted'}
     ],
     tagsList: [
         {tag: 'All'},
