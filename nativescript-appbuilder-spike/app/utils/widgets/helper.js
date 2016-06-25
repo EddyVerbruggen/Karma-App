@@ -1,4 +1,5 @@
 'use strict';
+
 var frame = require('ui/frame');
 var dialogsModule = require('ui/dialogs');
 var platform = require('platform');
