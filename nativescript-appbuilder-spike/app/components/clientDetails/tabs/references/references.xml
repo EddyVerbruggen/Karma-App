@@ -1,43 +1,49 @@
 <ScrollView loaded="onLoaded"> 
 	<StackLayout>
-
-        <StackLayout class="reference-details reference-pending">
-            <WrapLayout>
-                <Label text="Candy Kane" class="reference-name" />
-                <Label text="&#xf49a; Awaiting Verification" class="ionicons-icon reference-status reference-status-pending" />
-            </WrapLayout>
-            <Label text="(586) 687-6077" class="reference-phone" />
-            <Label text="candykanedancer@gmail.com" class="reference-email" />
-            <Label text="http://www.candykane.com" class="reference-website" />
-            <Label class="reference-divider" />
-            <Label text="Comments about John: " class="reference-comments-label" />
-            <Label text="N/A" class="reference-comments-text" textWrap="true" />
+        <Label class="section-title" text="3 references added" />
+        <StackLayout class="reference-details" orientation="horizontal">
+            <StackLayout class="reference-status-icon" width="75">
+                <Label text="&#xf49a;" class="ionicons-icon reference-status-icon-pending" />
+                <Label text="Awaiting" class="reference-status-text" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Candy Kane" class="reference-name" />            
+                <Label text="(586) 687-6077" class="reference-phone" />
+                <Label text="candykanedancer@gmail.com" class="reference-email" />
+                <Label text="http://www.candykane.com" class="reference-website" />
+                <Label text="Comments about John: " class="reference-comments-label" />
+                <Label text="N/A" class="reference-comments-text" textWrap="true" />
+            </StackLayout>
         </StackLayout>
 
-        <StackLayout class="reference-details reference-approved">
-            <WrapLayout>
+        <StackLayout class="reference-details" orientation="horizontal">
+            <StackLayout class="reference-status-icon" width="75">
+                <Label text="&#xf121;" class="ionicons-icon reference-status-icon-verified" />
+                <Label text="Verified" class="reference-status-text" />
+            </StackLayout>          
+            <StackLayout>
                 <Label text="Candy Kane" class="reference-name" />
-                <Label text="&#xf122; Approved" class="ionicons-icon reference-status reference-status-approved" />
-            </WrapLayout>
-            <Label text="(586) 687-6077" class="reference-phone" />
-            <Label text="candykanedancer@gmail.com" class="reference-email" />
-            <Label text="http://www.candykane.com" class="reference-website" />
-            <Label class="reference-divider" />
-            <Label text="Comments about John: " class="reference-comments-label" />
-            <Label text="N/A" class="reference-comments-text" textWrap="true" />
+                <Label text="(586) 687-6077" class="reference-phone" />
+                <Label text="candykanedancer@gmail.com" class="reference-email" />
+                <Label text="http://www.candykane.com" class="reference-website" />
+                <Label text="Comments about John: " class="reference-comments-label" />
+                <Label text="N/A" class="reference-comments-text" />
+            </StackLayout>
         </StackLayout>
 
-        <StackLayout class="reference-details reference-rejected">
-            <WrapLayout>
+        <StackLayout class="reference-details" orientation="horizontal">
+            <StackLayout class="reference-status-icon" width="75">
+                <Label text="&#xf129;" class="ionicons-icon reference-status-icon-denied" />
+                <Label text="Denied" class="reference-status-text" />
+            </StackLayout>
+            <StackLayout>
                 <Label text="Candy Kane" class="reference-name" />
-                <Label text="&#xf129; Rejected" class="ionicons-icon reference-status reference-status-rejected" />
-            </WrapLayout>
-            <Label text="(586) 687-6077" class="reference-phone" />
-            <Label text="candykanedancer@gmail.com" class="reference-email" />
-            <Label text="http://www.candykane.com" class="reference-website" />
-            <Label class="reference-divider" />
-            <Label text="Comments about John: " class="reference-comments-label" />
-            <Label text="N/A" class="reference-comments-text" textWrap="true" />
+                <Label text="(586) 687-6077" class="reference-phone" />
+                <Label text="candykanedancer@gmail.com" class="reference-email" />
+                <Label text="http://www.candykane.com" class="reference-website" />
+                <Label text="Comments about John: " class="reference-comments-label" />
+                <Label text="N/A" class="reference-comments-text" textWrap="true" />
+            </StackLayout>
         </StackLayout>
 
         <Label text="Each reference is automatically emailed when a client enters it. Even if the reference is marked as VERIFIED, it is important to make sure the email address actually belongs to the correct reference." class="reference-warning" textWrap="true" /> 

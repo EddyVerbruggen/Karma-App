@@ -4,15 +4,15 @@
         <StackLayout orientation="horizontal" class="screening-summary">
             <StackLayout width="33%">
                 <Label class="screening-stat-number" text="5" />
-                <Label class="screening-stat-label" text="Approved Screenings" />
+                <Label class="screening-stat-label" text="Approvals" />
             </StackLayout>
             <StackLayout width="33%">
                 <Label class="screening-stat-number" text="0" />
-                <Label class="screening-stat-label" text="Rejected Screenings" />
+                <Label class="screening-stat-label" text="Rejections" />
             </StackLayout>
             <StackLayout width="34%">
-                <Label class="screening-stat-number" text="1" />
-                <Label class="screening-stat-label" text="Whitelists" />
+                <Label class="screening-stat-number" text="0" />
+                <Label class="screening-stat-label" text="Blacklists" />
             </StackLayout>
         </StackLayout>
 

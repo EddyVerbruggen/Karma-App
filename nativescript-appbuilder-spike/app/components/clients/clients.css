@@ -6,9 +6,6 @@
     padding:12 15;
 }
 
-.client-row:pressed {
-    background-color: #000;
-}
 
 
 .client-row-icon-approved {width:12;height:12;border-radius:20;background-color:#5BB98C;}
@@ -77,7 +74,7 @@
 
 
 
-.client-options {background-color:#444;color:#fff;}
-.client-options-button {text-align:center;height:60;margin:1;background-color:#555;}
+.client-options {color:#fff;background-color:#555;}
+.client-options-button {text-align:center;height:60;}
 .client-options-label {font-size:11;color:#fff;text-transform: uppercase;margin-top:11;opacity:0.35;}
 .client-options-text {font-size:17;}

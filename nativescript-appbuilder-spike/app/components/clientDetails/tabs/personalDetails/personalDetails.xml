@@ -6,9 +6,8 @@
                 <Label text="{{clientDetails.Result.screening.status_text}}" class="client-profile-top-status" />
                 <Label text="&#xf123;" class="ionicons-icon client-profile-top-status-icon" />
             </WrapLayout>
-        </StackLayout>
 
-        <StackLayout orientation="horizontal" class="client-summary">
+            <StackLayout orientation="horizontal" class="client-summary">
             <StackLayout width="33%">
                 <Label class="summary-stat-number" text="{{clientDetails.Result.screening.karmascore}}" />
                 <Label class="summary-stat-label" text="karmascore" />
@@ -22,6 +21,9 @@
                 <Label class="summary-stat-label" text="no-shows" />
             </StackLayout>
         </StackLayout>
+        </StackLayout>
+
+        
 
         <!-- Pending appointment(s) 
         <Repeater items="{{clientDetails.Result.bookings}}">
@@ -35,16 +37,8 @@
 
         
 
-        <Label class="info-box-title" text="Personal" />
-        <StackLayout class="info-table">
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="Name:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.name}}" textWrap="true" />
-                </StackLayout>                
-            </StackLayout>            
+        <!--<Label class="info-box-title" text="Personal" />-->
+        <StackLayout class="info-table">           
             <Label class="info-table-divider" />            
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
@@ -57,7 +51,7 @@
             <Label class="info-table-divider" />
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
-                    <Label text="Age:" />
+                    <Label text="DOB:" />
                 </StackLayout>
                 <StackLayout class="info-table-text">
                     <Label text="{{clientDetails.Result.client_profile.age}}" />
