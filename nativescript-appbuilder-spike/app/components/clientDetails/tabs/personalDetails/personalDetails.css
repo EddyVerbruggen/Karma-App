@@ -2,9 +2,7 @@
 .client-summary {
     text-align:center;
     padding:20 0;
-    background-color:#777;
     color:#fff;
-    background-image: url('~/images/pattern-triangle-sm.png');
 }
     
 .appointment-button {
@@ -30,7 +28,7 @@
 
 
 .client-profile-wrapper {padding:15;}
-.client-profile-head {width:100%;padding:20 0;background-color:#98D2C2;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
+.client-profile-head {width:100%;padding-top:25;background-color:#666;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
 
 
 .client-profile-box {margin-bottom: 20;border-width:1;border-radius:3;border-color:#ddd;background-color:#fff;}
@@ -56,9 +54,15 @@
 .info-box-title {
     padding:13;
     font-size:14;
-background-color:#999;
-    color:#fff;
+    background-color:#e6e6e6;
+    color:#555;
+}
 
+.section-title {
+    padding:13;
+    font-size:14;
+    background-color:#777;
+    color:#fff;
 }
 
 .info-table-label {

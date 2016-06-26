@@ -68,13 +68,12 @@
 }
 
 .appointment-filtering {
-    background-color:#444;
+    background-color:#555;
 }
 
 .appointment-filter-button {
     text-align:center;
     padding-top:11;
-    margin:1;
     background-color:#555;
     opacity:0.8;
     color:#fff;
