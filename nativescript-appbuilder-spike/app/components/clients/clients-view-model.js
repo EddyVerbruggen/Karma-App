@@ -15,8 +15,6 @@ function ClientsViewModel(clients) {
         tag = tag || 'all';
         sortby = sortby || 'createddesc';
 
-        console.log(tag);
-        
         var fetchData;
         if (mock !== 'undefined') {
             fetchData = new Promise(function(resolve, reject) {

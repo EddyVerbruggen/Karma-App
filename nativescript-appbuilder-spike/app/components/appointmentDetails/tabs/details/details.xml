@@ -8,10 +8,10 @@
                         <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
                     </StackLayout>
                     <StackLayout verticalAlignment="center">
-                        <Label text="Clayton Fox" class="client-name" />
-                        <Label text="(516) 618-8884" class="client-phone" />
-                        <Label text="claytonfox@gmail.com" class="client-email" />
-                        <Label text="Approved" class="client-status client-status-verified" horizontalAlignment="left" />
+                        <Label text="{{appointmentDetails.name}}" class="client-name" />
+                        <Label text="{{appointmentDetails.phone}}" class="client-phone" />
+                        <Label text="{{appointmentDetails.email}}" class="client-email" />
+                        <Label text="{{appointmentDetails.client_status_text}}" class="client-status client-status-verified" horizontalAlignment="left" />
                     </StackLayout>
                 
             </StackLayout>            
@@ -19,23 +19,23 @@
             <StackLayout class="appointment-details">                
                 <StackLayout class="appointment-input-row">
                     <Label text="Date" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="Sunday, June 26, 2016" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Time" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="3:30 PM (PST)" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Length" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="2 Hours" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.length}}" editable="false" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Location" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="Outcall - Hilton Honors, Room 956" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Status" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="Pending - Waiting for you to Accept or Cancel" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.status_text}}" editable="false" />
                 </StackLayout>
             </StackLayout>            
         </StackLayout>

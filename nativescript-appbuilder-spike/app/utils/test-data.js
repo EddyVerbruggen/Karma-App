@@ -107,6 +107,56 @@ exports.clientDetails = {
     }
 }
 
+// Results of getting appointment details
+exports.appointmentDetails = {
+    success: true,
+    Result: {
+        id: 1,
+        date: 'Sunday, June 26, 2016',
+        time: '3:30PM (PST)',
+        length: '2 hrs',
+        location: 'Outcall - Hilton Honors, Room 956',
+        status_text: 'Pending - Waiting for you to Accept or Cancel',
+        canAccept: true,
+        canCancel: true,
+        canDelete: true,
+        canEdit: true,
+        client_id: 1,
+        name: 'John Doe',
+        email: 'info@cuties-tools.com',
+        phone: '718-875-9833',
+        client_status_text: 'Approved',
+        history: [
+            {
+                type: 'system',
+                title: 'Appointment request from Clayton.',
+                created: 'Monday, June 21 - 5:56 PM (PST)'
+            },
+            {
+                type: 'system',
+                title: 'You accepted Clayton\'s appointment',
+                created: 'Monday, June 21 - 5:56 PM (PST)'
+            },
+            {
+                type: 'message_client',
+                message: 'i screwed up babe can we change our date to the wednesday instead?? that would be very helpful!!',
+                created: 'Monday, June 21 - 5:56 PM (PST)'
+            },
+            {
+                type: 'message_user',
+                message: 'no problem i will make that change. xoxo',
+                created: 'Monday, June 21 - 5:56 PM (PST)'
+            },
+            {
+                type: 'edit',
+                title: 'You made a change:',
+                change: 'Wednesday, June 23, 2016',
+                created: 'Monday, June 21 - 5:56 PM (PST)'
+            }
+        ]
+    }
+}
+
 // Results of getting all appointments
 exports.appointments = {
     success: true,
