@@ -3,9 +3,8 @@
       shownModally="onShownModally"
       loaded="onLoaded">
     <GridLayout rows="90, auto, *" columns="*">
-        <StackLayout row="0" col="0" orientation="horizontal" id="toprow">
+        <StackLayout row="0" col="0" orientation="horizontal" id="actionBarLayout">
             <Label class="ionicons-icon" text="&#xf2ca;" fontSize="30" marginLeft="20" marginRight="10" tap="onClose" />
-            <SearchBar id="searchbar" submit="onSearch" />
         </StackLayout>
         <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" />
         <lv:RadListView id="searchResults" row="2" col="0" items="{{searchResultsList}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult">

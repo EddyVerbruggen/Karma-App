@@ -11,7 +11,7 @@ var pageData = new Observable({
     selectedStatusFilter: 'confirmed'
 });
 
-function onLoaded(args) {
+exports.onLoaded = function(args) {
     var page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
@@ -29,7 +29,7 @@ function onLoaded(args) {
     }
 }
 
-function onTapStatusFilter(args) {
+exports.onTapStatusFilter = function(args) {
     var oldStatus = pageData.get('selectedStatusFilter');
     if (!args.object.status) {
         throw Error('Error not defined');
@@ -49,6 +49,3 @@ function onTapStatusFilter(args) {
         	helpers.togglePageLoadingIndicator(false, pageData);
 		});
 }
-
-exports.onLoaded = onLoaded;
-exports.onTapStatusFilter = onTapStatusFilter;

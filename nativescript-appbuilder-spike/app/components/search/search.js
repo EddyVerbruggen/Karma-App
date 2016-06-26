@@ -3,6 +3,7 @@ var Observable = require('data/observable').Observable;
 var SearchViewModel = require('./search-view-model');
 var helpers = require('../../utils/widgets/helper');
 var searchBarModule = require('ui/search-bar');
+var timer = require('timer');
 
 var isInit = true;
 var searchResultsList = new SearchViewModel();
@@ -15,23 +16,14 @@ var closeCallback;
 
 exports.onLoaded = function(args) {
     var page = args.object;
-    
-    // Don't remove yet, in case keyboard doesn't show up
-    //var searchbar = page.getViewById('searchbar');
-    //searchbar.focus();
-    //searchbar.visibility = 'visible';
-    /*var toprow = page.getViewById('toprow');
+    var actionBarLayout = page.getViewById('actionBarLayout');
     var searchBar = new searchBarModule.SearchBar();
-    searchBar.visibility = 'visible';
-    searchBar.focus();
-    toprow.addChild(searchBar);*/
+
+    timer.setTimeout(() => {
+    	actionBarLayout.addChild(searchBar);
+    }, 1000);
     
-    /*searchBar.on(searchBarModule.SearchBar.submitEvent, function (args: observable.EventData) { 
-        console.log("Search for " + (<searchBarModule.SearchBar>args.object).text);
-    });
-    searchBar.on(searchBarModule.SearchBar.clearEvent, function (args: observable.EventData) {
-        console.log("Clear");
-    });*/
+    searchBar.on(searchBarModule.SearchBar.submitEvent, onSearch);
     
     closeCallback = args.closeCallback;
     page.bindingContext = pageData;
@@ -41,7 +33,7 @@ exports.onLoaded = function(args) {
     }
 }
 
-exports.onSearch = function(args) {
+function onSearch(args) {
     var searchText = args.object.text;
     if (searchText != '') {
         search(searchText);

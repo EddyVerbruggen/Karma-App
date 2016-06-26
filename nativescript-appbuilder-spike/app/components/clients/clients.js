@@ -14,7 +14,6 @@ var pageData = new Observable({
         {status: 'New'},
         {status: 'Approved'},
         {status: 'Rejected'},
-        //{status: 'Whitelist'},
         {status: 'Blacklisted'}
     ],
     tagsList: [
@@ -39,7 +38,7 @@ var pageData = new Observable({
     isLoading: true
 });
 
-function onLoaded(args) {
+exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
@@ -57,19 +56,19 @@ function onLoaded(args) {
     }
 }
 
-function onTapSortby(args) {
+exports.onTapSortby = function(args) {
     openOverlay('sortbyList', 'sortbyVisible');
 }
 
-function onTapTags(args) {
+exports.onTapTags = function(args) {
     openOverlay('tagsList', 'tagsVisible');
 }
 
-function onTapStatus(args) {
+exports.onTapStatus = function(args) {
     openOverlay('statusList', 'statusVisible');
 }
 
-function onSelectStatus(args) {
+exports.onSelectStatus = function(args) {
     pageData.set('selectedStatus', args.view.text);
     helpers.togglePageLoadingIndicator(true, pageData);
     closeOverlay('statusList', 'statusVisible').then(function() {
@@ -85,7 +84,7 @@ function onSelectStatus(args) {
     });	
 }
 
-function onSelectTag(args) {
+exports.onSelectTag = function(args) {
     pageData.set('selectedTag', args.view.text);
     helpers.togglePageLoadingIndicator(true, pageData);
     closeOverlay('tagsList', 'tagsVisible').then(function() {
@@ -101,7 +100,7 @@ function onSelectTag(args) {
     });	
 }
 
-function onSelectSortby(args) {
+exports.onSelectSortby = function(args) {
     pageData.set('selectedSortby', args.view.text);
     helpers.togglePageLoadingIndicator(true, pageData);
     closeOverlay('sortbyList', 'sortbyVisible').then(function() {
@@ -117,7 +116,7 @@ function onSelectSortby(args) {
     });	
 }
 
-function onTapOverlay(args) {
+exports.onTapOverlay = function(args) {
     if (pageData.get('statusVisible')) {
     	closeOverlay('statusList', 'statusVisible');
     }
@@ -145,12 +144,3 @@ function closeOverlay(overlayId, visibilityFlag) {
         pageData.set(visibilityFlag, false);
     });
 }
-
-exports.onLoaded = onLoaded;
-exports.onTapOverlay = onTapOverlay;
-exports.onSelectStatus = onSelectStatus;
-exports.onSelectTag = onSelectTag;
-exports.onSelectSortby = onSelectSortby;
-exports.onTapTags = onTapTags;
-exports.onTapStatus = onTapStatus;
-exports.onTapSortby = onTapSortby;

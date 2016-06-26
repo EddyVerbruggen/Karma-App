@@ -12,7 +12,7 @@ var pageData = new Observable({
     isLoading: true
 });
 
-function onLoaded(args) {
+exports.onLoaded = function(args) {
     var page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
@@ -31,5 +31,3 @@ function onLoaded(args) {
         isInit = false;
     }
 }
-
-exports.onLoaded = onLoaded;
