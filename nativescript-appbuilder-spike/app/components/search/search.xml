@@ -3,7 +3,7 @@
       shownModally="onShownModally"
       loaded="onLoaded">
     <GridLayout rows="90, auto, *" columns="*">
-        <StackLayout row="0" col="0" orientation="horizontal">
+        <StackLayout row="0" col="0" orientation="horizontal" id="toprow">
             <Label class="ionicons-icon" text="&#xf2ca;" fontSize="30" marginLeft="20" marginRight="10" tap="onClose" />
             <SearchBar id="searchbar" submit="onSearch" />
         </StackLayout>

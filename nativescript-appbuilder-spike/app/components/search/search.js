@@ -2,6 +2,7 @@
 var Observable = require('data/observable').Observable;
 var SearchViewModel = require('./search-view-model');
 var helpers = require('../../utils/widgets/helper');
+var searchBarModule = require('ui/search-bar');
 
 var isInit = true;
 var searchResultsList = new SearchViewModel();
@@ -14,14 +15,27 @@ var closeCallback;
 
 exports.onLoaded = function(args) {
     var page = args.object;
-    closeCallback = args.closeCallback;
-    page.getViewById('searchbar').focus();
-    page.bindingContext = pageData;
     
-    var searchResults = page.getViewById('searchResults');
-    searchResults.on('itemSelectedEvent', function(args) {
-        console.log('item selected!');
+    // Don't remove yet, in case keyboard doesn't show up
+    //var searchbar = page.getViewById('searchbar');
+    //searchbar.focus();
+    //searchbar.visibility = 'visible';
+    /*var toprow = page.getViewById('toprow');
+    var searchBar = new searchBarModule.SearchBar();
+    searchBar.visibility = 'visible';
+    searchBar.focus();
+    toprow.addChild(searchBar);*/
+    
+    /*searchBar.on(searchBarModule.SearchBar.submitEvent, function (args: observable.EventData) { 
+        console.log("Search for " + (<searchBarModule.SearchBar>args.object).text);
     });
+    searchBar.on(searchBarModule.SearchBar.clearEvent, function (args: observable.EventData) {
+        console.log("Clear");
+    });*/
+    
+    closeCallback = args.closeCallback;
+    page.bindingContext = pageData;
+
     if (isInit) {
         isInit = false;
     }
