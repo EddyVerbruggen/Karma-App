@@ -2,6 +2,7 @@
 var Observable = require('data/observable').Observable;
 var AppointmentsViewModel = require('./appointments-view-model');
 var helpers = require('../../utils/widgets/helper');
+var views = require('../../utils/views');
 
 var isInit = true;
 var appointmentsList = new AppointmentsViewModel();
@@ -49,3 +50,15 @@ exports.onTapStatusFilter = function(args) {
         	helpers.togglePageLoadingIndicator(false, pageData);
 		});
 }
+
+exports.onSelectAppointment = function(args) {
+    helpers.tapFlash(args.object).then(function() {
+        helpers.navigate({
+            moduleName: views.appointmentDetails,
+            context: {
+                id: args.view.bookingId
+            }
+        });        
+    });
+}
+

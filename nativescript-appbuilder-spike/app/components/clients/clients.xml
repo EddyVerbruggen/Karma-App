@@ -14,7 +14,7 @@
                     <lv:ListViewLinearLayout scrollDirection="Vertical" />
                 </lv:RadListView.listViewLayout>
                 <lv:RadListView.itemTemplate>
-                    <GridLayout columns="70, *, 25" rows="auto" class="client-row">
+                    <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
                         <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" col="0" />
                         <StackLayout col="1" verticalAlignment="center">
                             <Label text="{{client_name}}" class="client-row-name" />

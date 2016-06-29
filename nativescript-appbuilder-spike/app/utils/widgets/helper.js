@@ -3,6 +3,8 @@
 var frame = require('ui/frame');
 var dialogsModule = require('ui/dialogs');
 var platform = require('platform');
+var colorModule = require('color');
+var timer = require('timer');
 
 exports.platformInit = function(page) {
     var top = frame.topmost(),
@@ -60,5 +62,13 @@ exports.handleLoadError = function(error, errorMessage) {
     dialogsModule.alert({
         message: errorMessage,
         okButtonText: "OK"
+    });
+}
+
+exports.tapFlash = function(targetView) {
+    targetView.backgroundColor = new colorModule.Color("#CFDFE1");
+    return targetView.animate({
+        duration: 300,
+        backgroundColor: new colorModule.Color("#fcfcfc")
     });
 }

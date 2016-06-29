@@ -4,7 +4,7 @@
 	</Page.actionBar>
     <GridLayout rows="auto, *, 60" columns="*">
         <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" />
-        <lv:RadListView items="{{appointmentsList.booking_dates}}" row="1" col="0" >
+        <lv:RadListView items="{{appointmentsList.booking_dates}}" row="1" col="0">
             <lv:RadListView.listViewLayout>
                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
             </lv:RadListView.listViewLayout>
@@ -16,7 +16,7 @@
                             <StackLayout class="appointment-rows" />
                         </Repeater.itemsLayout>
                         <Repeater.itemTemplate>
-                            <StackLayout orientation="horizontal" class="appointment-row">
+                            <StackLayout orientation="horizontal" class="appointment-row" tap="onSelectAppointment" bookingId="{{id}}">
                                  <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
                                      <Label text="{{time}}" class="appointment-time" />
                                      <Label text="{{length}}" class="appointment-length" />

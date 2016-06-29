@@ -2,7 +2,7 @@
 var Observable = require('data/observable').Observable;
 var ClientsViewModel = require('./clients-view-model');
 var helpers = require('../../utils/widgets/helper');
-//var DropDown = require("nativescript-drop-down/drop-down");
+var views = require('../../utils/views');
 
 var page;
 var isInit = true;
@@ -54,6 +54,17 @@ exports.onLoaded = function(args) {
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.onSelectClient = function(args) {
+    helpers.tapFlash(args.object).then(function() {
+        helpers.navigate({
+            moduleName: views.clientDetails,
+            context: {
+                id: args.view.screeningId
+            }
+        });
+    });
 }
 
 exports.onTapSortby = function(args) {
