@@ -1,157 +1,163 @@
-<ScrollView loaded="onLoaded"> 
-	<StackLayout>
-        <StackLayout class="client-profile-head">
-            <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-profile-top-thumbnail" />
-            <WrapLayout class="client-status" horizontalAlignment="center">
-                <Label text="{{clientDetails.Result.screening.status_text}}" class="client-profile-top-status" />
-                <Label text="&#xf123;" class="ionicons-icon client-profile-top-status-icon" />
-            </WrapLayout>
-
-            <StackLayout orientation="horizontal" class="client-summary">
-            <StackLayout width="33%">
-                <Label class="summary-stat-number" text="{{clientDetails.Result.screening.karmascore}}" />
-                <Label class="summary-stat-label" text="karmascore" />
+<GridLayout rows="*, 50" columns="*">
+    <ScrollView row="0" col="0">  
+    	<StackLayout>
+            <StackLayout class="client-profile-head">
+                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-profile-top-thumbnail" />
+                <StackLayout orientation="horizontal" class="client-summary">
+                <StackLayout width="33%">
+                    <Label class="summary-stat-number" text="{{clientDetails.Result.screening.karmascore}}" />
+                    <Label class="summary-stat-label" text="karmascore" />
+                </StackLayout>
+                <StackLayout width="33%">
+                    <Label class="summary-stat-number" text="{{clientDetails.Result.screening.num_bookings}}" />
+                    <Label class="summary-stat-label" text="appointments" />
+                </StackLayout>
+                <StackLayout width="34%">
+                    <Label class="summary-stat-number" text="{{clientDetails.Result.screening.num_noshows}}" />
+                    <Label class="summary-stat-label" text="no-shows" />
+                </StackLayout>
             </StackLayout>
-            <StackLayout width="33%">
-                <Label class="summary-stat-number" text="{{clientDetails.Result.screening.num_bookings}}" />
-                <Label class="summary-stat-label" text="appointments" />
             </StackLayout>
-            <StackLayout width="34%">
-                <Label class="summary-stat-number" text="{{clientDetails.Result.screening.num_noshows}}" />
-                <Label class="summary-stat-label" text="no-shows" />
-            </StackLayout>
-        </StackLayout>
-        </StackLayout>
 
-        
+            
 
-        <!-- Pending appointment(s) 
-        <Repeater items="{{clientDetails.Result.bookings}}">
-            <Repeater.itemsLayout>
-                <StackLayout />
-            </Repeater.itemsLayout>
-            <Repeater.itemTemplate>
-                <Button text="{{'Appointment: ' + date}}" class="ionicons-icon appointment-button" />
-            </Repeater.itemTemplate>
-        </Repeater>-->
-
-        
-
-        <!--<Label class="info-box-title" text="Personal" />-->
-        <StackLayout class="info-table">           
-            <Label class="info-table-divider" />            
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="Residence:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.residence}}" textWrap="true" />
-                </StackLayout>                
-            </StackLayout>            
-            <Label class="info-table-divider" />
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="DOB:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.age}}" />
-                </StackLayout>                
-            </StackLayout>           
-        </StackLayout>
-
-        <Label class="info-box-title" text="Contact" />
-        <StackLayout class="info-table">
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="Email:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.email}}" textWrap="true" />
-                </StackLayout>                
-            </StackLayout>            
-            <Label class="info-table-divider" />         
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label class="" text="Phone:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
-                </StackLayout>              
-            </StackLayout>           
-        </StackLayout>
-
-        <Label class="info-box-title" text="Usernames" />
-        <StackLayout class="info-table">
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="TER:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.ter_username}}" />
-                </StackLayout>                
-            </StackLayout>            
-            <Label class="info-table-divider" />            
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="DateCheck:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.datecheck_username}}" />
-                </StackLayout>                
-            </StackLayout>            
-            <Label class="info-table-divider" />
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="P411:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client_profile.p411_username}}" />
-                </StackLayout>                
-            </StackLayout>           
-        </StackLayout> 
-
-        <Label class="info-box-title" text="Signup Details" />
-        <StackLayout class="info-table">
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="Date:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{ clientDetails.Result.client.created_formatted }}" />
-                </StackLayout>                
-            </StackLayout>            
-            <Label class="info-table-divider" />           
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="Location:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.location_signup}}" />
-                </StackLayout>                
-            </StackLayout>            
-            <Label class="info-table-divider" />
-            <StackLayout orientation="horizontal" class="info-table-row">
-                <StackLayout class="info-table-label">
-                    <Label text="IP:" />
-                </StackLayout>
-                <StackLayout class="info-table-text">
-                    <Label text="{{clientDetails.Result.client.ip_signup}}" textWrap="true" />
-                    <Label text="{{clientDetails.Result.client.host_signup, ' (' + clientDetails.Result.client.host_signup + ')'}}" textWrap="true" />
-                </StackLayout>                
-            </StackLayout>           
-        </StackLayout>      
-
-        <StackLayout class="info-box">
-            <Label class="info-box-title" text="Tags" />
-            <Repeater items="{{clientDetails.Result.tags}}">
+            <!-- Pending appointment(s) 
+            <Repeater items="{{clientDetails.Result.bookings}}">
                 <Repeater.itemsLayout>
-                    <StackLayout orientation="horizontal" />
+                    <StackLayout />
                 </Repeater.itemsLayout>
                 <Repeater.itemTemplate>
-                    <Button text="{{name}}" />
+                    <Button text="{{'Appointment: ' + date}}" class="ionicons-icon appointment-button" />
                 </Repeater.itemTemplate>
-            </Repeater>
-        </StackLayout>
+            </Repeater>-->
 
-	</StackLayout>
-</ScrollView>
+            
+
+            <!--<Label class="info-box-title" text="Personal" />-->
+            <StackLayout class="info-table">           
+                <Label class="info-table-divider" />            
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Residence:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client_profile.residence}}" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="DOB:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client_profile.age}}" />
+                    </StackLayout>                
+                </StackLayout>           
+            </StackLayout>
+
+            <Label class="info-box-title" text="Contact" />
+            <StackLayout class="info-table">
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Email:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client.email}}" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />         
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label class="" text="Phone:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
+                    </StackLayout>              
+                </StackLayout>           
+            </StackLayout>
+
+            <Label class="info-box-title" text="Usernames" />
+            <StackLayout class="info-table">
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="TER:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client_profile.ter_username}}" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />            
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="DateCheck:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client_profile.datecheck_username}}" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="P411:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client_profile.p411_username}}" />
+                    </StackLayout>                
+                </StackLayout>           
+            </StackLayout> 
+
+            <Label class="info-box-title" text="Signup Details" />
+            <StackLayout class="info-table">
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Date:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{ clientDetails.Result.client.created_formatted }}" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />           
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Location:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client.location_signup}}" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="IP:" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="{{clientDetails.Result.client.ip_signup}}" textWrap="true" />
+                        <Label text="{{clientDetails.Result.client.host_signup, ' (' + clientDetails.Result.client.host_signup + ')'}}" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>           
+            </StackLayout>      
+
+            <StackLayout class="info-box">
+                <Label class="info-box-title" text="Tags" />
+                <Repeater items="{{clientDetails.Result.tags}}">
+                    <Repeater.itemsLayout>
+                        <StackLayout orientation="horizontal" />
+                    </Repeater.itemsLayout>
+                    <Repeater.itemTemplate>
+                        <Button text="{{name}}" />
+                    </Repeater.itemTemplate>
+                </Repeater>
+            </StackLayout>
+
+	    </StackLayout>
+    </ScrollView>
+
+    <StackLayout orientation="horizontal" row="1" col="0">
+        <StackLayout width="80%">
+            <Button text="Approved Client" class="accept-save-button" width="100%" />
+        </StackLayout>
+        <StackLayout width="20%">
+            <Button text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
+        </StackLayout>
+    </StackLayout>   
+</GridLayout>

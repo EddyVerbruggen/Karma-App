@@ -1,7 +1,7 @@
 <ScrollView loaded="onLoaded"> 
 	<StackLayout>
         <Label class="section-title" text="3 references added" />
-        <StackLayout class="reference-details" orientation="horizontal">
+        <StackLayout class="reference-row" orientation="horizontal">
             <StackLayout class="reference-status-icon" width="75">
                 <Label text="&#xf49a;" class="ionicons-icon reference-status-icon-pending" />
                 <Label text="Awaiting" class="reference-status-text" />
@@ -16,7 +16,7 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout class="reference-details" orientation="horizontal">
+        <StackLayout class="reference-row" orientation="horizontal">
             <StackLayout class="reference-status-icon" width="75">
                 <Label text="&#xf121;" class="ionicons-icon reference-status-icon-verified" />
                 <Label text="Verified" class="reference-status-text" />
@@ -31,7 +31,7 @@
             </StackLayout>
         </StackLayout>
 
-        <StackLayout class="reference-details" orientation="horizontal">
+        <StackLayout class="reference-row" orientation="horizontal">
             <StackLayout class="reference-status-icon" width="75">
                 <Label text="&#xf129;" class="ionicons-icon reference-status-icon-denied" />
                 <Label text="Denied" class="reference-status-text" />
