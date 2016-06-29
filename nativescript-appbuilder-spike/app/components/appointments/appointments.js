@@ -9,7 +9,9 @@ var appointmentsList = new AppointmentsViewModel();
 var pageData = new Observable({
     appointmentsList: appointmentsList,
     isLoading: false,
-    selectedStatusFilter: 'confirmed'
+    selectConfirmedFilter: true,
+    selectPendingFilter: false,
+    selectCanceledFilter: false
 });
 
 exports.onLoaded = function(args) {
@@ -31,19 +33,19 @@ exports.onLoaded = function(args) {
 }
 
 exports.onTapStatusFilter = function(args) {
-    var oldStatus = pageData.get('selectedStatusFilter');
     if (!args.object.status) {
         throw Error('Error not defined');
     }
 
     helpers.togglePageLoadingIndicator(true, pageData);
-	pageData.set('selectedStatusFilter', args.object.status);
+    
+    pageData.set('select' + args.object.status + 'Filter', !pageData.get('select' + args.object.status + 'Filter'));
 
     // Load new filter data
 	appointmentsList
 		.load(args.object.status)
 		.catch(function(error) {
-        	pageData.set('selectedStatusFilter', oldStatus);
+        	pageData.set('select' + args.object.status + 'Filter', !pageData.get('select' + args.object.status + 'Filter'));
         	helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
     	})
 		.then(function() {

@@ -41,15 +41,15 @@
         </lv:RadListView>
 
         <StackLayout orientation="horizontal" row="2" col="0" class="appointment-filtering">
-            <StackLayout class="{{ selectedStatusFilter === 'confirmed' ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="33%" tap="onTapStatusFilter" status="confirmed">
+            <StackLayout class="{{ selectConfirmedFilter ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="33%" tap="onTapStatusFilter" status="Confirmed">
                 <Label class="ionicons-icon appointment-filter-icon" text="&#xf122;" />
                 <Label text="{{appointmentsList.types.confirmed, 'Confirmed (' + appointmentsList.types.confirmed + ')'}}" />
             </StackLayout>
-            <StackLayout class="{{ selectedStatusFilter === 'pending' ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="33%" tap="onTapStatusFilter" status="pending">
+            <StackLayout class="{{ selectPendingFilter ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="33%" tap="onTapStatusFilter" status="Pending">
                 <Label class="ionicons-icon appointment-filter-icon" text="&#xf396;" />
                 <Label text="{{appointmentsList.types.pending, 'Pending (' + appointmentsList.types.pending + ')'}}" />
             </StackLayout>
-            <StackLayout class="{{ selectedStatusFilter === 'cancelled' ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="34%" tap="onTapStatusFilter" status="cancelled">
+            <StackLayout class="{{ selectCanceledFilter ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="34%" tap="onTapStatusFilter" status="Canceled">
                 <Label class="ionicons-icon appointment-filter-icon" text="&#xf129;" />
                 <Label text="{{appointmentsList.types.cancelled, 'Cancelled (' + appointmentsList.types.cancelled + ')'}}" />
             </StackLayout>
