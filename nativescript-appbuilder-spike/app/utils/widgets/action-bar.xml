@@ -26,8 +26,8 @@
         tap="onTapSearch" />
     <ActionItem tap="onDelete"
         ios.systemIcon="16" ios.position="right"
-        text="delete" android.position="popup" />
+        text="Delete" android.position="popup" />
     <ActionItem tap="onDelete"
         ios.systemIcon="16" ios.position="right"
-        text="settings" android.position="popup" />
+        text="Settings" android.position="popup" />
 </ActionBar>

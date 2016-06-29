@@ -2,9 +2,9 @@
       xmlns:lv="nativescript-telerik-ui-pro/listview"
       shownModally="onShownModally"
       loaded="onLoaded">
-    <GridLayout rows="90, auto, *" columns="*">
-        <StackLayout row="0" col="0" orientation="horizontal" id="actionBarLayout">
-            <Label class="ionicons-icon" text="&#xf2ca;" fontSize="30" marginLeft="20" marginRight="10" tap="onClose" />
+    <GridLayout rows="60, auto, *" columns="*">
+        <StackLayout row="0" col="0" orientation="horizontal" id="actionBarLayout" class="search-top">
+            <Label class="ionicons-icon return-arrow" text="&#xf2ca;" tap="onClose" />
         </StackLayout>
         <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" />
         <lv:RadListView id="searchResults" row="2" col="0" items="{{searchResultsList}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult">
@@ -12,7 +12,7 @@
                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
             </lv:RadListView.listViewLayout>
             <lv:RadListView.itemTemplate>
-                <StackLayout width="100%">
+                <StackLayout class="search-wrapper">
                     <!-- Bookings -->
                     <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">
                          <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">

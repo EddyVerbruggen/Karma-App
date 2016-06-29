@@ -1,7 +1,7 @@
 
 .client-summary {
     text-align:center;
-    padding:20 0;
+    padding-bottom:20;
     color:#fff;
 }
     
@@ -19,6 +19,7 @@
     font-size:54;
     font-family: 'MyriadPro-Light';
     margin-bottom:5;
+    height:54;
 }
 
 .summary-stat-label {
@@ -40,22 +41,20 @@
   height:115;
   border-width:3;
   border-color:#fff;margin-bottom:10;  }
-.client-profile-status {text-align:center;}
-
-.client-profile-top-status {font-size:24;margin-right:10;}
-.client-profile-top-status-icon {font-size:16;}
 
 
 
 .info-table {
     background-color:#fff;
+    margin: 0 10 10 10;
 }
 
 .info-box-title {
-    padding:13;
+    padding:8;
     font-size:14;
-    background-color:#e6e6e6;
+    background-color:#ddd;
     color:#555;
+    margin: 0 10 0 10;
 }
 
 .section-title {
