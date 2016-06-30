@@ -51,7 +51,27 @@
 
 .row-client-name {
     font-size: 20;
+    
 }
+
+.row-client-name-new {
+    color:#aaa;
+}
+
+.row-client-name-approved {
+    color:#5BB98C;
+}
+
+.row-client-name-rejected {
+    color:#FC4545;
+}
+
+.row-client-name-blacklisted {
+    color:000;
+}
+
+
+
 
 .row-appointment-location {
     font-size: 14;
@@ -60,15 +80,17 @@
 
 .new-client {
     font-size: 10;
-    background-color:#999;
+    background-color:#aaa;
     margin-left:3;
     padding:1 3;
     border-radius:3;
     color:#fff;
 }
 
+.blacklisted-client {margin-left:3;color:#000;}
+
 .appointment-filtering {
-    background-color:#555;
+    background-color:#444;
 }
 
 .appointment-filter-button {
@@ -78,6 +100,7 @@
     opacity:0.8;
     color:#fff;
     height:60;
+    margin: 0 1 0 0;
 }
 
 .button-active {

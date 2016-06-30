@@ -16,7 +16,7 @@
             </StackLayout>
         </StackLayout>
 
-        <Label class="info-box-title" text="Employment" />
+        <Label class="info-box-title-dark" text="Employment" />
         <StackLayout class="info-table">
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">
@@ -46,7 +46,7 @@
             </StackLayout>                
         </StackLayout>
         
-        <Label class="info-box-title" text="Client's Device" />
+        <Label class="info-box-title-dark" text="Client's Device" />
         <StackLayout class="info-table">
             <StackLayout orientation="horizontal" class="info-table-row">
                 <StackLayout class="info-table-label">

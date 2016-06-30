@@ -48,6 +48,14 @@
                 <Label text="Visitors" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
+        <StackLayout class="drawer-nav-item" orientation="horizontal" tap="onTap">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf3f9;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Messages" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
         <Label class="nav-divider" />
         <StackLayout class="drawer-nav-item" orientation="horizontal">
             <StackLayout width="50" verticalAlignment="center">

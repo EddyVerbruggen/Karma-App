@@ -42,19 +42,29 @@
   border-width:3;
   border-color:#fff;margin-bottom:10;  }
 
-
+.personal-details-wrapper {margin:12;}
 
 .info-table {
     background-color:#fff;
-    margin: 0 10 10 10;
+    margin-bottom:15;
+    border-width:1;
+    border-color:#ddd;
+    padding:1;
+    border-radius:3;
 }
 
 .info-box-title {
+    padding:8 5;
+    font-size:12;
+    color:#999;
+    text-transform: uppercase;
+}
+
+.info-box-title-dark {
     padding:8;
     font-size:14;
-    background-color:#ddd;
-    color:#555;
-    margin: 0 10 0 10;
+    background-color:#aaa;
+    color:#fff;
 }
 
 .section-title {

@@ -66,7 +66,7 @@ exports.handleLoadError = function(error, errorMessage) {
 }
 
 exports.tapFlash = function(targetView) {
-    targetView.backgroundColor = new colorModule.Color("#CFDFE1");
+    targetView.backgroundColor = new colorModule.Color("#eee");
     return targetView.animate({
         duration: 300,
         backgroundColor: new colorModule.Color("#fcfcfc")

@@ -8,10 +8,12 @@
                         <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
                     </StackLayout>
                     <StackLayout verticalAlignment="center">
-                        <Label text="{{appointmentDetails.name}}" class="client-name" />
+                        <WrapLayout>
+                            <Label text="{{appointmentDetails.name}}" class="client-name" />
+                            <Label text="{{appointmentDetails.client_status_text}}" class="client-status client-status-approved" horizontalAlignment="left" />
+                        </WrapLayout>
                         <Label text="{{appointmentDetails.phone}}" class="client-phone" />
-                        <Label text="{{appointmentDetails.email}}" class="client-email" />
-                        <Label text="{{appointmentDetails.client_status_text}}" class="client-status client-status-verified" horizontalAlignment="left" />
+                        <Label text="{{appointmentDetails.email}}" class="client-email" />                        
                     </StackLayout>
                 
             </StackLayout>            
@@ -43,7 +45,7 @@
 
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="50%">
-            <Button text="Accept" class="accept-save-button" width="100%" />
+            <Button text="Confirm" class="accept-save-button" width="100%" />
         </StackLayout>
         <StackLayout width="35%">
             <Button text="Cancel" class="cancel-button" width="100%" />

@@ -32,10 +32,9 @@
             </Repeater>-->
 
             
-
+            <StackLayout class="personal-details-wrapper">
             <!--<Label class="info-box-title" text="Personal" />-->
-            <StackLayout class="info-table">           
-                <Label class="info-table-divider" />            
+            <StackLayout class="info-table">                       
                 <StackLayout orientation="horizontal" class="info-table-row">
                     <StackLayout class="info-table-label">
                         <Label text="Residence:" />
@@ -55,7 +54,7 @@
                 </StackLayout>           
             </StackLayout>
 
-            <Label class="info-box-title" text="Contact" />
+            
             <StackLayout class="info-table">
                 <StackLayout orientation="horizontal" class="info-table-row">
                     <StackLayout class="info-table-label">
@@ -76,7 +75,7 @@
                 </StackLayout>           
             </StackLayout>
 
-            <Label class="info-box-title" text="Usernames" />
+            
             <StackLayout class="info-table">
                 <StackLayout orientation="horizontal" class="info-table-row">
                     <StackLayout class="info-table-label">
@@ -148,6 +147,8 @@
                     </Repeater.itemTemplate>
                 </Repeater>
             </StackLayout>
+
+        </StackLayout>
 
 	    </StackLayout>
     </ScrollView>

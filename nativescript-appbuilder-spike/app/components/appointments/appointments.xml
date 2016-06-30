@@ -27,10 +27,25 @@
                                      </StackLayout>
                                  </StackLayout>                            
                                  <StackLayout verticalAlignment="center">
+
+                                    <!-- NEW CLIENT-->
                                     <WrapLayout>
-                                        <Label text="{{client_name}}" class="row-client-name" />
-                                        <Label text="New" horizontalAlignment="right" class="new-client" />
+                                        <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
+                                        <Label text="New" class="new-client" />
                                     </WrapLayout>
+                                    
+                                    <!-- APPROVED CLIENT
+                                    <Label text="{{client_name}}" class="row-client-name row-client-name-approved" /> -->
+
+                                    <!-- REJECTED CLIENT
+                                    <Label text="{{client_name}}" class="row-client-name row-client-name-rejected" /> -->
+
+                                    <!-- NEW CLIENT
+                                    <WrapLayout>
+                                        <Label text="{{client_name}}" class="row-client-name row-client-name-blacklisted" />
+                                        <Label text="&#xf3bc;" class="ionicons-icon blacklisted-client" />
+                                    </WrapLayout>-->                                  
+
                                     <Label text="{{location}}" class="row-appointment-location" />
                                  </StackLayout>
                              </StackLayout>
