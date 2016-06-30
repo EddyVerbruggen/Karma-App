@@ -1,77 +1,86 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets">
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <ScrollView>
-        <StackLayout width="100%">
-            
-            <StackLayout horizontalAlignment="center" class="settings-head">
-                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
-            </StackLayout>
-            
-            <StackLayout class="settings-all">                
-                    <WrapLayout class="settings-all-row">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                        <Label text="Services" class="settings-section-link-label" />
-                    </WrapLayout>
-                    <Label class="settings-all-divider" />
-                    <WrapLayout class="settings-all-row">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                        <Label text="Notifications" class="settings-section-link-label" />
-                    </WrapLayout>
-                    <Label class="settings-all-divider" />
-                    <WrapLayout class="settings-all-row">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                        <Label text="Screening" class="settings-section-link-label" />
-                    </WrapLayout>
-                    <Label class="settings-all-divider" />
-                    <WrapLayout class="settings-all-row">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                        <Label text="Booking" class="settings-section-link-label" />
-                    </WrapLayout>
-                    <Label class="settings-all-divider" />
-                    <WrapLayout class="settings-all-row">
-                    	<Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                        <Label text="Landing Page" class="settings-section-link-label" />
-                    </WrapLayout>
-            </StackLayout> 
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <ScrollView>
+                <StackLayout width="100%">
 
-            <StackLayout class="settings-account">
-                <StackLayout>
-                    <Label text="My Account" class="settings-section-header" />
-                    <Label class="settings-section-divider" />
-                </StackLayout>
-                <StackLayout class="settings-input-row">
-                    <Label text="Username" class="settings-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy07" class="settings-textfield" />
-                </StackLayout>
-                <StackLayout class="settings-input-row">
-                    <Label text="Name" class="settings-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Jenny Mathers" class="settings-textfield" />
-                </StackLayout>
-                <StackLayout class="settings-input-row">
-                    <Label text="Email" class="settings-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy857@gmail.com" class="settings-textfield" />
-                </StackLayout>
-            </StackLayout>
+                    <StackLayout horizontalAlignment="center" class="settings-head">
+                        <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
+                    </StackLayout>
 
-            <StackLayout class="settings-url">
-                <StackLayout>
-                    <Label text="My URLs" class="settings-section-header" />
-                    <Label class="settings-section-divider" />
-                </StackLayout>
+                    <StackLayout class="settings-all">                
+                            <WrapLayout class="settings-all-row">
+                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                                <Label text="Services" class="settings-section-link-label" />
+                            </WrapLayout>
+                            <Label class="settings-all-divider" />
+                            <WrapLayout class="settings-all-row">
+                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                                <Label text="Notifications" class="settings-section-link-label" />
+                            </WrapLayout>
+                            <Label class="settings-all-divider" />
+                            <WrapLayout class="settings-all-row">
+                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                                <Label text="Screening" class="settings-section-link-label" />
+                            </WrapLayout>
+                            <Label class="settings-all-divider" />
+                            <WrapLayout class="settings-all-row">
+                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                                <Label text="Booking" class="settings-section-link-label" />
+                            </WrapLayout>
+                            <Label class="settings-all-divider" />
+                            <WrapLayout class="settings-all-row">
+                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                                <Label text="Landing Page" class="settings-section-link-label" />
+                            </WrapLayout>
+                    </StackLayout> 
 
-                <StackLayout class="settings-input-row">
-                    <Label text="Web" class="settings-label" />
-                    <TextField text="https://www.screeningmate.com/jenny" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
-                </StackLayout>
+                    <StackLayout class="settings-account">
+                        <StackLayout>
+                            <Label text="My Account" class="settings-section-header" />
+                            <Label class="settings-section-divider" />
+                        </StackLayout>
+                        <StackLayout class="settings-input-row">
+                            <Label text="Username" class="settings-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy07" class="settings-textfield" />
+                        </StackLayout>
+                        <StackLayout class="settings-input-row">
+                            <Label text="Name" class="settings-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Jenny Mathers" class="settings-textfield" />
+                        </StackLayout>
+                        <StackLayout class="settings-input-row">
+                            <Label text="Email" class="settings-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy857@gmail.com" class="settings-textfield" />
+                        </StackLayout>
+                    </StackLayout>
 
-                <StackLayout class="settings-input-row">
-                    <Label text="Short/Mobile" class="settings-label" />
-                    <TextField text="http://scrnmt.com/47556" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
+                    <StackLayout class="settings-url">
+                        <StackLayout>
+                            <Label text="My URLs" class="settings-section-header" />
+                            <Label class="settings-section-divider" />
+                        </StackLayout>
+
+                        <StackLayout class="settings-input-row">
+                            <Label text="Web" class="settings-label" />
+                            <TextField text="https://www.screeningmate.com/jenny" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
+                        </StackLayout>
+
+                        <StackLayout class="settings-input-row">
+                            <Label text="Short/Mobile" class="settings-label" />
+                            <TextField text="http://scrnmt.com/47556" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
+                        </StackLayout>
+                    </StackLayout>
+
                 </StackLayout>
-            </StackLayout>
-           
-        </StackLayout>
-    </ScrollView>
+            </ScrollView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
 </Page>

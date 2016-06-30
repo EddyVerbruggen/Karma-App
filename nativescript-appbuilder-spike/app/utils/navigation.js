@@ -37,6 +37,6 @@ module.exports = {
 		});
 	},
 	startingPage: function() {
-		return config.token ? "views/list/list" : "navigation/navigation";
+		return config.token ? "components/dashboard/dashboard" : "components/dashboard/dashboard";
 	}
 };

@@ -65,10 +65,12 @@ exports.handleLoadError = function(error, errorMessage) {
     });
 }
 
-exports.tapFlash = function(targetView) {
-    targetView.backgroundColor = new colorModule.Color("#eee");
+exports.tapFlash = function(targetView, fromBgColor, toBgColor) {
+    toBgColor = toBgColor || '#fcfcfc';
+    fromBgColor = fromBgColor || '#eee';
+    targetView.backgroundColor = new colorModule.Color(fromBgColor);
     return targetView.animate({
         duration: 300,
-        backgroundColor: new colorModule.Color("#fcfcfc")
+        backgroundColor: new colorModule.Color(toBgColor)
     });
 }

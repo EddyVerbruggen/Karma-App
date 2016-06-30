@@ -1,89 +1,96 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" 
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:lv="nativescript-telerik-ui-pro/listview"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <GridLayout>
+                <GridLayout rows="auto, *, 60" columns="*">
+                    <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+                    <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate>
+                            <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
+                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" col="0" />
+                                <StackLayout col="1" verticalAlignment="center">
+                                    <Label text="{{client_name}}" class="client-row-name" />
+                                    <Label text="{{bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{bookings ? 'visible' : 'collapse'}}" />
+                                    <Label text="No-Show" class="client-row-noshow" />
+                                </StackLayout>
+                                <!--<Label class="client-row-icon-approved" col="2" />-->
+                                <!--<Label class="client-row-icon-pending" col="2" />-->
+                                <Label class="client-row-icon-rejected" col="2" /> --> 
+                                <!--<Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" /> -->                
+                                <!--<Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" />      -->                  
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>            
 
-    <GridLayout>
-        <GridLayout rows="auto, *, 60" columns="*">
-            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
-            <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
-                <lv:RadListView.listViewLayout>
-                    <lv:ListViewLinearLayout scrollDirection="Vertical" />
-                </lv:RadListView.listViewLayout>
-                <lv:RadListView.itemTemplate>
-                    <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
-                        <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" col="0" />
-                        <StackLayout col="1" verticalAlignment="center">
-                            <Label text="{{client_name}}" class="client-row-name" />
-                            <Label text="{{bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{bookings ? 'visible' : 'collapse'}}" />
-                            <Label text="No-Show" class="client-row-noshow" />
+                    <StackLayout orientation="horizontal" row="2" col="0" class="client-options">
+                        <StackLayout width="33%" tap="onTapStatus" class="client-options-button">
+                            <Label text="Status" class="client-options-label" />
+                            <WrapLayout horizontalAlignment="center">
+                                <Label text="{{selectedStatus}}" class="client-options-text" />
+                                <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
+                            </WrapLayout>
                         </StackLayout>
-                        <!--<Label class="client-row-icon-approved" col="2" />-->
-                        <!--<Label class="client-row-icon-pending" col="2" />-->
-                        <Label class="client-row-icon-rejected" col="2" /> --> 
-                        <!--<Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" /> -->                
-                        <!--<Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" />      -->                  
-                    </GridLayout>
-                </lv:RadListView.itemTemplate>
-            </lv:RadListView>            
+                        <StackLayout width="33%" tap="onTapTags" class="client-options-button">
+                            <Label text="Tag" class="client-options-label" />
+                            <WrapLayout horizontalAlignment="center">
+                                <Label text="{{selectedTag}}" class="client-options-text" />
+                                <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
+                            </WrapLayout>
+                        </StackLayout>
+                        <StackLayout width="34%" tap="onTapSortby" class="client-options-button">
+                            <Label text="Sort by" class="client-options-label" />
+                            <WrapLayout horizontalAlignment="center">
+                                <Label text="{{selectedSortby}}" class="client-options-text" />
+                                <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
+                            </WrapLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>        
 
-            <StackLayout orientation="horizontal" row="2" col="0" class="client-options">
-                <StackLayout width="33%" tap="onTapStatus" class="client-options-button">
-                    <Label text="Status" class="client-options-label" />
-                    <WrapLayout horizontalAlignment="center">
-                        <Label text="{{selectedStatus}}" class="client-options-text" />
-                        <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
-                    </WrapLayout>
+                <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="statusList" verticalAlignment="center" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
+                    <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+                        <ListView items="{{statusList}}" itemTap="onSelectStatus">
+                            <ListView.itemTemplate>
+                                <Label text="{{status}}" fontSize="20" color="black" padding="10" margin="10" />
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout width="33%" tap="onTapTags" class="client-options-button">
-                    <Label text="Tag" class="client-options-label" />
-                    <WrapLayout horizontalAlignment="center">
-                        <Label text="{{selectedTag}}" class="client-options-text" />
-                        <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
-                    </WrapLayout>
-                </StackLayout>
-                <StackLayout width="34%" tap="onTapSortby" class="client-options-button">
-                    <Label text="Sort by" class="client-options-label" />
-                    <WrapLayout horizontalAlignment="center">
-                        <Label text="{{selectedSortby}}" class="client-options-text" />
-                        <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
-                    </WrapLayout>
-                </StackLayout>
-            </StackLayout>
-        </GridLayout>        
 
-        <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="statusList" verticalAlignment="center" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-            <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-                <ListView items="{{statusList}}" itemTap="onSelectStatus">
-                    <ListView.itemTemplate>
-                        <Label text="{{status}}" fontSize="20" color="black" padding="10" margin="10" />
-                    </ListView.itemTemplate>
-                </ListView>
-            </StackLayout>
-        </StackLayout>
-        
-        <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="tagsList" verticalAlignment="center" visibility="{{tagsVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-            <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-                <ListView items="{{tagsList}}" itemTap="onSelectTag">
-                    <ListView.itemTemplate>
-                        <Label text="{{tag}}" fontSize="20" color="black" padding="10" margin="10" />
-                    </ListView.itemTemplate>
-                </ListView>
-            </StackLayout>
-        </StackLayout>
-        
-        <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="sortbyList" verticalAlignment="center" visibility="{{sortbyVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-            <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-                <ListView items="{{sortbyList}}" itemTap="onSelectSortby">
-                    <ListView.itemTemplate>
-                        <Label text="{{field}}" fontSize="20" color="black" padding="10" margin="10" />
-                    </ListView.itemTemplate>
-                </ListView>
-            </StackLayout>
-        </StackLayout>
-        
-    </GridLayout>
+                <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="tagsList" verticalAlignment="center" visibility="{{tagsVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
+                    <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+                        <ListView items="{{tagsList}}" itemTap="onSelectTag">
+                            <ListView.itemTemplate>
+                                <Label text="{{tag}}" fontSize="20" color="black" padding="10" margin="10" />
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="sortbyList" verticalAlignment="center" visibility="{{sortbyVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
+                    <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+                        <ListView items="{{sortbyList}}" itemTap="onSelectSortby">
+                            <ListView.itemTemplate>
+                                <Label text="{{field}}" fontSize="20" color="black" padding="10" margin="10" />
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </StackLayout>
+
+            </GridLayout>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
 </Page>

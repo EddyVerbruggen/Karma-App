@@ -1,31 +1,40 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
     <Page.actionBar>
         <widgets:action-bar />
     </Page.actionBar>
-    <ScrollView>
-        <StackLayout>            
-            <StackLayout class="dashboard-head">
-                <Label text="What's New (Today)" class="dashboard-head-title" />
-                <StackLayout orientation="horizontal">                    
-                    <StackLayout width="33%">
-                        <Label text="3" class="stats-number" />
-                        <Label text="Appointments" class="stats-label" />
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout class="dashboard-head">
+                        <Label text="What's New (Today)" class="dashboard-head-title" />
+                        <StackLayout orientation="horizontal">                    
+                            <StackLayout width="33%">
+                                <Label text="3" class="stats-number" />
+                                <Label text="Appointments" class="stats-label" />
+                            </StackLayout>
+                            <StackLayout width="33%">
+                                <Label text="21" class="stats-number" />
+                                <Label text="Clients" class="stats-label" />
+                            </StackLayout>
+                            <StackLayout width="33%">
+                                <Label text="326" class="stats-number" />
+                                <Label text="Visitors" class="stats-label" />
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
-                    <StackLayout width="33%">
-                        <Label text="21" class="stats-number" />
-                        <Label text="Clients" class="stats-label" />
-                    </StackLayout>
-                    <StackLayout width="33%">
-                        <Label text="326" class="stats-number" />
-                        <Label text="Visitors" class="stats-label" />
+
+                    <StackLayout>
+                        <!-- Insert code for todays appointments here -->
                     </StackLayout>
                 </StackLayout>
-            </StackLayout>
-
-            <StackLayout>
-                <!-- Insert code for todays appointments here -->
-            </StackLayout>
-
-        </StackLayout>
-    </ScrollView>
+            </ScrollView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
 </Page>

@@ -1,22 +1,19 @@
 'use strict';
+
 var isInit = true;
+var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
-    // additional requires
-    //viewModel = require('./dashboardView-view-model');
 
-// additional functions
-function pageLoaded(args) {
+var pageData = new Observable({
+    backButtonHidden: true
+});
+
+exports.onLoaded = function(args) {
     var page = args.object;
-
+    page.bindingContext = pageData;
     helpers.platformInit(page);
-    //page.bindingContext = viewModel;
-    // additional pageLoaded
 
     if (isInit) {
         isInit = false;
-
-        // additional pageInit
     }
 }
-
-exports.pageLoaded = pageLoaded;

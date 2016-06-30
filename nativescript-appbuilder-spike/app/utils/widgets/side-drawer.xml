@@ -8,7 +8,7 @@
         </StackLayout>
     </StackLayout>
     <StackLayout class="drawer-nav-area">
-        <StackLayout class="drawer-nav-item" orientation="horizontal" tap="goToDashboard">
+        <StackLayout class="drawer-nav-item" orientation="horizontal" tap="onTapDashboard">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf447;" class="ionicons-icon nav-icon" /> 
             </StackLayout>

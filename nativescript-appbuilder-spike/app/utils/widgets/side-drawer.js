@@ -1,24 +1,33 @@
 'use strict';
 
-var dialogs = require("ui/dialogs"),
-    SideDrawerViewModel = require('./side-drawer-view-model'),
-    helper = require('./helper');
+var dialogs = require("ui/dialogs");
+var SideDrawerViewModel = require('./side-drawer-view-model');
+var helper = require('./helper');
+var views = require('../views');
 
-function onLoad(args) {
+exports.onLoad = function(args) {
     var page = args.object;
     var sideDrawerModel = new SideDrawerViewModel();
     page.bindingContext = sideDrawerModel;
 }
 
-function onTap(event) {
-    var section = event.object.section;
-
-    // Navigate to a different page
-    helper.navigate({
-        moduleName: '/components/' + section + 'View/' + section + 'View',
-        type: event.object.type
-    })
+exports.onTap = function(args) {
+    var section = args.object.section;
+	helper.tapFlash(args.object, '#333', '#1B1C25').then(function() {
+        helper.navigate({
+            moduleName: 'components/' + section + '/' + section,
+            context: {
+                type: args.object.type
+            }
+        });
+    });
 }
 
-exports.onLoad = onLoad;
-exports.onTap = onTap;
+exports.onTapDashboard = function(args) {
+    var section = args.object.section;
+	helper.tapFlash(args.object, '#333', '#1B1C25').then(function() {
+        helper.navigate({
+            moduleName: views.dashboard,
+        });
+    });
+}
