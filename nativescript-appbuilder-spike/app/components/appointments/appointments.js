@@ -7,6 +7,7 @@ var views = require('../../utils/views');
 var isInit = true;
 var appointmentsList = new AppointmentsViewModel();
 var pageData = new Observable({
+    
     appointmentsList: appointmentsList,
     isLoading: false,
     selectConfirmedFilter: true,
