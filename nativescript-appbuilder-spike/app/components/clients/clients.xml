@@ -2,6 +2,7 @@
       xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:lv="nativescript-telerik-ui-pro/listview"
       xmlns:widgets="utils/widgets"
+      xmlns:dd="nativescript-drop-down"
       loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
@@ -60,6 +61,11 @@
                     </StackLayout>
                 </GridLayout>        
 
+				<GridLayout rows="auto, auto, *" columns="auto, *" backgroundColor="#555" id="statusList" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
+                	<dd:DropDown items="{{ statusList }}" selectedIndex="{{ selectedIndex }}" row="0" colSpan="2" />
+             	</GridLayout>
+                    
+                <!-- 
                 <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="statusList" verticalAlignment="center" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
                     <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
                         <ListView items="{{statusList}}" itemTap="onSelectStatus">
@@ -69,6 +75,7 @@
                         </ListView>
                     </StackLayout>
                 </StackLayout>
+				-->
 
                 <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="tagsList" verticalAlignment="center" visibility="{{tagsVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
                     <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
