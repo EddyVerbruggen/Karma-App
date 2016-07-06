@@ -40,8 +40,9 @@
                         <StackLayout width="33%" tap="onTapStatus" class="client-options-button">
                             <Label text="Status" class="client-options-label" />
                             <WrapLayout horizontalAlignment="center">
-                                <Label text="{{selectedStatus}}" class="client-options-text" />
-                                <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
+                                <!-- <Label id="dd-default-text" text="All" class="client-options-text" visibility="{{selectedIndex >= 0 ? 'collapse' : 'visible'}}" /> -->
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ statusList }}" selectedIndex="{{ selectedIndex == 1 }}" row="0" colSpan="2" />
+                                <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
                         </StackLayout>
                         <StackLayout width="33%" tap="onTapTags" class="client-options-button">
@@ -61,10 +62,12 @@
                     </StackLayout>
                 </GridLayout>        
 
+                <!--
 				<GridLayout rows="auto, auto, *" columns="auto, *" backgroundColor="#555" id="statusList" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
                 	<dd:DropDown items="{{ statusList }}" selectedIndex="{{ selectedIndex }}" row="0" colSpan="2" />
              	</GridLayout>
-                    
+				-->                    
+
                 <!-- 
                 <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="statusList" verticalAlignment="center" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
                     <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">

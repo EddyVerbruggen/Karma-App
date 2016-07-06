@@ -9,12 +9,12 @@ var isInit = true;
 var clientsList = new ClientsViewModel();
 var pageData = new Observable({
     clientsList: clientsList,
-    statusList: [
-        {status: 'All'},
+    statusList: ["All", "New", "Approved", "Rejected", "Blacklisted"
+/*        {status: 'All'},
         {status: 'New'},
         {status: 'Approved'},
         {status: 'Rejected'},
-        {status: 'Blacklisted'}
+        {status: 'Blacklisted'}*/
     ],
     tagsList: [
         {tag: 'All'},
@@ -76,7 +76,7 @@ exports.onTapTags = function(args) {
 }
 
 exports.onTapStatus = function(args) {
-    openOverlay('statusList', 'statusVisible');
+    //openOverlay('statusList', 'statusVisible');
 }
 
 exports.onSelectStatus = function(args) {
