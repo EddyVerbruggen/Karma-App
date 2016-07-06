@@ -41,6 +41,7 @@
                             <Label text="Status" class="client-options-label" />
                             <WrapLayout horizontalAlignment="center">
                                 <!-- <Label id="dd-default-text" text="All" class="client-options-text" visibility="{{selectedIndex >= 0 ? 'collapse' : 'visible'}}" /> -->
+                                <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
                                 <dd:DropDown id="dd" class="client-options-text" items="{{ statusList }}" selectedIndex="{{ selectedIndex == 1 }}" row="0" colSpan="2" />
                                 <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
@@ -48,15 +49,19 @@
                         <StackLayout width="33%" tap="onTapTags" class="client-options-button">
                             <Label text="Tag" class="client-options-label" />
                             <WrapLayout horizontalAlignment="center">
-                                <Label text="{{selectedTag}}" class="client-options-text" />
-                                <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
+                                <!-- <Label text="{{selectedTag}}" class="client-options-text" /> -->
+                                <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ tagsList }}" selectedIndex="{{ selectedIndex == 1 }}" row="0" colSpan="2" />
+                                <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
                         </StackLayout>
                         <StackLayout width="34%" tap="onTapSortby" class="client-options-button">
                             <Label text="Sort by" class="client-options-label" />
                             <WrapLayout horizontalAlignment="center">
-                                <Label text="{{selectedSortby}}" class="client-options-text" />
-                                <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
+                                <!-- <Label text="{{selectedSortby}}" class="client-options-text" /> -->
+                                <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ sortbyList }}" selectedIndex="{{ selectedIndex == 1 }}" row="0" colSpan="2" />
+                                <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
                         </StackLayout>
                     </StackLayout>
@@ -78,7 +83,7 @@
                         </ListView>
                     </StackLayout>
                 </StackLayout>
-				-->
+				
 
                 <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="tagsList" verticalAlignment="center" visibility="{{tagsVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
                     <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
@@ -99,6 +104,7 @@
                         </ListView>
                     </StackLayout>
                 </StackLayout>
+				-->
 
             </GridLayout>
         </drawer:RadSideDrawer.mainContent>

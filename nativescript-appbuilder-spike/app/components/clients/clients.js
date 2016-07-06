@@ -16,18 +16,18 @@ var pageData = new Observable({
         {status: 'Rejected'},
         {status: 'Blacklisted'}*/
     ],
-    tagsList: [
-        {tag: 'All'},
+    tagsList: ["All", "new york", "los angeles", "san francisco"
+/*        {tag: 'All'},
         {tag: 'new york'},
         {tag: 'los angeles'},
-        {tag: 'san francisco'}
+        {tag: 'san francisco'}*/
     ],
-    sortbyList: [
-        {field: 'Name (A-Z)'},
+    sortbyList: ["Name (A-Z)", "Name (Z-A)", "Status", "Date (Newest)", "Date (Oldest)"
+/*        {field: 'Name (A-Z)'},
         {field: 'Name (Z-A)'},
         {field: 'Status'},
         {field: 'Date (Newest)'},
-        {field: 'Date (Oldest)'},
+        {field: 'Date (Oldest)'},*/
     ],
 	statusVisible: false,
     tagsVisible: false,
@@ -68,11 +68,11 @@ exports.onSelectClient = function(args) {
 }
 
 exports.onTapSortby = function(args) {
-    openOverlay('sortbyList', 'sortbyVisible');
+    //openOverlay('sortbyList', 'sortbyVisible');
 }
 
 exports.onTapTags = function(args) {
-    openOverlay('tagsList', 'tagsVisible');
+    //openOverlay('tagsList', 'tagsVisible');
 }
 
 exports.onTapStatus = function(args) {
