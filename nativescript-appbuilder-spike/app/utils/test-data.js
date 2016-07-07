@@ -11,7 +11,9 @@ exports.clients = {
             profile_image: 'http://www.image.com',
             status_text: 'Pending...',
             status: 'pending',
-            tag: 'new york'
+            tag: 'new york',
+            last_message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            message_time: "09:25"
         },
         {
             screening_id: 3,
@@ -20,7 +22,9 @@ exports.clients = {
             profile_image: 'http://www.image.com',
             status_text: 'Approved',
             status: 'approved',
-            tag: 'los angeles'
+            tag: 'los angeles',
+            last_message: "Lorem Ipsum is simply dummy text.",
+            message_time: "09:00"
         },
         {
             screening_id: 4,
@@ -29,7 +33,9 @@ exports.clients = {
             profile_image: 'http://www.image.com',
             status_text: 'Whitelist',
             status: 'whitelist',
-            tag: 'san francisco'
+            tag: 'san francisco',
+            last_message: "Lorem Ipsum is simply dummy.",
+            message_time: "06/05/2016"
         },
         {
             screening_id: 6,
@@ -38,7 +44,9 @@ exports.clients = {
             profile_image: 'http://www.image.com',
             status_text: 'Blacklist',
             status: 'blacklist',
-            tag: 'san francisco'
+            tag: 'san francisco',
+            last_message: "Hey there",
+            message_time: "05/05/2016"
         },
         {
             screening_id: 8,
@@ -47,7 +55,9 @@ exports.clients = {
             profile_image: 'http://www.image.com',
             status_text: 'Rejected',
             status: 'rejected',
-            tag: 'new york'
+            tag: 'new york',
+            last_message: "Hi",
+            message_time: "05/05/2016"
         },
         {
             screening_id: 9,
@@ -56,7 +66,20 @@ exports.clients = {
             profile_image: 'http://www.image.com',
             status_text: 'No-Show History',
             status: 'noshow',
-            tag: 'los angeles'
+            tag: 'los angeles',
+            last_message: "Hello",
+            message_time: "03/05/2016"
+        },
+        {
+            screening_id: 10,
+            client_name: 'Client 7',
+            bookings: 0,
+            profile_image: 'http://www.image.com',
+            status_text: 'Rejected',
+            status: 'rejected',
+            tag: 'new york',
+            last_message: "Hi",
+            message_time: "01/05/2016"
         }
     ]
 };

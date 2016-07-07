@@ -83,19 +83,20 @@ exports.onTapStatus = function(args) {
 }
 
 exports.onSelectStatus = function(args) {
-    pageData.set('selectedStatus', args.view.text);
-    helpers.togglePageLoadingIndicator(true, pageData);
-    closeOverlay('statusList', 'statusVisible').then(function() {
-        clientsList
-            .load(pageData.get('selectedStatus'), pageData.get('selectedTag'), pageData.get('selectedSortby'))
-            .catch(function(error) {
-                helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
-            })
-            .then(function() {
-                //console.log('done');
-                //helpers.togglePageLoadingIndicator(false, pageData);
-            });
-    });	
+    alert(args.view.text);
+    // pageData.set('selectedStatus', args.view.text);
+    // helpers.togglePageLoadingIndicator(true, pageData);
+    // closeOverlay('statusList', 'statusVisible').then(function() {
+    //     clientsList
+    //         .load(pageData.get('selectedStatus'), pageData.get('selectedTag'), pageData.get('selectedSortby'))
+    //         .catch(function(error) {
+    //             helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
+    //         })
+    //         .then(function() {
+    //             //console.log('done');
+    //             //helpers.togglePageLoadingIndicator(false, pageData);
+    //         });
+    // });	
 }
 
 exports.onSelectTag = function(args) {
@@ -131,7 +132,7 @@ exports.onSelectSortby = function(args) {
 }
 
 exports.onTapOverlay = function(args) {
-    alert(pageData.selectedIndex0);
+    alert(args);
     // if (pageData.get('statusVisible')) {
     // 	closeOverlay('statusList', 'statusVisible');
     // }

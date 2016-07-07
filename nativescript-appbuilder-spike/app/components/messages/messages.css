@@ -2,7 +2,7 @@
 
 .client-row {
     background-color:#fcfcfc;
-    margin-bottom: 1;
+    margin-bottom: 0;
     padding:12 15;
 }
 
@@ -30,33 +30,31 @@
 
 .client-row-icon-blacklisted {
     color:#000;
-    font-size:28;}
-
+    font-size:28;
+}
 
 .client-row-thumbnail {
-  border-radius: 100;
-  width:55;
-  height:55;
-  
-  border-width:1;
-  border-color:#efefef; 
-  margin-right:10;
-    
-    
+  	border-radius: 100;
+  	width:55;
+  	height:55;
+  	border-width:1;
+  	border-color:#efefef; 
+  	margin-right:10;
 }
 
 .client-row-name {
-  font-size: 22;
+  	font-size: 22;
+    color: #000;
 }
 
 .client-row-appointment {
     font-size:12;
-  color:#999;
+  	color:#999;
 }
 
 .client-row-noshow {
     font-size:12;
-  color:#FF7F00;
+  	color:#FF7F00;
 }
 
 
@@ -91,13 +89,30 @@
     color: #ffa500;
 }
 
+.client-options {
+    color:#fff;
+    background-color:#444;
+}
 
+.client-options-button {
+    text-align:center;
+    height:60;
+    margin: 0 1 0 0;
+    background-color:#555;
+}
 
-.client-options {color:#fff;background-color:#444;}
-.client-options-button {text-align:center;height:60;margin: 0 1 0 0;background-color:#555;}
-.client-options-label {font-size:11;color:#fff;text-transform: uppercase;margin-top:11;opacity:0.35;}
-.client-options-text {font-size:17;text-align:center;}
+.client-options-label {
+    font-size:11;
+    color:#fff;
+    text-transform: uppercase;
+    margin-top:11;
+    opacity:0.35;
+}
 
+.client-options-text {
+    font-size:17;
+    text-align:center;
+}
 
 #dd{
     padding-left: 2;

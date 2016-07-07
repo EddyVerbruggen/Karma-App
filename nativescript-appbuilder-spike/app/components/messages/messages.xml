@@ -1,0 +1,36 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:lv="nativescript-telerik-ui-pro/listview"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <GridLayout>
+                <GridLayout rows="auto, *" columns="*">
+                    <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+                    <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate>
+                            <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
+                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" col="0" />
+                                <StackLayout col="1" verticalAlignment="center">
+                                    <Label text="{{client_name}}" class="client-row-name" />
+                                    <Label text="{{ last_message }}" class="client-row-appointment" />
+                                </StackLayout>
+                                <Label class="client-row-appointment" col="2" text="{{ message_time }}" />
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>            
+                </GridLayout>        
+            </GridLayout>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>
