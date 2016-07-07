@@ -29,7 +29,7 @@
                                 </StackLayout>
                                 <!--<Label class="client-row-icon-approved" col="2" />-->
                                 <!--<Label class="client-row-icon-pending" col="2" />-->
-                                <Label class="client-row-icon-rejected" col="2" /> --> 
+                                <Label class="client-row-icon-rejected" col="2" />
                                 <!--<Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" /> -->                
                                 <!--<Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" />      -->                  
                             </GridLayout>

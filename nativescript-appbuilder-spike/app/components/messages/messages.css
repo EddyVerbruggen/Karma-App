@@ -52,6 +52,12 @@
   	color:#999;
 }
 
+.client-row-message{
+    font-size:12;
+  	color:#999;
+    text-align: left;
+}
+
 .client-row-noshow {
     font-size:12;
   	color:#FF7F00;
@@ -112,6 +118,12 @@
 .client-options-text {
     font-size:17;
     text-align:center;
+}
+
+.client-row-message-time{
+    font-size:12;
+  	color:#999;
+    text-align: right;
 }
 
 #dd{
