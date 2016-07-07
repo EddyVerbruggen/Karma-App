@@ -35,7 +35,10 @@ var pageData = new Observable({
     selectedStatus: 'Status',
     selectedTag: 'Tags',
     selectedSortby: 'Sort By',
-    isLoading: true
+    isLoading: true,
+    selectedIndex0: 0,
+    selectedIndex1: 0,
+    selectedIndex2: 0
 });
 
 exports.onLoaded = function(args) {
@@ -128,15 +131,16 @@ exports.onSelectSortby = function(args) {
 }
 
 exports.onTapOverlay = function(args) {
-    if (pageData.get('statusVisible')) {
-    	closeOverlay('statusList', 'statusVisible');
-    }
-    if (pageData.get('tagsVisible')) {
-    	closeOverlay('tagsList', 'tagsVisible');
-    }
-    if (pageData.get('sortbyVisible')) {
-    	closeOverlay('sortbyList', 'sortbyVisible');
-    }
+    alert(args);
+    // if (pageData.get('statusVisible')) {
+    // 	closeOverlay('statusList', 'statusVisible');
+    // }
+    // if (pageData.get('tagsVisible')) {
+    // 	closeOverlay('tagsList', 'tagsVisible');
+    // }
+    // if (pageData.get('sortbyVisible')) {
+    // 	closeOverlay('sortbyList', 'sortbyVisible');
+    // }
 }
 
 function openOverlay(overlayId, visibilityFlag) {

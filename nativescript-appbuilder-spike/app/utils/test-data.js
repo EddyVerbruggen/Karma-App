@@ -10,7 +10,8 @@ exports.clients = {
             bookings: 1,
             profile_image: 'http://www.image.com',
             status_text: 'Pending...',
-            status: 'pending'
+            status: 'pending',
+            tag: 'new york'
         },
         {
             screening_id: 3,
@@ -18,7 +19,8 @@ exports.clients = {
             bookings: 0,
             profile_image: 'http://www.image.com',
             status_text: 'Approved',
-            status: 'approved'
+            status: 'approved',
+            tag: 'los angeles'
         },
         {
             screening_id: 4,
@@ -26,7 +28,8 @@ exports.clients = {
             bookings: 2,
             profile_image: 'http://www.image.com',
             status_text: 'Whitelist',
-            status: 'whitelist'
+            status: 'whitelist',
+            tag: 'san francisco'
         },
         {
             screening_id: 6,
@@ -34,7 +37,8 @@ exports.clients = {
             bookings: 0,
             profile_image: 'http://www.image.com',
             status_text: 'Blacklist',
-            status: 'blacklist'
+            status: 'blacklist',
+            tag: 'san francisco'
         },
         {
             screening_id: 8,
@@ -42,7 +46,8 @@ exports.clients = {
             bookings: 0,
             profile_image: 'http://www.image.com',
             status_text: 'Rejected',
-            status: 'rejected'
+            status: 'rejected',
+            tag: 'new york'
         },
         {
             screening_id: 9,
@@ -50,7 +55,8 @@ exports.clients = {
             bookings: 0,
             profile_image: 'http://www.image.com',
             status_text: 'No-Show History',
-            status: 'noshow'
+            status: 'noshow',
+            tag: 'los angeles'
         }
     ]
 };
