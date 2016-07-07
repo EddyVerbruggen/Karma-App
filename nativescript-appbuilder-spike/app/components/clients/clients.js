@@ -131,7 +131,7 @@ exports.onSelectSortby = function(args) {
 }
 
 exports.onTapOverlay = function(args) {
-    alert(args);
+    alert(pageData.selectedIndex0);
     // if (pageData.get('statusVisible')) {
     // 	closeOverlay('statusList', 'statusVisible');
     // }
