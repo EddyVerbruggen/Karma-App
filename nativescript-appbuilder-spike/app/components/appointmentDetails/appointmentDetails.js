@@ -5,6 +5,8 @@ var AppointmentDetailsViewModel = require('./appointmentDetails-view-model');
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
+var observableArrayModule = require('data/observable-array').Observable;
+
 var page;
 var isInit = true;
 var appointmentDetails = new AppointmentDetailsViewModel();
@@ -17,6 +19,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    
 	appointmentDetails
 		.load()
 		.catch(function(error) {
@@ -34,13 +37,30 @@ exports.onLoaded = function(args) {
 }
 
 exports.sendMessage = function(args) {
-    var new_message = {};
-    new_message.type = "message_user";
-    new_message.message = page.getViewById("message_box").text;
     
-    var now = new Date();
-    new_message.created = now.toLocaleDateString()+" "+now.toTimeString();
+    if(page.getViewById("message_box").text.length > 0){
+        var new_message = {};
+        new_message.type = "message_user";
+        new_message.message = page.getViewById("message_box").text;
+        var now = new Date();
+        new_message.created = now.toLocaleDateString()+" "+now.toTimeString();
+
+        // pageData.appointmentDetails.history.push(new_message);
+        // pageData.set('appointmentDetails', pageData.appointmentDetails.history);
+
+        appointmentDetails.Result.history.push(new_message);
+        pageData.set('appointmentDetails', appointmentDetails.Result);
+        
+        alert(appointmentDetails.Result.history.length);
+        
+        page.getViewById("message_box").text = "";
+        
+        page.bindingContext = pageData;
+        appointmentDetails = new AppointmentDetailsViewModel();
+        pageData = new Observable({
+            appointmentDetails: appointmentDetails,
+            isLoading: true
+        });
+    }
     
-    appointmentDetails.Result.history.push(new_message);    
-    page.getViewById("message_box").text = "";
 }
