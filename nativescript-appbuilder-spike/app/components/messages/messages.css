@@ -44,7 +44,6 @@
 
 .client-row-name {
   	font-size: 22;
-    color: #000;
 }
 
 .client-row-appointment {
@@ -126,26 +125,11 @@
     text-align: right;
 }
 
-#dd{
-    padding-left: 2;
-    padding-bottom: 3;
-    padding-right: 3;
-    color: #FFF;
-    background-color: #555;
-    width: 75%;
-    font-size:17;
-    text-align: center;
+.new-messages-name{
+   	color: #000;
+    font-weight: bolder;
 }
 
-#dd-arrow{
-    float: left;
-    width:25%;
-}
-
-#dd-default-text{
-    padding-bottom: 3;
-    color: #FFF;
-    background-color: #555;
-    width: auto;
-    font-size:17;
+.new-messages{
+   	color: #000;
 }

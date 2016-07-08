@@ -53,10 +53,10 @@
 
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="75%">
-            <TextView class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message for Clayton..." textWrap="true" />
+            <TextView id="message_box" class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message for Clayton..." textWrap="true" />
         </StackLayout>
         <StackLayout width="25%">
-            <Button text="Send" class="send-message-button" width="100%" />
+            <Button text="Send" class="send-message-button" width="100%" tap="sendMessage" />
         </StackLayout>
     </StackLayout>    
 </GridLayout>

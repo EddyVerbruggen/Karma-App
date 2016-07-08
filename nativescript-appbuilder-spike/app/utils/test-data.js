@@ -13,7 +13,8 @@ exports.clients = {
             status: 'pending',
             tag: 'new york',
             last_message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            message_time: "09:25"
+            message_time: "09:25",
+            new_message: 1
         },
         {
             screening_id: 3,
