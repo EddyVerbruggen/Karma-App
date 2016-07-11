@@ -1,7 +1,7 @@
 <GridLayout rows="*, 60" columns="*">
     <ScrollView row="0" col="0">  
         <StackLayout class="history-content-area">
-            <Repeater items="{{appointmentDetails.history}}">
+            <Repeater items="{{messageHistory}}">
                 <Repeater.itemTemplate>
                     <StackLayout>
                         <!-- system message -->

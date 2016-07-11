@@ -32,13 +32,10 @@ var pageData = new Observable({
 	statusVisible: false,
     tagsVisible: false,
     sortbyVisible: false,
-    selectedStatus: 'Status',
-    selectedTag: 'Tags',
-    selectedSortby: 'Sort By',
-    isLoading: true,
-    selectedIndex0: 0,
-    selectedIndex1: 0,
-    selectedIndex2: 0
+    selectedStatus: 0,
+    selectedTag: 0,
+    selectedSortby: 0,
+    isLoading: true
 });
 
 exports.onLoaded = function(args) {
@@ -132,7 +129,7 @@ exports.onSelectSortby = function(args) {
 }
 
 exports.onTapOverlay = function(args) {
-    alert(args);
+    // alert(args);
     // if (pageData.get('statusVisible')) {
     // 	closeOverlay('statusList', 'statusVisible');
     // }

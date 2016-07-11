@@ -42,7 +42,7 @@
                             <WrapLayout horizontalAlignment="center">
                                 <!-- <Label text="All" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
-                                <dd:DropDown id="dd" class="client-options-text" items="{{ statusList }}" selectedIndex="{{ selectedIndex0 }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ statusList }}" selectedIndex="{{ selectedStatus }}" row="0" colSpan="2" tap="onTapOverlay" />
                                 <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
                         </StackLayout>
@@ -51,7 +51,7 @@
                             <WrapLayout horizontalAlignment="center">
                                 <!-- <Label text="{{selectedTag}}" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
-                                <dd:DropDown id="dd" class="client-options-text" items="{{ tagsList }}" selectedIndex="{{ selectedIndex1 }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ tagsList }}" selectedIndex="{{ selectedTag }}" row="0" colSpan="2" tap="onTapOverlay" />
                                 <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
                         </StackLayout>
@@ -60,7 +60,7 @@
                             <WrapLayout horizontalAlignment="center">
                                 <!-- <Label text="{{selectedSortby}}" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
-                                <dd:DropDown id="dd" class="client-options-text" items="{{ sortbyList }}" selectedIndex="{{ selectedIndex2 }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ sortbyList }}" selectedIndex="{{ selectedSortby }}" row="0" colSpan="2" tap="onTapOverlay" />
                                 <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
                             </WrapLayout>
                         </StackLayout>

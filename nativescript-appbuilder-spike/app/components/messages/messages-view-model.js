@@ -6,7 +6,7 @@ var mock = require('../../utils/test-data');
 var handleResponse = require('../../utils/api/helpers').handleResponse;
 var navigation = require('../../utils/navigation');
 
-function ClientsViewModel(clients) {
+function MessagesViewModel(clients) {
     var viewModel = new ObservableArray(clients)
     
     // Load all clients
@@ -47,4 +47,4 @@ function ClientsViewModel(clients) {
     return viewModel;
 }
 
-module.exports = ClientsViewModel;
+module.exports = MessagesViewModel;

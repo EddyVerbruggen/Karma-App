@@ -14,18 +14,18 @@
             <GridLayout>
                 <GridLayout rows="auto, *" columns="*">
                     <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
-                    <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                    <lv:RadListView items="{{messageList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                         <lv:RadListView.listViewLayout>
                             <lv:ListViewLinearLayout scrollDirection="Vertical" />
                         </lv:RadListView.listViewLayout>
                         <lv:RadListView.itemTemplate>
-                            <GridLayout columns="60, *" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
-                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" col="0" />
+                            <GridLayout columns="60, *" rows="auto" class="message-row" tap="onSelectMessage" screeningId="{{screening_id}}">
+                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="message-row-thumbnail" col="0" />
                                 <StackLayout col="1" verticalAlignment="center">
-                                    <Label text="{{client_name}}" class="client-row-name" />
+                                    <Label text="{{client_name}}" class="message-row-name" />
                                     <GridLayout columns="*, 75" rows="auto">
- 	                                   <Label text="{{ last_message }}" class="client-row-message" />
-                                       <Label class="client-row-message-time" col="2" text="{{ message_time }}" />
+ 	                                   <Label text="{{ last_message }}" class="message-row-message" />
+                                       <Label class="message-row-message-time" col="2" text="{{ message_time }}" />
                                     </GridLayout>
                                 </StackLayout>
                             </GridLayout>

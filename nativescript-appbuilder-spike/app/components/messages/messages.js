@@ -6,27 +6,21 @@ var views = require('../../utils/views');
 
 var page;
 var isInit = true;
-var clientsList = new MessagesViewModel();
+var messageList = new MessagesViewModel();
 var pageData = new Observable({
-    clientsList: clientsList,
+    messageList: messageList,
 	statusVisible: false,
     tagsVisible: false,
     sortbyVisible: false,
-    selectedStatus: 'Status',
-    selectedTag: 'Tags',
-    selectedSortby: 'Sort By',
     isLoading: true,
-    backButtonHidden: true,
-    selectedIndex0: 0,
-    selectedIndex1: 0,
-    selectedIndex2: 0
+    backButtonHidden: true
 });
 
 exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
-	clientsList
+	messageList
 		.load()
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
@@ -40,7 +34,7 @@ exports.onLoaded = function(args) {
     }
 }
 
-exports.onSelectClient = function(args) {
+exports.onSelectMessage  = function(args) {
     helpers.tapFlash(args.object).then(function() {
         helpers.navigate({
             moduleName: views.clientDetails,

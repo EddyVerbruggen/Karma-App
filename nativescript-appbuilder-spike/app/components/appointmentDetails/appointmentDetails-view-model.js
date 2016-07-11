@@ -7,6 +7,8 @@ var navigation = require('../../utils/navigation');
 
 function AppointmentDetailsViewModel() {
     var viewModel = new Observable();
+    var new_message = {};
+    var now = new Date();
     
     viewModel.load = function(id) {
         var fetchData;
@@ -40,21 +42,17 @@ function AppointmentDetailsViewModel() {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
-        	});
+			});
         }
 
-        var new_message = {};
 		new_message.type = "message_user";
-        new_message.message = message;
-        var now = new Date();
+        new_message.message = message;        
         new_message.created = now.toLocaleDateString()+" "+now.toTimeString();
-        // mock.appointmentDetails.result.history.push(new_message);
         
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-            	alert(data);
-                // viewModel.set('Result', data.Result);
+                viewModel.set('Result', data.Result);
             });
     };
        

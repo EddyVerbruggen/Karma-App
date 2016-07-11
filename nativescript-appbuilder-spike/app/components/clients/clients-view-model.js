@@ -38,35 +38,6 @@ function ClientsViewModel(clients) {
             });
     };
     
-    // Load Filtered Clients
-    viewModel.filter = function(status, tag, sortby) {
-        status = status || 'all';
-        tag = tag || 'all';
-        sortby = sortby || 'createddesc';
-        
-        var fetchData;
-        if (mock !== 'undefined') {
-            fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.clients);
-            });
-        } else {
-            fetchData = fetch(config.apiUrl + 'clients?fields=client_id,screening_id,client_name,profile_image,status?filter='+status+','+tag+','+sortby, {
-                headers: {
-                    Authorization: 'Bearer ' + config.token
-                }
-        	});
-        }
-
-        return fetchData
-            .then(handleResponse)
-            .then(function(data) {
-                viewModel.empty();
-                data.Result.forEach(function(client) {
-                    viewModel.push(client);
-                })
-            });
-    };
-    
     viewModel.empty = function() {
         while (viewModel.length) {
             viewModel.pop();
