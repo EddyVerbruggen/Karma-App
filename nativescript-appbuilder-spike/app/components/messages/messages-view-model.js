@@ -18,10 +18,10 @@ function MessagesViewModel(clients) {
         var fetchData;
         if (mock !== 'undefined') {
             fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.clients);
+                return resolve(mock.messages);
             });
         } else {
-            fetchData = fetch(config.apiUrl + 'clients/' + status + '?fields=client_id,screening_id,client_name,profile_image,status', {
+            fetchData = fetch(config.apiUrl + 'messages/' + status + '?fields=client_id,screening_id,client_name,profile_image,status', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }

@@ -9,9 +9,6 @@ var isInit = true;
 var messageList = new MessagesViewModel();
 var pageData = new Observable({
     messageList: messageList,
-	statusVisible: false,
-    tagsVisible: false,
-    sortbyVisible: false,
     isLoading: true,
     backButtonHidden: true
 });
