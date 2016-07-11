@@ -28,7 +28,12 @@ exports.onLoaded = function(args) {
     	})
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
-        	pageData.set('messageHistory', appointmentDetails.Result.history);
+        
+        	if(pageData.messageHistory.length == 0){
+				appointmentDetails.Result.history.forEach(function(message) {
+					pageData.messageHistory.push(message);
+            	})
+            }
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
     helpers.platformInit(page);
@@ -38,18 +43,23 @@ exports.onLoaded = function(args) {
 }
 
 exports.sendMessage = function(args) {
-    if(page.getViewById("message_box").text.length > 0){
+    if(page.getViewById("message_box").text){
         var new_message = {};
         var now = new Date();
         
         new_message.type = "message_user";
         new_message.message = page.getViewById("message_box").text;
         new_message.created = now.toLocaleDateString() + " " + now.toTimeString();
-
         pageData.messageHistory.push(new_message);
-        pageData.set('messageHistory', pageData.messageHistory);
-        alert(pageData.messageHistory);
-	
+        
+		var mScroller = page.getViewById("myScroller");
+        var offset = mScroller.scrollableHeight + parseInt(40); // get the current scroll height
+        setTimeout(
+            function(){
+        		mScroller.scrollToVerticalOffset(offset, true); // scroll to the bottom        
+            }
+        , 10) ;
+                
         page.getViewById("message_box").text = "";
     }
 }

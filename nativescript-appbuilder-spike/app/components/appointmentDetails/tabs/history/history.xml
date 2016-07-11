@@ -1,5 +1,5 @@
 <GridLayout rows="*, 60" columns="*">
-    <ScrollView row="0" col="0">  
+    <ScrollView row="0" col="0" id="myScroller">
         <StackLayout class="history-content-area">
             <Repeater items="{{messageHistory}}">
                 <Repeater.itemTemplate>
