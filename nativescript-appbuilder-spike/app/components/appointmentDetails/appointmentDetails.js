@@ -20,7 +20,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
-    
+       
 	appointmentDetails
 		.load()
 		.catch(function(error) {
@@ -36,6 +36,10 @@ exports.onLoaded = function(args) {
             }
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
+    
+	//Redirects to Messages tab
+	page.getViewById("appointments-tabs").selectedIndex = 1;
+    
     helpers.platformInit(page);
     if (isInit) {
         isInit = false;
@@ -58,7 +62,7 @@ exports.sendMessage = function(args) {
             function(){
         		mScroller.scrollToVerticalOffset(offset, true); // scroll to the bottom        
             }
-        , 10) ;
+        , 5) ;
                 
         page.getViewById("message_box").text = "";
     }

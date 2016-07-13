@@ -33,11 +33,16 @@ exports.onLoaded = function(args) {
 
 exports.onSelectMessage  = function(args) {
     helpers.tapFlash(args.object).then(function() {
-        helpers.navigate({
-            moduleName: views.clientDetails,
-            context: {
-                id: args.view.screeningId
-            }
-        });
+        try{
+            helpers.navigate({
+ 				// moduleName: views.clientDetails,
+                moduleName: views.appointmentDetails,
+                context: {
+                    id: args.view.screeningId
+                }
+            });
+		}catch(w){
+            alert(w.message);
+        }
     });
 }
