@@ -38,7 +38,8 @@ exports.onSelectMessage  = function(args) {
  				// moduleName: views.clientDetails,
                 moduleName: views.appointmentDetails,
                 context: {
-                    id: args.view.screeningId
+                    id: args.view.screeningId,
+                    from: "messages"
                 }
             });
 		}catch(w){

@@ -37,8 +37,11 @@ exports.onLoaded = function(args) {
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
     
-	//Redirects to Messages tab
-	page.getViewById("appointments-tabs").selectedIndex = 1;
+    //Redirect to History tab
+    var gotData = page.navigationContext;
+    if(gotData.from == "messages"){
+    	page.getViewById("appointments-tabs").selectedIndex = 1;
+    }
     
     helpers.platformInit(page);
     if (isInit) {
