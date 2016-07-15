@@ -9,32 +9,32 @@ var isInit = true;
 var clientsList = new ClientsViewModel();
 var pageData = new Observable({
     clientsList: clientsList,
-    statusList: [
-        {status: 'All'},
+    statusList: ["All", "New", "Approved", "Rejected", "Blacklisted"
+/*        {status: 'All'},
         {status: 'New'},
         {status: 'Approved'},
         {status: 'Rejected'},
-        {status: 'Blacklisted'}
+        {status: 'Blacklisted'}*/
     ],
-    tagsList: [
-        {tag: 'All'},
+    tagsList: ["All", "new york", "los angeles", "san francisco"
+/*        {tag: 'All'},
         {tag: 'new york'},
         {tag: 'los angeles'},
-        {tag: 'san francisco'}
+        {tag: 'san francisco'}*/
     ],
-    sortbyList: [
-        {field: 'Name (A-Z)'},
+    sortbyList: ["Name (A-Z)", "Name (Z-A)", "Status", "Date (Newest)", "Date (Oldest)"
+/*        {field: 'Name (A-Z)'},
         {field: 'Name (Z-A)'},
         {field: 'Status'},
         {field: 'Date (Newest)'},
-        {field: 'Date (Oldest)'},
+        {field: 'Date (Oldest)'},*/
     ],
 	statusVisible: false,
     tagsVisible: false,
     sortbyVisible: false,
-    selectedStatus: 'Status',
-    selectedTag: 'Tags',
-    selectedSortby: 'Sort By',
+    selectedStatus: 0,
+    selectedTag: 0,
+    selectedSortby: 0,
     isLoading: true
 });
 
@@ -68,31 +68,32 @@ exports.onSelectClient = function(args) {
 }
 
 exports.onTapSortby = function(args) {
-    openOverlay('sortbyList', 'sortbyVisible');
+    //openOverlay('sortbyList', 'sortbyVisible');
 }
 
 exports.onTapTags = function(args) {
-    openOverlay('tagsList', 'tagsVisible');
+    //openOverlay('tagsList', 'tagsVisible');
 }
 
 exports.onTapStatus = function(args) {
-    openOverlay('statusList', 'statusVisible');
+    //openOverlay('statusList', 'statusVisible');
 }
 
 exports.onSelectStatus = function(args) {
-    pageData.set('selectedStatus', args.view.text);
-    helpers.togglePageLoadingIndicator(true, pageData);
-    closeOverlay('statusList', 'statusVisible').then(function() {
-        clientsList
-            .load(pageData.get('selectedStatus'), pageData.get('selectedTag'), pageData.get('selectedSortby'))
-            .catch(function(error) {
-                helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
-            })
-            .then(function() {
-                //console.log('done');
-                //helpers.togglePageLoadingIndicator(false, pageData);
-            });
-    });	
+    alert(args.view.text);
+    // pageData.set('selectedStatus', args.view.text);
+    // helpers.togglePageLoadingIndicator(true, pageData);
+    // closeOverlay('statusList', 'statusVisible').then(function() {
+    //     clientsList
+    //         .load(pageData.get('selectedStatus'), pageData.get('selectedTag'), pageData.get('selectedSortby'))
+    //         .catch(function(error) {
+    //             helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
+    //         })
+    //         .then(function() {
+    //             //console.log('done');
+    //             //helpers.togglePageLoadingIndicator(false, pageData);
+    //         });
+    // });	
 }
 
 exports.onSelectTag = function(args) {
@@ -128,15 +129,16 @@ exports.onSelectSortby = function(args) {
 }
 
 exports.onTapOverlay = function(args) {
-    if (pageData.get('statusVisible')) {
-    	closeOverlay('statusList', 'statusVisible');
-    }
-    if (pageData.get('tagsVisible')) {
-    	closeOverlay('tagsList', 'tagsVisible');
-    }
-    if (pageData.get('sortbyVisible')) {
-    	closeOverlay('sortbyList', 'sortbyVisible');
-    }
+    // alert(args);
+    // if (pageData.get('statusVisible')) {
+    // 	closeOverlay('statusList', 'statusVisible');
+    // }
+    // if (pageData.get('tagsVisible')) {
+    // 	closeOverlay('tagsList', 'tagsVisible');
+    // }
+    // if (pageData.get('sortbyVisible')) {
+    // 	closeOverlay('sortbyList', 'sortbyVisible');
+    // }
 }
 
 function openOverlay(overlayId, visibilityFlag) {

@@ -8,3 +8,4 @@ exports.dashboard = 'components/dashboard/dashboard';
 exports.settingsMenu = 'components/settings/settingsMain';
 exports.login = 'components/login/login';
 exports.search = 'components/search/search';
+exports.messages = 'components/messages/messages';

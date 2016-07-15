@@ -4,18 +4,23 @@ var tabViewModule = require("ui/tab-view");
 var AppointmentDetailsViewModel = require('./appointmentDetails-view-model');
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
+var view = require("ui/core/view");
+var observableArrayModule = require('data/observable-array').ObservableArray;
 
+var page;
 var isInit = true;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
     appointmentDetails: appointmentDetails,
+    messageHistory: new observableArrayModule(),
     isLoading: true
 });
 
 exports.onLoaded = function(args) {
-    var page = args.object;
+    page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+       
 	appointmentDetails
 		.load()
 		.catch(function(error) {
@@ -23,11 +28,45 @@ exports.onLoaded = function(args) {
     	})
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
+        
+        	if(pageData.messageHistory.length == 0){
+				appointmentDetails.Result.history.forEach(function(message) {
+					pageData.messageHistory.push(message);
+            	})
+            }
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
-
+    
+    //Redirect to History tab
+    var gotData = page.navigationContext;
+    if(gotData.from == "messages"){
+    	page.getViewById("appointments-tabs").selectedIndex = 1;
+    }
+    
     helpers.platformInit(page);
     if (isInit) {
         isInit = false;
+    }
+}
+
+exports.sendMessage = function(args) {
+    if(page.getViewById("message_box").text){
+        var new_message = {};
+        var now = new Date();
+        
+        new_message.type = "message_user";
+        new_message.message = page.getViewById("message_box").text;
+        new_message.created = now.toLocaleDateString() + " " + now.toTimeString();
+        pageData.messageHistory.push(new_message);
+        
+		var mScroller = page.getViewById("myScroller");
+        var offset = mScroller.scrollableHeight + parseInt(40); // get the current scroll height
+        setTimeout(
+            function(){
+        		mScroller.scrollToVerticalOffset(offset, true); // scroll to the bottom        
+            }
+        , 5) ;
+                
+        page.getViewById("message_box").text = "";
     }
 }
