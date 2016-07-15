@@ -70,7 +70,7 @@ exports.tapFlash = function(targetView, fromBgColor, toBgColor) {
     fromBgColor = fromBgColor || '#eee';
     targetView.backgroundColor = new colorModule.Color(fromBgColor);
     return targetView.animate({
-        duration: 300,
+        duration: 200,
         backgroundColor: new colorModule.Color(toBgColor)
     });
 }

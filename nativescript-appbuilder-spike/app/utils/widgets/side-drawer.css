@@ -20,11 +20,11 @@
 }
 
 .drawer-nav-area {
-    padding:10;
+    padding:10 0;
 }
 
 .drawer-nav-item {
-    padding: 10 0;
+    padding: 10;
     font-size: 21;
     opacity: 0.7;
 }
