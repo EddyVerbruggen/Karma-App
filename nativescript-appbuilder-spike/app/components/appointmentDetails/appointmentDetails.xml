@@ -10,7 +10,7 @@
             <widgets:side-drawer />
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
-            <TabView>
+            <TabView id="appointments-tabs">
                 <TabView.items>
                     <!-- Display a tab, and pull contents from external file -->
                     <TabViewItem title="Details" xmlns:Details="components/appointmentDetails/tabs/details">
