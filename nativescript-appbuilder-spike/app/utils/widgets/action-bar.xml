@@ -30,4 +30,6 @@
     <ActionItem tap="onDelete"
         ios.systemIcon="16" ios.position="right"
         text="Settings" android.position="popup" />
+  
+
 </ActionBar>

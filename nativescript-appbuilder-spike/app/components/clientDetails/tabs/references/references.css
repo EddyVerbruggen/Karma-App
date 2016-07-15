@@ -1,4 +1,6 @@
-.reference-row {background-color:#fff;margin:10 10 0 10;padding:20;font-size:15;}
+.reference-row {background-color:#fff;margin:10 10 0 10;padding:20;font-size:15;border-width:1;
+    border-color:#ddd;
+    border-radius:3;}
 
 .reference-status-icon {text-align:center;}
 .reference-status-icon-pending {font-size:75;color:#ccc;height:65;}
