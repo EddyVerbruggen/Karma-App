@@ -45,6 +45,15 @@
     margin-left:5;
 }
 
+.appointment-label-right{
+    font-size: 12;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left:5;
+    text-align: right;
+}
+
 .appointment-textfield {
     font-size: 19;
     

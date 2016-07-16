@@ -21,11 +21,11 @@
             <StackLayout class="appointment-details">                
                 <StackLayout class="appointment-input-row">
                     <Label text="Date" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" tap="openDatePicker" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Time" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" tap="openTimePicker" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Length" class="appointment-label" />
@@ -33,7 +33,8 @@
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Location" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" />
+                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" tap="openLocationPopup" />
+                    <Label text="VIEW MAP" class="appointment-label-right" />
                 </StackLayout>
                 <StackLayout class="appointment-input-row">
                     <Label text="Status" class="appointment-label" />
@@ -53,5 +54,11 @@
         <StackLayout width="15%">
             <Button text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
         </StackLayout>
-    </StackLayout>    
+    </StackLayout>
+    
+    <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="LocationPopupBody" verticalAlignment="center" visibility="{{LocationVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
+		<StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+
+    	</StackLayout>
+	</StackLayout>
 </GridLayout>

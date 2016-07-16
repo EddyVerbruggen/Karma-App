@@ -6,6 +6,7 @@ var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
+var PickerManager= require("nativescript-timedatepicker");
 
 var page;
 var isInit = true;
@@ -13,7 +14,8 @@ var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
     appointmentDetails: appointmentDetails,
     messageHistory: new observableArrayModule(),
-    isLoading: true
+    isLoading: true,
+    LocationVisible: false
 });
 
 exports.onLoaded = function(args) {
@@ -69,4 +71,55 @@ exports.sendMessage = function(args) {
                 
         page.getViewById("message_box").text = "";
     }
+}
+
+exports.openDatePicker = function(args){
+    var DateCallback = function (result) {
+        if (result) {
+            alert(JSON.stringify(pageData.appointmentDetails.date));
+            pageData.appointmentDetails.date = result;
+        }
+    };
+    
+    //Initialize the PickerManager (.init(yourCallback, title, initialDate))
+    PickerManager.init(DateCallback,null,null);
+    
+    //Show the dialog
+    PickerManager.showDatePickerDialog();
+}
+
+exports.openTimePicker = function(args){
+    var TimeCallback = function (result) {
+        if (result) {
+            alert(JSON.stringify(pageData.appointmentDetails.time));
+            pageData.appointmentDetails.time = result;
+        }
+    };
+    
+    //Initialize the PickerManager (.init(yourCallback, title, initialDate))
+    PickerManager.init(TimeCallback,null,null);
+    
+    //Show the dialog
+    PickerManager.showTimePickerDialog();
+}
+
+exports.openLocationPopup = function(){
+    openOverlay('LocationPopupBody', 'LocationVisible');
+}
+
+function openOverlay(overlayId, visibilityFlag) {
+    pageData.set(LocationVisible, true);
+    page.getViewById(overlayId).animate({
+        opacity: 0.95,
+        duration: 300
+    });
+}
+
+function closeOverlay(overlayId, visibilityFlag) {
+    return page.getViewById(overlayId).animate({
+        opacity: 0,
+        duration: 300
+    }).then(function() {
+        pageData.set(visibilityFlag, false);
+    });
 }
