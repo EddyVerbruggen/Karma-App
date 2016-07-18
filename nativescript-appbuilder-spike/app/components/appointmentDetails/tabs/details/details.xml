@@ -2,17 +2,17 @@
     <ScrollView row="0" col="0">  
         <StackLayout>
             <StackLayout class="appointment-details-head" orientation="horizontal">                
-                    <StackLayout verticalAlignment="center">
-                        <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
-                    </StackLayout>
-                    <StackLayout verticalAlignment="center">
-                        <WrapLayout>
-                            <Label text="{{appointmentDetails.name}}" class="client-name" />
-                            <Label text="{{appointmentDetails.client_status_text}}" class="client-status client-status-approved" horizontalAlignment="left" />
-                        </WrapLayout>
-                        <Label text="{{appointmentDetails.phone}}" class="client-phone" />
-                        <Label text="{{appointmentDetails.email}}" class="client-email" />                        
-                    </StackLayout>                
+                <StackLayout verticalAlignment="center">
+                    <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
+                </StackLayout>
+                <StackLayout verticalAlignment="center">
+                    <WrapLayout>
+                        <Label text="{{appointmentDetails.name}}" class="client-name" />
+                        <Label text="{{appointmentDetails.client_status_text}}" class="client-status client-status-approved" horizontalAlignment="left" />
+                    </WrapLayout>
+                    <Label text="{{appointmentDetails.phone}}" class="client-phone" />
+                    <Label text="{{appointmentDetails.email}}" class="client-email" />                        
+                </StackLayout>                
             </StackLayout> 
             <StackLayout class="appointment-details">      
                 <StackLayout class="white-box">           
@@ -43,6 +43,37 @@
         </StackLayout>
     </ScrollView>
 
+    <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="LocationPopupBody" verticalAlignment="center" visibility="{{LocationVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
+        <StackLayout width="80%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+            <StackLayout class="title-bar" orientation="horizontal">
+                <Label text="EDIT LOCATION" class="LocationPopupBody-title-row" width="95%" />
+                <Label text="X" textWrap="true" width="5%" />
+            </StackLayout>
+            <StackLayout class="appointment-input-row" orientation="horizontal">
+				<StackLayout class="info-table-label" orientation="horizontal">
+                    <Label class="client-row-icon-selected-true" />
+                	<Label text="Incall" textWrap="true" />
+                </StackLayout>
+                <StackLayout class="info-table-label" orientation="horizontal">
+                    <Label class="client-row-icon-selected-false" />
+                	<Label text="Outcall" textWrap="true" />
+				</StackLayout>
+            </StackLayout>
+            <StackLayout class="appointment-input-row">
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
+            </StackLayout>
+            <StackLayout class="appointment-input-row">
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
+            </StackLayout>
+            <StackLayout class="appointment-input-row">
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
+            </StackLayout>
+            <StackLayout class="appointment-input-row">
+				<Label text="{{appointmentDetails.status_text}}" class="appointment-label" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+    
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="50%">
             <Label text="Confirm" class="accept-save-button" width="100%" />

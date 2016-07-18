@@ -84,3 +84,34 @@
     background-color:#bbb;
 }
 
+.LocationPopupBody-title-row{
+    
+}
+
+.title-bar{
+    color: #fff;
+    background-color: #858585;
+    text-transform: capitalize;
+}
+
+.info-table-label {
+	width: 100;
+    padding:15 15 15 15;
+}
+
+.client-row-icon-selected-true{
+ 	width:12;
+    height:12;
+    border-radius:20;
+    background-color:#dcdcdc;
+    padding-right: 15;
+}
+
+.client-row-icon-selected-false{
+ 	width:12;
+    height:12;
+    border-radius:20;
+    border-color: #dcdcdc;
+    border-width:1;
+    padding-right: 15;
+}

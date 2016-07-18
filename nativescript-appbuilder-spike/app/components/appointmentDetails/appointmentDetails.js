@@ -96,7 +96,7 @@ exports.openTimePicker = function(args){
         }
     };
     
-    //Initialize the PickerManager (.init(yourClalback, title, initialDate))
+    //Initialize the PickerManager (.init(yourCallback, title, initialDate))
     PickerManager.init(TimeCallback,null,null);
     
     //Show the dialog
