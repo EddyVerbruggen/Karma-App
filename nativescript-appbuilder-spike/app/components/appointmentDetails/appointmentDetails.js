@@ -96,7 +96,7 @@ exports.openTimePicker = function(args){
         }
     };
     
-    //Initialize the PickerManager (.init(yourCallback, title, initialDate))
+    //Initialize the PickerManager (.init(yourClalback, title, initialDate))
     PickerManager.init(TimeCallback,null,null);
     
     //Show the dialog
@@ -107,8 +107,14 @@ exports.openLocationPopup = function(){
     openOverlay('LocationPopupBody', 'LocationVisible');
 }
 
+exports.onTapOverlay = function(args) {
+    if (pageData.get('LocationVisible')) {
+    	closeOverlay('LocationPopupBody', 'LocationVisible');
+    }
+}
+
 function openOverlay(overlayId, visibilityFlag) {
-    pageData.set(LocationVisible, true);
+    pageData.set(visibilityFlag, true);
     page.getViewById(overlayId).animate({
         opacity: 0.95,
         duration: 300
