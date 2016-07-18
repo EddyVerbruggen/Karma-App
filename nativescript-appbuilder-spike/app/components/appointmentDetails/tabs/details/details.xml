@@ -1,9 +1,7 @@
 <GridLayout rows="*, 50" columns="*">
     <ScrollView row="0" col="0">  
         <StackLayout>
-
-            <StackLayout class="appointment-details-head" orientation="horizontal">
-                
+            <StackLayout class="appointment-details-head" orientation="horizontal">                
                     <StackLayout verticalAlignment="center">
                         <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
                     </StackLayout>
@@ -14,30 +12,32 @@
                         </WrapLayout>
                         <Label text="{{appointmentDetails.phone}}" class="client-phone" />
                         <Label text="{{appointmentDetails.email}}" class="client-email" />                        
+                    </StackLayout>                
+            </StackLayout> 
+            <StackLayout class="appointment-details">      
+                <StackLayout class="white-box">           
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Date" class="appointment-label" />
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" />
                     </StackLayout>
-                
-            </StackLayout>            
-            
-            <StackLayout class="appointment-details">                
-                <StackLayout class="appointment-input-row">
-                    <Label text="Date" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" />
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Time" class="appointment-label" />
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" />
+                    </StackLayout>
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Length" class="appointment-label" />
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.length}}" editable="false" />
+                    </StackLayout>
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Location" class="appointment-label" />
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" />
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout class="appointment-input-row">
-                    <Label text="Time" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" />
-                </StackLayout>
-                <StackLayout class="appointment-input-row">
-                    <Label text="Length" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.length}}" editable="false" />
-                </StackLayout>
-                <StackLayout class="appointment-input-row">
-                    <Label text="Location" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" />
-                </StackLayout>
-                <StackLayout class="appointment-input-row">
-                    <Label text="Status" class="appointment-label" />
-                    <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.status_text}}" editable="false" />
+                <StackLayout class="white-box">
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Status" class="appointment-label" />
+                        <Label text="{{appointmentDetails.status_text}}" class="appointment-status" />
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>            
         </StackLayout>
@@ -45,13 +45,13 @@
 
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="50%">
-            <Button text="Confirm" class="accept-save-button" width="100%" />
+            <Label text="Confirm" class="accept-save-button" width="100%" />
         </StackLayout>
         <StackLayout width="35%">
-            <Button text="Cancel" class="cancel-button" width="100%" />
+            <Label text="Cancel" class="cancel-button" width="100%" />
         </StackLayout>
         <StackLayout width="15%">
-            <Button text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
+            <Label text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
         </StackLayout>
     </StackLayout>    
 </GridLayout>

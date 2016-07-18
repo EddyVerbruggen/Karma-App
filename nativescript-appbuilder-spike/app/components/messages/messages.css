@@ -1,135 +1,50 @@
-/*@import url('~/components/appointments/appointments.css');*/
+.message-wrapper {
+    background-color:#eaeaea;
+}
 
 .message-row {
-    background-color:#fcfcfc;
-    margin-bottom: 0;
-    padding:12 15;
+    padding:15 10;
+    margin-bottom:1;
 }
 
-.message-row-icon-approved {
-    width:12;
-    height:12;
-    border-radius:20;
-    background-color:#5BB98C;
+.message-read {
+    opacity:0.75;
+    background-color:#F3F3F3;
 }
 
-.message-row-icon-pending {
-    width:12;
-    height:12;
-    border-radius:20;
-    border-width:1;
-    border-color:#ccc;
-}
-
-.message-row-icon-rejected {
-    width:12;
-    height:12;
-    border-radius:20;
-    background-color:#FC4545;
-}
-
-.message-row-icon-blacklisted {
+.message-unread {
+    background-color:#fdfdfd;
     color:#000;
-    font-size:28;
 }
 
 .message-row-thumbnail {
-  	border-radius: 100;
-  	width:55;
-  	height:55;
-  	border-width:1;
-  	border-color:#efefef; 
-  	margin-right:10;
+    border-radius: 100;
+    width:45;
+    height:45;
+    border-width:1;
+    border-color:#F3F3F3; 
+    margin-right:10;
 }
 
 .message-row-name {
-  	font-size: 22;
-}
-
-.message-row-appointment {
-    font-size:12;
-  	color:#999;
+    font-size: 18;
 }
 
 .message-row-message{
-    font-size:12;
-  	color:#999;
-    text-align: left;
-}
-
-.message-row-noshow {
-    font-size:12;
-  	color:#FF7F00;
-}
-
-
-.message-row-status-approved {
-    background-color:#5BB98C;
-    color:#fff;
-    width:65;
-    text-align:center;
-    border-radius:6;
-    font-size:11;
-    padding: 4 0;
-    text-transform: uppercase;
-}
-/*
-.message-row-status-pending {
-    
-}
-
-.message-row-status-whitelist {
-    
-}
-*/
-.message-row-status-blacklist {
-    color: #ff0000;
-}
-/*
-.message-row-status-rejected {
-    
-}
-*/
-.message-row-status-noshow {
-    color: #ffa500;
-}
-
-.message-options {
-    color:#fff;
-    background-color:#444;
-}
-
-.message-options-button {
-    text-align:center;
-    height:60;
-    margin: 0 1 0 0;
-    background-color:#555;
-}
-
-.message-options-label {
-    font-size:11;
-    color:#fff;
-    text-transform: uppercase;
-    margin-top:11;
-    opacity:0.35;
-}
-
-.message-options-text {
-    font-size:17;
-    text-align:center;
+    font-size:16;
+    margin-bottom:3;   
 }
 
 .message-row-message-time{
     font-size:12;
-  	color:#999;
-    text-align: right;
+    color:#aaa;
 }
 
-.new-messages-name{
-   	color: #000;
-    font-weight: bolder;
-}
-
-.new-messages{
-   	color: #000;
+.new-message {
+    font-size:9;
+    background-color:#3EC3D6;
+    color:#fff;
+    border-radius:10;
+    margin-left:5;
+    padding:2 5;
 }
