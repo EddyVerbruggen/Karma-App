@@ -20,8 +20,8 @@
                         </lv:RadListView.listViewLayout>
                         <lv:RadListView.itemTemplate>
                             <StackLayout class="message-wrapper">
-                                <StackLayout orientation="horizontal" class="message-row message-read" tap="onSelectMessage" screeningId="{{screening_id}}">
-                                    <StackLayout width="70">
+                                <StackLayout orientation="horizontal" class="message-row message-unread" tap="onSelectMessage" screeningId="{{screening_id}}">
+                                    <StackLayout width="85">
                                         <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="message-row-thumbnail" />
                                     </StackLayout>
                                     <StackLayout>

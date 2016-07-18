@@ -1,43 +1,45 @@
 .message-wrapper {
-    background-color:#eaeaea;
+    background-color:#E8EAE9;
 }
 
 .message-row {
-    padding:15 10;
+    padding:10;
     margin-bottom:1;
 }
 
 .message-read {
     opacity:0.75;
-    background-color:#F3F3F3;
+    background-color:#F6F8F7;
 }
 
 .message-unread {
-    background-color:#fdfdfd;
+    background-color:#ECEEED;
     color:#000;
 }
 
 .message-row-thumbnail {
     border-radius: 100;
-    width:45;
-    height:45;
+    width:60;
+    height:60;
     border-width:1;
-    border-color:#F3F3F3; 
-    margin-right:10;
+    border-color:#eee; 
 }
 
 .message-row-name {
     font-size: 18;
+    margin-bottom:4;
+    color:#111;
 }
 
 .message-row-message{
     font-size:16;
-    margin-bottom:3;   
+    margin-bottom:3;
+    color:#666;
 }
 
 .message-row-message-time{
-    font-size:12;
-    color:#aaa;
+    font-size:13;
+    color:#999;
 }
 
 .new-message {
