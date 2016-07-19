@@ -7,7 +7,6 @@ var views = require('../../utils/views');
 var isInit = true;
 var appointmentsList = new AppointmentsViewModel();
 var pageData = new Observable({
-    
     appointmentsList: appointmentsList,
     isLoading: false,
     selectConfirmedFilter: true,
@@ -27,6 +26,7 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	helpers.togglePageLoadingIndicator(false, pageData);
 		});
+    
     helpers.platformInit(page);
     if (isInit) {
         isInit = false;
