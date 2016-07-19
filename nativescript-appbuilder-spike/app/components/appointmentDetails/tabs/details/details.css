@@ -1,5 +1,5 @@
 .appointment-details-head {
-    padding:15 0 15 25;
+    padding:25 0 25 18;
     background-color:#666;background-image: url('~/images/pattern-triangle-sm.png');
     color:#fff;
 }
@@ -8,8 +8,8 @@
     border-radius: 200;
     width:75;
     height:75;
-    border-width:2;
-    border-color:#888;  
+    border-width:1;
+    border-color:#777;  
     margin: 0 20 0 0;
 }
 
@@ -30,11 +30,11 @@
 }
 
 .appointment-details {
-    padding:10 15 15 15;
+    padding:7;
 }
 
 .appointment-input-row {
-    margin: 15 0 0 0;
+    margin: 5 0 15 0;
 }
 
 .appointment-label {
@@ -60,30 +60,38 @@
 }
 
 .accept-save-button {
-    font-size:26;
+    font-size:24;
     color:#fff;
     background-color:#3EC3D6;
     height:50;
     padding:0;
     margin:0;
+    margin-right:1;
+    text-align:center;
+    padding-top:10;
 }
-
 
 
 .cancel-button {
     font-size:21;
     height:50;
-    color:#888;
-    background-color:#bbb;
+    color:#666;
+    background-color:#ccc;
+    margin-right:1;
+    text-align:center;
+    padding-top:12;
 }
 
 .delete-button {
     font-size:26;
     height:50;
     color:#888;
-    background-color:#bbb;
+    background-color:#ddd;
+    text-align:center;
+    padding-top:12;
 }
 
+<<<<<<< HEAD
 .LocationPopupBody-title-row{
     
 }
@@ -115,3 +123,9 @@
     border-width:1;
     padding-right: 15;
 }
+=======
+.appointment-status {margin-left:6;margin-top:5;}
+
+.white-box {background-color:#fff;margin-bottom:10;border-radius:5;border-width:1;border-color:#ddd;padding:15;}
+
+>>>>>>> remotes/origin/andre-ui

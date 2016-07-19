@@ -2,6 +2,7 @@
     <ScrollView row="0" col="0">  
         <StackLayout>
             <StackLayout class="appointment-details-head" orientation="horizontal">                
+<<<<<<< HEAD
                 <StackLayout verticalAlignment="center">
                     <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
                 </StackLayout>
@@ -23,6 +24,29 @@
                     <StackLayout class="appointment-input-row">
                         <Label text="Time" class="appointment-label" />
                         <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" tap="openTimePicker" />
+=======
+                    <StackLayout verticalAlignment="center">
+                        <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
+                    </StackLayout>
+                    <StackLayout verticalAlignment="center">
+                        <WrapLayout>
+                            <Label text="{{appointmentDetails.name}}" class="client-name" />
+                            <Label text="{{appointmentDetails.client_status_text}}" class="client-status client-status-approved" horizontalAlignment="left" />
+                        </WrapLayout>
+                        <Label text="{{appointmentDetails.phone}}" class="client-phone" />
+                        <Label text="{{appointmentDetails.email}}" class="client-email" />                        
+                    </StackLayout>                
+            </StackLayout> 
+            <StackLayout class="appointment-details">      
+                <StackLayout class="white-box">           
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Date" class="appointment-label" />
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" />
+                    </StackLayout>
+                    <StackLayout class="appointment-input-row">
+                        <Label text="Time" class="appointment-label" />
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" />
+>>>>>>> remotes/origin/andre-ui
                     </StackLayout>
                     <StackLayout class="appointment-input-row">
                         <Label text="Length" class="appointment-label" />
@@ -30,7 +54,11 @@
                     </StackLayout>
                     <StackLayout class="appointment-input-row">
                         <Label text="Location" class="appointment-label" />
+<<<<<<< HEAD
                         <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" tap="openLocationPopup" />
+=======
+                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" />
+>>>>>>> remotes/origin/andre-ui
                     </StackLayout>
                 </StackLayout>
                 <StackLayout class="white-box">
