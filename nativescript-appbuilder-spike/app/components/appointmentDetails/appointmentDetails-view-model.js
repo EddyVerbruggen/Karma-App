@@ -12,22 +12,23 @@ function AppointmentDetailsViewModel() {
     
     viewModel.load = function(id) {
         var fetchData;
-        if (mock !== 'undefined') {
-            fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.appointmentDetails);
-            });
-        } else {
-            fetchData = fetch(config.apiUrl + 'client_details/' + id, {
+        // if (mock !== 'undefined') {
+        //     fetchData = new Promise(function(resolve, reject) {
+        //         return resolve(mock.appointmentDetails);
+        //     });
+        // } else {
+            fetchData = fetch(config.apiUrl + 'appointment/' + id + '.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
         	});
-        }
+        // }
 
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-                viewModel.set('Result', data.Result);
+            	data = JSON.parse(data._bodyInit.replace(new RegExp('/', 'g'), ''));
+                viewModel.set('Result', data.booking);
             });
     };
     

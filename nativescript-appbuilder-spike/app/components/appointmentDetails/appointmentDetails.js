@@ -22,9 +22,10 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    var gotData = page.navigationContext;
        
 	appointmentDetails
-		.load()
+		.load(gotData.id)
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
     	})
@@ -40,7 +41,6 @@ exports.onLoaded = function(args) {
 		});
     
     //Redirect to History tab
-    var gotData = page.navigationContext;
     if(gotData.from == "messages"){
     	page.getViewById("appointments-tabs").selectedIndex = 1;
     }
