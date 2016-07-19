@@ -20,7 +20,7 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
 	appointmentsList
-		.load()
+		.load("appointments/index.json")
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
     	})
