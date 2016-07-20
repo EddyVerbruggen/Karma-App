@@ -22,7 +22,7 @@ function AppointmentsViewModel() {
         //         return resolve(mock.appointments);
         //     });
         // } else {
-            fetchData = fetch(config.apiUrl + status, {
+            fetchData = fetch(config.apiUrl + 'appointments/index.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
@@ -32,11 +32,10 @@ function AppointmentsViewModel() {
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-            	data._bodyInit = JSON.parse(data._bodyInit.replace(new RegExp('/', 'g'), ''));
-            	viewModel.set('types', data._bodyInit.types);
+            	viewModel.set('types', data.types);
             
             	bookingDates.emptyBookings();
-            	data._bodyInit.booking_dates.forEach(function(booking) {
+            	data.booking_dates.forEach(function(booking) {
             		bookingDates.push(booking);
             	});
             	viewModel.set('booking_dates',bookingDates);

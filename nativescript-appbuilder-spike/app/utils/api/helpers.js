@@ -4,7 +4,7 @@ var navigation = require('../../utils/navigation');
 
 exports.handleResponse = function(response) {
 	if (response.status != 200) {
-        alert(JSON.stringify(response));
+        alert(JSON.stringify(response.statusText));
 		console.log(JSON.stringify(response));
 
 		if (response.status === 403) {
@@ -14,5 +14,5 @@ exports.handleResponse = function(response) {
 		throw Error(response.statusText);
 	}
     
-    return typeof(response) === 'string' ? response.json() : response;
+    return response.json();
 }

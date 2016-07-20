@@ -57,6 +57,7 @@ exports.onLoaded = function(args) {
 }
 
 exports.onSelectClient = function(args) {
+    // alert(args.view.screeningId);
     helpers.tapFlash(args.object).then(function() {
         helpers.navigate({
             moduleName: views.clientDetails,

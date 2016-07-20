@@ -23,11 +23,11 @@ function AppointmentDetailsViewModel() {
                 }
         	});
         // }
-
+		alert(config.apiUrl + 'appointment/' + id + '.json');
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-            	data = JSON.parse(data._bodyInit.replace(new RegExp('/', 'g'), ''));
+            	console.log(data);
                 viewModel.set('Result', data.booking);
             });
     };

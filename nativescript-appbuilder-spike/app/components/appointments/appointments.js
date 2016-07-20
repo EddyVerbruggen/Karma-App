@@ -19,7 +19,7 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
 	appointmentsList
-		.load("appointments/index.json")
+		.load()
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
     	})
@@ -64,4 +64,3 @@ exports.onSelectAppointment = function(args) {
         });        
     });
 }
-
