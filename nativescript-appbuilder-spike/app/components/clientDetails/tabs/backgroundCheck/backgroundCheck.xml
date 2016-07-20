@@ -1,4 +1,4 @@
-<ScrollView loaded="onLoaded"> 
+<ScrollView> 
 	<StackLayout class="background-wrapper">
         <Label class="section-title" text="3 potential sex offender matches" />        
         <StackLayout orientation="horizontal" class="sex-offender-row">
