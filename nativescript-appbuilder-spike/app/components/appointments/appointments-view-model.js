@@ -22,7 +22,7 @@ function AppointmentsViewModel() {
         //         return resolve(mock.appointments);
         //     });
         // } else {
-            fetchData = fetch(config.apiUrl + 'appointments/index.json', {
+            fetchData = fetch(config.apiUrl + 'appointments/index.json' + '?status=' + status, {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
