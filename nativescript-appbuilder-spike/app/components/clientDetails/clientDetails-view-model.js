@@ -25,6 +25,7 @@ function ClientDetailsViewModel() {
         return fetchData
             .then(handleResponse)
             .then(function(data) {
+            	// console.error(JSON.stringify(data.screening));
                 viewModel.set('Result', data.screening);
             });
     };

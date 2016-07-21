@@ -10,8 +10,7 @@ var isInit = true;
 var clientDetails = new ClientDetailsViewModel();
 var pageData = new Observable({
     clientDetails: clientDetails,
-    isLoading: true,
-    screen_id: null
+    isLoading: true
 });
 
 exports.onLoaded = function(args) {
@@ -26,8 +25,8 @@ exports.onLoaded = function(args) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
     	})
 		.then(function() {
-        	console.log(JSON.stringify(clientDetails.Result));
-        	pageData.set('clientDetails', clientDetails.Result);
+        	console.log(JSON.stringify(clientDetails));
+        	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
 	

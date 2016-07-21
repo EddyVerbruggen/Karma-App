@@ -17,13 +17,13 @@ function AppointmentDetailsViewModel() {
         //         return resolve(mock.appointmentDetails);
         //     });
         // } else {
-            fetchData = fetch(config.apiUrl + 'appointment/' + id + '.json', {
+            fetchData = fetch(config.apiUrl + 'appointments/view/' + id + '.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
         	});
         // }
-        
+
         return fetchData
             .then(handleResponse)
             .then(function(data) {

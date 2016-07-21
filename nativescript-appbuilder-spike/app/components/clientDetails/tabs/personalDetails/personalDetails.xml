@@ -1,4 +1,4 @@
-<GridLayout rows="*, 50" columns="*" loaded="onLoaded">
+<GridLayout rows="*, 50" columns="*">
     <ScrollView row="0" col="0">  
     	<StackLayout>
             <StackLayout class="client-profile-head">
