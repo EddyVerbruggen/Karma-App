@@ -10,34 +10,27 @@ var navigation = require('../../utils/navigation');
 function AppointmentsViewModel() {
     var viewModel = new Observable();
     var bookingDates = [];
-    //var bookingDates = new ObservableArray();
     
     // Load all clients
     viewModel.load = function(status) {
         status = status || 'confirmed';
 
-        var fetchData;
-        if (mock !== 'undefined') {
-            fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.appointments);
-            });
-        } else {
-            fetchData = fetch(config.apiUrl + 'bookings/' + status + '?fields=client_id,screening_id,client_name,profile_image,status', {
+        var fetchData = fetch(config.apiUrl + 'appointments/index.json' + '?status=' + status, {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
-        	});
-        }
-
+            });
+        
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-            	viewModel.set('types', data.Result.types);
+            	viewModel.set('types', data.types);
+            
             	bookingDates.emptyBookings();
-                data.Result.booking_dates.forEach(function(booking) {
-                    bookingDates.push(booking);
-                });
-				viewModel.set('booking_dates',bookingDates);
+            	data.booking_dates.forEach(function(booking) {
+            		bookingDates.push(booking);
+            	});
+            	viewModel.set('booking_dates',bookingDates);
             });
     };
     

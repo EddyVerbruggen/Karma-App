@@ -11,23 +11,16 @@ function AppointmentDetailsViewModel() {
     var now = new Date();
     
     viewModel.load = function(id) {
-        var fetchData;
-        if (mock !== 'undefined') {
-            fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.appointmentDetails);
-            });
-        } else {
-            fetchData = fetch(config.apiUrl + 'client_details/' + id, {
+        var fetchData = fetch(config.apiUrl + 'appointments/view/' + id + '.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
         	});
-        }
 
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-                viewModel.set('Result', data.Result);
+                viewModel.set('Result', data.booking);
             });
     };
     

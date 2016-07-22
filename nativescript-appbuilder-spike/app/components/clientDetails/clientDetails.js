@@ -5,6 +5,7 @@ var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 
+var page;
 var isInit = true;
 var clientDetails = new ClientDetailsViewModel();
 var pageData = new Observable({
@@ -13,16 +14,18 @@ var pageData = new Observable({
 });
 
 exports.onLoaded = function(args) {
-    var page = args.object;
+    page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    var gotData = page.navigationContext;
+
 	clientDetails
-		.load()
+		.load(gotData.id)
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
     	})
 		.then(function() {
-        	pageData.set('clientDetails', clientDetails.Result);
+        	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
 	

@@ -2,7 +2,7 @@ var applicationSettingsModule = require("application-settings");
 
 var configObject = {
     testData: false,
-	apiUrl: "https://api.karmascreen.com/v1/",
+	apiUrl: "https://www.karmascreen.com/api/v1/",
 	invalidateToken: function() {
 		this.token = "";
 	}

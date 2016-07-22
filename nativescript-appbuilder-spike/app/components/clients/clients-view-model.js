@@ -15,24 +15,17 @@ function ClientsViewModel(clients) {
         tag = tag || 'all';
         sortby = sortby || 'createddesc';
 
-        var fetchData;
-        if (mock !== 'undefined') {
-            fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.clients);
-            });
-        } else {
-            fetchData = fetch(config.apiUrl + 'clients/' + status + '?fields=client_id,screening_id,client_name,profile_image,status', {
+        var fetchData = fetch(config.apiUrl + 'clients/index.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
         	});
-        }
 
         return fetchData
             .then(handleResponse)
             .then(function(data) {
                 viewModel.empty();
-                data.Result.forEach(function(client) {
+                data.clients.forEach(function(client) {
                     viewModel.push(client);
                 })
             });

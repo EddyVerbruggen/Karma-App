@@ -21,17 +21,17 @@
                         </lv:RadListView.listViewLayout>
                         <lv:RadListView.itemTemplate>
                             <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
-                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" col="0" />
+                                <Label style="background-image: url('{{ profile_image }}');" class="client-row-thumbnail" col="0" />
                                 <StackLayout col="1" verticalAlignment="center">
                                     <Label text="{{client_name}}" class="client-row-name" />
-                                    <Label text="{{bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{bookings ? 'visible' : 'collapse'}}" />
-                                    <Label text="No-Show" class="client-row-noshow" />
+                                    <Label text="{{num_bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{num_bookings  ? 'visible' : 'collapse'}}" />
+                                    <Label text="{{status_text}}" class="client-row-noshow" visibility="{{status == 'noshow' ? 'visible' : 'collapse'}}" />
                                 </StackLayout>
-                                <!--<Label class="client-row-icon-approved" col="2" />-->
-                                <!--<Label class="client-row-icon-pending" col="2" />-->
-                                <Label class="client-row-icon-rejected" col="2" />
-                                <!--<Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" /> -->                
-                                <!--<Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" />      -->                  
+                                <Label class="client-row-icon-approved" col="2" visibility="{{status == 'approved' ? 'visible' : 'collapse'}}" />
+                                <Label class="client-row-icon-pending" col="2" visibility="{{status == 'pending' ? 'visible' : 'collapse'}}" />
+                                <Label class="client-row-icon-rejected" col="2" visibility="{{status == 'rejected' ? 'visible' : 'collapse'}}" />
+                                <Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" visibility="{{status  == 'blacklist' ? 'visible' : 'collapse'}}" />
+                                <!-- <Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" /> -->
                             </GridLayout>
                         </lv:RadListView.itemTemplate>
                     </lv:RadListView>            

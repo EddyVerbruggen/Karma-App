@@ -1,4 +1,4 @@
-<ScrollView loaded="onLoaded">
+<ScrollView>
     <StackLayout>
         
         <StackLayout orientation="horizontal" class="screening-summary">

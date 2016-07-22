@@ -1,4 +1,4 @@
-<ScrollView loaded="onLoaded"> 
+<ScrollView> 
 	<StackLayout>
         <Label class="section-title" text="3 references added" />
         <StackLayout class="reference-row" orientation="horizontal">
