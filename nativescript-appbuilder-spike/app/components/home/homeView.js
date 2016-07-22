@@ -1,11 +1,13 @@
 'use strict';
-var isInit = true,
-    helpers = require('../../utils/widgets/helper'),
-    viewModel = require('./homeView-view-model'),
-	slideContainer;
+var isInit = true;
+var helpers = require('../../utils/widgets/helper');
+var viewModel = require('./homeView-view-model');
+var views = require('../../utils/views');
+var	slideContainer;
+var page;
 
 function pageLoaded(args) {
-    var page = args.object;
+    page = args.object;
 	slideContainer = page.getViewById("slides");
 
     helpers.platformInit(page);
@@ -14,6 +16,18 @@ function pageLoaded(args) {
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.login = function(args){
+	helpers.navigate({
+    	moduleName: views.dashboard,
+    });
+}
+
+exports.register = function(args){
+    helpers.navigate({
+        moduleName: views.dashboard,
+    });
 }
 
 exports.pageLoaded = pageLoaded;
