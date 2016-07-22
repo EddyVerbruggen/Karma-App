@@ -76,7 +76,6 @@ exports.sendMessage = function(args) {
 exports.openDatePicker = function(args){
     var DateCallback = function (result) {
         if (result) {
-            alert(JSON.stringify(pageData.appointmentDetails.date));
             pageData.appointmentDetails.date = result;
         }
     };
@@ -91,7 +90,6 @@ exports.openDatePicker = function(args){
 exports.openTimePicker = function(args){
     var TimeCallback = function (result) {
         if (result) {
-            alert(JSON.stringify(pageData.appointmentDetails.time));
             pageData.appointmentDetails.time = result;
         }
     };

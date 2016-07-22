@@ -15,18 +15,11 @@ function ClientsViewModel(clients) {
         tag = tag || 'all';
         sortby = sortby || 'createddesc';
 
-        var fetchData;
-        // if (mock !== 'undefined') {
-        //     fetchData = new Promise(function(resolve, reject) {
-        //         return resolve(mock.clients);
-        //     });
-        // } else {
-            fetchData = fetch(config.apiUrl + 'clients/index.json', {
+        var fetchData = fetch(config.apiUrl + 'clients/index.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
         	});
-        // }
 
         return fetchData
             .then(handleResponse)

@@ -25,7 +25,6 @@ exports.onLoaded = function(args) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
     	})
 		.then(function() {
-        	console.log(JSON.stringify(clientDetails));
         	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});

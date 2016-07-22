@@ -10,24 +10,16 @@ var navigation = require('../../utils/navigation');
 function AppointmentsViewModel() {
     var viewModel = new Observable();
     var bookingDates = [];
-    //var bookingDates = new ObservableArray();
     
     // Load all clients
     viewModel.load = function(status) {
         status = status || 'confirmed';
 
-        var fetchData;
-        // if (mock !== 'undefined') {
-        //     fetchData = new Promise(function(resolve, reject) {
-        //         return resolve(mock.appointments);
-        //     });
-        // } else {
-            fetchData = fetch(config.apiUrl + 'appointments/index.json' + '?status=' + status, {
+        var fetchData = fetch(config.apiUrl + 'appointments/index.json' + '?status=' + status, {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
             });
-        // }
         
         return fetchData
             .then(handleResponse)

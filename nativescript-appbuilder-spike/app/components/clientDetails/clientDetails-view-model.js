@@ -9,23 +9,15 @@ function ClientDetailsViewModel() {
     var viewModel = new Observable();
     
     viewModel.load = function(id) {
-        var fetchData;
-        // if (mock !== 'undefined') {
-        //     fetchData = new Promise(function(resolve, reject) {
-        //         return resolve(mock.clientDetails);
-        //     });
-        // } else {
-            fetchData = fetch(config.apiUrl + 'client/' + id + '.json', {
+        var fetchData = fetch(config.apiUrl + 'client/' + id + '.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
         	});
-        // }
 
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-            	// console.error(JSON.stringify(data.screening));
                 viewModel.set('Result', data.screening);
             });
     };
