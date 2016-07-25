@@ -6,7 +6,8 @@ var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
-var PickerManager= require("nativescript-timedatepicker");
+var PickerManager = require("nativescript-timedatepicker");
+var moment = require("moment");
 
 var page;
 var isInit = true;
@@ -76,7 +77,10 @@ exports.sendMessage = function(args) {
 exports.openDatePicker = function(args){
     var DateCallback = function (result) {
         if (result) {
-            pageData.appointmentDetails.date = result;
+            result = result.split(" ");
+            result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
+            alert(result.format('LLLL'));
+            pageData.appointmentDetails.date = result.format('LLLL');
         }
     };
     
@@ -90,7 +94,10 @@ exports.openDatePicker = function(args){
 exports.openTimePicker = function(args){
     var TimeCallback = function (result) {
         if (result) {
-            pageData.appointmentDetails.time = result;
+            result = result.split(" ");
+            result = moment(result[3], "HH:mm");
+            alert(result.format('LT'));
+            pageData.appointmentDetails.time = result.format('LT');
         }
     };
     
