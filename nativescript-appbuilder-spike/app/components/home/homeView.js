@@ -9,7 +9,8 @@ var page;
 function pageLoaded(args) {
     page = args.object;
 	slideContainer = page.getViewById("slides");
-
+	page.actionBarHidden = true;
+    
     helpers.platformInit(page);
     page.bindingContext = viewModel;
 
