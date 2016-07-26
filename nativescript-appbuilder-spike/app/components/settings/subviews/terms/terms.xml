@@ -1,6 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
       xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
-      xmlns:widgets="utils/widgets">
+      xmlns:widgets="utils/widgets"
+      xmlns:FAB="nativescript-floatingactionbutton">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
@@ -41,6 +42,7 @@
                             <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
                         </StackLayout>
                     </StackLayout>
+                    <FAB:fab tap="fabTap" row="1" icon="res://ic_add_white" rippleColor="#f1f1f1" class="fab-button" />
                     
                 </StackLayout>
             </ScrollView>

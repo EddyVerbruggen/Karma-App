@@ -16,7 +16,7 @@
     margin-bottom: 5;
 }
 
-.terms-input-row 
+.terms-input-row {
 	margin: 10 0 0 0;
 }
 
@@ -30,4 +30,15 @@
 
 .terms-textfield {
     font-size:19;
+}
+
+.fab-button {
+    height: 70;
+    margin: 15;
+    background-color: #ff4081; 
+    horizontal-align: right; 
+    vertical-align: bottom; 
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
