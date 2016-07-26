@@ -33,32 +33,49 @@
                             <Label text="Email" class="settings-label" />
                             <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy857@gmail.com" class="settings-textfield" />
                         </StackLayout>
+                        <StackLayout class="settings-input-row">
+                            <Label text="Mobile Number" class="settings-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="123-456-7890" class="settings-textfield" />
+                        </StackLayout>
+                        <StackLayout class="settings-input-row">
+                            <Label text="Password" class="settings-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="*****" class="settings-textfield" />
+                        </StackLayout>
+                        <StackLayout class="settings-input-row">
+                            <Label text="Timezone" class="settings-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="GMT-05:00 Eastern Time (EST)" class="settings-textfield" />
+                        </StackLayout>
                     </StackLayout>
                     
                     <StackLayout class="settings-all">                
-                        <WrapLayout class="settings-all-row">
+                        <WrapLayout class="settings-all-row" section="services" tap="onTap">
                             <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                             <Label text="Services" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
-                        <WrapLayout class="settings-all-row">
+                        <WrapLayout class="settings-all-row" section="notifications" tap="onTap">
                             <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                             <Label text="Notifications" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
-                        <WrapLayout class="settings-all-row">
+                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
                             <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                             <Label text="Screening" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
-                        <WrapLayout class="settings-all-row">
+                        <WrapLayout class="settings-all-row" section="booking" tap="onTap">
                             <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                             <Label text="Booking" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
-                        <WrapLayout class="settings-all-row">
+                        <WrapLayout class="settings-all-row" section="landing" tap="onTap">
                             <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                             <Label text="Landing Page" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <Label class="settings-all-divider" />
+                        <WrapLayout class="settings-all-row" section="terms" tap="onTap">
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="Terms & Conditions" class="settings-section-link-label" />
                         </WrapLayout>
                     </StackLayout> 
 
