@@ -12,38 +12,33 @@
             <ScrollView>
                 <StackLayout width="100%">
 
-                    <StackLayout horizontalAlignment="center" class="settings-head">
-                        <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
-                    </StackLayout>
-
-                    <StackLayout class="settings-account">
+                    <StackLayout class="terms-account">
                         <StackLayout>
-                            <Label text="My Account" class="settings-section-header" />
-                            <Label class="settings-section-divider" />
+                            <Label text="Page" class="terms-section-header" />
+                            <Label class="terms-section-divider" />
                         </StackLayout>
-                        <StackLayout class="settings-input-row">
-                            <Label text="Username" class="settings-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy07" class="settings-textfield" />
+                        <StackLayout class="terms-input-row">
+                            <Label text="Display" class="terms-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="terms-textfield" />
                         </StackLayout>
-                        <StackLayout class="settings-input-row">
-                            <Label text="Name" class="settings-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Jenny Mathers" class="settings-textfield" />
+                        <StackLayout class="terms-input-row">
+                            <Label text="Text" class="terms-label" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
                         </StackLayout>
-                        <StackLayout class="settings-input-row">
-                            <Label text="Email" class="settings-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy857@gmail.com" class="settings-textfield" />
+                    </StackLayout>
+                    
+                    <StackLayout class="terms-account">
+                        <StackLayout>
+                            <Label text="Terms" class="terms-section-header" />
+                            <Label class="terms-section-divider" />
                         </StackLayout>
-                        <StackLayout class="settings-input-row">
-                            <Label text="Mobile Number" class="settings-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="123-456-7890" class="settings-textfield" />
-                        </StackLayout>
-                        <StackLayout class="settings-input-row">
-                            <Label text="Password" class="settings-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="*****" class="settings-textfield" />
-                        </StackLayout>
-                        <StackLayout class="settings-input-row">
-                            <Label text="Timezone" class="settings-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="GMT-05:00 Eastern Time (EST)" class="settings-textfield" />
+                        <StackLayout class="terms-input-row">
+                            <Label text="The client must accept the following" class="terms-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="terms-textfield" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
+							<TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
                         </StackLayout>
                     </StackLayout>
                     
