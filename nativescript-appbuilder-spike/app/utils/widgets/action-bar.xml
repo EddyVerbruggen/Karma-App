@@ -27,7 +27,7 @@
     <ActionItem tap="onDelete"
         ios.systemIcon="16" ios.position="right"
         text="Delete" android.position="popup" />
-    <ActionItem tap="onDelete"
+    <ActionItem tap="onSetting"
         ios.systemIcon="16" ios.position="right"
         text="Settings" android.position="popup" />
   

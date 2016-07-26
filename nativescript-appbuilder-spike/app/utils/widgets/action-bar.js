@@ -39,3 +39,11 @@ exports.onTapSearch = function() {
         
     }, true);
 }
+
+exports.onSetting = function(){
+    var topmost = frameModule.topmost();
+    // alert("hii");
+    helpers.navigate({
+    	moduleName: views.settingsMenu
+    });
+}

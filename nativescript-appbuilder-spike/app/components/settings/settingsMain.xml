@@ -16,33 +16,6 @@
                         <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
                     </StackLayout>
 
-                    <StackLayout class="settings-all">                
-                            <WrapLayout class="settings-all-row">
-                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                                <Label text="Services" class="settings-section-link-label" />
-                            </WrapLayout>
-                            <Label class="settings-all-divider" />
-                            <WrapLayout class="settings-all-row">
-                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                                <Label text="Notifications" class="settings-section-link-label" />
-                            </WrapLayout>
-                            <Label class="settings-all-divider" />
-                            <WrapLayout class="settings-all-row">
-                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                                <Label text="Screening" class="settings-section-link-label" />
-                            </WrapLayout>
-                            <Label class="settings-all-divider" />
-                            <WrapLayout class="settings-all-row">
-                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                                <Label text="Booking" class="settings-section-link-label" />
-                            </WrapLayout>
-                            <Label class="settings-all-divider" />
-                            <WrapLayout class="settings-all-row">
-                                <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
-                                <Label text="Landing Page" class="settings-section-link-label" />
-                            </WrapLayout>
-                    </StackLayout> 
-
                     <StackLayout class="settings-account">
                         <StackLayout>
                             <Label text="My Account" class="settings-section-header" />
@@ -61,6 +34,33 @@
                             <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="jennycandy857@gmail.com" class="settings-textfield" />
                         </StackLayout>
                     </StackLayout>
+                    
+                    <StackLayout class="settings-all">                
+                        <WrapLayout class="settings-all-row">
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="Services" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <Label class="settings-all-divider" />
+                        <WrapLayout class="settings-all-row">
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="Notifications" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <Label class="settings-all-divider" />
+                        <WrapLayout class="settings-all-row">
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="Screening" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <Label class="settings-all-divider" />
+                        <WrapLayout class="settings-all-row">
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="Booking" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <Label class="settings-all-divider" />
+                        <WrapLayout class="settings-all-row">
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="Landing Page" class="settings-section-link-label" />
+                        </WrapLayout>
+                    </StackLayout> 
 
                     <StackLayout class="settings-url">
                         <StackLayout>
