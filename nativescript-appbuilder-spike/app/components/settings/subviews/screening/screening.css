@@ -1,2 +1,40 @@
-body {
+.screening-account {
+    margin:15;
+}
+
+.screening-section-header {
+    font-size: 14;
+    color: #3EC3D6;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 10 0 5 0;
+}
+
+.screening-section-divider {
+    background-color: #3EC3D6;
+    height:3;
+    margin-bottom: 5;
+}
+
+.screening-input-row {
+	margin: 10 0 0 0;
+}
+
+.screening-label {
+    font-size: 12;
+    color: #bbb;
+    font-weight: bold;
+    margin-left:5;
+}
+
+.screening-textfield {
+    font-size:19;
+}
+
+.fab-button {
+    height: 70;
+    margin: 15;
+    background-color: #3EC3D6; 
+    horizontal-align: right; 
+    vertical-align: bottom; 
 }

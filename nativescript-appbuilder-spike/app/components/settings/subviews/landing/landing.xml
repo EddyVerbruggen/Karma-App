@@ -18,7 +18,7 @@
                             <Label class="landing-section-divider" />
                         </StackLayout>
                         <StackLayout class="landing-input-row">
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Welcome to my page, Iwould really like to meet you. So please don't forget to book with me." class="landing-textfield" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Welcome to my page, Iwould really like to meet you. So please don't forget to book with me." class="landing-textfield" tap="edit" />
                         </StackLayout>
                     </StackLayout>
                     
@@ -27,7 +27,7 @@
                             <Label text="Background Image" class="landing-section-header" />
                             <Label class="landing-section-divider" />
                         </StackLayout>
-                        <StackLayout class="landing-input-row">
+                        <StackLayout class="landing-input-row" tap="browse" >
                             <image src="~/images/pattern-triangle.png" class="landing-bg-image" />
                         </StackLayout>
                     </StackLayout>

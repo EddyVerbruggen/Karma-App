@@ -1,5 +1,87 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd">
-  <GridLayout>
-    <!-- Add UI declaration here -->
-  </GridLayout>
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <ScrollView>
+                <StackLayout width="100%">
+
+                    <StackLayout class="screening-account">
+                        <StackLayout>
+                            <Label text="References" class="screening-section-header" />
+                            <Label class="screening-section-divider" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="Require client references from other companions" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="References required to have an established website" class="screening-label" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="screening-textfield" />
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout class="screening-account">
+                        <StackLayout>
+                            <Label text="Client Information" class="screening-section-header" />
+                            <Label class="screening-section-divider" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="The client must accept the following" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="The client must accept the following" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="The client must accept the following" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="The client must accept the following" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout class="screening-account">
+                        <StackLayout>
+                            <Label text="Work" class="screening-section-header" />
+                            <Label class="screening-section-divider" />
+                        </StackLayout>
+                        <StackLayout class="screening-input-row">
+                            <Label text="The client must accept the following" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                        </StackLayout>
+                    </StackLayout>
+                    
+					<StackLayout class="screening-account">
+                        <StackLayout>
+                            <Label text="Skipping" class="screening-section-header" />
+                            <Label class="screening-section-divider" />
+                        </StackLayout>
+                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" class="" width="30" />
+                            <Label text="Incalls" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                            <image src="~/images/ic_check_box_white.png" class="" width="30" />
+                            <Label text="Outcalls" class="settings-section-link-label" />
+                        </WrapLayout>
+                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                            <image src="~/images/ic_check_box_white.png" class="" width="30" />
+                            <Label text="Outcalls" class="settings-section-link-label" />
+                        </WrapLayout>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
 </Page>
