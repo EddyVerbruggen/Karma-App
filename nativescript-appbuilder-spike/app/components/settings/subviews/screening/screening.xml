@@ -19,11 +19,11 @@
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Require client references from other companions" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Atleast 2 references" class="screening-textfield" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="References required to have an established website" class="screening-label" />
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="screening-textfield" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="At least 1 reference website must be verified" class="screening-textfield" />
                         </StackLayout>
                     </StackLayout>
                     
@@ -33,20 +33,20 @@
                             <Label class="screening-section-divider" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
-                            <Label text="The client must accept the following" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                            <Label text="Require client to upload photo(s)" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for photos from clients" class="screening-textfield" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
-                            <Label text="The client must accept the following" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                            <Label text="Client's last name" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Require full last name" class="screening-textfield" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
-                            <Label text="The client must accept the following" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                            <Label text="Year of birth" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Required (to calculate their age)" class="screening-textfield" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
-                            <Label text="The client must accept the following" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                            <Label text="City/state of residence" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Don't ask for current residence" class="screening-textfield" />
                         </StackLayout>
                     </StackLayout>
                     
@@ -56,8 +56,8 @@
                             <Label class="screening-section-divider" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
-                            <Label text="The client must accept the following" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="screening-textfield" />
+                            <Label text="Require work/employment information" class="screening-label" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for this information" class="screening-textfield" />
                         </StackLayout>
                     </StackLayout>
                     
@@ -65,18 +65,21 @@
                         <StackLayout>
                             <Label text="Skipping" class="screening-section-header" />
                             <Label class="screening-section-divider" />
+                        </StackLayout>	
+                        <StackLayout class="screening-input-row">
+                            <Label text="Require work/employment information" class="screening-label" />
                         </StackLayout>
-                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                        <WrapLayout class="screening-all-row" section="screening" tap="onTap">
                             <image src="~/images/ic_check_box_outline_blank_white.png" class="" width="30" />
-                            <Label text="Incalls" class="settings-section-link-label" />
+                            <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
                         </WrapLayout>
-                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                        <WrapLayout class="screening-all-row" section="screening" tap="onTap">
                             <image src="~/images/ic_check_box_white.png" class="" width="30" />
-                            <Label text="Outcalls" class="settings-section-link-label" />
+                            <Label text="On any other companion's white-list" class="screening-section-link-label" />
                         </WrapLayout>
-                        <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                        <WrapLayout class="screening-all-row" section="screening" tap="onTap">
                             <image src="~/images/ic_check_box_white.png" class="" width="30" />
-                            <Label text="Outcalls" class="settings-section-link-label" />
+                            <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
                         </WrapLayout>
                     </StackLayout>
                     

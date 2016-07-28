@@ -31,10 +31,8 @@
     font-size:19;
 }
 
-.fab-button {
-    height: 70;
-    margin: 15;
-    background-color: #3EC3D6; 
-    horizontal-align: right; 
-    vertical-align: bottom; 
+.screening-section-link-label{
+    width: 80%;
+    white-space: normal;
+    font-size: 17;
 }
