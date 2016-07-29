@@ -21,7 +21,7 @@
                             <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
                         </StackLayout>
                     </StackLayout>
-                    <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" />
+	                <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" />
                     
                 </StackLayout>
             </ScrollView>
