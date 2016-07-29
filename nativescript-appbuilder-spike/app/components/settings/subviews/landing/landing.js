@@ -15,25 +15,12 @@ exports.edit = function(){
     });
 }
 
-exports.browse = function(){
-
-    // dialogs.action({
-    //   message: "Your message",
-    //   cancelButtonText: "Cancel text",
-    //   actions: ["Option1", "Option2"]
-    // }).then(function (result) {
-    //   console.log("Dialog result: " + result)
-    // });
-    
-    dialogs.prompt({
-    title: "Edit Background",
-      	okButtonText: "Upload...",
-      	cancelButtonText: "Cancel",
-      	neutralButtonText: "Delete"
-    }).then(function (r) {
-      	// console.log("Dialog result: " + r.result + ", text: " + r.text);
-        dialogs.alert("Dialog result: " + r.result + ", text: " + r.text).then(function() {
-
-        });
+exports.delete = function(){
+	dialogs.confirm("Are you sure ?").then(function (result) {
+      	alert(result);
     });
+}
+
+exports.upload = function(){
+
 }

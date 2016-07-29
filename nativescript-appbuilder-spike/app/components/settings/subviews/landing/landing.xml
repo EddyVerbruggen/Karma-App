@@ -27,9 +27,13 @@
                             <Label text="Background Image" class="landing-section-header" />
                             <Label class="landing-section-divider" />
                         </StackLayout>
-                        <StackLayout class="landing-input-row" tap="browse" >
+                        <StackLayout class="landing-input-row" >
                             <image src="~/images/pattern-triangle.png" class="landing-bg-image" />
                         </StackLayout>
+                        <WrapLayout class="landing-all-row">
+                            <Button text="Delete" class="send-message-button" width="50%" tap="delete" />
+                            <Button text="Upload" class="send-message-button" width="50%" tap="upload" />
+                        </WrapLayout>
                     </StackLayout>
 
                 </StackLayout>
