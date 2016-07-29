@@ -1,0 +1,96 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <ScrollView>
+                <StackLayout width="100%">
+
+                    <StackLayout class="notification-account">
+                        <StackLayout>
+                            <Label text="New client and appointment" class="notification-section-header" />
+                            <Label class="notification-section-divider" />
+                        </StackLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="App Message" class="notification-section-link-label" />
+                            <Switch checked="{{ new_client_apt.inapp }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="Email" class="notification-section-link-label" />
+                            <Switch checked="{{ new_client_apt.email }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="SMS/TXT Message" class="notification-section-link-label" />
+                            <Switch checked="{{ new_client_apt.text }}" class="notification-switch" />
+                        </WrapLayout>
+                    </StackLayout>
+                    
+                    <StackLayout class="notification-account">
+                        <StackLayout>
+                            <Label text="Message from clients" class="notification-section-header" />
+                            <Label class="notification-section-divider" />
+                        </StackLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="App Message" class="notification-section-link-label" />
+                            <Switch checked="{{ msg_clnt.inapp }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="Email" class="notification-section-link-label" />
+                            <Switch checked="{{ msg_clnt.email }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="SMS/TXT Message" class="notification-section-link-label" />
+                            <Switch checked="{{ msg_clnt.text }}" class="notification-switch" />
+                        </WrapLayout>
+                    </StackLayout>
+                    
+                    <StackLayout class="notification-account">
+                        <StackLayout>
+                            <Label text="Refused client reference" class="notification-section-header" />
+                            <Label class="notification-section-divider" />
+                        </StackLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="App Message" class="notification-section-link-label" />
+                            <Switch checked="{{ ref_clnt_ref.inapp }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="Email" class="notification-section-link-label" />
+                            <Switch checked="{{ ref_clnt_ref.email }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="SMS/TXT Message" class="notification-section-link-label" />
+                            <Switch checked="{{ ref_clnt_ref.text }}" class="notification-switch" />
+                        </WrapLayout>
+                    </StackLayout>
+                    
+                    <StackLayout class="notification-account">
+                        <StackLayout>
+                            <Label text="cancelled appointment" class="notification-section-header" />
+                            <Label class="notification-section-divider" />
+                        </StackLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="App Message" class="notification-section-link-label" />
+                            <Switch checked="{{ can_apt.inapp }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="Email" class="notification-section-link-label" />
+                            <Switch checked="{{ can_apt.email }}" class="notification-switch" />
+                        </WrapLayout>
+                        <WrapLayout class="notification-all-row">
+                            <Label text="SMS/TXT Message" class="notification-section-link-label" />
+                            <Switch checked="{{ can_apt.text }}" class="notification-switch" />
+                        </WrapLayout>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>

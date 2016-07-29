@@ -53,7 +53,7 @@
                             <Label text="Services" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
-                        <WrapLayout class="settings-all-row" section="notifications" tap="onTap">
+                        <WrapLayout class="settings-all-row" section="notification" tap="onTap">
                             <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
                             <Label text="Notifications" class="settings-section-link-label" />
                         </WrapLayout>
