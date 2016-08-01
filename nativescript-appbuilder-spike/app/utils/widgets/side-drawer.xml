@@ -32,7 +32,7 @@
                 <Label text="Clients (265)" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-        <StackLayout class="drawer-nav-item" orientation="horizontal" section="clients" type="all" tap="onTap">
+        <StackLayout class="drawer-nav-item" orientation="horizontal" section="availability" type="all" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf3f3;" class="ionicons-icon nav-icon" /> 
             </StackLayout>

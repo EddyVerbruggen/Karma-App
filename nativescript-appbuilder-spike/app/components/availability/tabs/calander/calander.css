@@ -1,0 +1,121 @@
+.appointment-details-head {
+    padding:15 0 15 25;
+    background-color:#666;background-image: url('~/images/pattern-triangle-sm.png');
+    color:#fff;
+}
+
+.client-thumbnail {
+    border-radius: 200;
+    width:75;
+    height:75;
+    border-width:2;
+    border-color:#888;  
+    margin: 0 20 0 0;
+}
+
+.client-name {
+    font-size:23;
+    margin-right:3;
+}
+
+.client-phone,
+.client-email {
+    font-size:16;
+    color:#ccc;
+}
+
+.client-status {
+    font-size:10;
+    color:#5BB98C;
+}
+
+.appointment-details {
+    padding:10 15 15 15;
+}
+
+.appointment-input-row {
+    margin: 15 0 0 0;
+}
+
+.appointment-label {
+    font-size: 12;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left:5;
+}
+
+.appointment-label-right{
+    font-size: 12;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left:5;
+    text-align: right;
+}
+
+.appointment-textfield {
+    font-size: 19;
+    
+}
+
+.accept-save-button {
+    font-size:26;
+    color:#fff;
+    background-color:#3EC3D6;
+    height:50;
+    padding:0;
+    margin:0;
+}
+
+
+
+.cancel-button {
+    font-size:21;
+    height:50;
+    color:#888;
+    background-color:#bbb;
+}
+
+.delete-button {
+    font-size:26;
+    height:50;
+    color:#888;
+    background-color:#bbb;
+}
+
+.LocationPopupBody-title-row{
+    
+}
+
+#LocationPopupBody{
+
+}
+
+.title-bar{
+    color: #fff;
+    background-color: #858585;
+    text-transform: capitalize;
+}
+
+.info-table-label {
+	width: 100;
+    padding:15 15 15 15;
+}
+
+.client-row-icon-selected-true{
+ 	width:12;
+    height:12;
+    border-radius:20;
+    background-color:#dcdcdc;
+    padding-right: 15;
+}
+
+.client-row-icon-selected-false{
+ 	width:12;
+    height:12;
+    border-radius:20;
+    border-color: #dcdcdc;
+    border-width:1;
+    padding-right: 15;
+}
