@@ -1,0 +1,26 @@
+.services-account {
+    margin:15;
+}
+
+.services-input-row {
+	margin: 10 0 0 0;
+}
+
+.services-label {
+    font-size: 12;
+    color: #bbb;
+    font-weight: bold;
+    margin-left:5;
+}
+
+.services-textfield {
+    font-size:19;
+}
+
+.fab-button {
+    height: 70;
+    margin: 15;
+    background-color: #3EC3D6; 
+    horizontal-align: right; 
+    vertical-align: bottom; 
+}

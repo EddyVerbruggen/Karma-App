@@ -1,13 +1,25 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded">
-    <Page.actionBar>
-        <widgets:action-bar />
-    </Page.actionBar>
-
-    <StackLayout>
-        <!-- additional view content -->
-        <!-- START_CUSTOM_CODE_homeView -->
-        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-        <!-- END_CUSTOM_CODE_homeView -->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:Slides="nativescript-slides" loaded="pageLoaded">
+    <StackLayout orientation="vertical">
+		<Slides:SlideContainer id="slides" row="0" pageIndicators="true" velocityScrolling="true" interval="10000" loop="false" height="92%">
+			<Slides:Slide class="slide-1">
+				<Label text="This is Panel 1" />
+			</Slides:Slide>
+			<Slides:Slide class="slide-2">
+				<Label text="This is Panel 2" />
+			</Slides:Slide>
+			<Slides:Slide class="slide-3">
+				<Label text="This is Panel 3" />
+			</Slides:Slide>
+			<Slides:Slide class="slide-4">
+				<Label text="This is Panel 4" />
+			</Slides:Slide>
+			<Slides:Slide class="slide-5">
+				<Label text="This is Panel 5" />
+			</Slides:Slide>
+		</Slides:SlideContainer>
+        <GridLayout class="nav" row="1" rows="auto" columns="auto, auto" height="*">
+            <Button col="0" text="Login" class="prev" tap="login" width="50%" />
+            <Button col="1" text="Register" class="next" tap="register" width="50%" />
+        </GridLayout>
     </StackLayout>
 </Page>

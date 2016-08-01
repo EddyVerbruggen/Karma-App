@@ -1,26 +1,34 @@
 'use strict';
-var isInit = true,
-    helpers = require('../../utils/widgets/helper'),
-    // additional requires
-    viewModel = require('./homeView-view-model');
+var isInit = true;
+var helpers = require('../../utils/widgets/helper');
+var viewModel = require('./homeView-view-model');
+var views = require('../../utils/views');
+var	slideContainer;
+var page;
 
-// additional functions
 function pageLoaded(args) {
-    var page = args.object;
-
+    page = args.object;
+	slideContainer = page.getViewById("slides");
+	page.actionBarHidden = true;
+    
     helpers.platformInit(page);
     page.bindingContext = viewModel;
-    // additional pageLoaded
 
     if (isInit) {
         isInit = false;
-
-        // additional pageInit
     }
 }
 
-// START_CUSTOM_CODE_homeView
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+exports.login = function(args){
+	helpers.navigate({
+    	moduleName: views.dashboard,
+    });
+}
 
-// END_CUSTOM_CODE_homeView
+exports.register = function(args){
+    helpers.navigate({
+        moduleName: views.dashboard,
+    });
+}
+
 exports.pageLoaded = pageLoaded;

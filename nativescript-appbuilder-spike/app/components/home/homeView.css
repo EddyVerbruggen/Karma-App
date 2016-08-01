@@ -1,0 +1,29 @@
+body {
+    
+}
+
+.slide-1{
+	background-color: brown;
+}
+
+.slide-2{
+    background-color: brown;
+}
+
+.slide-3{
+    background-color: brown;
+}
+
+.slide-4{
+    background-color: brown;
+}
+
+.slide-5{
+    background-color: brown;
+}
+
+.nav{
+    position: absolute;
+    top: 90%;
+   	background-color: black;
+}
