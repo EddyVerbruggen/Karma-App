@@ -9,7 +9,8 @@ var configObject = {
 };
 Object.defineProperty(configObject, "token", {
 	get: function() {
-		return applicationSettingsModule.getString("token");
+        return "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjgwNDIwNzYwMSwiZXhwIjoxNDcxMDA3MzQ0fQ.yBHQI0_13k2gX_fK6Mtjz76OjmAr5FHXgCckejFkWYo";
+		//return applicationSettingsModule.getString("token");
 	},
 	set: function(token) {
 		return applicationSettingsModule.setString("token", token);
