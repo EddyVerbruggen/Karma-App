@@ -1,3 +1,30 @@
 <GridLayout rows="*, 50" columns="*">
-      
+    <ScrollView>
+        <grid-layout rows="auto,*">
+            <Repeater items="{{weekdays}}">
+                <Repeater.itemTemplate>
+
+                    <WrapLayout class="standard-accordian-header">
+                        <image src="~/images/ic_keyboard_arrow_down.png" class="ionicons-icon availability-standard-section-link-icon" />
+                        <Label text="{{day}}" class="standard-accordian-header-label" />
+                    </WrapLayout>
+<!--                     <stack-layout visibility="collapse">
+                        <StackLayout class="standard-accordion-input-row">
+                            <Label text="Availability" class="standard-accordion-label" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="11:00 AM (PST)" class="standard-accordion-textfield" />
+                        </StackLayout>
+                        <StackLayout class="standard-accordion-input-row">
+                            <Label text="Location" class="standard-accordion-label" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Incall, Outcall " class="standard-accordion-textfield" />
+                        </StackLayout>
+                        <WrapLayout class="standard-accordion-all-row" section="screening" tap="onTap">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                            <Label text="Unavailable all day" class="standard-accordion-section-link-label" />
+                        </WrapLayout>
+                    </stack-layout> -->
+                    
+                </Repeater.itemTemplate>
+            </Repeater>	 
+        </grid-layout>
+    </ScrollView>
 </GridLayout>

@@ -22,7 +22,7 @@
                             <Standard:standard />
                         </TabViewItem.view>
                     </TabViewItem>
-                    <TabViewItem title="Travel" xmlns:Travel="components/availability/tabs/travel">
+                    <TabViewItem title="{{'Pending (' + 1 + ')'}}" xmlns:Travel="components/availability/tabs/travel">
                         <TabViewItem.view>
                             <Travel:travel />
                         </TabViewItem.view>

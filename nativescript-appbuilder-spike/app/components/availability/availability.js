@@ -13,8 +13,16 @@ var page;
 var isInit = true;
 
 var pageData = new Observable({
-    isLoading: true,
-    LocationVisible: false
+    weekdays: [
+        {"day":"Mondays"},
+        {"day":"Tuesdays"},
+        {"day":"Wednesdays"},
+        {"day":"Thursdays"},
+        {"day":"Fridays"},
+        {"day":"Saturdays"},
+        {"day":"Sundays"}
+    ],
+    isLoading: true
 });
 
 exports.onLoaded = function(args) {
