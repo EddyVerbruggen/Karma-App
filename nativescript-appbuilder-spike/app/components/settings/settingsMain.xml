@@ -49,32 +49,32 @@
                     
                     <StackLayout class="settings-all">                
                         <WrapLayout class="settings-all-row" section="services" tap="onTap">
-                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
                             <Label text="Services" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
                         <WrapLayout class="settings-all-row" section="notification" tap="onTap">
-                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
                             <Label text="Notifications" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
                         <WrapLayout class="settings-all-row" section="screening" tap="onTap">
-                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
                             <Label text="Screening" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
                         <WrapLayout class="settings-all-row" section="booking" tap="onTap">
-                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
                             <Label text="Booking" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
                         <WrapLayout class="settings-all-row" section="landing" tap="onTap">
-                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
                             <Label text="Landing Page" class="settings-section-link-label" />
                         </WrapLayout>
                         <Label class="settings-all-divider" />
                         <WrapLayout class="settings-all-row" section="terms" tap="onTap">
-                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" width="45" />
+                            <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
                             <Label text="Terms & Conditions" class="settings-section-link-label" />
                         </WrapLayout>
                     </StackLayout> 

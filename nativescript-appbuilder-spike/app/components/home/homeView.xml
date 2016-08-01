@@ -1,6 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:Slides="nativescript-slides" loaded="pageLoaded">
-    <GridLayout rows="* auto">
-		<Slides:SlideContainer id="slides" row="0" pageIndicators="true" velocityScrolling="true" interval="10000" loop="false">
+    <StackLayout orientation="vertical">
+		<Slides:SlideContainer id="slides" row="0" pageIndicators="true" velocityScrolling="true" interval="10000" loop="false" height="92%">
 			<Slides:Slide class="slide-1">
 				<Label text="This is Panel 1" />
 			</Slides:Slide>
@@ -17,9 +17,9 @@
 				<Label text="This is Panel 5" />
 			</Slides:Slide>
 		</Slides:SlideContainer>
-        <GridLayout class="nav" row="1" rows="auto" columns="auto, auto">
+        <GridLayout class="nav" row="1" rows="auto" columns="auto, auto" height="*">
             <Button col="0" text="Login" class="prev" tap="login" width="50%" />
             <Button col="1" text="Register" class="next" tap="register" width="50%" />
         </GridLayout>
-	</GridLayout>
+    </StackLayout>
 </Page>
