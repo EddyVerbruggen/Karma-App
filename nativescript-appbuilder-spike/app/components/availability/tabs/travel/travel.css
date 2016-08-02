@@ -1,0 +1,22 @@
+.travel-accordian-header{
+    margin:5;
+    background-color:#DDDDDD;
+}
+
+.travel-accordian-header-label{
+    margin:5;
+    font-size: 19;
+    width: 72%;
+}
+
+.availability-travel-section-link-icon{
+    width:40;
+}
+
+.travel-account{
+    margin: 15;
+}
+
+.travel-accordian-header-delete{
+    float: right;
+}
