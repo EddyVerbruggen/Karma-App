@@ -6,9 +6,9 @@
     <Image src="~/images/karma-logo-light.png" class="login-logo" />
         <GridLayout rows="auto, auto" id="form-controls">
             <TextField
-                id="email"
-                text="{{ user.email }}"
-                hint="Email"
+                id="username"
+                text="{{ user.username }}"
+                hint="Username"
                 keyboardType="email"
                 returnKeyType="next"
                 returnPress="focusPassword"

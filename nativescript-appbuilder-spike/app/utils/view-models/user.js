@@ -1,36 +1,47 @@
-var config = require('../config');
 var Observable = require('data/observable').Observable;
 var validator = require('email-validator');
+var dialogs = require('ui/dialogs');
+var config = require('../config');
+var navigation = require('../navigation');
 
 function User(info) {
 	info = info || {};
 
-	// You can add properties to observables on creation
 	var viewModel = new Observable({
-		email: info.email || "",
+		username: info.username || "",
 		password: info.password || ""
 	});
 
 	viewModel.login = function() {
-		return fetch(config.apiUrl + "oauth/token", {
-			method: "POST",
-			body: JSON.stringify({
-				username: viewModel.get("email"),
-				password: viewModel.get("password"),
-				grant_type: "password"
-			}),
+        return fetch(config.apiUrl + "users/token.json", {
+            // Do a regular form POST instead of JSON body string
+            method: "POST",
 			headers: {
-				"Content-Type": "application/json"
-			}
-		})
-		.then(handleErrors)
-		.then(function(response) {
-			return response.json();
-		}).then(function(data) {
-			config.token = data.Result.access_token;
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+            body: "username=" + viewModel.get("username") + "&password=" + viewModel.get("password")
+        })
+        .then(function(response) {
+            return response.json().then(function(data) {
+                return {
+                    data: data,
+                    status: response.status
+                };
+            });
+        })
+        .then(function(resp) {
+            if (resp.status === 200 && resp.data && resp.data.token) {
+                config.token = resp.data.token;
+                // Set other user information in application-settings
+                navigation.goToDashboard();
+            } else {
+                dialogs.alert({
+                    message: 'Sorry, your username/password could not be found.',
+                    okButtonText: 'OK'
+                });
+            }
 		});
 	};
-    
 
 	viewModel.isValidEmail = function() {
 		var email = this.get("email");
@@ -38,15 +49,6 @@ function User(info) {
 	};
 
 	return viewModel;
-}
-
-
-function handleErrors(response) {
-	if (!response.ok) {
-		console.log(JSON.stringify(response));
-		throw Error(response.statusText);
-	}
-	return response;
 }
 
 module.exports = User;

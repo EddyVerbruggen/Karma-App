@@ -13,30 +13,21 @@ module.exports = {
 	goToLoginPage: function() {
 		frameModule.topmost().navigate(views.login);
 	},
-	goToPasswordPage: function() {
-		frameModule.topmost().navigate("views/password/password");
-	},
     goToDashboard: function() {
         frameModule.topmost().navigate({
-            moduleName: 'navigation/navigation',
+            moduleName: views.dashboard,
             clearHistory: true
         });
     },
-	goToListPage: function() {
-		frameModule.topmost().navigate({
-			moduleName: "views/list/list",
-			clearHistory: true
-		});
-	},
 	signOut: function() {
 		config.invalidateToken();
 		frameModule.topmost().navigate({
-			moduleName: "views/login/login",
+			moduleName: views.login,
 			animated: false,
 			clearHistory: true
 		});
 	},
 	startingPage: function() {
-		return config.token ? "components/dashboard/dashboard" : "components/home/homeView";
+        return config.token ? views.dashboard : views.login;
 	}
 };
