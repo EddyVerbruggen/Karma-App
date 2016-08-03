@@ -1,3 +1,4 @@
+var appSettings = require("application-settings");
 var Observable = require('data/observable').Observable;
 var validator = require('email-validator');
 var dialogs = require('ui/dialogs');
@@ -32,7 +33,12 @@ function User(info) {
         .then(function(resp) {
             if (resp.status === 200 && resp.data && resp.data.token) {
                 config.token = resp.data.token;
-                // Set other user information in application-settings
+                appSettings.setNumber('id', resp.data.id);
+                appSettings.setString('username', resp.data.username);
+                appSettings.setString('email', resp.data.email);
+                appSettings.setString('profile_image', resp.data.profile_image);
+                appSettings.setString('name', resp.data.name);
+                appSettings.setString('timezone', resp.data.timezone);
                 navigation.goToDashboard();
             } else {
                 dialogs.alert({

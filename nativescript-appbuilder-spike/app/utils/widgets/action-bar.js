@@ -4,13 +4,11 @@ var frameModule = require('ui/frame');
 var view = require('ui/core/view');
 var observable = require('data/observable');
 var views = require('../views');
-var helpers = require('./helper');
 var navigation = require('../navigation');
 
 exports.onBack = function() {
     // Android only
-    var topmost = frameModule.topmost();
-    topmost.goBack();
+    frameModule.topmost().goBack();
 }
 
 exports.toggleDrawer = function() {
@@ -19,25 +17,23 @@ exports.toggleDrawer = function() {
 }
 
 exports.onTapSearch = function() {
-    var currentPage = topmost.currentPage;
+    var currentPage = frameModule.topmost().currentPage;
     currentPage.showModal(views.search, '', function closeCallback(type, id) {
         var targetComponent;
         if (type == 'booking') {
-            targetComponent = views.appointmentDetails;
+            targetComponent = 'appointmentDetails';
         } else if (type == 'client') {
-            targetComponent = views.clientDetails;
+            targetComponent = 'clientDetails';
         } else {
             return;
         }
-        // TODO: use navigation
-        helpers.navigate(targetComponent);
-        
+
+        navigation.goToPage(targetComponent);
     }, true);
 }
 
 exports.onSetting = function() {
-    // TODO: utils/navigation
-    helpers.navigate(views.settingsMenu);
+    navigation.goToPage('settingsMenu');
 }
 
 exports.onLogout = function() {

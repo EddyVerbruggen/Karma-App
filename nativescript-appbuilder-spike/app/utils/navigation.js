@@ -1,8 +1,12 @@
+var appSettings = require("application-settings");
 var frameModule = require("ui/frame");
 var config = require("./config");
 var views = require('./views');
 
 module.exports = {
+    goBack: function() {
+        frame.topmost().goBack();
+    },
     goToPage: function(view) {
         if (views.hasOwnProperty(view)) {
             frameModule.topmost().navigate(views[view]);
@@ -21,6 +25,12 @@ module.exports = {
     },
 	signOut: function() {
 		config.invalidateToken();
+        appSettings.remove('id');
+        appSettings.remove('username');
+        appSettings.remove('email');
+        appSettings.remove('profile_image');
+        appSettings.remove('name');
+        appSettings.remove('timezone');
 		frameModule.topmost().navigate({
 			moduleName: views.login,
 			animated: false,
