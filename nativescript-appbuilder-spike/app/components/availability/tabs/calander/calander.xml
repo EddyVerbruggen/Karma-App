@@ -1,4 +1,4 @@
-<GridLayout rows="*, 50" columns="*"
+<GridLayout rows="*" columns="*"
 	xmlns:calendar="nativescript-telerik-ui-pro/calendar">
 	<calendar:RadCalendar id="calendar" />
 </GridLayout>

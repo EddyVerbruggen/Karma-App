@@ -1,0 +1,30 @@
+<GridLayout rows="*" columns="*">
+    <ScrollView>
+        <grid-layout rows="auto,*" id="gridview">
+            <StackLayout>
+                <button text="July 23 - August 3" class="traffic-date-selection" />
+
+                <Repeater items="{{visitList}}">
+                    <Repeater.itemTemplate>
+                        <StackLayout class="visitors-account">
+                            <wrap-layout class="visitors-account">
+                                <stack-layout class="visitors-traffic-input-row-left">
+                                    <Label text="{{datetime}}" class="visitors-traffic-datetime" />
+                                    <Label text="{{ip}}" class="visitors-traffic-ipaddress" />
+                                    <Label text="{{location}}" class="visitors-traffic-country" />
+                                    <Label text="{{url}}" class="visitors-traffic-address" />
+                                </stack-layout>
+                                <stack-layout class="visitors-traffic-input-row-right">
+                                    <Label text="{{duration}}" class="visitors-traffic-duration" />
+                                    <Label text="{{actionText}}" class="{{'visitors-traffic-action ' + action }}" />
+                                    <Label text="{{name}}" class="visitors-traffic-name" visibility="{{ action == 'booked' ? 'visible' : 'collapse'}}"/>
+                                </stack-layout>
+                            </wrap-layout>
+                        </StackLayout>
+                    </Repeater.itemTemplate>
+                </Repeater>
+                
+            </StackLayout>
+        </grid-layout>
+    </ScrollView>
+</GridLayout>

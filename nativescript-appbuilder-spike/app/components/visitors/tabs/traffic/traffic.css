@@ -1,0 +1,49 @@
+.visitors-account {
+    margin:5;
+    border-bottom-width:2;
+    border-bottom-color:#999;
+}
+
+.visitors-traffic-input-row-left {
+    width:70%;
+}
+
+.visitors-traffic-input-row-right {
+    width:30%;
+    text-align: right;
+}
+
+.visitors-traffic-datetime{
+    color: #DDDDDD;
+    font-size: 12;
+}
+
+.visitors-traffic-ipaddress{
+    font-size: 19;
+}
+
+.visitors-traffic-country{
+    font-size: 13;
+}
+
+.visitors-traffic-address{
+    color: #3EC3D6;
+    font-size: 12;
+}
+
+.visitors-traffic-duration{
+    font-size: 17;
+}
+
+.visitors-traffic-action{
+    font-size: 17;
+    color: #DDDDDD;
+}
+
+.visitors-traffic-name{
+    font-size: 12;
+}
+
+.booked{
+    color: #57E35C;
+}
