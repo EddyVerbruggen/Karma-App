@@ -7,14 +7,14 @@ var navigation = require('../../utils/navigation');
 var pageData;
 var user;
 var page;
-var email;
+var username;
 var password;
 var submitButton;
 
 exports.onLoaded = function (args) {
     page = args.object;
     user = new UserViewModel({
-        email: '',
+        username: '',
         password: ''
     });
     pageData = new Observable({
@@ -24,10 +24,10 @@ exports.onLoaded = function (args) {
     page.bindingContext = pageData;
     // statusBarUtil.configure();
     
-	email = page.getViewById("email");
+	username = page.getViewById("username");
 	password = page.getViewById("password");
 	submitButton = page.getViewById("submit-button");
-	//formUtil.hideKeyboardOnBlur(page, [email, password]);
+	//formUtil.hideKeyboardOnBlur(page, [username, password]);
 
 	handleAndroidFocus();
     
@@ -35,13 +35,6 @@ exports.onLoaded = function (args) {
 };
 
 exports.submit = function() {
-    if (!user.isValidEmail()) {
-        dialogs.alert({
-            message: 'Enter a valid email address.',
-            okButtonText: 'OK'
-        });
-        return;
-    }
     toggleForm(false);
     login();
 };
@@ -51,7 +44,7 @@ exports.focusPassword = function() {
 };
 
 function toggleForm(enable) {
-    email.isEnabled = enable;
+    username.isEnabled = enable;
     password.isEnabled = enable;
     submitButton.isEnabled = enable;
     pageData.set('authenticating', !enable);
@@ -60,15 +53,15 @@ function toggleForm(enable) {
 function setHintColors() {
 	var placeHolderColor = pageData.get("isLogin") ? "#52545B" : "#52545B";
 
-	if (email.android) {
+	if (username.android) {
 		var color = android.graphics.Color.parseColor(placeHolderColor);
-		email.android.setHintTextColor(color);
+		username.android.setHintTextColor(color);
 		password.android.setHintTextColor(color);
 	}
-	if (email.ios) {
+	if (username.ios) {
 		var dictionary = new NSDictionary([new Color(placeHolderColor).ios], [NSForegroundColorAttributeName]);
-		email.ios.attributedPlaceholder = NSAttributedString.alloc().initWithStringAttributes(
-			email.hint, dictionary);
+		username.ios.attributedPlaceholder = NSAttributedString.alloc().initWithStringAttributes(
+			username.hint, dictionary);
 		password.ios.attributedPlaceholder = NSAttributedString.alloc().initWithStringAttributes(
 			password.hint, dictionary);
 	}
@@ -81,21 +74,13 @@ function handleAndroidFocus() {
 	if (container.android) {
 		container.android.setFocusableInTouchMode(true);
 		container.android.setFocusable(true);
-		email.android.clearFocus();
+		username.android.clearFocus();
 	}
 }
 
 function login() {
-    navigation.goToDashboard();
-    /*user.login()
-    	.catch(function() {
-        	dialogs.alert({
-                message: 'Sorry, your username/password could not be found.',
-                okButtonText: 'OK'
-            });
-        	toggleForm(true);
-        	return Promise.reject();
-    	})
-    	.then(toggleForm(true))
-    	.then(navigation.goToDashboardView());*/
+    user.login()
+    	.then(function(response) {
+			toggleForm(true);
+    	});
 }

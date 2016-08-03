@@ -24,10 +24,12 @@ exports.platformInit = function(page) {
     }
 }
 
+// TODO: Place in utils/navigation
 exports.back = function() {
     frame.topmost().goBack();
 }
 
+// TODO: Remove and use utils/navigation
 exports.navigate = function(location) {
     frame.topmost().navigate(location);
 }
@@ -58,7 +60,6 @@ exports.togglePageLoadingIndicator = function(toggleValue, pageData) {
 
 exports.handleLoadError = function(error, errorMessage) {
     errorMessage = errorMessage || 'Sorry, there was an error loading information.'
-    console.log(error);
     dialogsModule.alert({
         message: errorMessage,
         okButtonText: "OK"

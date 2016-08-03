@@ -30,6 +30,9 @@
     <ActionItem tap="onSetting"
         ios.systemIcon="16" ios.position="right"
         text="Settings" android.position="popup" />
+    <ActionItem tap="onLogout"
+        ios.systemIcon="16" ios.position="right"
+        text="Logout" android.position="popup" />
   
 
 </ActionBar>
