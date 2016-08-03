@@ -1,6 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
       xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
-      xmlns:widgets="utils/widgets">
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
@@ -10,7 +11,7 @@
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
             <ScrollView>
-                <StackLayout width="100%">
+                <StackLayout width="100%" id="screening">
 
                     <StackLayout class="screening-account">
                         <StackLayout>
@@ -69,16 +70,16 @@
                         <StackLayout class="screening-input-row">
                             <Label text="Require work/employment information" class="screening-label" />
                         </StackLayout>
-                        <WrapLayout class="screening-all-row" section="screening">
-                            <image src="~/images/ic_check_box_outline_blank_white.png" class="" width="30" />
+                        <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec1">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="sec1" class="" width="30" />
                             <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
                         </WrapLayout>
-                        <WrapLayout class="screening-all-row" section="screening">
-                            <image src="~/images/ic_check_box_white.png" class="" width="30" />
+                        <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec2">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="sec2" class="" width="30" />
                             <Label text="On any other companion's white-list" class="screening-section-link-label" />
                         </WrapLayout>
-                        <WrapLayout class="screening-all-row" section="screening">
-                            <image src="~/images/ic_check_box_white.png" class="" width="30" />
+                        <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec3">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="sec3" class="" width="30" />
                             <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
                         </WrapLayout>
                     </StackLayout>

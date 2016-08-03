@@ -18,7 +18,16 @@
                             </StackLayout>
                             <StackLayout class="travel-accordion-input-row">
                                 <Label text="Location" class="travel-accordion-label" />
-                                <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{location}}" class="travel-accordion-textfield" />
+                                <WrapLayout>
+                                    <WrapLayout class="travel-accordion-all-row-50" tap="toggleCheckbox" section="{{day+'incall'}}">
+                                        <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'incall'}}" class="ionicons-icon travel-accordion-section-link-icon" width="30" />
+                                        <Label text=" Incall" class="travel-accordion-section-link-label" />
+                                    </WrapLayout>
+                                    <WrapLayout class="travel-accordion-all-row-50" tap="toggleCheckbox" section="{{day+'outcall'}}">
+                                        <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'outcall'}}" class="ionicons-icon travel-accordion-section-link-icon" width="30" />
+                                        <Label text=" Outcall" class="travel-accordion-section-link-label" />
+                                    </WrapLayout>
+                                </WrapLayout>
                             </StackLayout>
                             <StackLayout class="travel-accordion-input-row">
                                 <Label text="Availability" class="travel-accordion-label" />

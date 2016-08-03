@@ -55,6 +55,17 @@ exports.toggle = function(args){
     }  	
 }
 
+exports.toggleCheckbox = function(args){
+    var section = args.object.section;
+    var a = parentView.getViewById(section);
+    
+    if(a.src == "~/images/ic_check_box_outline_blank_white.png"){
+    	a.src = "~/images/ic_check_box_white.png";
+    }else{
+        a.src = "~/images/ic_check_box_outline_blank_white.png";
+    }
+}
+
 exports.selectTime = function(args){
 	var TimeCallback = function (result) {
         if (result) {

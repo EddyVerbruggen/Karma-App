@@ -17,11 +17,20 @@
                             </StackLayout>
                             <StackLayout class="standard-accordion-input-row">
                                 <Label text="Location" class="standard-accordion-label" />
-                                <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{location}}" class="standard-accordion-textfield" />
+                                <WrapLayout>
+                                    <WrapLayout class="standard-accordion-all-row-50" tap="toggleCheckbox" section="{{day+'incall'}}">
+                                        <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'incall'}}" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                                        <Label text=" Incall" class="standard-accordion-section-link-label" />
+                                    </WrapLayout>
+                                    <WrapLayout class="standard-accordion-all-row-50" tap="toggleCheckbox" section="{{day+'outcall'}}">
+                                        <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'outcall'}}" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                                        <Label text=" Outcall" class="standard-accordion-section-link-label" />
+                                    </WrapLayout>
+                                </WrapLayout>
                             </StackLayout>
-                            <WrapLayout class="standard-accordion-all-row" section="screening" tap="onTap">
-                                <image src="~/images/ic_check_box_outline_blank_white.png" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
-                                <Label text="Unavailable all day" class="standard-accordion-section-link-label" />
+                            <WrapLayout class="standard-accordion-all-row" tap="toggleCheckbox" section="{{day+'chk'}}">
+                                <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'chk'}}" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                                <Label text=" Unavailable all day" class="standard-accordion-section-link-label" />
                             </WrapLayout>
                         </StackLayout>
 					</StackLayout>    

@@ -1,6 +1,7 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
       xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
-      xmlns:widgets="utils/widgets">
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
@@ -10,7 +11,7 @@
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
             <ScrollView>
-                <StackLayout width="100%">
+                <StackLayout width="100%" id="booking">
 
                     <StackLayout class="booking-account">
                         <StackLayout>
@@ -38,12 +39,12 @@
                         </StackLayout>
                         <StackLayout class="booking-input-row">
                             <Label text="Location I offer" class="booking-label" />
-                            <WrapLayout class="settings-all-row" section="screening" tap="onTap">
-                                <image src="~/images/ic_check_box_outline_blank_white.png" class="ionicons-icon settings-section-link-icon" width="30" />
+                            <WrapLayout class="settings-all-row" section="screening" tap="toggleCheckbox" section="incall">
+                                <image src="~/images/ic_check_box_outline_blank_white.png" id="incall" class="ionicons-icon settings-section-link-icon" width="30" />
                                 <Label text="Incalls" class="settings-section-link-label" />
                             </WrapLayout>
-                            <WrapLayout class="settings-all-row" section="screening" tap="onTap">
-                                <image src="~/images/ic_check_box_white.png" class="ionicons-icon settings-section-link-icon" width="30" />
+                            <WrapLayout class="settings-all-row" section="screening" tap="toggleCheckbox" section="outcall">
+                                <image src="~/images/ic_check_box_white.png" id="outcall" class="ionicons-icon settings-section-link-icon" width="30" />
                                 <Label text="Outcalls" class="settings-section-link-label" />
                             </WrapLayout>
                         </StackLayout>
