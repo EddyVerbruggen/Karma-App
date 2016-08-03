@@ -24,11 +24,6 @@ exports.platformInit = function(page) {
     }
 }
 
-// TODO: Place in utils/navigation
-exports.back = function() {
-    frame.topmost().goBack();
-}
-
 // TODO: Remove and use utils/navigation
 exports.navigate = function(location) {
     frame.topmost().navigate(location);

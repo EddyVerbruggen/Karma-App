@@ -4,7 +4,7 @@
             <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="profile-thumbnail" />
         </StackLayout>
         <StackLayout verticalAlignment="center">
-            <Label text="Jenny Sinclair" class="" />
+            <Label text="{{name}}" class="" />
         </StackLayout>
     </StackLayout>
     <StackLayout class="drawer-nav-area">
