@@ -5,7 +5,6 @@ var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
-var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;

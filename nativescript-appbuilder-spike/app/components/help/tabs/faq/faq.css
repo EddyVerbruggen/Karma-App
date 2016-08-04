@@ -3,12 +3,13 @@
 }
 
 .faq-row{
-    background-color: #F9F9F9;
+    margin: 5;
+    background-color: #FFF;
 }
 
 .help-faq-header{
     margin:5;
-    background-color:#F9F9F9;
+    background-color: #FFF;
 }
 
 .help-faq-header-label{
