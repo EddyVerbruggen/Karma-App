@@ -57,7 +57,7 @@
             </StackLayout>
         </StackLayout>
         <Label class="nav-divider" />
-        <StackLayout class="drawer-nav-item" orientation="horizontal">
+        <StackLayout class="drawer-nav-item" orientation="horizontal" section="help" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf445;" class="ionicons-icon nav-icon" /> 
             </StackLayout>

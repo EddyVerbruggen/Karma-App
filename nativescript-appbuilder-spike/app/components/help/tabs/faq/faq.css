@@ -1,2 +1,26 @@
-body {
+.help-faq-section-link-icon{
+    width: 40;
+}
+
+.faq-row{
+    background-color: #F9F9F9;
+}
+
+.help-faq-header{
+    margin:5;
+    background-color:#F9F9F9;
+}
+
+.help-faq-header-label{
+    margin:5;
+    font-size: 19;
+}
+
+.standard-account{
+    margin: 15;
+}
+
+.faq-accordion-description{
+    white-space: normal;
+    margin-left:25;
 }
