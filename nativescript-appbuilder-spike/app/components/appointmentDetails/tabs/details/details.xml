@@ -1,7 +1,7 @@
 <GridLayout rows="*, 50" columns="*">
     <ScrollView row="0" col="0">  
         <StackLayout>
-            <StackLayout class="appointment-details-head" orientation="horizontal">                
+            <StackLayout class="appointment-details-head" orientation="horizontal" clientId="{{appointmentDetails.id}}" tap="ClientDetail">                
                 <StackLayout verticalAlignment="center">
                     <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
                 </StackLayout>
@@ -76,13 +76,13 @@
     
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="50%">
-            <Label text="Confirm" class="accept-save-button" width="100%" />
+            <Label text="Confirm" class="accept-save-button" width="100%" tap="confirm" />
         </StackLayout>
         <StackLayout width="35%">
-            <Label text="Cancel" class="cancel-button" width="100%" />
+            <Label text="Cancel" class="cancel-button" width="100%" tap="cancel" />
         </StackLayout>
         <StackLayout width="15%">
-            <Label text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
+            <Label text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" tap="delete" />
         </StackLayout>
     </StackLayout>    
 </GridLayout>

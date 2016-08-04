@@ -1,5 +1,5 @@
 .visitors-referrer-toggle{
-    width: 5%;
+    width: 3%;
     background-color: #383838;
 }
 
@@ -9,6 +9,10 @@
 
 .visitors-referrer-body{
     width: 95%;
+}
+
+.margin-left-3{
+    margin-left: 3%;
 }
 
 .visitors-referrer-col{
@@ -40,4 +44,10 @@
 .visitors-referrer-appointment{
     width: 33%;
     text-align: center;
+}
+
+.visitors-referrer-user-list{
+    border-width: 1;
+    border-color: #E7E7E7;
+    border-style: solid;
 }

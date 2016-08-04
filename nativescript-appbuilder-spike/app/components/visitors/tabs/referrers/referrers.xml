@@ -6,9 +6,9 @@
 
                 <Repeater items="{{referrers}}">
                     <Repeater.itemTemplate>
-                        <StackLayout class="visitors-account" orientation="horizontal">
-                            <Stack-layout class="visitors-referrer-toggle">
-                                <image src="~/images/ic_keyboard_arrow_down.png" class="visitors-referrer-toggle-icon" width="20" />
+                        <StackLayout class="visitors-account" orientation="horizontal" section="{{id}}" tap="toggle">
+                            <Stack-layout class="visitors-referrer-toggle" visibility="{{aptlist.length > 0 ? 'visible' : 'collapse' }}">
+                                <image src="~/images/ic_keyboard_arrow_down.png" id="{{id+'arr'}}" class="visitors-referrer-toggle-icon" width="20" />
                             </Stack-layout>
                             <StackLayout class="visitors-referrer-body">
                                 <wrap-layout class="visitors-account">
@@ -32,12 +32,18 @@
                                         <Label text="{{appointments}}" class="visitors-referrer-value" />
                                     </stack-layout>
                                 </wrap-layout>
-                                <StackLayout>
-                                    <wrap-layout>
-                                        <label text="hi" class="visitors-referrer-name" />
-                                        <label text="hello" class="visitors-referrer-status" />
-                                        <label text="hey" class="visitors-referrer-appointment" />
-                                    </wrap-layout>
+                                <StackLayout visibility="collapse" id="{{id}}">
+                                    
+                                    <Repeater items="{{aptlist}}">
+                                        <Repeater.itemTemplate>
+                                            <wrap-layout class="visitors-referrer-user-list">
+                                                <label text="{{name}}" class="visitors-referrer-name" />
+                                                <label text="{{status}}" class="visitors-referrer-status" />
+                                                <label text="{{appointment + ' Appointment'}}" class="visitors-referrer-appointment" />
+                                            </wrap-layout>
+                                        </Repeater.itemTemplate>
+                                    </Repeater>
+                                    
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>

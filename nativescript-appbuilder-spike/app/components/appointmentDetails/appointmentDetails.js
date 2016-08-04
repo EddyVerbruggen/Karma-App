@@ -6,8 +6,10 @@ var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
+var views = require('../../utils/views');
 var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
+var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;
@@ -50,6 +52,17 @@ exports.onLoaded = function(args) {
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.ClientDetail = function(args){
+	helpers.tapFlash(args.object).then(function() {
+        helpers.navigate({
+            moduleName: views.clientDetails,
+            context: {
+                id: args.view.clientId
+            }
+        });        
+    });
 }
 
 exports.sendMessage = function(args) {
@@ -132,5 +145,33 @@ function closeOverlay(overlayId, visibilityFlag) {
         duration: 300
     }).then(function() {
         pageData.set(visibilityFlag, false);
+    });
+}
+
+exports.confirm = function(args){
+    dialogs.confirm({
+      title: "Confirm",
+      message: "Are you sure?",
+      okButtonText: "Confirm",
+      cancelButtonText: "Cancel"
+    }).then(function (result) {
+      // result argument is boolean
+      console.log("Dialog result: " + result);
+    });
+}
+
+exports.cancel = function(args){
+
+}
+
+exports.delete = function(args){
+    dialogs.confirm({
+      title: "Delete",
+      message: "Are you sure you want to delete ?",
+      okButtonText: "Delete",
+      cancelButtonText: "Cancel"
+    }).then(function (result) {
+      // result argument is boolean
+      console.log("Dialog result: " + result);
     });
 }

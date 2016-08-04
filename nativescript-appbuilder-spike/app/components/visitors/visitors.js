@@ -52,44 +52,35 @@ var pageData = new Observable({
     ],
     referrers:[
         {
+            "id":"1",
+            "visits":"577", 
+            "avgtime":"5m 33s",  
+            "url":"http://www.google.co.in",
+            "clients":"17",
+            "appointments":"7",
+            "aptlist":[]
+        },{
+            "id":"2",
             "visits":"577", 
             "avgtime":"5m 33s",  
             "url":"http://www.google.co.in",
             "clients":"17",
             "appointments":"7",
             "aptlist":[
-                {"name":"John Smith","status":"Pending","appointment":"0"},
-                {"name":"Peter Johnson","status":"Approved","appointment":"1"},
-                {"name":"Mathew Jones","status":"Rejected","appointment":"0"},
-                {"name":"Andrew Ladd","status":"Pending","appointment":"1"},
-                {"name":"Blake Wheeler","status":"Pending","appointment":"0"}
+                {"name":"John Smith", "status":"Pending", "appointment":"0"},
+                {"name":"Peter Johnson", "status":"Approved", "appointment":"1"},
+                {"name":"Mathew Jones", "status":"Rejected", "appointment":"0"},
+                {"name":"Andrew Ladd", "status":"Pending", "appointment":"1"},
+                {"name":"Blake Wheeler", "status":"Pending", "appointment":"0"}
             ]
         },{
+            "id":"3",
             "visits":"577", 
             "avgtime":"5m 33s",  
             "url":"http://www.google.co.in",
             "clients":"17",
             "appointments":"7",
-            "aptlist":[
-                {"name":"John Smith","status":"Pending","appointment":"0"},
-                {"name":"Peter Johnson","status":"Approved","appointment":"1"},
-                {"name":"Mathew Jones","status":"Rejected","appointment":"0"},
-                {"name":"Andrew Ladd","status":"Pending","appointment":"1"},
-                {"name":"Blake Wheeler","status":"Pending","appointment":"0"}
-            ]
-        },{
-            "visits":"577", 
-            "avgtime":"5m 33s",  
-            "url":"http://www.google.co.in",
-            "clients":"17",
-            "appointments":"7",
-            "aptlist":[
-                {"name":"John Smith","status":"Pending","appointment":"0"},
-                {"name":"Peter Johnson","status":"Approved","appointment":"1"},
-                {"name":"Mathew Jones","status":"Rejected","appointment":"0"},
-                {"name":"Andrew Ladd","status":"Pending","appointment":"1"},
-                {"name":"Blake Wheeler","status":"Pending","appointment":"0"}
-            ]
+            "aptlist":[]
         }
     ],
     isLoading: true
@@ -105,4 +96,18 @@ exports.onLoaded = function(args) {
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.toggle = function(args){
+    var section = args.object.section;
+    var a = parentView.getViewById(section);
+    var b = parentView.getViewById(section+'arr');
+    
+    if(a.visibility == "visible"){
+        a.visibility = "collapse";
+        b.src = "~/images/ic_keyboard_arrow_down.png";
+    }else{
+        a.visibility = "visible";
+        b.src = "~/images/ic_keyboard_arrow_up.png";
+    }  
 }
