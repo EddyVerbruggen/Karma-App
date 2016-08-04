@@ -50,6 +50,48 @@ var pageData = new Observable({
             "name":"John Carter"
         }
     ],
+    referrers:[
+        {
+            "visits":"577", 
+            "avgtime":"5m 33s",  
+            "url":"http://www.google.co.in",
+            "clients":"17",
+            "appointments":"7",
+            "aptlist":[
+                {"name":"John Smith","status":"Pending","appointment":"0"},
+                {"name":"Peter Johnson","status":"Approved","appointment":"1"},
+                {"name":"Mathew Jones","status":"Rejected","appointment":"0"},
+                {"name":"Andrew Ladd","status":"Pending","appointment":"1"},
+                {"name":"Blake Wheeler","status":"Pending","appointment":"0"}
+            ]
+        },{
+            "visits":"577", 
+            "avgtime":"5m 33s",  
+            "url":"http://www.google.co.in",
+            "clients":"17",
+            "appointments":"7",
+            "aptlist":[
+                {"name":"John Smith","status":"Pending","appointment":"0"},
+                {"name":"Peter Johnson","status":"Approved","appointment":"1"},
+                {"name":"Mathew Jones","status":"Rejected","appointment":"0"},
+                {"name":"Andrew Ladd","status":"Pending","appointment":"1"},
+                {"name":"Blake Wheeler","status":"Pending","appointment":"0"}
+            ]
+        },{
+            "visits":"577", 
+            "avgtime":"5m 33s",  
+            "url":"http://www.google.co.in",
+            "clients":"17",
+            "appointments":"7",
+            "aptlist":[
+                {"name":"John Smith","status":"Pending","appointment":"0"},
+                {"name":"Peter Johnson","status":"Approved","appointment":"1"},
+                {"name":"Mathew Jones","status":"Rejected","appointment":"0"},
+                {"name":"Andrew Ladd","status":"Pending","appointment":"1"},
+                {"name":"Blake Wheeler","status":"Pending","appointment":"0"}
+            ]
+        }
+    ],
     isLoading: true
 });
 

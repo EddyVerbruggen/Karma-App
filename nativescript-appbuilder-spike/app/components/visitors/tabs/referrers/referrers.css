@@ -1,2 +1,43 @@
-body {
+.visitors-referrer-toggle{
+    width: 5%;
+    background-color: #383838;
+}
+
+.visitors-referrer-toggle-icon{
+    color: #A3A3A3;
+}
+
+.visitors-referrer-body{
+    width: 95%;
+}
+
+.visitors-referrer-col{
+    width: 25%;
+}
+
+.visitors-referrer-title{
+    color: #A3A3A3;
+    font-size: 12;
+    text-align: center;
+}
+
+.visitors-referrer-value{
+    color: #383838;
+    font-size: 17;
+    text-align: center;
+}
+
+.visitors-referrer-name{
+    width: 33%;
+    text-align: center;
+}
+
+.visitors-referrer-status{
+    width: 33%;
+    text-align: center;
+}
+
+.visitors-referrer-appointment{
+    width: 33%;
+    text-align: center;
 }
