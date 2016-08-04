@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <TabView id="help-tabs">
+                <TabView.items>
+                    <TabViewItem title="F.A.Q." xmlns:Faq="components/help/tabs/faq">
+                        <TabViewItem.view>
+                            <Faq:faq />
+                        </TabViewItem.view>
+                    </TabViewItem>
+                    <TabViewItem title="Submit Ticket" xmlns:Ticket="components/help/tabs/ticket">
+                        <TabViewItem.view>
+                            <Ticket:ticket />
+                        </TabViewItem.view>
+                    </TabViewItem>
+                </TabView.items>
+            </TabView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>
