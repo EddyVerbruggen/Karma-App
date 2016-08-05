@@ -11,7 +11,8 @@ var page;
 var isInit = true;
 var parentView;
 var pageData = new Observable({
-    isLoading: true
+    isLoading: true,
+    pageTitle: "SCREENING"
 });
 
 exports.onLoaded = function(args) {

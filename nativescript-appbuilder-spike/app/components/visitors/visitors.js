@@ -84,7 +84,8 @@ var pageData = new Observable({
         }
     ],
     isLoading: true,
-    backButtonHidden: true
+    backButtonHidden: true,
+    pageTitle: "VISITORS"
 });
 
 exports.onLoaded = function(args) {

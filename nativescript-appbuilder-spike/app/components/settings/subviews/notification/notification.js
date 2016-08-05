@@ -24,7 +24,8 @@ var pageData = new Observable({
         inapp: true,
         email: false,
         text: false
-    }
+    },
+    pageTitle: "NOTIFICATIONS"
 });
 
 exports.onLoaded = function(args) {

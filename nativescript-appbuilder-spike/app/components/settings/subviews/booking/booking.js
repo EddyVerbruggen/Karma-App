@@ -10,7 +10,8 @@ var page;
 var isInit = true;
 var parentView;
 var pageData = new Observable({
-    isLoading: true
+    isLoading: true,
+    pageTitle: "BOOKING"
 });
 
 exports.onLoaded = function(args) {
