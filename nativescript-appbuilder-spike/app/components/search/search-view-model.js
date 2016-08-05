@@ -12,17 +12,24 @@ function SearchViewModel() {
     
     // Load all clients
     viewModel.load = function(searchText) {
-        var fetchData = fetch(config.apiUrl + 'search/all.json?q=text', {
-			headers: {
-				Authorization: 'Bearer ' + config.token
-			}
-        });
+        var fetchData;
+        if (mock !== 'undefined') {
+            fetchData = new Promise(function(resolve, reject) {
+                return resolve(mock.search_results);
+            });
+        } else {
+            fetchData = fetch(config.apiUrl + 'bookings/' + status + '?fields=client_id,screening_id,client_name,profile_image,status', {
+                headers: {
+                    Authorization: 'Bearer ' + config.token
+                }
+        	});
+        }
 
         return fetchData
             .then(handleResponse)
             .then(function(data) {
             	viewModel.empty();
-                data.results.forEach(function(result) {
+                data.Result.forEach(function(result) {
                     viewModel.push(result);
                 });
             });

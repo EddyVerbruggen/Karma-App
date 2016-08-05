@@ -1,5 +1,6 @@
 'use strict';
 
+var tabViewModule = require("ui/tab-view");
 var Observable = require('data/observable').Observable;
 var helpers = require('../../../../utils/widgets/helper');
 var view = require("ui/core/view");
@@ -8,6 +9,7 @@ var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;
+var parentView;
 var pageData = new Observable({
     isLoading: true,
     pageTitle: "SERVICES"
@@ -17,6 +19,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+	parentView = page.getViewById("booking");
 
     helpers.platformInit(page);
     if (isInit) {

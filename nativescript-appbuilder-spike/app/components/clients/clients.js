@@ -36,7 +36,8 @@ var pageData = new Observable({
     selectedTag: 0,
     selectedSortby: 0,
     isLoading: true,
-    backButtonHidden: true
+    backButtonHidden: true,
+    pageTitle: "CLIENTS"
 });
 
 exports.onLoaded = function(args) {
