@@ -1,7 +1,6 @@
 'use strict';
 var Observable = require('data/observable').Observable;
 var config = require('../../utils/config');
-var mock = require('../../utils/test-data');
 var handleResponse = require('../../utils/api/helpers').handleResponse;
 var navigation = require('../../utils/navigation');
 
@@ -25,19 +24,12 @@ function AppointmentDetailsViewModel() {
     };
     
     viewModel.sendMessage = function(message) {
-        var fetchData;
-        if (mock !== 'undefined') {
-            fetchData = new Promise(function(resolve, reject) {
-                return resolve(mock.appointmentDetails);
-            });
-        } else {
-            fetchData = fetch(config.apiUrl + 'client_details/' + id, {
+        var fetchData = fetch(config.apiUrl + 'client_details/' + id, {
                 headers: {
                     Authorization: 'Bearer ' + config.token
                 }
 			});
-        }
-
+        
 		new_message.type = "message_user";
         new_message.message = message;        
         new_message.created = now.toLocaleDateString()+" "+now.toTimeString();

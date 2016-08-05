@@ -2,7 +2,6 @@
 
 var config = require('../../utils/config');
 var ObservableArray = require('data/observable-array').ObservableArray;
-var mock = require('../../utils/test-data');
 var handleResponse = require('../../utils/api/helpers').handleResponse;
 var navigation = require('../../utils/navigation');
 
