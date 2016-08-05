@@ -11,7 +11,9 @@ var pageData = new Observable({
     isLoading: false,
     selectConfirmedFilter: true,
     selectPendingFilter: false,
-    selectCanceledFilter: false
+    selectCanceledFilter: false,
+    backButtonHidden: true,
+    pageTitle: "APPOINTMENT"
 });
 
 exports.onLoaded = function(args) {

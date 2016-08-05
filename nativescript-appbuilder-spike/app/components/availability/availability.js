@@ -29,7 +29,9 @@ var pageData = new Observable({
         {"city":"Los Angeles", "visibility":"collapse", "date":"July 23, 2016 - August 6, 2016", "location":"Incall, Outcall", "availability":"12PM - 11AM"},
         {"city":"Florida", "visibility":"collapse", "date":"July 23, 2016 - August 6, 2016", "location":"Incall, Outcall", "availability":"12PM - 11AM"}
     ],
-    isLoading: true
+    isLoading: true,
+    backButtonHidden: true,
+    pageTitle: "AVAILABILITY"
 });
 
 exports.onLoaded = function(args) {

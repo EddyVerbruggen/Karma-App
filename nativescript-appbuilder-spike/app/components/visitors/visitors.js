@@ -83,7 +83,8 @@ var pageData = new Observable({
             "aptlist":[]
         }
     ],
-    isLoading: true
+    isLoading: true,
+    backButtonHidden: true
 });
 
 exports.onLoaded = function(args) {

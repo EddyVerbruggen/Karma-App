@@ -1,15 +1,22 @@
 'use strict';
 var isInit = true;
-var helper = require('../../utils/widgets/helper');
+var helpers = require('../../utils/widgets/helper');
+var Observable = require('data/observable').Observable;
 // var viewModel = require('./settingsMain-view-model');
 var views = require('../../utils/views');
 var page;
 
+var pageData = new Observable({
+    isLoading: true,
+    backButtonHidden: true
+});
+
 function pageLoaded(args) {
     page = args.object;
-    helper.platformInit(page);
-    page.bindingContext = viewModel;
-
+    page.bindingContext = pageData;
+	helpers.togglePageLoadingIndicator(true, pageData);
+    
+    helpers.platformInit(page);
     if (isInit) {
         isInit = false;
     }
@@ -18,7 +25,7 @@ function pageLoaded(args) {
 exports.onTap = function(args) {
     try{
 		var section = args.object.section;
-        helper.navigate({
+        helpers.navigate({
             moduleName: 'components/settings/subviews/' + section + '/' + section,
         });   
     }catch(q){ }

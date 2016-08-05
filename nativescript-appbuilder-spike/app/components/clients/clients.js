@@ -35,7 +35,8 @@ var pageData = new Observable({
     selectedStatus: 0,
     selectedTag: 0,
     selectedSortby: 0,
-    isLoading: true
+    isLoading: true,
+    backButtonHidden: true
 });
 
 exports.onLoaded = function(args) {
