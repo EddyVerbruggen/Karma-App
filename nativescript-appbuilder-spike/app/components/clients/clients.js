@@ -37,7 +37,7 @@ var pageData = new Observable({
     selectedSortby: 0,
     isLoading: true,
     backButtonHidden: true,
-    pageTitle: "CLIENTS"
+    pageTitle: "KARMA"
 });
 
 exports.onLoaded = function(args) {
@@ -64,7 +64,8 @@ exports.onSelectClient = function(args) {
         helpers.navigate({
             moduleName: views.clientDetails,
             context: {
-                id: args.view.screeningId
+                id: args.view.screeningId,
+                name: args.view.clientName
             }
         });
     });

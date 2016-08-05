@@ -12,7 +12,9 @@ var pageData = new Observable({
         {"def":"You are atleast 18 years of age and you enter into legally binding contract under aplicable law."},
         {"def":"You are atleast 18 years of age and you enter into legally binding contract under aplicable law."}
     ],
-    pageTitle: "TERMS & CONDITIONS"
+    pageTitle: "TERMS & CONDITIONS",
+    HButtonHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {

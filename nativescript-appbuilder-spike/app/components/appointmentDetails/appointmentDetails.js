@@ -18,7 +18,10 @@ var pageData = new Observable({
     appointmentDetails: appointmentDetails,
     messageHistory: new observableArrayModule(),
     isLoading: true,
-    LocationVisible: false
+    LocationVisible: false,
+    pageTitle: "APPOINTMENT",
+    HButtonHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {

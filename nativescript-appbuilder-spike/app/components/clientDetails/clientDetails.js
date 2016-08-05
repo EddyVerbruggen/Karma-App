@@ -10,7 +10,10 @@ var isInit = true;
 var clientDetails = new ClientDetailsViewModel();
 var pageData = new Observable({
     clientDetails: clientDetails,
-    isLoading: true
+    isLoading: true,
+    pageTitle: "",
+    HButtonHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {
@@ -18,7 +21,8 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
     var gotData = page.navigationContext;
-
+	pageData.set('pageTitle', gotData.name);
+    
 	clientDetails
 		.load(gotData.id)
 		.catch(function(error) {

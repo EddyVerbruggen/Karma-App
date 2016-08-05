@@ -6,7 +6,7 @@ var helpers = require('../../utils/widgets/helper');
 
 var pageData = new Observable({
     backButtonHidden: true,
-    pageTitle: "KARMA APP"
+    pageTitle: "KARMA"
 });
 
 exports.onLoaded = function(args) {

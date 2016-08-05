@@ -25,7 +25,9 @@ var pageData = new Observable({
         email: false,
         text: false
     },
-    pageTitle: "NOTIFICATIONS"
+    pageTitle: "NOTIFICATIONS",
+    HButtonHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {

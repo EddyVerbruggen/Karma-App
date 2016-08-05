@@ -12,7 +12,9 @@ var isInit = true;
 var parentView;
 var pageData = new Observable({
     isLoading: true,
-    pageTitle: "SCREENING"
+    pageTitle: "SCREENING",
+    HButtonHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {

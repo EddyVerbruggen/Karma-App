@@ -11,7 +11,9 @@ var isInit = true;
 var parentView;
 var pageData = new Observable({
     isLoading: true,
-    pageTitle: "BOOKING"
+    pageTitle: "BOOKING",
+	HButtonHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {
