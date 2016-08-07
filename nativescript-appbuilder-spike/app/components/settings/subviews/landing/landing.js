@@ -1,4 +1,5 @@
 var dialogs = require("ui/dialogs");
+var saveSetting = require('')
 
 exports.edit = function(){
     dialogs.prompt({

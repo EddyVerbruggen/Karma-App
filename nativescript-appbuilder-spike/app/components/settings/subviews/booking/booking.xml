@@ -11,7 +11,6 @@
         <drawer:RadSideDrawer.mainContent>
             <ScrollView>
                 <StackLayout width="100%">
-
                     <StackLayout class="booking-account">
                         <StackLayout>
                             <Label text="Clients" class="booking-section-header" />
@@ -22,7 +21,6 @@
                             <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes, client must select date/time/location" class="booking-textfield" />
                         </StackLayout>
                     </StackLayout>
-                    
                     <StackLayout class="booking-account">
                         <StackLayout>
                             <Label text="Appointments" class="booking-section-header" />
@@ -48,7 +46,6 @@
                             </WrapLayout>
                         </StackLayout>
                     </StackLayout>
-                    
                 </StackLayout>
             </ScrollView>
         </drawer:RadSideDrawer.mainContent>
