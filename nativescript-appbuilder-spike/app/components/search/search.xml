@@ -6,7 +6,7 @@
         <StackLayout row="0" col="0" orientation="horizontal" id="actionBarLayout" class="search-top">
             <Label class="ionicons-icon return-arrow" text="&#xf2ca;" tap="onClose" />
         </StackLayout>
-        <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" />
+        <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" style="margin-top:35%;" />
         <lv:RadListView id="searchResults" row="2" col="0" items="{{searchResultsList}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult">
             <lv:RadListView.listViewLayout>
                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
