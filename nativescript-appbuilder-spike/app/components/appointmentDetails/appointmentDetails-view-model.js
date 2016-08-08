@@ -23,6 +23,23 @@ function AppointmentDetailsViewModel() {
             });
     };
     
+    viewModel.update = function(appointmentInfo) {
+        var fetchData = fetch(config.apiUrl + "appointments/update/" + appointmentInfo.id + ".json", {
+            // Do a regular form POST instead of JSON body string
+            method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+            body: appointmentInfo
+        });
+
+        return fetchData
+            .then(handleResponse)
+            .then(function(data) {
+                viewModel.set('Result', data.booking);
+            });
+    };
+    
     viewModel.sendMessage = function(message) {
         var fetchData = fetch(config.apiUrl + 'client_details/' + id, {
                 headers: {
