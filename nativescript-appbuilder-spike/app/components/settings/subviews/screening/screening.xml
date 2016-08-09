@@ -1,91 +1,83 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
-      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <drawer:RadSideDrawer id="sideDrawer">
-        <drawer:RadSideDrawer.drawerContent>
-            <widgets:side-drawer />
-		</drawer:RadSideDrawer.drawerContent>
-        <drawer:RadSideDrawer.mainContent>
-            <ScrollView>
-                <StackLayout width="100%" id="screening">
+    <ScrollView>
+        <StackLayout width="100%" id="screening">
 
-                    <StackLayout class="screening-account">
-                        <StackLayout>
-                            <Label text="References" class="screening-section-header" />
-                            <Label class="screening-section-divider" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="Require client references from other companions" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Atleast 2 references" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="References required to have an established website" class="screening-label" />
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="At least 1 reference website must be verified" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                    </StackLayout>
-                    
-                    <StackLayout class="screening-account">
-                        <StackLayout>
-                            <Label text="Client Information" class="screening-section-header" />
-                            <Label class="screening-section-divider" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="Require client to upload photo(s)" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for photos from clients" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="Client's last name" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Require full last name" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="Year of birth" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Required (to calculate their age)" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="City/state of residence" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Don't ask for current residence" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                    </StackLayout>
-                    
-                    <StackLayout class="screening-account">
-                        <StackLayout>
-                            <Label text="Work" class="screening-section-header" />
-                            <Label class="screening-section-divider" />
-                        </StackLayout>
-                        <StackLayout class="screening-input-row">
-                            <Label text="Require work/employment information" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for this information" class="screening-textfield" tap="onTap" />
-                        </StackLayout>
-                    </StackLayout>
-                    
-					<StackLayout class="screening-account">
-                        <StackLayout>
-                            <Label text="Skipping" class="screening-section-header" />
-                            <Label class="screening-section-divider" />
-                        </StackLayout>	
-                        <StackLayout class="screening-input-row">
-                            <Label text="Require work/employment information" class="screening-label" />
-                        </StackLayout>
-                        <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec1">
-                            <image src="~/images/ic_check_box_outline_blank_white.png" id="sec1" class="" width="30" />
-                            <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
-                        </WrapLayout>
-                        <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec2">
-                            <image src="~/images/ic_check_box_outline_blank_white.png" id="sec2" class="" width="30" />
-                            <Label text="On any other companion's white-list" class="screening-section-link-label" />
-                        </WrapLayout>
-                        <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec3">
-                            <image src="~/images/ic_check_box_outline_blank_white.png" id="sec3" class="" width="30" />
-                            <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
-                        </WrapLayout>
-                    </StackLayout>
-                    
+            <StackLayout class="screening-account">
+                <StackLayout>
+                    <Label text="References" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
                 </StackLayout>
-            </ScrollView>
-        </drawer:RadSideDrawer.mainContent>
-	</drawer:RadSideDrawer>
+                <StackLayout class="screening-input-row">
+                    <Label text="Require client references from other companions" class="screening-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Atleast 2 references" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+                <StackLayout class="screening-input-row">
+                    <Label text="References required to have an established website" class="screening-label" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="At least 1 reference website must be verified" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout class="screening-account">
+                <StackLayout>
+                    <Label text="Client Information" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>
+                <StackLayout class="screening-input-row">
+                    <Label text="Require client to upload photo(s)" class="screening-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for photos from clients" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+                <StackLayout class="screening-input-row">
+                    <Label text="Client's last name" class="screening-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Require full last name" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+                <StackLayout class="screening-input-row">
+                    <Label text="Year of birth" class="screening-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Required (to calculate their age)" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+                <StackLayout class="screening-input-row">
+                    <Label text="City/state of residence" class="screening-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Don't ask for current residence" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout class="screening-account">
+                <StackLayout>
+                    <Label text="Work" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>
+                <StackLayout class="screening-input-row">
+                    <Label text="Require work/employment information" class="screening-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for this information" class="screening-textfield" tap="onTap" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout class="screening-account">
+                <StackLayout>
+                    <Label text="Skipping" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>	
+                <StackLayout class="screening-input-row">
+                    <Label text="Require work/employment information" class="screening-label" />
+                </StackLayout>
+                <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec1">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec1" class="" width="30" />
+                    <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec2">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec2" class="" width="30" />
+                    <Label text="On any other companion's white-list" class="screening-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="screening-all-row" tap="toggleCheckbox" section="sec3">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec3" class="" width="30" />
+                    <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
+                </WrapLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
 </Page>

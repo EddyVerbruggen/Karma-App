@@ -1,30 +1,22 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
-      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <drawer:RadSideDrawer id="sideDrawer">
-        <drawer:RadSideDrawer.drawerContent>
-            <widgets:side-drawer />
-		</drawer:RadSideDrawer.drawerContent>
-        <drawer:RadSideDrawer.mainContent>
-            <TabView id="appointments-tabs">
-                <TabView.items>
-                    <!-- Display a tab, and pull contents from external file -->
-                    <TabViewItem title="Details" xmlns:Details="components/appointmentDetails/tabs/details">
-                        <TabViewItem.view>
-                            <Details:details />
-                        </TabViewItem.view>
-                    </TabViewItem>
-                    <TabViewItem title="History" xmlns:History="components/appointmentDetails/tabs/history">
-                        <TabViewItem.view>
-                            <History:history />
-                        </TabViewItem.view>
-                    </TabViewItem>
-                </TabView.items>
-            </TabView>
-        </drawer:RadSideDrawer.mainContent>
-	</drawer:RadSideDrawer>
+    <TabView id="appointments-tabs">
+        <TabView.items>
+            <!-- Display a tab, and pull contents from external file -->
+            <TabViewItem title="Details" xmlns:Details="components/appointmentDetails/tabs/details">
+                <TabViewItem.view>
+                    <Details:details />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="History" xmlns:History="components/appointmentDetails/tabs/history">
+                <TabViewItem.view>
+                    <History:history />
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
 </Page>

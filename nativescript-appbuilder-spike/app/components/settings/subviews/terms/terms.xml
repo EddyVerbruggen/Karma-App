@@ -1,53 +1,45 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
-      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded"
       xmlns:FAB="nativescript-floatingactionbutton">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <drawer:RadSideDrawer id="sideDrawer">
-        <drawer:RadSideDrawer.drawerContent>
-            <widgets:side-drawer />
-		</drawer:RadSideDrawer.drawerContent>
-        <drawer:RadSideDrawer.mainContent>
-            <ScrollView>
-                <grid-layout rows="auto,*">
+    <ScrollView>
+        <grid-layout rows="auto,*">
 
-                    <StackLayout class="terms-account" row="0">
-                        <StackLayout>
-                            <Label text="Page" class="terms-section-header" />
-                            <Label class="terms-section-divider" />
-                        </StackLayout>
-                        <StackLayout class="terms-input-row">
-                            <Label text="Display" class="terms-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="terms-textfield" />
-                        </StackLayout>
-                        <StackLayout class="terms-input-row">
-                            <Label text="Text" class="terms-label" />
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
-                        </StackLayout>
-                    </StackLayout>
-                    
-                    <StackLayout class="terms-account" row="1">
-                        <StackLayout>
-                            <Label text="Terms" class="terms-section-header" />
-                            <Label class="terms-section-divider" />
-                        </StackLayout>
-                        <StackLayout class="terms-input-row" id="termsList">
-                            <Label text="The client must accept the following" class="terms-label" />
-                            
-                            <Repeater items="{{terms}}">
-				                <Repeater.itemTemplate>
-		                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{def}}" class="terms-textfield" />
-                                </Repeater.itemTemplate>
-                            </Repeater>						
-                        </StackLayout>
-                    </StackLayout>
-                    <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" hideOnSwipeOfView="termsList" />
-                    
-                </grid-layout>
-            </ScrollView>
-        </drawer:RadSideDrawer.mainContent>
-	</drawer:RadSideDrawer>
+            <StackLayout class="terms-account" row="0">
+                <StackLayout>
+                    <Label text="Page" class="terms-section-header" />
+                    <Label class="terms-section-divider" />
+                </StackLayout>
+                <StackLayout class="terms-input-row">
+                    <Label text="Display" class="terms-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="terms-textfield" />
+                </StackLayout>
+                <StackLayout class="terms-input-row">
+                    <Label text="Text" class="terms-label" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout class="terms-account" row="1">
+                <StackLayout>
+                    <Label text="Terms" class="terms-section-header" />
+                    <Label class="terms-section-divider" />
+                </StackLayout>
+                <StackLayout class="terms-input-row" id="termsList">
+                    <Label text="The client must accept the following" class="terms-label" />
+
+                    <Repeater items="{{terms}}">
+                        <Repeater.itemTemplate>
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{def}}" class="terms-textfield" />
+                        </Repeater.itemTemplate>
+                    </Repeater>						
+                </StackLayout>
+            </StackLayout>
+            <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" hideOnSwipeOfView="termsList" />
+
+        </grid-layout>
+    </ScrollView>
 </Page>

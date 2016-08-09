@@ -1,4 +1,6 @@
 {
+    "description": "KarmaScreen Mobile Application",
+    "license": "UNLICENSED",
     "dependencies": {
         "tns-core-modules": "2.0.1",
         "nativescript-telerik-ui-pro": "1.*",
