@@ -32,7 +32,8 @@
                         </StackLayout>
                     </StackLayout>
 
-                    <GridLayout rows="auto, *" columns="*">
+                    <!-- Appointments -->
+                    <GridLayout columns="*">
                         <!-- Insert code for todays appointments here -->
                         <lv:RadListView items="{{appointmentsList}}" row="1" col="0">
                             <lv:RadListView.listViewLayout>
@@ -73,7 +74,8 @@
                         </lv:RadListView>
                     </GridLayout>
                     
-                    <GridLayout rows="auto, *" columns="*">
+                    <!-- Clients -->
+                    <GridLayout columns="*">
                         <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                             <lv:RadListView.listViewLayout>
                                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
