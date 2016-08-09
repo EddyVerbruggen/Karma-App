@@ -1,12 +1,12 @@
 <StackLayout class="drawer-menu-content" loaded="onLoad">
-    <StackLayout class="drawer-top-area" orientation="horizontal">
+    <!--<StackLayout class="drawer-top-area" orientation="horizontal">
         <StackLayout width="75" verticalAlignment="center">
             <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="profile-thumbnail" />
         </StackLayout>
         <StackLayout verticalAlignment="center">
             <Label text="{{name}}" class="" />
         </StackLayout>
-    </StackLayout>
+    </StackLayout>-->
     <StackLayout class="drawer-nav-area">
         <StackLayout class="drawer-nav-item" orientation="horizontal" tap="onTapDashboard">
             <StackLayout width="50" verticalAlignment="center">
@@ -56,7 +56,6 @@
                 <Label text="Messages" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-        <Label class="nav-divider" />
         <StackLayout class="drawer-nav-item" orientation="horizontal" section="help" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf445;" class="ionicons-icon nav-icon" /> 

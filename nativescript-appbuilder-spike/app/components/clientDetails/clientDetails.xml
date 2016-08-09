@@ -11,10 +11,9 @@
             <widgets:side-drawer />
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
-            <TabView>
+            <TabView tabsBackgroundColor="#272936">
                 <TabView.items>
-                    <!-- Display a tab, and pull contents from external file -->
-                    <TabViewItem title="Info" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
+                    <TabViewItem title="Info" color="#fff" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
                         <TabViewItem.view>
                             <PersonalDetails:personalDetails />
                         </TabViewItem.view>

@@ -1,21 +1,21 @@
 .drawer-menu-content {
-    background-color: #1B1C25;
+    background-color: #222;
     color: #fff;
     font-family: 'MyriadPro-Light';
 }
 
 .drawer-top-area {
-    background-color:#14151B;
-    padding:25 0 25 10;
+    background-color:#f9f9f9;
+    padding:15 0 10 10;
     font-size:19;
-    color:#646569;    
+    color:#666;    
 }
 
 .profile-thumbnail {
   border-radius: 100;
   width:50;
   height:50;
-  border-width:3;
+  border-width:1;
   border-color:#545454;    
 }
 
@@ -24,18 +24,19 @@
 }
 
 .drawer-nav-item {
-    padding: 10;
-    font-size: 21;
+    padding: 5 10;
+    font-size: 19;
     opacity: 0.7;
 }
 
 .nav-icon {
-    font-size:28;
-    opacity:0.4;
+    font-size:36;
+    opacity:0.3;
+    margin-right:0 15;
 }
 
 .nav-divider {
-    background-color:#22232E;
+    background-color:#333;
     height:1;
     margin: 10 0;
 }

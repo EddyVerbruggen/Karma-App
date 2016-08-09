@@ -20,6 +20,8 @@ page {
     font-size:15;
 }
 
+.actionbar {background-color:#2A2C38;color:#fff;}
+
 button {
     horizontal-align: stretch;
 }
@@ -138,6 +140,7 @@ switch {
     font-size: 8;
 }
 
-ActionBar {background-color:#fff;}  
+ActionBar {background-color:#272936;color:#fff;opacity:1;}  
 
-.pageTitle { font-size: 21; text-align: center; color:#ADADB2; }
+.pageTitle { font-size: 23; text-align: center; color:#fff;font-family: 'MyriadPro-Light';}
+

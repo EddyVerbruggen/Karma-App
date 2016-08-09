@@ -1,4 +1,4 @@
-<ActionBar>
+<ActionBar class="actionbar">
     <NavigationButton text="Back" android.systemIcon="ic_menu_back"
         tap="onBack" visibility="{{ backButtonHidden ? 'collapse' : 'visible' }}">
     </NavigationButton>
