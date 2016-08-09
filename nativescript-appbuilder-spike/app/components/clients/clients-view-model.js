@@ -24,6 +24,8 @@ function ClientsViewModel(clients) {
             .then(handleResponse)
             .then(function(data) {
                 viewModel.empty();
+            	console.log(JSON.stringify(data.clients));
+            
                 data.clients.forEach(function(client) {
                     viewModel.push(client);
                 })
