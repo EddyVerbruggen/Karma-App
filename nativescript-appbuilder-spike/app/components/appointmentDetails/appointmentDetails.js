@@ -153,28 +153,48 @@ function closeOverlay(overlayId, visibilityFlag) {
 
 exports.confirm = function(args){
     dialogs.confirm({
-      title: "Confirm",
-      message: "Are you sure?",
-      okButtonText: "Confirm",
-      cancelButtonText: "Cancel"
+      	title: "Confirm",
+      	message: "Are you sure?",
+      	okButtonText: "Confirm",
+      	cancelButtonText: "Cancel"
     }).then(function (result) {
-      // result argument is boolean
-      console.log("Dialog result: " + result);
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+        updateAppointment(pageData.appointmentDetails);
     });
 }
 
 exports.cancel = function(args){
-
+	updateAppointment(pageData.appointmentDetails);
 }
 
 exports.delete = function(args){
     dialogs.confirm({
-      title: "Delete",
-      message: "Are you sure you want to delete ?",
-      okButtonText: "Delete",
-      cancelButtonText: "Cancel"
+      	title: "Delete",
+      	message: "Are you sure you want to delete ?",
+      	okButtonText: "Delete",
+      	cancelButtonText: "Cancel"
     }).then(function (result) {
-      // result argument is boolean
-      console.log("Dialog result: " + result);
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+        updateAppointment(pageData.appointmentDetails);
     });
+}
+
+function updateAppointment(postData){
+    appointmentDetails
+		.update(postData)
+		.catch(function(error) {
+        	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
+    	})
+		.then(function() {
+        	pageData.set('appointmentDetails', appointmentDetails.Result);
+        
+        	if(pageData.messageHistory.length == 0){
+				appointmentDetails.Result.history.forEach(function(message) {
+					pageData.messageHistory.push(message);
+            	})
+            }
+			helpers.togglePageLoadingIndicator(false, pageData);
+		});
 }
