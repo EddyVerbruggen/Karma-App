@@ -37,7 +37,7 @@ var pageData = new Observable({
     selectedSortby: 0,
     isLoading: true,
     backButtonHidden: true,
-    pageTitle: "KARMA"
+    pageTitle: "CLIENTS"
 });
 
 exports.onLoaded = function(args) {

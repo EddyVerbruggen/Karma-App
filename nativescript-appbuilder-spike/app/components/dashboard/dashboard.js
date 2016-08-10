@@ -56,3 +56,16 @@ exports.onSelectAppointment = function(args) {
         });        
     });
 }
+
+exports.onSelectClient = function(args) {
+    // alert(args.view.screeningId);
+    helpers.tapFlash(args.object).then(function() {
+        helpers.navigate({
+            moduleName: views.clientDetails,
+            context: {
+                id: args.view.screeningId,
+                name: args.view.clientName
+            }
+        });
+    });
+}

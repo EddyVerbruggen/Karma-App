@@ -27,9 +27,9 @@
         android.systemIcon="ic_menu_search"
         tap="onTapSearch"
         visibility="{{ SearchButtonHidden ? 'collapse' : 'visible' }}" />
-    <ActionItem tap="onDelete"
+<!--     <ActionItem tap="onDelete"
         ios.systemIcon="16" ios.position="right"
-        text="Delete" android.position="popup" />
+        text="Delete" android.position="popup" /> -->
     <ActionItem tap="onSetting"
         ios.systemIcon="16" ios.position="right"
         text="Settings" android.position="popup" />

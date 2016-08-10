@@ -155,10 +155,10 @@
 
     <StackLayout orientation="horizontal" row="1" col="0">
         <StackLayout width="80%">
-            <Button text="Approved Client" class="accept-save-button" width="100%" />
+            <Button text="Approved Client" class="accept-save-button" width="100%" tap="approve" />
         </StackLayout>
         <StackLayout width="20%">
-            <Button text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
+            <Button text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" tap="delete" />
         </StackLayout>
     </StackLayout>   
 </GridLayout>
