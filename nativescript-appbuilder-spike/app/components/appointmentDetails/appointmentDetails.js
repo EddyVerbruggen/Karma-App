@@ -165,7 +165,16 @@ exports.confirm = function(args){
 }
 
 exports.cancel = function(args){
-	updateAppointment(pageData.appointmentDetails);
+    dialogs.confirm({
+      	title: "Cancel",
+      	message: "Are you sure you want to cancel ?",
+      	okButtonText: "Yes",
+      	cancelButtonText: "No"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+        updateAppointment(pageData.appointmentDetails);
+    });
 }
 
 exports.delete = function(args){
@@ -185,7 +194,7 @@ function updateAppointment(postData){
     appointmentDetails
 		.update(postData)
 		.catch(function(error) {
-        	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
+        	helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
     	})
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
