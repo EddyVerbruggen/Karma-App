@@ -13,6 +13,7 @@ var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;
+var parentView;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
     appointmentDetails: appointmentDetails,
@@ -28,6 +29,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    parentView = page.getViewById("LocationPopupBody");
     var gotData = page.navigationContext;
        
 	appointmentDetails
@@ -206,4 +208,34 @@ function updateAppointment(postData){
             }
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
+}
+
+exports.toggleRadio = function(args){
+    var section = args.object.section;
+    var incall = parentView.getViewById("incall");
+    var outcall = parentView.getViewById("outcall");
+
+    if(section == "incall"){
+        if(incall.src == "~/images/ic_radio_button_checked_white.png"){
+            incall.src = "~/images/ic_radio_button_unchecked_white.png";
+	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
+        }
+        
+        if(incall.src == "~/images/ic_radio_button_unchecked_white.png"){
+            outcall.src = "~/images/ic_radio_button_unchecked_white.png";
+	        incall.src = "~/images/ic_radio_button_checked_white.png";   
+        }
+    }
+    
+    if(section == "outcall"){
+        if(outcall.src == "~/images/ic_radio_button_checked_white.png"){
+            incall.src = "~/images/ic_radio_button_unchecked_white.png";
+	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
+        }
+        
+        if(outcall.src == "~/images/ic_radio_button_unchecked_white.png"){
+            incall.src = "~/images/ic_radio_button_unchecked_white.png";
+	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
+        }
+    }
 }

@@ -55,8 +55,7 @@
 }
 
 .appointment-textfield {
-    font-size: 19;
-    
+    font-size: 15;
 }
 
 .accept-save-button {
@@ -118,4 +117,12 @@
     border-color: #dcdcdc;
     border-width:1;
     padding-right: 15;
+}
+
+.appointment-detail-section-link-icon{
+    width: 30;
+}
+
+.appointment-detail-poup-all-row{
+    width:30%;
 }
