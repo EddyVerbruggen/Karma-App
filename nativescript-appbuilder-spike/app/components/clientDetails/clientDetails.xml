@@ -1,11 +1,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded">
-    <!-- Actionbar with back button -->
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <TabView tabsBackgroundColor="#272936">
+    <TabView>
         <TabView.items>
             <TabViewItem title="Info" color="#fff" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
                 <TabViewItem.view>

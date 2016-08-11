@@ -1,56 +1,49 @@
-<GridLayout rows="*" columns="*">
-    <ScrollView>
-        <grid-layout rows="auto,*" id="gridview">
-            <StackLayout>
-                <button text="July 23 - August 3" class="traffic-date-selection" />
-
-                <Repeater items="{{referrers}}">
-                    <Repeater.itemTemplate>
-                        <StackLayout class="visitors-account" orientation="horizontal" section="{{id}}" tap="toggle">
-                            <Stack-layout class="visitors-referrer-toggle" visibility="{{aptlist.length > 0 ? 'visible' : 'collapse' }}">
-                                <image src="~/images/ic_keyboard_arrow_down.png" id="{{id+'arr'}}" class="visitors-referrer-toggle-icon" width="20" />
-                            </Stack-layout>
-                            <StackLayout class="visitors-referrer-body">
-                                <wrap-layout class="visitors-account">
-                                    <Label text="{{url}}" class="visitors-traffic-address" />
-                                </wrap-layout>
-                                <wrap-layout class="visitors-account">
-                                    <stack-layout class="visitors-referrer-col">
-                                        <Label text="Total Visits" class="visitors-referrer-title" />
-                                        <Label text="{{visits}}" class="visitors-referrer-value" />
-                                    </stack-layout>
-                                    <stack-layout class="visitors-referrer-col">
-                                        <Label text="Average Time" class="visitors-referrer-title" />
-                                        <Label text="{{avgtime}}" class="visitors-referrer-value" />
-                                    </stack-layout>
-                                    <stack-layout class="visitors-referrer-col">
-                                        <Label text="Clients" class="visitors-referrer-title" />
-                                        <Label text="{{clients}}" class="visitors-referrer-value" />
-                                    </stack-layout>
-                                    <stack-layout class="visitors-referrer-col">
-                                        <Label text="Appointments" class="visitors-referrer-title" />
-                                        <Label text="{{appointments}}" class="visitors-referrer-value" />
-                                    </stack-layout>
-                                </wrap-layout>
-                                <StackLayout visibility="collapse" id="{{id}}">
-                                    
-                                    <Repeater items="{{aptlist}}">
-                                        <Repeater.itemTemplate>
-                                            <wrap-layout class="visitors-referrer-user-list">
-                                                <label text="{{name}}" class="visitors-referrer-name" />
-                                                <label text="{{status}}" class="visitors-referrer-status" />
-                                                <label text="{{appointment + ' Appointment'}}" class="visitors-referrer-appointment" />
-                                            </wrap-layout>
-                                        </Repeater.itemTemplate>
-                                    </Repeater>
-                                    
-                                </StackLayout>
-                            </StackLayout>
+<ScrollView>
+    <StackLayout>
+        <WrapLayout class="date-selection">
+            <Label text="&#xf35f;" class="ionicons-icon" />
+            <Label text="July 23 - August 3" />
+        </WrapLayout>
+        <Repeater items="{{referrers}}">
+            <Repeater.itemTemplate>
+                <StackLayout class="referrer-row" section="{{id}}" tap="toggle">
+                    <StackLayout class="visitors-referrer-toggle" visibility="{{aptlist.length > 0 ? 'visible' : 'collapse' }}">
+                        <image src="~/images/ic_keyboard_arrow_down.png" id="{{id+'arr'}}" class="visitors-referrer-toggle-icon" width="20" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label text="{{url}}" class="referrer-url" />
+                    </StackLayout>
+                    <StackLayout orientation="horizontal">           
+                        <StackLayout width="25%">
+                            <Label text="{{visits}}" class="referrer-value" />
+                            <Label text="Total Visits" class="referrer-label" />                            
                         </StackLayout>
-                    </Repeater.itemTemplate>
-                </Repeater>
-                
-            </StackLayout>
-        </grid-layout>
-    </ScrollView>
-</GridLayout>
+                        <StackLayout width="25%">
+                            <Label text="{{avgtime}}" class="referrer-value" />
+                            <Label text="Average Time" class="referrer-label" />                            
+                        </StackLayout>
+                        <StackLayout width="25%">
+                            <Label text="{{clients}}" class="referrer-value" />
+                            <Label text="Clients" class="referrer-label" />                            
+                        </StackLayout>
+                        <StackLayout width="25%">
+                            <Label text="{{appointments}}" class="referrer-value" />
+                            <Label text="Appointments" class="referrer-label" />                            
+                        </StackLayout>
+                    </StackLayout>            
+                    <StackLayout visibility="collapse" id="{{id}}">
+                        <Repeater items="{{aptlist}}">
+                            <Repeater.itemTemplate>
+                                <WrapLayout class="referrer-list">
+                                    <label text="{{name}}" class="referrer-name" />
+                                    <label text="{{status}}" class="referrer-status" />
+                                    <label text="{{appointment + ' Appointment'}}" class="referrer-appointments" />
+                                </WrapLayout>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </StackLayout>
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </StackLayout>
+</ScrollView>

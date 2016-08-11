@@ -1,30 +1,25 @@
-<GridLayout rows="*" columns="*">
-    <ScrollView>
-        <grid-layout rows="auto,*" id="gridview">
-            <StackLayout>
-                <button text="July 23 - August 3" class="traffic-date-selection" />
-
-                <Repeater items="{{visitList}}">
-                    <Repeater.itemTemplate>
-                        <StackLayout class="visitors-account">
-                            <wrap-layout class="visitors-account">
-                                <stack-layout class="visitors-traffic-input-row-left">
-                                    <Label text="{{datetime}}" class="visitors-traffic-datetime" />
-                                    <Label text="{{ip}}" class="visitors-traffic-ipaddress" />
-                                    <Label text="{{location}}" class="visitors-traffic-country" />
-                                    <Label text="{{url}}" class="visitors-traffic-address" />
-                                </stack-layout>
-                                <stack-layout class="visitors-traffic-input-row-right">
-                                    <Label text="{{duration}}" class="visitors-traffic-duration" />
-                                    <Label text="{{actionText}}" class="{{'visitors-traffic-action ' + action }}" />
-                                    <Label text="{{name}}" class="visitors-traffic-name" visibility="{{ action == 'booked' ? 'visible' : 'collapse'}}"/>
-                                </stack-layout>
-                            </wrap-layout>
-                        </StackLayout>
-                    </Repeater.itemTemplate>
-                </Repeater>
-                
-            </StackLayout>
-        </grid-layout>
-    </ScrollView>
-</GridLayout>
+<ScrollView>
+    <StackLayout>
+        <WrapLayout class="date-selection">
+            <Label text="&#xf35f;" class="ionicons-icon" />
+            <Label text="July 23 - August 3" />
+        </WrapLayout>
+        <Repeater items="{{visitList}}">
+            <Repeater.itemTemplate>
+                <GridLayout columns="*, 125" rows="auto" class="visitor-row">
+                    <StackLayout col="0" class="visitor-details-left">
+                        <Label text="{{datetime}}" class="visitor-datetime" />
+                        <Label text="{{ip}}" class="visitor-ip" />
+                        <Label text="{{location}}" class="visitor-location" />
+                        <Label text="{{url}}" class="visitor-url" />
+                    </StackLayout>
+                    <StackLayout col="1" class="visitor-details-right">
+                        <Label text="{{duration}}" class="visitor-duration" />
+                        <Label text="{{actionText}}" class="{{'visitor-action ' + action }}" />
+                        <Label text="{{name}}" class="visitor-name" visibility="{{ action == 'booked' ? 'visible' : 'collapse'}}"/>
+                    </StackLayout>
+                </GridLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </StackLayout>
+</ScrollView>

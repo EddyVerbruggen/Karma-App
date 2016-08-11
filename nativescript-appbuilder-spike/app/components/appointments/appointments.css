@@ -90,22 +90,20 @@
 .blacklisted-client {margin-left:3;color:#000;}
 
 .appointment-filtering {
-    background-color:#444;
+    background-color:#ddd;
+    padding-top:1;
 }
 
 .appointment-filter-button {
     text-align:center;
     padding-top:11;
-    background-color:#555;
-    opacity:0.8;
-    color:#fff;
+      background-color:#fff;
+    color:#aaa;
     height:60;
-    margin: 0 1 0 0;
 }
 
 .button-active {
-    background-color:#666;
-    color:#fff;
+    color:#3EC3D6;
     opacity:1;
 }
 

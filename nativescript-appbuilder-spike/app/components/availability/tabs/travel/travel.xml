@@ -1,43 +1,34 @@
-<GridLayout rows="*" columns="*">
-    <ScrollView>
-        <grid-layout rows="auto,*" id="gridview">
-            <Repeater items="{{travel}}">
-                <Repeater.itemTemplate>
-
-                    <StackLayout>
-                        <WrapLayout class="travel-accordian-header" tap="toggle" section="{{city}}">
-                            <image src="~/images/ic_keyboard_arrow_down.png" class="ionicons-icon availability-travel-section-link-icon" />
-                            <Label text="{{city}}" class="travel-accordian-header-label" />
-                            <Label text="Delete" class="travel-accordian-header-delete" tap="delete" />
+<ScrollView>
+    <Repeater items="{{travel}}">
+        <Repeater.itemTemplate>
+            <StackLayout class="travel-entry">
+                <WrapLayout class="travel-accordion-header" tap="toggle" section="{{city}}">
+                    <image src="~/images/ic_keyboard_arrow_down.png" class="ionicons-icon arrow-icon" />
+                    <Label text="{{city}}" class="travel-accordion-header-label" />
+                    <Label text="&#xf4c4;" class="ionicons-icon travel-delete-icon" tap="delete" />
+                </WrapLayout>
+                <StackLayout class="travel-account" visibility="{{visibility}}" id="{{city}}">
+                    <StackLayout class="travel-accordion-input-row">
+                        <Label text="Date" class="travel-accordion-label" />
+                        <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{date}}" class="travel-accordion-textfield" tap="selectDate" />
+                    </StackLayout>
+                    <StackLayout class="travel-accordion-input-row">
+                        <Label text="Availability" class="travel-accordion-label" />
+                        <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{availability}}" class="travel-accordion-textfield" tap="selectTime" />
+                    </StackLayout>
+                    <StackLayout class="travel-accordion-input-row">
+                        <Label text="Location" class="travel-accordion-label" />
+                        <WrapLayout class="travel-accordion-row" tap="toggleCheckbox" section="{{day+'incall'}}">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'incall'}}" class="ionicons-icon travel-accordion-section-link-icon" width="30" />
+                            <Label text=" Incall" class="travel-accordion-section-link-label" />
                         </WrapLayout>
-                        
-                        <StackLayout class="travel-account" visibility="{{visibility}}" id="{{city}}">
-                            <StackLayout class="travel-accordion-input-row">
-                                <Label text="Date" class="travel-accordion-label" />
-                                <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{date}}" class="travel-accordion-textfield" tap="selectDate" />
-                            </StackLayout>
-                            <StackLayout class="travel-accordion-input-row">
-                                <Label text="Location" class="travel-accordion-label" />
-                                <WrapLayout>
-                                    <WrapLayout class="travel-accordion-all-row-50" tap="toggleCheckbox" section="{{day+'incall'}}">
-                                        <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'incall'}}" class="ionicons-icon travel-accordion-section-link-icon" width="30" />
-                                        <Label text=" Incall" class="travel-accordion-section-link-label" />
-                                    </WrapLayout>
-                                    <WrapLayout class="travel-accordion-all-row-50" tap="toggleCheckbox" section="{{day+'outcall'}}">
-                                        <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'outcall'}}" class="ionicons-icon travel-accordion-section-link-icon" width="30" />
-                                        <Label text=" Outcall" class="travel-accordion-section-link-label" />
-                                    </WrapLayout>
-                                </WrapLayout>
-                            </StackLayout>
-                            <StackLayout class="travel-accordion-input-row">
-                                <Label text="Availability" class="travel-accordion-label" />
-                                <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{availability}}" class="travel-accordion-textfield" tap="selectTime" />
-                            </StackLayout>
-                        </StackLayout>
-					</StackLayout>    
-                    
-                </Repeater.itemTemplate>
-            </Repeater>	 
-        </grid-layout>
-    </ScrollView>
-</GridLayout>
+                        <WrapLayout class="travel-accordion-row" tap="toggleCheckbox" section="{{day+'outcall'}}">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'outcall'}}" class="ionicons-icon travel-accordion-section-link-icon" width="30" />
+                            <Label text=" Outcall" class="travel-accordion-section-link-label" />
+                        </WrapLayout>
+                    </StackLayout>                    
+                </StackLayout>
+			</StackLayout>    
+        </Repeater.itemTemplate>
+    </Repeater>
+</ScrollView>

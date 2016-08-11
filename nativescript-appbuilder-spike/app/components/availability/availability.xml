@@ -10,9 +10,9 @@
             <widgets:side-drawer />
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
-            <TabView id="availability-tabs">
+            <TabView id="availability-tabs" tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
                 <TabView.items>
-                    <TabViewItem title="Calander" xmlns:Calander="components/availability/tabs/calander">
+                    <TabViewItem title="Calendar" xmlns:Calander="components/availability/tabs/calender">
                         <TabViewItem.view>
                             <Calander:calander />
                         </TabViewItem.view>

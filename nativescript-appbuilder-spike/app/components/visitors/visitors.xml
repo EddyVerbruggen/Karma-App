@@ -10,7 +10,7 @@
             <widgets:side-drawer />
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
-            <TabView id="visitors-tabs">
+            <TabView id="visitors-tabs" tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
                 <TabView.items>
                     <TabViewItem title="Traffic" xmlns:Traffic="components/visitors/tabs/traffic">
                         <TabViewItem.view>
