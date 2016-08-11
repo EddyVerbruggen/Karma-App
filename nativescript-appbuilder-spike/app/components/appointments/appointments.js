@@ -13,7 +13,7 @@ var pageData = new Observable({
     selectPendingFilter: false,
     selectCanceledFilter: false,
     backButtonHidden: true,
-    pageTitle: "APPOINTMENT"
+    pageTitle: "APPOINTMENTS"
 });
 
 exports.onLoaded = function(args) {
