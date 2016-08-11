@@ -1,7 +1,8 @@
 <GridLayout rows="*, 60" columns="*">
     <ScrollView row="0" col="0" id="myScroller">
         <StackLayout class="history-content-area">
-            <Repeater items="{{messageHistory}}">
+            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+            <Repeater items="{{messageHistory}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                 <Repeater.itemTemplate>
                     <StackLayout>
                         <!-- system message -->

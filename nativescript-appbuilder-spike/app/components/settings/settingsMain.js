@@ -26,8 +26,18 @@ function pageLoaded(args) {
 }
 
 exports.onTap = function(args) {
+    var section = args.object.section;
+    
+    // var modalPageModule = 'components/settings/subviews/' + section + '/' + section;
+    // var context = args.context;
+    // var fullscreen = true;
+    // page.showModal(modalPageModule, context, function closeCallback(username, password) {
+    // // Log the user in...
+
+    // }, fullscreen);
+    
     try{
-		var section = args.object.section;
+    var section = args.object.section;
         helpers.navigate({
             moduleName: 'components/settings/subviews/' + section + '/' + section,
         });   

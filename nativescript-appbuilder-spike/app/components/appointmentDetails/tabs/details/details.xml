@@ -1,7 +1,8 @@
 <GridLayout rows="*, 50" columns="*">
     <ScrollView row="0" col="0">  
         <StackLayout>
-            <StackLayout class="appointment-details-head" orientation="horizontal" clientId="{{appointmentDetails.id}}" tap="ClientDetail">                
+            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+            <StackLayout class="appointment-details-head" orientation="horizontal" clientId="{{appointmentDetails.id}}" tap="ClientDetail" visibility="{{ isLoading ? 'collapse' : 'visible' }}">                
                 <StackLayout verticalAlignment="center">
                     <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
                 </StackLayout>
@@ -14,7 +15,7 @@
                     <Label text="{{appointmentDetails.email}}" class="client-email" />                        
                 </StackLayout>                
             </StackLayout> 
-            <StackLayout class="appointment-details">      
+            <StackLayout class="appointment-details" visibility="{{ isLoading ? 'collapse' : 'visible' }}">      
                 <StackLayout class="white-box">           
                     <StackLayout class="appointment-input-row">
                         <Label text="Date" class="appointment-label" />

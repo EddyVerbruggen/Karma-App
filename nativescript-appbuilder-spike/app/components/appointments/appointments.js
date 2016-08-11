@@ -4,11 +4,12 @@ var AppointmentsViewModel = require('./appointments-view-model');
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
 
+var page;
 var isInit = true;
 var appointmentsList = new AppointmentsViewModel();
 var pageData = new Observable({
     appointmentsList: appointmentsList,
-    isLoading: false,
+    isLoading: true,
     selectConfirmedFilter: true,
     selectPendingFilter: false,
     selectCanceledFilter: false,
@@ -17,7 +18,7 @@ var pageData = new Observable({
 });
 
 exports.onLoaded = function(args) {
-    var page = args.object;
+    page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
 	appointmentsList
@@ -57,7 +58,6 @@ exports.onTapStatusFilter = function(args) {
 }
 
 exports.onSelectAppointment = function(args) {
-    
     helpers.tapFlash(args.object).then(function() {
         helpers.navigate({
             moduleName: views.appointmentDetails,
@@ -66,5 +66,4 @@ exports.onSelectAppointment = function(args) {
             }
         });        
     });
-    
 }
