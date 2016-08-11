@@ -7,33 +7,26 @@
 	</Page.actionBar>
     <ScrollView>
         <grid-layout rows="auto,*">
-
-            <StackLayout class="terms-account" row="0">
-                <StackLayout>
-                    <Label text="Page" class="terms-section-header" />
-                    <Label class="terms-section-divider" />
+            <StackLayout row="0" class="subsettings-wrapper">
+                <StackLayout class="subsettings-row">
+                    <Label text="Display" class="subsettings-label" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="subsettings-textfield" />
                 </StackLayout>
-                <StackLayout class="terms-input-row">
-                    <Label text="Display" class="terms-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="terms-textfield" />
-                </StackLayout>
-                <StackLayout class="terms-input-row">
-                    <Label text="Text" class="terms-label" />
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" />
+                <StackLayout class="subsettings-row">
+                    <Label text="Text" class="subsettings-label" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="subsettings-textfield" />
                 </StackLayout>
             </StackLayout>
-
-            <StackLayout class="terms-account" row="1">
+            <StackLayout row="1" class="subsettings-wrapper">
                 <StackLayout>
-                    <Label text="Terms" class="terms-section-header" />
-                    <Label class="terms-section-divider" />
+                    <Label text="Terms" class="subsettings-header" />
+                    <Label class="subsettings-divider" />
                 </StackLayout>
-                <StackLayout class="terms-input-row" id="termsList">
-                    <Label text="The client must accept the following" class="terms-label" />
-
+                <StackLayout class="subsettings-row" id="termsList">
+                    <Label text="The client must accept the following" class="subsettings-label" />
                     <Repeater items="{{terms}}">
                         <Repeater.itemTemplate>
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{def}}" class="terms-textfield" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{def}}" class="subsettings-textfield" />
                         </Repeater.itemTemplate>
                     </Repeater>						
                 </StackLayout>

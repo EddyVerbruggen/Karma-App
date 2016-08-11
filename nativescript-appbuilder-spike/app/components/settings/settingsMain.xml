@@ -6,11 +6,9 @@
 	</Page.actionBar>
     <ScrollView>
         <StackLayout width="100%">
-
             <StackLayout horizontalAlignment="center" class="settings-head">
                 <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
             </StackLayout>
-
             <StackLayout class="settings-account">
                 <StackLayout>
                     <Label text="My Account" class="settings-section-header" />
@@ -41,56 +39,55 @@
                     <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="GMT-05:00 Eastern Time (EST)" class="settings-textfield" />
                 </StackLayout>
             </StackLayout>
-
-            <StackLayout class="settings-all">                
+            <StackLayout class="settings-all">
+                <StackLayout>
+                    <Label text="All Settings" class="settings-section-header" />
+                    <Label class="settings-section-divider" />
+                </StackLayout>             
                 <WrapLayout class="settings-all-row" section="services" tap="onTap">
-                    <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="&#xf272;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Services" class="settings-section-link-label" />
                 </WrapLayout>
                 <Label class="settings-all-divider" />
                 <WrapLayout class="settings-all-row" section="notification" tap="onTap">
-                    <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="&#xf3e2;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Notifications" class="settings-section-link-label" />
                 </WrapLayout>
                 <Label class="settings-all-divider" />
                 <WrapLayout class="settings-all-row" section="screening" tap="onTap">
-                    <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="&#xf2f5;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Screening" class="settings-section-link-label" />
                 </WrapLayout>
                 <Label class="settings-all-divider" />
                 <WrapLayout class="settings-all-row" section="booking" tap="onTap">
-                    <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="&#xf3f4;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Booking" class="settings-section-link-label" />
                 </WrapLayout>
                 <Label class="settings-all-divider" />
                 <WrapLayout class="settings-all-row" section="landing" tap="onTap">
-                    <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="&#xf37b;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Landing Page" class="settings-section-link-label" />
                 </WrapLayout>
                 <Label class="settings-all-divider" />
                 <WrapLayout class="settings-all-row" section="terms" tap="onTap">
-                    <Label text="&#xf43d;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="&#xf3bc;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Terms & Conditions" class="settings-section-link-label" />
                 </WrapLayout>
-            </StackLayout> 
-
+            </StackLayout>
             <StackLayout class="settings-url">
                 <StackLayout>
                     <Label text="My URLs" class="settings-section-header" />
                     <Label class="settings-section-divider" />
                 </StackLayout>
-
                 <StackLayout class="settings-input-row">
                     <Label text="Web" class="settings-label" />
                     <TextField text="https://www.screeningmate.com/jenny" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
                 </StackLayout>
-
                 <StackLayout class="settings-input-row">
                     <Label text="Short/Mobile" class="settings-label" />
                     <TextField text="http://scrnmt.com/47556" keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" class="settings-textfield" />
                 </StackLayout>
             </StackLayout>
-
         </StackLayout>
     </ScrollView>
 </Page>

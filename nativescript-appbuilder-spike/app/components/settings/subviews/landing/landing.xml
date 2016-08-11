@@ -6,25 +6,24 @@
 	</Page.actionBar>
     <ScrollView>
         <StackLayout width="100%">
-            <StackLayout class="landing-account">
+            <StackLayout class="subsettings-wrapper">
                 <StackLayout>
-                    <Label text="Text" class="landing-section-header" />
-                    <Label class="landing-section-divider" />
+                    <Label text="Welcome Text" class="subsettings-header" />
+                    <Label class="subsettings-divider" />
                 </StackLayout>
-                <StackLayout class="landing-input-row">
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Welcome to my page, Iwould really like to meet you. So please don't forget to book with me." class="landing-textfield" tap="edit" />
+                <StackLayout class="subsettings-row">
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Welcome to my page, Iwould really like to meet you. So please don't forget to book with me." class="subsettings-textfield" tap="edit" />
                 </StackLayout>
             </StackLayout>
-
-            <StackLayout class="landing-account">
+            <StackLayout class="subsettings-wrapper">
                 <StackLayout>
-                    <Label text="Background Image" class="landing-section-header" />
-                    <Label class="landing-section-divider" />
+                    <Label text="Background Image" class="subsettings-header" />
+                    <Label class="subsettings-divider" />
                 </StackLayout>
-                <StackLayout class="landing-input-row" >
-                    <image src="~/images/pattern-triangle.png" class="landing-bg-image" />
+                <StackLayout class="subsettings-row" >
+                    <image src="~/images/pattern-triangle.png" class="subsettings-bg-image" />
                 </StackLayout>
-                <WrapLayout class="landing-all-row">
+                <WrapLayout class="subsettings-all-row">
                     <Button text="Delete" class="send-message-button" width="50%" tap="delete" />
                     <Button text="Upload" class="send-message-button" width="50%" tap="upload" />
                 </WrapLayout>
