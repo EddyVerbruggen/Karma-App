@@ -20,7 +20,7 @@ var pageData = new Observable({
     messageHistory: new observableArrayModule(),
     isLoading: true,
     LocationVisible: false,
-    pageTitle: "APPOINTMENTS",
+    pageTitle: "APPOINTMENT",
     HButtonHidden: true,
     SearchButtonHidden: true
 });

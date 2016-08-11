@@ -1,27 +1,24 @@
 .help-faq-section-link-icon{
-    width: 40;
+    width: 30;
 }
 
 .faq-row{
-    margin: 5;
     background-color: #FFF;
+    margin-bottom:1;
 }
 
 .help-faq-header{
-    margin:5;
-    background-color: #FFF;
+    padding:10;
+    font-family: 'MyriadPro-Light';font-size: 18;color:#2499AA;
 }
 
-.help-faq-header-label{
-    margin:5;
-    font-size: 19;
-}
 
 .standard-account{
-    margin: 15;
+    padding:0 40 35 40;
+    font-size:15;
 }
 
 .faq-accordion-description{
     white-space: normal;
-    margin-left:25;
+    line-height:25;
 }

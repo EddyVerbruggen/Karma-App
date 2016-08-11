@@ -1,12 +1,13 @@
 <StackLayout class="drawer-menu-content" loaded="onLoad">
-    <!--<StackLayout class="drawer-top-area" orientation="horizontal">
-        <StackLayout width="75" verticalAlignment="center">
-            <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="profile-thumbnail" />
+    <StackLayout class="drawer-top-area" orientation="horizontal">
+        <StackLayout width="60">
+            <Label style="background-image: url('~/images/girl-100x100.jpg');" class="profile-thumbnail" />
         </StackLayout>
         <StackLayout verticalAlignment="center">
-            <Label text="{{name}}" class="" />
+            <Label text="Jenny Smith" class="" />
+            <!--<Label text="{{name}}" class="" />-->
         </StackLayout>
-    </StackLayout>-->
+    </StackLayout>
     <StackLayout class="drawer-nav-area">
         <StackLayout class="drawer-nav-item" orientation="horizontal" tap="onTapDashboard">
             <StackLayout width="50" verticalAlignment="center">

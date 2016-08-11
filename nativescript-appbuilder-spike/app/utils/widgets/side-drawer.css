@@ -5,18 +5,21 @@
 }
 
 .drawer-top-area {
-    background-color:#f9f9f9;
-    padding:15 0 10 10;
+    padding:15 0 0 10;
     font-size:19;
     color:#666;    
 }
 
 .profile-thumbnail {
   border-radius: 100;
-  width:50;
-  height:50;
+  width:45;
+  height:45;
   border-width:1;
-  border-color:#545454;    
+  border-color:#545454;  
+    background-repeat:no-repeat;
+  background-size:contain;  
+    margin-right:20;
+    margin-left:15;
 }
 
 .drawer-nav-area {

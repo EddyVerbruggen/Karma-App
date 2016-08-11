@@ -8,15 +8,24 @@ var views = require('../../utils/views');
 var pageData = new Observable({
     appointmentsList:[
         {
-            "date": "Appointments Today",
+            "date": "Appointments",
             "bookings": [
                 {
                     "id": 5,
                     "time": "3:00pm",
-                    "length": "30 minutes",
+                    "length": "1 Hour",
                     "client_name": "John Dowdy",
                     "screening_id": 7,
                     "location": "Outcall - downtown LA",
+                    "status": "accepted"
+                },
+                {
+                    "id": 6,
+                    "time": "8:00pm",
+                    "length": "3 Hours",
+                    "client_name": "Eric Karlsson",
+                    "screening_id": 7,
+                    "location": "Outcall - Marriott, Room 56",
                     "status": "accepted"
                 }
             ]
@@ -25,8 +34,32 @@ var pageData = new Observable({
     clientsList:[
         {
             "screening_id": 1,
-            "client_name": "Client 1",
+            "client_name": "Peter Jones",
             "num_bookings": 1,
+            "profile_image": "",
+            "status_text": "Pending...",
+            "status": "pending"
+        },
+        {
+            "screening_id": 2,
+            "client_name": "John Smith",
+            "num_bookings": 1,
+            "profile_image": "images/placeholder/temp-client-thumb.jpg",
+            "status_text": "Approved",
+            "status": "pending"
+        },
+        {
+            "screening_id": 2,
+            "client_name": "Martin Page",
+            "num_bookings": 0,
+            "profile_image": "",
+            "status_text": "Pending...",
+            "status": "pending"
+        },
+        {
+            "screening_id": 2,
+            "client_name": "Matthew Johnson",
+            "num_bookings": 0,
             "profile_image": "",
             "status_text": "Pending...",
             "status": "pending"

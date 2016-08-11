@@ -1,106 +1,26 @@
-.appointment-details-head {
-    padding:15 0 15 25;
-    background-color:#666;background-image: url('~/images/pattern-triangle-sm.png');
-    color:#fff;
-}
-
-.client-thumbnail {
-    border-radius: 200;
-    width:75;
-    height:75;
-    border-width:2;
-    border-color:#888;  
-    margin: 0 20 0 0;
-}
-
-.client-name {
-    font-size:23;
-    margin-right:3;
-}
+.appointment-details-head {width:100%;padding:15;background-color:#666;background-image: url('~/images/pattern-circles-light.png');color:#fff;}
+.client-thumbnail {border-radius: 75;width:75;height:75;border-width:1;border-color:#999;margin: 0 20 0 0;background-repeat:no-repeat;background-size:contain;}
+.client-name {font-size:24;margin-right:3;font-family: 'MyriadPro-Light';}
 
 .client-phone,
-.client-email {
-    font-size:16;
-    color:#ccc;
-}
+.client-email {font-size:14;color:#ddd;}
+.client-status {font-size:9;background-color:#555;padding:2 8;border-radius:2;color:#fff;}
 
-.client-status {
-    font-size:10;
-    color:#5BB98C;
-}
+.appointment-details {padding:20;}
+.appointment-input-row {margin: 0 0 20 0;}
+.appointment-label {font-size: 14;color: #888;text-transform: uppercase;font-weight: bold;margin-left:2;}
+.appointment-label-right {font-size: 12;color: #999;text-transform: uppercase;font-weight: bold;margin-left:5;text-align: right;}
+.appointment-textfield {font-size: 18;padding:2;}
+.appointment-status {color: #555;padding:2;}
 
-.appointment-details {
-    padding:10 15 15 15;
-}
+.appointment-options {padding:5;}
+.accept-save-button {font-size:21;color:#fff;background-color:#3EC3D6;height:44;margin-right:5;border-radius:3;padding-top:6;text-align:center;}
+.cancel-button {font-size:21;height:44;background-color:#999;margin-right:5;border-radius:3;text-align:center;color: #fff;padding-top:6;}
+.delete-button {font-size:26;height:44;color:#fff;background-color:#999;border-radius:3;text-align:center;margin-right:0; padding-top:5;width:100%;}
 
-.appointment-input-row {
-    margin: 15 0 0 0;
-}
-
-.appointment-label {
-    font-size: 12;
-    color: #999;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left:5;
-}
-
-.appointment-label-right{
-    font-size: 12;
-    color: #999;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left:5;
-    text-align: right;
-}
-
-.appointment-textfield {
-    font-size: 15;
-}
-
-.accept-save-button {
-    font-size:26;
-    color:#fff;
-    background-color:#3EC3D6;
-    height:50;
-    padding:0;
-    margin:0;
-}
-
-
-
-.cancel-button {
-    font-size:21;
-    height:50;
-    color:#888;
-    background-color:#bbb;
-}
-
-.delete-button {
-    font-size:26;
-    height:50;
-    color:#888;
-    background-color:#bbb;
-}
-
-.LocationPopupBody-title-row{
-    
-}
-
-#LocationPopupBody{
-
-}
-
-.title-bar{
-    color: #fff;
-    background-color: #858585;
-    text-transform: capitalize;
-}
-
-.info-table-label {
-	width: 100;
-    padding:15 15 15 15;
-}
+.title-bar {color: #fff;background-color: #858585;text-transform: uppercase;padding:10;}
+.info-table-label {width: 100;padding:15 15 15 15;}
+.popup-wrapper {padding:15;}
 
 .client-row-icon-selected-true{
  	width:12;

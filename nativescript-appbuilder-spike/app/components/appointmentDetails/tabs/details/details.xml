@@ -48,11 +48,10 @@
         <StackLayout width="80%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
             
             <StackLayout class="title-bar" orientation="horizontal">
-                <Label text="EDIT LOCATION" class="LocationPopupBody-title-row" width="95%" />
+                <Label text="EDIT LOCATION" class="LocationPopupBody-title-row" width="90%" />
                 <Label text="X" textWrap="true" width="5%" />
-            </StackLayout>
-            
-            <StackLayout class="appointment-input-row">
+            </StackLayout>            
+            <StackLayout class="popup-wrapper">
                 <WrapLayout>
                     <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="incall">
                         <image src="~/images/ic_radio_button_checked_white.png" id="incall" class="ionicons-icon appointment-detail-section-link-icon" />
@@ -67,32 +66,19 @@
             
             <StackLayout class="appointment-input-row">
                 <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
-            </StackLayout>
-            
-            <StackLayout class="appointment-input-row">
-                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
-            </StackLayout>
-            
-            <StackLayout class="appointment-input-row">
-                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
-            </StackLayout>
-            
-            <StackLayout class="appointment-input-row">
-				<Label text="{{appointmentDetails.status_text}}" class="appointment-label" />
-            </StackLayout>
-            
+            </StackLayout>            
         </StackLayout>
     </StackLayout>
     
-    <StackLayout orientation="horizontal" row="1" col="0">
-        <StackLayout width="50%">
-            <Label text="Confirm" class="accept-save-button" width="100%" tap="confirm" />
+    <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options">
+        <StackLayout width="40%">
+            <Label text="Confirm" class="accept-save-button" tap="confirm" />
         </StackLayout>
-        <StackLayout width="35%">
-            <Label text="Cancel" class="cancel-button" width="100%" tap="cancel" />
+        <StackLayout width="40%">
+            <Label text="Cancel" class="cancel-button" wtap="cancel" />
         </StackLayout>
-        <StackLayout width="15%">
-            <Label text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" tap="delete" />
+        <StackLayout width="20%">
+            <Label text="&#xf4c4;" class="ionicons-icon delete-button" tap="delete" />
         </StackLayout>
     </StackLayout>    
 </GridLayout>

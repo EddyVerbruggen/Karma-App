@@ -15,22 +15,23 @@
                 <StackLayout>
                     
                     <StackLayout class="dashboard-head">
-                        <Label text="What's New (Today)" class="dashboard-head-title" />
                         <StackLayout orientation="horizontal">                    
                             <StackLayout width="33%">
-                                <Label text="3" class="stats-number" />
+                                <Label text="2" class="stats-number" />
                                 <Label text="Appointments" class="stats-label" />
                             </StackLayout>
                             <StackLayout width="33%">
-                                <Label text="21" class="stats-number" />
+                                <Label text="4" class="stats-number" />
                                 <Label text="Clients" class="stats-label" />
                             </StackLayout>
                             <StackLayout width="33%">
-                                <Label text="326" class="stats-number" />
+                                <Label text="47" class="stats-number" />
                                 <Label text="Visitors" class="stats-label" />
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
+
+                    
 
                     <!-- Appointments -->
                     <GridLayout columns="*">
@@ -41,7 +42,7 @@
                             </lv:RadListView.listViewLayout>
                             <lv:RadListView.itemTemplate>
                                 <StackLayout>
-                                    <Label text="{{date}}" class="appointment-calendar-date" />
+                                    <Label text="{{date}}" class="appointment-calendar-date" /> 
                                     <Repeater items="{{bookings}}">
                                         <Repeater.itemsLayout>
                                             <StackLayout class="appointment-rows" />
@@ -75,6 +76,7 @@
                     </GridLayout>
                     
                     <!-- Clients -->
+                    <Label text="New Clients" class="appointment-calendar-date" />
                     <GridLayout columns="*">
                         <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                             <lv:RadListView.listViewLayout>
@@ -82,7 +84,8 @@
                             </lv:RadListView.listViewLayout>
                             <lv:RadListView.itemTemplate>
                                 <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
-                                    <Label style="background-image: url('{{ profile_image }}');" class="client-row-thumbnail" col="0" />
+                                    <Label class="client-row-thumbnail" col="0" />
+                                    <!--<Label style="background-image: url('~/{{ profile_image }}');" class="client-row-thumbnail" col="0" />-->
                                     <StackLayout col="1" verticalAlignment="center">
                                         <Label text="{{client_name}}" class="client-row-name" />
                                         <Label text="{{num_bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{num_bookings  ? 'visible' : 'collapse'}}" />

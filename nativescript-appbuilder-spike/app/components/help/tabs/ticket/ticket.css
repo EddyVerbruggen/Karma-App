@@ -5,14 +5,11 @@
 }
 
 .ticket-row{
-    margin:10;
-    border-width: 1;
-    border-color: #E5E5E5;
-    background-color: #FFF;
+    margin:15;
 }
 
 .ticket-btn-row{
-    margin:10;
+    padding:20;
 }
 
 .help-ticket-input {

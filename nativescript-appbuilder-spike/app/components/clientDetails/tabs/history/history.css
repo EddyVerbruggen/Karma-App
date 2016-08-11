@@ -1,7 +1,4 @@
-.history-wrapper {margin:0;}
-.history-row {margin:10 10 0 10;padding:20 25;font-size:15;background-color:#fff;border-width:1;
-    border-color:#ddd;
-    border-radius:3;}
+.history-row {margin-bottom:1;padding:20 25;font-size:15;background-color:#fff;}
 .history-row-icon {font-size:40;color:#ccc;margin-right:15;}
 .history-row-text {font-size:16;}
 .history-row-date {font-size:12;color:#bbb;margin-top:2;}

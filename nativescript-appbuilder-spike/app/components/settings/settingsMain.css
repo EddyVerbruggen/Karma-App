@@ -1,5 +1,5 @@
 .settings-head {width:100%;padding:18 0;background-color: #222431;background-image: url('~/images/pattern-circles.png');}
-.settings-thumbnail {border-radius: 100;width:100;height:100;border-width:1;border-color:#666;}
+.settings-thumbnail {border-radius: 100;width:100;height:100;border-width:1;border-color:#666;background-repeat:no-repeat;background-size:contain;}
 
 .settings-account {margin:15;}
 .settings-all {margin:15;}

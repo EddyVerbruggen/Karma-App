@@ -52,12 +52,12 @@
         </StackLayout>
     </ScrollView>
 
-    <StackLayout orientation="horizontal" row="1" col="0">
-        <StackLayout width="75%">
-            <TextView id="message_box" class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message for Clayton..." textWrap="true" />
+    <StackLayout orientation="horizontal" row="1" col="0" class="send-message-bar">
+        <StackLayout width="70%">
+            <TextView id="message_box" class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message..." textWrap="true" />
         </StackLayout>
-        <StackLayout width="25%">
-            <Button text="Send" class="send-message-button" width="100%" tap="sendMessage" />
+        <StackLayout width="30%">
+            <Label text="Send" class="send-message-button" tap="sendMessage" />
         </StackLayout>
     </StackLayout>    
 </GridLayout>

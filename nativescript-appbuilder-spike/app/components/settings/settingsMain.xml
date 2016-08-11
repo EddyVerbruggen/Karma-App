@@ -7,7 +7,7 @@
     <ScrollView>
         <StackLayout width="100%">
             <StackLayout horizontalAlignment="center" class="settings-head">
-                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="settings-thumbnail" />
+                <Label style="background-image: url('~/images/girl-100x100.jpg');" class="settings-thumbnail" />
             </StackLayout>
             <StackLayout class="settings-account">
                 <StackLayout>

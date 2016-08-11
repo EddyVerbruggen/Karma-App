@@ -10,7 +10,7 @@
             <widgets:side-drawer />
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
-            <TabView id="help-tabs">
+            <TabView id="help-tabs" tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
                 <TabView.items>
                     <TabViewItem title="F.A.Q." xmlns:Faq="components/help/tabs/faq">
                         <TabViewItem.view>

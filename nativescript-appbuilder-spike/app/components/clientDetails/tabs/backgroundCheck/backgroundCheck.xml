@@ -1,6 +1,6 @@
 <ScrollView> 
 	<StackLayout class="background-wrapper">
-        <Label class="section-title" text="3 potential sex offender matches" />        
+        <Label class="section-title" text="3 Potential Sex Offender Matches" />        
         <StackLayout orientation="horizontal" class="sex-offender-row">
             <StackLayout class="sex-offender-photo" verticalAlignment="center">
                 <Image src="~/images/placeholder/placeholder-offender.jpg" />    

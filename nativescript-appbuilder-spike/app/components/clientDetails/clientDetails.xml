@@ -4,9 +4,9 @@
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <TabView>
+    <TabView tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
         <TabView.items>
-            <TabViewItem title="Info" color="#fff" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
+            <TabViewItem title="Info" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
                 <TabViewItem.view>
                     <PersonalDetails:personalDetails />
                 </TabViewItem.view>

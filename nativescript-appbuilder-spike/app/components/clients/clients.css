@@ -34,13 +34,13 @@
 .client-row-thumbnail {
   border-radius: 100;
   width:55;
-  height:55;
-  
+  height:55;  
   border-width:1;
-  border-color:#efefef; 
+  border-color:#ddd; 
   margin-right:10;
-    
-    
+  background-repeat:no-repeat;
+  background-size:contain;   
+    background-image: url('~/images/default-thumbnail.jpg')
 }
 
 .client-row-name {

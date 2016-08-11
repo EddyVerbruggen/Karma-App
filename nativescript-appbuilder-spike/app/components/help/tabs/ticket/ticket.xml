@@ -33,6 +33,7 @@
                         keyboardType="text"
                         autocorrect="true"
                         autocapitalizationType="none"
+                        textWrap="true"
                         class="help-ticket-input-area" />
                 </WrapLayout>
 

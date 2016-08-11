@@ -1,16 +1,11 @@
-.appointment-calendar-date {
-    font-size:15;
-    margin:20 0;
-    text-align:center;
-    color:#999;
-    text-transform:uppercase;
-}
+.appointment-calendar-date {font-size:15;margin:20 0;text-align:center;color:#999;text-transform:uppercase;}
 
 .appointment-row {
     vertical-align: center;
     background-color: #fcfcfc;
     padding: 12 0;
     margin:0 0 1 0;
+    
 }
 
 .appointment-status {
@@ -55,7 +50,7 @@
 }
 
 .row-client-name-new {
-    color:#aaa;
+    
 }
 
 .row-client-name-approved {
