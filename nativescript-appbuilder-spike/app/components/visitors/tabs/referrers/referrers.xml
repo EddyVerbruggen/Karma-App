@@ -7,9 +7,7 @@
         <Repeater items="{{referrers}}">
             <Repeater.itemTemplate>
                 <StackLayout class="referrer-row" section="{{id}}" tap="toggle">
-                    <StackLayout class="visitors-referrer-toggle" visibility="{{aptlist.length > 0 ? 'visible' : 'collapse' }}">
-                        <image src="~/images/ic_keyboard_arrow_down.png" id="{{id+'arr'}}" class="visitors-referrer-toggle-icon" width="20" />
-                    </StackLayout>
+                    
                     <StackLayout>
                         <Label text="{{url}}" class="referrer-url" />
                     </StackLayout>

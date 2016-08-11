@@ -103,13 +103,13 @@ exports.onLoaded = function(args) {
 exports.toggle = function(args){
     var section = args.object.section;
     var a = parentView.getViewById(section);
-    var b = parentView.getViewById(section+'arr');
+    // var b = parentView.getViewById(section+'arr');
     
     if(a.visibility == "visible"){
         a.visibility = "collapse";
-        b.src = "~/images/ic_keyboard_arrow_down.png";
+        // b.src = "~/images/ic_keyboard_arrow_down.png";
     }else{
         a.visibility = "visible";
-        b.src = "~/images/ic_keyboard_arrow_up.png";
+        // b.src = "~/images/ic_keyboard_arrow_up.png";
     }  
 }
