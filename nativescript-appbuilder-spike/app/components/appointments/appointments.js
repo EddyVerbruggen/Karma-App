@@ -57,6 +57,7 @@ exports.onTapStatusFilter = function(args) {
 }
 
 exports.onSelectAppointment = function(args) {
+    
     helpers.tapFlash(args.object).then(function() {
         helpers.navigate({
             moduleName: views.appointmentDetails,
@@ -65,4 +66,5 @@ exports.onSelectAppointment = function(args) {
             }
         });        
     });
+    
 }
