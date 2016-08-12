@@ -1,0 +1,31 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
+    <StackLayout id="locationModal" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">          
+        
+        <wrap-layout class="location-header">
+            <label text="EDIT LOCATION" class="location-header-title" />
+            <image src="~/images/ic_clear_white.png" class="location-close-button" tap="closeModal" />
+        </wrap-layout>
+        <wrap-layout class="location-sub-header">
+            <label text="You are travelling in Miami during this time." />
+        </wrap-layout>
+        <StackLayout class="popup-wrapper">
+            <WrapLayout>
+                <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="incall">
+                    <image src="~/images/ic_radio_button_checked_white.png" id="incall" class="ionicons-icon appointment-detail-section-link-icon" />
+                    <Label text=" Incall" />
+                </WrapLayout>
+                <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="outcall">
+                    <image src="~/images/ic_radio_button_unchecked_white.png" id="outcall" class="ionicons-icon appointment-detail-section-link-icon" />
+                    <Label text=" Outcall" />
+                </WrapLayout>
+            </WrapLayout>
+            <StackLayout>
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
+            </StackLayout>
+            <StackLayout>
+                <label class="appointment-textlabel" text="Incall informaiton is only sent to Clayton 24 hours before your appointment." />
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+</Page>

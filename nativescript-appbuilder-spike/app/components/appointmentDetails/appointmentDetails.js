@@ -126,8 +126,16 @@ exports.openTimePicker = function(args){
     PickerManager.showTimePickerDialog();
 }
 
-exports.openLocationPopup = function(){
-    openOverlay('LocationPopupBody', 'LocationVisible');
+exports.openLocationPopup = function(args){
+    
+    var modalPageModule = 'components/appointmentDetails/tabs/location/location';
+    var context = args.context;
+    var fullscreen = false;
+    page.showModal(modalPageModule, context, function closeCallback(location, address) {
+    	console.log(location + address);
+    }, fullscreen);
+    
+    // openOverlay('LocationPopupBody', 'LocationVisible');
 }
 
 exports.onTapOverlay = function(args) {
@@ -208,34 +216,4 @@ function updateAppointment(postData){
             }
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
-}
-
-exports.toggleRadio = function(args){
-    var section = args.object.section;
-    var incall = parentView.getViewById("incall");
-    var outcall = parentView.getViewById("outcall");
-
-    if(section == "incall"){
-        if(incall.src == "~/images/ic_radio_button_checked_white.png"){
-            incall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
-        }
-        
-        if(incall.src == "~/images/ic_radio_button_unchecked_white.png"){
-            outcall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        incall.src = "~/images/ic_radio_button_checked_white.png";   
-        }
-    }
-    
-    if(section == "outcall"){
-        if(outcall.src == "~/images/ic_radio_button_checked_white.png"){
-            incall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
-        }
-        
-        if(outcall.src == "~/images/ic_radio_button_unchecked_white.png"){
-            incall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
-        }
-    }
 }
