@@ -10,7 +10,7 @@
 .appointment-input-row {margin: 0 0 20 0;}
 .appointment-label {font-size: 14;color: #888;text-transform: uppercase;font-weight: bold;margin-left:2;}
 .appointment-label-right {font-size: 12;color: #999;text-transform: uppercase;font-weight: bold;margin-left:5;text-align: right;}
-.appointment-textfield {font-size: 18;padding:2;}
+.appointment-textfield {font-size: 18;padding-left:2;}
 .appointment-status {color: #555;padding:2;}
 
 .appointment-options {padding:5;}

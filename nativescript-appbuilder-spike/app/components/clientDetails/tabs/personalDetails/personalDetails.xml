@@ -70,7 +70,13 @@
                         <Label class="" text="Phone:" />
                     </StackLayout>
                     <StackLayout class="info-table-text">
-                        <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
+                        <WrapLayout>
+                            <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
+                            <WrapLayout class="verified-badge">
+                                <Label text="&#xf121;" class="ionicons-icon" />
+                                <Label text="Verified" />
+                            </WrapLayout>
+                        </WrapLayout>
                     </StackLayout>              
                 </StackLayout>           
             </StackLayout>
