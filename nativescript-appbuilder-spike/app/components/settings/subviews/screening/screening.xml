@@ -19,14 +19,14 @@
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Require client references from other companions" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Atleast 2 references" class="screening-textfield" tap="onTap" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Atleast 2 references" class="screening-textfield" tap="onTapSetting" setting="flag_num_references" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="References required to have an established website" class="screening-label" />
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="At least 1 reference website must be verified" class="screening-textfield" tap="onTap" />
+                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="At least 1 reference website must be verified" class="screening-textfield" tap="onTapDialog" setting="flag_num_references" />
                         </StackLayout>
                     </StackLayout>
-                    
+
                     <StackLayout class="screening-account">
                         <StackLayout>
                             <Label text="Client Information" class="screening-section-header" />
@@ -34,22 +34,22 @@
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Require client to upload photo(s)" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for photos from clients" class="screening-textfield" tap="onTap" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for photos from clients" class="screening-textfield" tap="onTapDialog" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Client's last name" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Require full last name" class="screening-textfield" tap="onTap" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Require full last name" class="screening-textfield" tap="onTapDialog" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Year of birth" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Required (to calculate their age)" class="screening-textfield" tap="onTap" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Required (to calculate their age)" class="screening-textfield" tap="onTapDialog" />
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="City/state of residence" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Don't ask for current residence" class="screening-textfield" tap="onTap" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Don't ask for current residence" class="screening-textfield" tap="onTapDialog" />
                         </StackLayout>
                     </StackLayout>
-                    
+
                     <StackLayout class="screening-account">
                         <StackLayout>
                             <Label text="Work" class="screening-section-header" />
@@ -57,32 +57,32 @@
                         </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Require work/employment information" class="screening-label" />
-                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for this information" class="screening-textfield" tap="onTap" />
+                            <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for this information" class="screening-textfield" tap="onTapDialog" />
                         </StackLayout>
                     </StackLayout>
-                    
+
 					<StackLayout class="screening-account">
                         <StackLayout>
                             <Label text="Skipping" class="screening-section-header" />
                             <Label class="screening-section-divider" />
-                        </StackLayout>	
+                        </StackLayout>
                         <StackLayout class="screening-input-row">
                             <Label text="Require work/employment information" class="screening-label" />
                         </StackLayout>
                         <WrapLayout class="screening-all-row" section="screening">
-                            <image src="~/images/ic_check_box_outline_blank_white.png" class="" width="30" />
+                            <image src="~/images/ic_check_box_outline_blank_white.png" class="" width="30" onTap="onToggle" />
                             <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
                         </WrapLayout>
                         <WrapLayout class="screening-all-row" section="screening">
-                            <image src="~/images/ic_check_box_white.png" class="" width="30" />
+                            <image src="~/images/ic_check_box_white.png" class="" width="30" onTap="onToggle" />
                             <Label text="On any other companion's white-list" class="screening-section-link-label" />
                         </WrapLayout>
                         <WrapLayout class="screening-all-row" section="screening">
-                            <image src="~/images/ic_check_box_white.png" class="" width="30" />
+                            <image src="~/images/ic_check_box_white.png" class="" width="30" onTap="onToggle" />
                             <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
                         </WrapLayout>
                     </StackLayout>
-                    
+
                 </StackLayout>
             </ScrollView>
         </drawer:RadSideDrawer.mainContent>

@@ -1,10 +1,6 @@
-var dialogs = require("ui/dialogs");
+'use strict';
 
-exports.onTap = function(){
- 	dialogs.action({
-		message: "Edit",
-      	actions: ["No, never ask for references", "Atleast 1 references", "Atleast 2 references", "3 references"]
-    }).then(function (result) {
-      	if(result) alert(result);
-    });   
-}
+var settingUtils = require("../../../utils/settings");
+
+exports.onTapDialog = settingUtils.onTapDialog;
+exports.onToggle = settingUtils.onToggle;
