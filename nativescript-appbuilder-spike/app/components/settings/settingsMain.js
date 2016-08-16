@@ -16,10 +16,11 @@ exports.pageLoaded = function(args) {
 }
 
 exports.onTap = function(args) {
-    try{
+    try {
 		var section = args.object.section;
         helper.navigate({
             moduleName: 'components/settings/subviews/' + section + '/' + section,
         });
-    }catch(q){ }
+    } catch(q) {
+    }
 }
