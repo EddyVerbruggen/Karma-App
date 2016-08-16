@@ -149,7 +149,7 @@
                         <StackLayout orientation="horizontal" />
                     </Repeater.itemsLayout>
                     <Repeater.itemTemplate>
-                        <Button text="{{name}}" class="tag" />
+                        <Button text="{{name}}" class="tag" tap="tagTap" />
                     </Repeater.itemTemplate>
                 </Repeater>
             </StackLayout>

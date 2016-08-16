@@ -58,6 +58,17 @@ exports.onTapStatusFilter = function(args) {
 }
 
 exports.onSelectAppointment = function(args) {
+    
+    // var modalPageModule = views.appointmentDetails;
+    // var context = {
+    // id: args.view.bookingId
+    // };
+    // var fullscreen = true;
+    // page.showModal(modalPageModule, context, function closeCallback(username, password) {
+    // // Log the user in...
+
+    // }, fullscreen);
+    
     helpers.tapFlash(args.object).then(function() {
         helpers.navigate({
             moduleName: views.appointmentDetails,

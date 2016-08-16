@@ -4,6 +4,7 @@ var tabViewModule = require("ui/tab-view");
 var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
+var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;
@@ -37,4 +38,32 @@ exports.onLoaded = function(args) {
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.approve = function(args){
+    dialogs.confirm({
+      	title: "Approve",
+      	message: "Are you sure you want to confirm ?",
+      	okButtonText: "Approve",
+      	cancelButtonText: "Cancel"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+    });
+}
+
+exports.delete = function(args){
+    dialogs.confirm({
+      	title: "Delete",
+      	message: "Are you sure you want to delete ?",
+      	okButtonText: "Delete",
+      	cancelButtonText: "Cancel"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+    });
+}
+
+exports.tagTap = function(args){
+	console.log(args.object.text);
 }

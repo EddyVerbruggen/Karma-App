@@ -31,7 +31,7 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     parentView = page.getViewById("LocationPopupBody");
     var gotData = page.navigationContext;
-       
+
 	appointmentDetails
 		.load(gotData.id)
 		.catch(function(error) {
