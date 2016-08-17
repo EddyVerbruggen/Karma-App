@@ -91,7 +91,7 @@ var screeningSettingsOptions = {
         {        
 			label: 'Require full last name',
 			value: 0
-	    },
+	    }
     ],
   
     flag_screening_skip: [
@@ -135,7 +135,7 @@ var screeningSettingsOptions = {
    	    {        
 			label: 'No, don\'t ask them for their year of birth',
 			value: 0
-	    },
+	    }
     ],
     flag_screening_residence: [
 		{        
@@ -145,7 +145,7 @@ var screeningSettingsOptions = {
    	    {        
 			label: 'No, don\'t ask them for their current residence',
 			value: 0
-	    },
+	    }
     ],
 };
 
@@ -158,7 +158,7 @@ var bookingSettingsOptions = {
    	    {        
 			label: 'Turn Off - Screening-only. Don\'t ask for a date/time',
 			value: 0
-	    },
+	    }
     ],
     minimum_booking_time: [
 		{        
@@ -188,7 +188,7 @@ var bookingSettingsOptions = {
         {        
 			label: '2 hour sessions',
 			value: 120
-	    },
+	    }
     ],
     
     flag_calendar: [
@@ -225,7 +225,7 @@ var bookingSettingsOptions = {
         {
             label: 'text',
             value: 0
-        },
+        }
     ],
     booking_location_fields: [
 
@@ -242,7 +242,7 @@ var bookingSettingsOptions = {
         {        
 			label: 'Travel',
 			value: 4
-	    },
+	    }
     ],
     default_appointment_notes: [
 
@@ -264,13 +264,13 @@ var notificationSettingsOptions = {
    	    {        
 			label: 'SMS/TEXT',
 			value: 2
-	    },
+	    }
     ],
     client_confirm_notification: [
 		{        
 			label: 'Email',
 			value: 1
-		},
+		}
    	],
     new_booking_notification: [
 		{        
@@ -280,13 +280,13 @@ var notificationSettingsOptions = {
    	    {        
 			label: 'SMS/TEXT',
 			value: 2
-	    },
+	    }
     ],
     reference_rejected_notification: [
 		{        
 			label: 'Email',
 			value: 1
-		},
+		}
    	],
     client_cancel_notification: [
 		{        
@@ -296,7 +296,7 @@ var notificationSettingsOptions = {
    	    {        
 			label: 'SMS/TEXT',
 			value: 2
-	    },
+	    }
     ],
 };
 
@@ -313,7 +313,7 @@ var termsSettingsOptions = {
    	    {        
 			label: 'Off',
 			value: 0
-	    },
+	    }
     ],
     flag_terms1: [
 		{        
@@ -323,7 +323,7 @@ var termsSettingsOptions = {
    	    {        
 			label: 'Hide',
 			value: 0
-	    },
+	    }
     ],
     flag_terms2: [
 		{        
@@ -333,7 +333,7 @@ var termsSettingsOptions = {
    	    {        
 			label: 'Hide',
 			value: 0
-	    },
+	    }
     ],
     flag_terms3: [
 		{        
@@ -343,7 +343,7 @@ var termsSettingsOptions = {
    	    {        
 			label: 'Hide',
 			value: 0
-	    },
+	    }
     ],
     flag_terms4: [
 		{        
@@ -353,7 +353,7 @@ var termsSettingsOptions = {
    	    {        
 			label: 'Hide',
 			value: 0
-	    },
+	    }
     ],
     flag_terms5: [
 		{        
@@ -363,7 +363,7 @@ var termsSettingsOptions = {
    	    {        
 			label: 'Hide',
 			value: 0
-	    },
+	    }
     ],  
 };
 
