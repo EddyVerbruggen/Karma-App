@@ -32,22 +32,56 @@ var screeningSettingsOptions = {
         }
     ],
     flag_screening_reference_website: [
-        <option value="0">No, verified references don't need to have a website</option>
-        <option value="3">Yes, all references need an established website</option>
-        <option value="1">At least 1 verified reference needs an established website</option>
-        <option value="2">At least 2 verified reference need an established website</option>
+		{        
+			label: 'No, verified references don\'t need to have a website',
+			value: 0
+		},
+   	    {        
+			label: 'Yes, all references need an established website',
+			value: 3
+	    },
+        {        
+			label: 'At least 1 verified reference needs an established website',
+			value: 1
+	    },
+        {        
+			label: 'At least 2 verified reference need an established website',
+	  		value: 2
+    	}
     ],
-    flag_screening_client_photos: [
-        <option value="0">No, never ask for photos from clients</option>
-        <option value="1">At least 1</option>
-        <option value="2">At least 2</option>
-        <option value="3">At least 3</option>
+	flag_screening_client_photos: [
+		{        
+			label: 'No, never ask for photos from clients',
+			value: 0
+		},
+   	    {        
+			label: 'At least 1',
+			value: 1
+	    },
+        {        
+			label: 'At least 2',
+			value: 2
+	    },
+        {        
+			label: 'At least 3',
+	  		value: 3
+    	}
     ],
     flag_screening_last_name: [
-        <option value="1">Only first letter (no Sex Offender check)</option>
-        <option value="2">Only first 2 letters</option>
-        <option value="0">Require full last name</option>
+		{        
+			label: 'Only first letter (no Sex Offender check)',
+			value: 1
+		},
+   	    {        
+			label: 'Only first 2 letters',
+			value: 2
+	    },
+        {        
+			label: 'Require full last name',
+			value: 0
+	    },
     ],
+  
     flag_screening_skip: [
 
     ],
@@ -82,29 +116,69 @@ var screeningSettingsOptions = {
 
     ],
     flag_screening_birth_date: [
-        <option value="1">Yes, ask them for their year of birth (to calculate their age)</option>
-        <option value="0">No, don't ask them for their year of birth</option>
+		{        
+			label: 'Yes, ask them for their year of birth (to calculate their age)',
+			value: 1
+		},
+   	    {        
+			label: 'No, don\'t ask them for their year of birth',
+			value: 0
+	    },
     ],
     flag_screening_residence: [
-        <option value="1">Yes, ask them where they currently live</option>
-        <option value="0">No, don't ask them for their current residence</option>
-    ]
+		{        
+			label: 'Yes, ask them where they currently live',
+			value: 1
+		},
+   	    {        
+			label: 'No, don\'t ask them for their current residence',
+			value: 0
+	    },
+    ],
 };
 
 var bookingSettingsOptions = {
     flag_booking: [
-        <option value="1">Turn On - Require a date/time/location for appointment</option>
-        <option value="0">Turn Off - Screening-only. Don't ask for a date/time</option>
+		{        
+			label: 'Turn On - Require a date/time/location for appointment',
+			value: 1
+		},
+   	    {        
+			label: 'Turn Off - Screening-only. Don\'t ask for a date/time',
+			value: 0
+	    },
     ],
     minimum_booking_time: [
-        <option value="0">None</option>
-        <option value="15">15 minute sessions</option>
-        <option value="30">30 minute sessions</option>
-        <option value="45">45 minute sessions</option>
-        <option value="60">1 hour sessions</option>
-        <option value="90">1.5 hour sessions</option>
-        <option value="120">2 hour sessions</option>  
+		{        
+			label: 'None',
+			value: 0
+		},
+   	    {        
+			label: '15 minute sessions',
+			value: 15
+	    },
+        {        
+			label: '30 minute sessions',
+			value: 30
+	    },
+        {        
+			label: '45 minute sessions',
+			value: 45
+	    },
+        {        
+			label: '1 hour sessions',
+			value: 60
+	    },
+        {        
+			label: '1.5 hour sessions',
+			value: 90
+	    },
+        {        
+			label: '2 hour sessions',
+			value: 120
+	    },
     ],
+    
     flag_calendar: [
         {
             label: '',
@@ -184,29 +258,65 @@ var servicesSettingsOptions = {
 
 var termsSettingsOptions = {
     flag_terms_page: [
-        <option value="1">On</option>
-        <option value="0">Off</option>
+		{        
+			label: 'On',
+			value: 1
+		},
+   	    {        
+			label: 'Off',
+			value: 0
+	    },
     ],
     flag_terms1: [
-        <option value="1">Show</option>
-        <option value="0">Hide</option>
+		{        
+			label: 'Show',
+			value: 1
+		},
+   	    {        
+			label: 'Hide',
+			value: 0
+	    },
     ],
     flag_terms2: [
-        <option value="1">Show</option>
-        <option value="0">Hide</option>
+		{        
+			label: 'Show',
+			value: 1
+		},
+   	    {        
+			label: 'Hide',
+			value: 0
+	    },
     ],
     flag_terms3: [
-        <option value="1">Show</option>
-        <option value="0">Hide</option>
+		{        
+			label: 'Show',
+			value: 1
+		},
+   	    {        
+			label: 'Hide',
+			value: 0
+	    },
     ],
     flag_terms4: [
-        <option value="1">Show</option>
-        <option value="0">Hide</option>
+		{        
+			label: 'Show',
+			value: 1
+		},
+   	    {        
+			label: 'Hide',
+			value: 0
+	    },
     ],
     flag_terms5: [
-        <option value="1">Show</option>
-        <option value="0">Hide</option>
-    ]
+		{        
+			label: 'Show',
+			value: 1
+		},
+   	    {        
+			label: 'Hide',
+			value: 0
+	    },
+    ],  
 };
 
 exports.onToggle = function(args) {
