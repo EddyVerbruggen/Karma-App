@@ -52,6 +52,18 @@ exports.approve = function(args){
     });
 }
 
+exports.reject = function(args){
+    dialogs.confirm({
+      	title: "Reject",
+      	message: "Are you sure you want to reject ?",
+      	okButtonText: "Reject",
+      	cancelButtonText: "Cancel"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+    });
+}
+
 exports.delete = function(args){
     dialogs.confirm({
       	title: "Delete",

@@ -164,7 +164,7 @@
             <Label text="Approve" class="approve-button" tap="approve" />
         </StackLayout>
         <StackLayout width="40%">
-            <Label text="Reject" class="reject-button" tap="approve" />
+            <Label text="Reject" class="reject-button" tap="reject" />
         </StackLayout>
         <StackLayout width="20%">
             <Label text="&#xf4c4;" class="ionicons-icon delete-button" tap="delete" />

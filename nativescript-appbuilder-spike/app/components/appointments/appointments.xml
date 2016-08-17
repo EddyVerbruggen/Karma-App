@@ -60,7 +60,7 @@
                                      </StackLayout>
                                 </Repeater.itemTemplate>
                             </Repeater>
-                            </StackLayout>
+                        </StackLayout>
                     </lv:RadListView.itemTemplate>
                 </lv:RadListView>
 
