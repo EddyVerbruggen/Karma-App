@@ -146,7 +146,7 @@ var screeningSettingsOptions = {
 			label: 'No, don\'t ask them for their current residence',
 			value: 0
 	    }
-    ],
+    ]
 };
 
 var bookingSettingsOptions = {
@@ -297,7 +297,7 @@ var notificationSettingsOptions = {
 			label: 'SMS/TEXT',
 			value: 2
 	    }
-    ],
+    ]
 };
 
 var servicesSettingsOptions = {
@@ -364,7 +364,7 @@ var termsSettingsOptions = {
 			label: 'Hide',
 			value: 0
 	    }
-    ],  
+    ]  
 };
 
 exports.onToggle = function(args) {
