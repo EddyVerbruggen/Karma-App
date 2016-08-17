@@ -222,15 +222,27 @@ var bookingSettingsOptions = {
         }
     ],
     flag_reminder_email: [
-        'text'
+        {
+            label: 'text',
+            value: 0
+        },
     ],
     booking_location_fields: [
 
     ],
     accepted_locations: [
-1, Incalls
-2, Outcalls
-4, Travel
+		{        
+			label: 'Incalls',
+			value: 1
+		},
+   	    {        
+			label: 'Outcalls',
+			value: 0
+	    },
+        {        
+			label: 'Travel',
+			value: 4
+	    },
     ],
     default_appointment_notes: [
 
@@ -245,23 +257,47 @@ var landingSettingsOptions = {
 
 var notificationSettingsOptions = {
     final_confirmation_notification: [
-1, Email
-2, SMS/TEXT
+		{        
+			label: 'Email',
+			value: 1
+		},
+   	    {        
+			label: 'SMS/TEXT',
+			value: 2
+	    },
     ],
     client_confirm_notification: [
-1 Email
-    ],
+		{        
+			label: 'Email',
+			value: 1
+		},
+   	],
     new_booking_notification: [
-1 Email
-2 SMS/Text
+		{        
+			label: 'Email',
+			value: 1
+		},
+   	    {        
+			label: 'SMS/TEXT',
+			value: 2
+	    },
     ],
     reference_rejected_notification: [
-1 Email
-    ],
+		{        
+			label: 'Email',
+			value: 1
+		},
+   	],
     client_cancel_notification: [
-1 Email
-2 SMS/Text
-    ]
+		{        
+			label: 'Email',
+			value: 1
+		},
+   	    {        
+			label: 'SMS/TEXT',
+			value: 2
+	    },
+    ],
 };
 
 var servicesSettingsOptions = {
