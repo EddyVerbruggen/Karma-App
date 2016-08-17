@@ -8,10 +8,22 @@ var handleResponse = require('./api/helpers').handleResponse;
 // List all settings
 var screeningSettingsOptions = {
     flag_screening_work_information: [
-        <option value="3">Yes, verify both their work email AND their profile</option>
-        <option value="2">Yes, verify their work email OR their profile</option>
-        <option value="1">Yes, ask for work information but don't need to verify</option>
-        <option value="0">No, never ask for work information</option>
+        {
+            label: 'Yes, verify both their work email AND their profile',
+            value: 3
+        },
+        {
+            label: 'Yes, verify their work email OR their profile',
+            value: 2
+        },
+        {
+            label: 'Yes, ask for work information but don\'t need to verify',
+            value: 1
+        },
+        {
+            label: 'No, never ask for work information',
+            value: 0
+        }
     ],
     flag_screening_references: [
         {
