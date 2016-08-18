@@ -410,3 +410,15 @@ exports.saveSettings = function(settings) {
 
     });
 };
+
+exports.updateSettingsText = function(page, pageData) {
+    var settingsOptions = eval(page + 'SettingsOptions');
+    var selectedSettings = pageData.get('settings');
+/*
+    _.each(settingsOptions, function(options, setting) {
+        var selectedOption = _.findWhere(options, {value: selectedSettings[setting]});
+        pageData.set(setting, selectedOption);
+    });
+*/    
+    return pageData;
+};

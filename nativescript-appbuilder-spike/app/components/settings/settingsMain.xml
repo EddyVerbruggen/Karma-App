@@ -1,4 +1,5 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd"
+<Page loaded="onLoaded"
+      xmlns="http://www.nativescript.org/tns.xsd"
       xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:widgets="utils/widgets">
     <Page.actionBar>

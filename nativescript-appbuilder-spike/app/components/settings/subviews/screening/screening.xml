@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd"
+<Page navigatedTo="onNavigatedTo"
       xmlns:widgets="utils/widgets">
     <Page.actionBar>
     	<widgets:action-bar />
@@ -13,7 +13,7 @@
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="Require client references from other companions" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Atleast 2 references" class="screening-textfield" tap="onTapDialog" setting="flag_screening_references" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{textValues.flag_screening_references}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_references" />
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="References required to have an established website" class="screening-label" />

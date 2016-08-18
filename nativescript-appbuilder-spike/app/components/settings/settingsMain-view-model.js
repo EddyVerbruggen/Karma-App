@@ -17,7 +17,7 @@ function SettingsViewModel() {
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-                viewModel.set('Result', data);
+                viewModel.set('Result', data.settings);
             });
     };
 

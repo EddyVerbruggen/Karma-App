@@ -1,26 +1,45 @@
 'use strict';
-var isInit = true;
-var helper = require('../../utils/widgets/helper');
-var viewModel = require('./settingsMain-view-model');
+
+var Observable = require('data/observable').Observable;
+var helpers = require('../../utils/widgets/helper');
+var SettingsViewModel = require('./settingsMain-view-model');
 var views = require('../../utils/views');
 var page;
 
-exports.pageLoaded = function(args) {
-    page = args.object;
-    helper.platformInit(page);
-    page.bindingContext = viewModel;
+var settings = new SettingsViewModel();
+var pageData = new Observable({
+    settings: settings,
+    isLoading: true
+});
 
-    if (isInit) {
-        isInit = false;
-    }
+
+exports.onLoaded = function(args) {
+    page = args.object;
+    page.bindingContext = pageData;
+	helpers.togglePageLoadingIndicator(true, pageData);
+    helpers.platformInit(page);
+    
+	settings
+		.load()
+		.catch(function(error) {
+        	helpers.handleLoadError(error, 'Sorry, we could not load your settings');
+    	})
+		.then(function() {
+        	pageData.set('settings', settings.Result);        
+			helpers.togglePageLoadingIndicator(false, pageData);
+		});
 }
 
 exports.onTap = function(args) {
     try {
 		var section = args.object.section;
-        helper.navigate({
+        helpers.navigate({
             moduleName: 'components/settings/subviews/' + section + '/' + section,
+            context: {
+                pageData: pageData
+            }
         });
     } catch(q) {
+        alert(q);
     }
 }
