@@ -12,10 +12,11 @@
                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
             </lv:RadListView.listViewLayout>
             <lv:RadListView.itemTemplate>
-                <StackLayout class="search-wrapper">
 
-                    <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">
-                        
+                <StackLayout class="search-wrapper">
+                    <Label class="search-result-title" text="Clients" />
+
+                    <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">                        
                          <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
                              <Label text="{{time}}" class="appointment-time" />
                              <Label text="{{length}}" class="appointment-length" />
@@ -26,20 +27,16 @@
                              </StackLayout>
                          </StackLayout>                            
                          <StackLayout verticalAlignment="center">
-
                             <WrapLayout>
                                 <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
-                                <Label text="New" class="new-client" />
+                                <Label text="New" class="client-status" />
                             </WrapLayout>
-
                             <Label text="{{location}}" class="row-appointment-location" />
                          </StackLayout>
                     </StackLayout>
 
                     <!-- Clients -->
-
-                    <StackLayout orientation="horizontal" class="client-row" visibility="{{type == 'client' ? 'visible' : 'collapse'}}">
-                        
+                    <StackLayout orientation="horizontal" class="client-row" visibility="{{type == 'client' ? 'visible' : 'collapse'}}">                        
                         <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
                             <Label class="client-row-thumbnail" col="0" />
                             <StackLayout col="1" verticalAlignment="center">

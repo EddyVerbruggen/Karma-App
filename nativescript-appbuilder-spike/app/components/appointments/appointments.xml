@@ -40,7 +40,7 @@
                                             <!-- NEW CLIENT-->
                                             <WrapLayout>
                                                 <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
-                                                <Label text="New" class="new-client" />
+                                                <Label text="New" class="client-status" />
                                             </WrapLayout>
 
                                             <!-- APPROVED CLIENT
