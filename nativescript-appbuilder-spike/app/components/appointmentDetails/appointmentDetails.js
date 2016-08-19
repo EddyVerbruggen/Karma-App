@@ -3,17 +3,16 @@
 var tabViewModule = require("ui/tab-view");
 var AppointmentDetailsViewModel = require('./appointmentDetails-view-model');
 var Observable = require('data/observable').Observable;
-var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
 var views = require('../../utils/views');
+var helpers = require('../../utils/widgets/helper');
 var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
 var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;
-var parentView;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
     appointmentDetails: appointmentDetails,
@@ -29,7 +28,6 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
-    parentView = page.getViewById("LocationPopupBody");
     var gotData = page.navigationContext;
 
 	appointmentDetails
