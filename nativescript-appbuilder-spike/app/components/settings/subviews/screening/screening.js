@@ -13,7 +13,7 @@ var parentView;
 var pageData = new Observable({
     isLoading: true,
     pageTitle: "SCREENING",
-    HButtonHidden: true,
+    SideMenuHidden: true,
     SearchButtonHidden: true
 });
 

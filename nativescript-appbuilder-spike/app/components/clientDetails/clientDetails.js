@@ -13,7 +13,7 @@ var pageData = new Observable({
     clientDetails: clientDetails,
     isLoading: true,
     pageTitle: "",
-    HButtonHidden: true,
+    SideMenuHidden: true,
     SearchButtonHidden: true
 });
 

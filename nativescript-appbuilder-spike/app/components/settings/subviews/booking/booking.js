@@ -12,7 +12,7 @@ var parentView;
 var pageData = new Observable({
     isLoading: true,
     pageTitle: "BOOKING",
-	HButtonHidden: true,
+	SideMenuHidden: true,
     SearchButtonHidden: true
 });
 

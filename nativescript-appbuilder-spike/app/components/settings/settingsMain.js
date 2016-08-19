@@ -9,7 +9,7 @@ var page;
 var pageData = new Observable({
     isLoading: true,
     backButtonHidden: false,
-    HButtonHidden: true,
+    SideMenuHidden: true,
     pageTitle: "SETTINGS",
     SearchButtonHidden: true
 });

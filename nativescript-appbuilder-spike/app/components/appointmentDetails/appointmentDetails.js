@@ -20,7 +20,7 @@ var pageData = new Observable({
     isLoading: true,
     LocationVisible: false,
     pageTitle: "APPOINTMENT",
-    HButtonHidden: true,
+    SideMenuHidden: true,
     SearchButtonHidden: true
 });
 

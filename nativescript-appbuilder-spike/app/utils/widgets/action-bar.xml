@@ -8,7 +8,7 @@
     <ActionBar.titleView>
         <GridLayout columns="auto, 5, *">
 <!--             <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" /> -->
-            <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ HButtonHidden ? 'collapse' : 'visible' }}" />
+            <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ SideMenuHidden ? 'collapse' : 'visible' }}" />
 			<Label col="2" text="{{pageTitle}}" minWidth="100" class="pageTitle" />
             
         </GridLayout>

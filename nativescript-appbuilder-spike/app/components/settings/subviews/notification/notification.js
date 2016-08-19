@@ -26,7 +26,7 @@ var pageData = new Observable({
         text: false
     },
     pageTitle: "NOTIFICATIONS",
-    HButtonHidden: true,
+    SideMenuHidden: true,
     SearchButtonHidden: true
 });
 
