@@ -78,7 +78,7 @@ exports.selectTime = function(args){
     };
     
     //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(TimeCallback,null,null);
+    PickerManager.init(TimeCallback, null, null);
     
     //Show the dialog
     PickerManager.showTimePickerDialog();
@@ -94,7 +94,7 @@ exports.selectDate = function(){
     };
     
     //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(DateCallback,null,null);
+    PickerManager.init(DateCallback, null, null);
     
     //Show the dialog
     PickerManager.showDatePickerDialog();
