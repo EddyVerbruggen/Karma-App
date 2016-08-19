@@ -2,9 +2,9 @@
 
 var tabViewModule = require("ui/tab-view");
 var Observable = require('data/observable').Observable;
-var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
+var helpers = require('../../utils/widgets/helper');
 
 var page;
 var isInit = true;

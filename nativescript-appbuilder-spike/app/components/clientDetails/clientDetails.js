@@ -3,8 +3,8 @@
 var tabViewModule = require("ui/tab-view");
 var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
-var helpers = require('../../utils/widgets/helper');
 var dialogs = require("ui/dialogs");
+var helpers = require('../../utils/widgets/helper');
 
 var page;
 var isInit = true;

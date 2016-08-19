@@ -5,11 +5,11 @@ var AppointmentDetailsViewModel = require('./appointmentDetails-view-model');
 var Observable = require('data/observable').Observable;
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
+var dialogs = require("ui/dialogs");
 var views = require('../../utils/views');
 var helpers = require('../../utils/widgets/helper');
 var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
-var dialogs = require("ui/dialogs");
 
 var page;
 var isInit = true;
