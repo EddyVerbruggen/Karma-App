@@ -41,20 +41,28 @@ exports.onTapStatusFilter = function(args) {
         throw Error('Error not defined');
     }
 
-    helpers.togglePageLoadingIndicator(true, pageData);
+    // helpers.togglePageLoadingIndicator(true, pageData);
     
     pageData.set('select' + args.object.status + 'Filter', !pageData.get('select' + args.object.status + 'Filter'));
+    
+    pageData.appointmentsList.booking_dates.forEach(function (element) {
+        element.bookings.forEach(function (atom) {
+            if (atom.status.toLowerCase() == args.object.status.toLowerCase()) {
+                console.log(JSON.stringify(atom));
+            }
+        });
+	});
 
     // Load new filter data
-	appointmentsList
-		.load(args.object.status)
-		.catch(function(error) {
-        	pageData.set('select' + args.object.status + 'Filter', !pageData.get('select' + args.object.status + 'Filter'));
-        	helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
-    	})
-		.then(function() {
-        	helpers.togglePageLoadingIndicator(false, pageData);
-		});
+	// appointmentsList
+	// 	.load(args.object.status)
+	// 	.catch(function(error) {
+	// pageData.set('select' + args.object.status + 'Filter', !pageData.get('select' + args.object.status + 'Filter'));
+	// helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
+	// })
+	// 	.then(function() {
+	// helpers.togglePageLoadingIndicator(false, pageData);
+	// 	});
 }
 
 exports.onSelectAppointment = function(args) {

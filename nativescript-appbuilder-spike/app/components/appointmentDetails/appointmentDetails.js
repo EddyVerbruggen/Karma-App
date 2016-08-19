@@ -38,7 +38,7 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
         
-        	if(pageData.messageHistory.length == 0){
+        	if(pageData.messageHistory.length === 0){
 				appointmentDetails.Result.history.forEach(function(message) {
 					pageData.messageHistory.push(message);
             	})
@@ -101,7 +101,7 @@ exports.openDatePicker = function(args){
     };
     
     //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(DateCallback,null,null);
+    PickerManager.init(DateCallback, null, null);
     
     //Show the dialog
     PickerManager.showDatePickerDialog();
@@ -118,7 +118,7 @@ exports.openTimePicker = function(args){
     };
     
     //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(TimeCallback,null,null);
+    PickerManager.init(TimeCallback, null, null);
     
     //Show the dialog
     PickerManager.showTimePickerDialog();

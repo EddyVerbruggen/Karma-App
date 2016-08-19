@@ -14,7 +14,7 @@
             <lv:RadListView.itemTemplate>
 
                 <StackLayout class="search-wrapper">
-                    <Label class="search-result-title" text="Clients" />
+<!--                     <Label class="search-result-title" text="Clients" /> -->
 
                     <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">                        
                          <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
