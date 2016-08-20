@@ -61,12 +61,12 @@ exports.onSelectAppointment = function(args) {
     
     // var modalPageModule = views.appointmentDetails;
     // var context = {
-    // id: args.view.bookingId
+    // 	id: args.view.bookingId,
+    //     context: page
     // };
     // var fullscreen = true;
     // page.showModal(modalPageModule, context, function closeCallback(username, password) {
-    // // Log the user in...
-
+    // 	//Called after closing modal
     // }, fullscreen);
     
     helpers.tapFlash(args.object).then(function() {

@@ -12,6 +12,7 @@ var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
 
 var page;
+var root;
 var isInit = true;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
@@ -28,10 +29,11 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+	// root = args.context.context;
     var gotData = page.navigationContext;
-
-	appointmentDetails
-		.load(gotData.id)
+	
+    appointmentDetails
+		.load(gotData.id)//.load(args.context.id)
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
     	})
@@ -47,9 +49,9 @@ exports.onLoaded = function(args) {
 		});
     
     //Redirect to History tab
-    if(gotData.from == "messages"){
-    	page.getViewById("appointments-tabs").selectedIndex = 1;
-    }
+    if(page.navigationContext.from == "messages"){
+        page.getViewById("appointments-tabs").selectedIndex = 1;
+    }   
     
     helpers.platformInit(page);
     if (isInit) {
@@ -127,8 +129,9 @@ exports.openTimePicker = function(args){
 exports.openLocationPopup = function(args){
     
     var modalPageModule = 'components/appointmentDetails/tabs/location/location';
-    var context = args.context;
+    var context = {};
     var fullscreen = false;
+    // root.showModal(modalPageModule, context, function closeCallback(location, address) {
     page.showModal(modalPageModule, context, function closeCallback(location, address) {
     	console.log(location + address);
     }, fullscreen);
