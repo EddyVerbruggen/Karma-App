@@ -12,8 +12,8 @@
 		</drawer:RadSideDrawer.drawerContent>
         <drawer:RadSideDrawer.mainContent>
             <GridLayout rows="auto, *, 60" columns="*">
-                <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" />
-                <lv:RadListView items="{{appointmentsList.booking_dates}}" row="1" col="0">
+                <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+                <lv:RadListView items="{{appointmentsList.booking_dates}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                     <lv:RadListView.listViewLayout>
                         <lv:ListViewLinearLayout scrollDirection="Vertical" />
                     </lv:RadListView.listViewLayout>
@@ -40,7 +40,7 @@
                                             <!-- NEW CLIENT-->
                                             <WrapLayout>
                                                 <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
-                                                <Label text="New" class="new-client" />
+                                                <Label text="New" class="client-status" />
                                             </WrapLayout>
 
                                             <!-- APPROVED CLIENT
@@ -60,7 +60,7 @@
                                      </StackLayout>
                                 </Repeater.itemTemplate>
                             </Repeater>
-                            </StackLayout>
+                        </StackLayout>
                     </lv:RadListView.itemTemplate>
                 </lv:RadListView>
 

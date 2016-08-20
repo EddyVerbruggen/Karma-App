@@ -46,7 +46,7 @@
                 <Label class="info-table-divider" />
                 <StackLayout orientation="horizontal" class="info-table-row">
                     <StackLayout class="info-table-label">
-                        <Label text="DOB:" />
+                        <Label text="Age:" />
                     </StackLayout>
                     <StackLayout class="info-table-text">
                         <Label text="{{clientDetails.Result.client_profile.age}}" />
@@ -54,7 +54,7 @@
                 </StackLayout>           
             </StackLayout>
 
-            
+            <Label class="info-box-title" text="Contact" />
             <StackLayout class="info-table">
                 <StackLayout orientation="horizontal" class="info-table-row">
                     <StackLayout class="info-table-label">
@@ -70,12 +70,18 @@
                         <Label class="" text="Phone:" />
                     </StackLayout>
                     <StackLayout class="info-table-text">
-                        <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
+                        <WrapLayout>
+                            <Label text="{{clientDetails.Result.client.phone}}" textWrap="true" />
+                            <WrapLayout class="verified-badge">
+                                <Label text="&#xf121;" class="ionicons-icon" />
+                                <Label text="Verified" />
+                            </WrapLayout>
+                        </WrapLayout>
                     </StackLayout>              
                 </StackLayout>           
             </StackLayout>
 
-            
+            <Label class="info-box-title" text="Accounts" />
             <StackLayout class="info-table">
                 <StackLayout orientation="horizontal" class="info-table-row">
                     <StackLayout class="info-table-label">
@@ -136,14 +142,14 @@
                 </StackLayout>           
             </StackLayout>      
 
-            <StackLayout class="info-box">
+            <StackLayout class="info-box tags-box">
                 <Label class="info-box-title" text="Tags" />
                 <Repeater items="{{clientDetails.Result.tags}}">
                     <Repeater.itemsLayout>
                         <StackLayout orientation="horizontal" />
                     </Repeater.itemsLayout>
                     <Repeater.itemTemplate>
-                        <Button text="{{name}}" />
+                        <Button text="{{name}}" class="tag" tap="tagTap" />
                     </Repeater.itemTemplate>
                 </Repeater>
             </StackLayout>
@@ -153,12 +159,15 @@
 	    </StackLayout>
     </ScrollView>
 
-    <StackLayout orientation="horizontal" row="1" col="0">
-        <StackLayout width="80%">
-            <Button text="Approved Client" class="accept-save-button" width="100%" />
+    <StackLayout orientation="horizontal" row="1" col="0" class="client-options">
+        <StackLayout width="40%">
+            <Label text="Approve" class="approve-button" tap="approve" />
+        </StackLayout>
+        <StackLayout width="40%">
+            <Label text="Reject" class="reject-button" tap="reject" />
         </StackLayout>
         <StackLayout width="20%">
-            <Button text="&#xf4c4;" class="ionicons-icon delete-button" width="100%" />
+            <Label text="&#xf4c4;" class="ionicons-icon delete-button" tap="delete" />
         </StackLayout>
     </StackLayout>   
 </GridLayout>

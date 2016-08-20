@@ -1,0 +1,24 @@
+.help-ticket-btn-send{
+    font-size:26;
+    color:#fff;
+    background-color:#3EC3D6
+}
+
+.ticket-row{
+    margin:15;
+}
+
+.ticket-btn-row{
+    padding:20;
+}
+
+.help-ticket-input {
+    font-size:20;
+    width:100%;
+}
+
+.help-ticket-input-area{
+    font-size:20;
+    width:100%;
+    height: 50;
+}

@@ -44,56 +44,56 @@ var screeningSettingsOptions = {
         }
     ],
     flag_screening_reference_website: [
-		{        
+		{
 			label: 'No, verified references don\'t need to have a website',
 			value: 0
 		},
-   	    {        
+   	    {
 			label: 'Yes, all references need an established website',
 			value: 3
 	    },
-        {        
+        {
 			label: 'At least 1 verified reference needs an established website',
 			value: 1
 	    },
-        {        
+        {
 			label: 'At least 2 verified reference need an established website',
 	  		value: 2
     	}
     ],
 	flag_screening_client_photos: [
-		{        
+		{
 			label: 'No, never ask for photos from clients',
 			value: 0
 		},
-   	    {        
+   	    {
 			label: 'At least 1',
 			value: 1
 	    },
-        {        
+        {
 			label: 'At least 2',
 			value: 2
 	    },
-        {        
+        {
 			label: 'At least 3',
 	  		value: 3
     	}
     ],
     flag_screening_last_name: [
-		{        
+		{
 			label: 'Only first letter (no Sex Offender check)',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Only first 2 letters',
 			value: 2
 	    },
-        {        
+        {
 			label: 'Require full last name',
 			value: 0
 	    }
     ],
-  
+
     flag_screening_skip: [
 
     ],
@@ -128,21 +128,21 @@ var screeningSettingsOptions = {
 
     ],
     flag_screening_birth_date: [
-		{        
+		{
 			label: 'Yes, ask them for their year of birth (to calculate their age)',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'No, don\'t ask them for their year of birth',
 			value: 0
 	    }
     ],
     flag_screening_residence: [
-		{        
+		{
 			label: 'Yes, ask them where they currently live',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'No, don\'t ask them for their current residence',
 			value: 0
 	    }
@@ -151,46 +151,46 @@ var screeningSettingsOptions = {
 
 var bookingSettingsOptions = {
     flag_booking: [
-		{        
+		{
 			label: 'Turn On - Require a date/time/location for appointment',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Turn Off - Screening-only. Don\'t ask for a date/time',
 			value: 0
 	    }
     ],
     minimum_booking_time: [
-		{        
+		{
 			label: 'None',
 			value: 0
 		},
-   	    {        
+   	    {
 			label: '15 minute sessions',
 			value: 15
 	    },
-        {        
+        {
 			label: '30 minute sessions',
 			value: 30
 	    },
-        {        
+        {
 			label: '45 minute sessions',
 			value: 45
 	    },
-        {        
+        {
 			label: '1 hour sessions',
 			value: 60
 	    },
-        {        
+        {
 			label: '1.5 hour sessions',
 			value: 90
 	    },
-        {        
+        {
 			label: '2 hour sessions',
 			value: 120
 	    }
     ],
-    
+
     flag_calendar: [
         {
             label: '',
@@ -231,15 +231,15 @@ var bookingSettingsOptions = {
 
     ],
     accepted_locations: [
-		{        
+		{
 			label: 'Incalls',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Outcalls',
 			value: 0
 	    },
-        {        
+        {
 			label: 'Travel',
 			value: 4
 	    }
@@ -257,43 +257,43 @@ var landingSettingsOptions = {
 
 var notificationSettingsOptions = {
     final_confirmation_notification: [
-		{        
+		{
 			label: 'Email',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'SMS/TEXT',
 			value: 2
 	    }
     ],
     client_confirm_notification: [
-		{        
+		{
 			label: 'Email',
 			value: 1
 		}
    	],
     new_booking_notification: [
-		{        
+		{
 			label: 'Email',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'SMS/TEXT',
 			value: 2
 	    }
     ],
     reference_rejected_notification: [
-		{        
+		{
 			label: 'Email',
 			value: 1
 		}
    	],
     client_cancel_notification: [
-		{        
+		{
 			label: 'Email',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'SMS/TEXT',
 			value: 2
 	    }
@@ -306,69 +306,76 @@ var servicesSettingsOptions = {
 
 var termsSettingsOptions = {
     flag_terms_page: [
-		{        
+		{
 			label: 'On',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Off',
 			value: 0
 	    }
     ],
     flag_terms1: [
-		{        
+		{
 			label: 'Show',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Hide',
 			value: 0
 	    }
     ],
     flag_terms2: [
-		{        
+		{
 			label: 'Show',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Hide',
 			value: 0
 	    }
     ],
     flag_terms3: [
-		{        
+		{
 			label: 'Show',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Hide',
 			value: 0
 	    }
     ],
     flag_terms4: [
-		{        
+		{
 			label: 'Show',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Hide',
 			value: 0
 	    }
     ],
     flag_terms5: [
-		{        
+		{
 			label: 'Show',
 			value: 1
 		},
-   	    {        
+   	    {
 			label: 'Hide',
 			value: 0
 	    }
-    ]  
+    ]
 };
 
 exports.onToggle = function(args) {
     var setting = args.view.setting;
+    var a = parentView.getViewById(section);
+
+    if(a.src == "~/images/ic_check_box_outline_blank_white.png"){
+    	a.src = "~/images/ic_check_box_white.png";
+    }else{
+        a.src = "~/images/ic_check_box_outline_blank_white.png";
+    }
 };
 
 exports.onTapDialog = function(args) {
@@ -419,6 +426,6 @@ exports.updateSettingsText = function(page, pageData) {
         var selectedOption = _.findWhere(options, {value: selectedSettings[setting]});
         pageData.set(setting, selectedOption);
     });
-*/    
+*/
     return pageData;
 };

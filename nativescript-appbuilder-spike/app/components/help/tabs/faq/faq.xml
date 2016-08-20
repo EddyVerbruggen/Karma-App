@@ -1,0 +1,24 @@
+<GridLayout rows="*" columns="*">
+    <ScrollView>
+        <grid-layout rows="auto,*" id="gridview">
+            <Repeater items="{{faqs}}">
+                <Repeater.itemTemplate>
+
+                    <StackLayout class="faq-row">
+                        <WrapLayout class="help-faq-header" tap="toggle" section="{{id}}">
+                            <image src="~/images/ic_keyboard_arrow_right.png" id="{{'ico'+id}}" class="ionicons-icon help-faq-section-link-icon" />
+                            <Label text="{{title}}" class="help-faq-header-label" />
+                        </WrapLayout>
+                        
+                        <StackLayout class="standard-account" id="{{id}}" visibility="collapse">
+                            <StackLayout class="standard-accordion-input-row">
+                                <Label text="{{descr}}" class="faq-accordion-description" />
+                            </StackLayout>
+                        </StackLayout>
+					</StackLayout>    
+                    
+                </Repeater.itemTemplate>
+            </Repeater>	 
+        </grid-layout>
+    </ScrollView>
+</GridLayout>

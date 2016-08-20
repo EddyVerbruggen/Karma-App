@@ -1,88 +1,25 @@
+.client-profile-head {width:100%;padding-top:25;background-color:#666;background-image: url('~/images/pattern-circles-light.png');text-align:center;color:#fff;}
+.client-profile-top-thumbnail {border-radius: 100;width:115;height:115;border-width:1;border-color:#ccc;margin-bottom:10;background-repeat:no-repeat;background-size:contain;}
 
-.client-summary {
-    text-align:center;
-    padding-bottom:20;
-    color:#fff;
-}
-    
-.appointment-button {
-    font-size: 12;
-    background-color:#ACE8EE;
-    width:100%;
-    margin-bottom:0;
-    
+.client-summary {text-align:center;padding-bottom:20;color:#fff;}
+.summary-stat-number {font-size:54;font-family: 'MyriadPro-Light';margin-bottom:5;height:54;}
+.summary-stat-label {font-size:12;text-transform:uppercase;}
 
-}
+.info-table {background-color:#fff;}
+.info-box-title {font-size:15;margin:20 0;text-align:center; color:#999;text-transform:uppercase;}
+.info-table-label {width: 125;padding:15 0 15 15; color:#aaa;}
+.info-table-text {padding:15 0 15 15; width:100%;}
+.info-table-divider {height: 1; width: 100%;background-color: #f1f1f1;}
 
+.client-options {padding:5;}
+.approve-button {font-size:21;color:#fff;background-color:#3EC3D6;height:44;margin-right:5;border-radius:3;padding-top:6;text-align:center;}
+.reject-button {font-size:21;height:44;background-color:#999;margin-right:5;border-radius:3;text-align:center;color: #fff;padding-top:6;}
+.delete-button {font-size:26;height:44;color:#fff;background-color:#999;border-radius:3;text-align:center;padding-top:5;width:100%;}
 
-.summary-stat-number {
-    font-size:54;
-    font-family: 'MyriadPro-Light';
-    margin-bottom:5;
-    height:54;
-}
+.section-title {width:100%;padding:20 0 20 0;background-color:#666;background-image: url('~/images/pattern-circles-light.png');color:#fff;text-align:center;}
 
-.summary-stat-label {
-    font-size:12;
-    text-transform:uppercase;
-}
+.tags-box {margin-bottom:20;}
+.tag {background-color:#3EC3D6;color:#fff;}
 
-
-.client-profile-wrapper {padding:15;}
-.client-profile-head {width:100%;padding-top:25;background-color:#666;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
-
-
-.client-profile-box {margin-bottom: 20;border-width:1;border-radius:3;border-color:#ddd;background-color:#fff;}
-
-
-
-.client-profile-top-thumbnail {border-radius: 100;
-  width:115;
-  height:115;
-  border-width:3;
-  border-color:#fff;margin-bottom:10;  }
-
-.personal-details-wrapper {margin:12;}
-
-.info-table {
-    background-color:#fff;
-    margin-bottom:10;
-    border-width:1;
-    border-color:#ddd;
-    border-radius:3;
-    padding:1;
-    
-}
-
-.info-box-title {
-    padding:12 8;
-    font-size:13;
-    color:#777;
-    text-transform: uppercase;
-}
-
-.section-title {
-    padding:13;
-    font-size:14;
-    background-color:#777;
-    color:#fff;
-}
-
-.info-table-label {
-	width: 150;
-    padding:15 0 15 15;  
-    background-color:#EBF9FB;
-}
-
-.info-table-text {
-    padding:15 0 15 15;    
-    width:100%;
-}
-
-.info-table-divider {
-    height: 1;
-    width: 100%;
-    background-color: #f1f1f1;
-}
-
-
+.verified-badge {margin-left:8;font-size:10;color:#fff;border-radius:10;padding:2 8;background-color:#59B200;}
+.verified-badge .ionicons-icon {margin-right:4;}

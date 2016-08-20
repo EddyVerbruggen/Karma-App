@@ -5,7 +5,6 @@
 	</Page.actionBar>
     <ScrollView>
         <StackLayout width="100%">
-
             <StackLayout class="screening-account">
                 <StackLayout>
                     <Label text="References" class="screening-section-header" />
@@ -63,16 +62,16 @@
                 <StackLayout class="screening-input-row">
                     <Label text="Require work/employment information" class="screening-label" />
                 </StackLayout>
-                <WrapLayout class="screening-all-row" section="screening">
-                    <image src="~/images/ic_check_box_outline_blank_white.png" class="" width="30" onTap="onToggle" />
+                <WrapLayout class="screening-all-row" tap="onToggle" section="sec1">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec1" class="" width="30" />
                     <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
                 </WrapLayout>
-                <WrapLayout class="screening-all-row" section="screening">
-                    <image src="~/images/ic_check_box_white.png" class="" width="30" onTap="onToggle" />
+                <WrapLayout class="screening-all-row" tap="onToggle" section="sec2">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec2" class="" width="30" />
                     <Label text="On any other companion's white-list" class="screening-section-link-label" />
                 </WrapLayout>
-                <WrapLayout class="screening-all-row" section="screening">
-                    <image src="~/images/ic_check_box_white.png" class="" width="30" onTap="onToggle" />
+                <WrapLayout class="screening-all-row" tap="onToggle" section="sec3">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec3" class="" width="30" />
                     <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
                 </WrapLayout>
             </StackLayout>

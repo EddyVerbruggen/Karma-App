@@ -1,0 +1,47 @@
+<ScrollView>
+    <StackLayout>
+        <WrapLayout class="date-selection">
+            <Label text="&#xf35f;" class="ionicons-icon" />
+            <Label text="July 23 - August 3" />
+        </WrapLayout>
+        <Repeater items="{{referrers}}">
+            <Repeater.itemTemplate>
+                <StackLayout class="referrer-row" section="{{id}}" tap="toggle">
+                    
+                    <StackLayout>
+                        <Label text="{{url}}" class="referrer-url" />
+                    </StackLayout>
+                    <StackLayout orientation="horizontal">           
+                        <StackLayout width="25%">
+                            <Label text="{{visits}}" class="referrer-value" />
+                            <Label text="Total Visits" class="referrer-label" />                            
+                        </StackLayout>
+                        <StackLayout width="25%">
+                            <Label text="{{avgtime}}" class="referrer-value" />
+                            <Label text="Average Time" class="referrer-label" />                            
+                        </StackLayout>
+                        <StackLayout width="25%">
+                            <Label text="{{clients}}" class="referrer-value" />
+                            <Label text="Clients" class="referrer-label" />                            
+                        </StackLayout>
+                        <StackLayout width="25%">
+                            <Label text="{{appointments}}" class="referrer-value" />
+                            <Label text="Appointments" class="referrer-label" />                            
+                        </StackLayout>
+                    </StackLayout>            
+                    <StackLayout visibility="collapse" id="{{id}}">
+                        <Repeater items="{{aptlist}}">
+                            <Repeater.itemTemplate>
+                                <WrapLayout class="referrer-list">
+                                    <label text="{{name}}" class="referrer-name" />
+                                    <label text="{{status}}" class="referrer-status" />
+                                    <label text="{{appointment + ' Appointment'}}" class="referrer-appointments" />
+                                </WrapLayout>
+                            </Repeater.itemTemplate>
+                        </Repeater>
+                    </StackLayout>
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </StackLayout>
+</ScrollView>

@@ -3,6 +3,7 @@ var isInit = true;
 var helpers = require('../../utils/widgets/helper');
 var viewModel = require('./homeView-view-model');
 var views = require('../../utils/views');
+
 var	slideContainer;
 var page;
 

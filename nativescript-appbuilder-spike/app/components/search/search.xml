@@ -6,15 +6,17 @@
         <StackLayout row="0" col="0" orientation="horizontal" id="actionBarLayout" class="search-top">
             <Label class="ionicons-icon return-arrow" text="&#xf2ca;" tap="onClose" />
         </StackLayout>
-        <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" />
+        <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" style="margin-top:35%;" />
         <lv:RadListView id="searchResults" row="2" col="0" items="{{searchResultsList}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult">
             <lv:RadListView.listViewLayout>
                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
             </lv:RadListView.listViewLayout>
             <lv:RadListView.itemTemplate>
+
                 <StackLayout class="search-wrapper">
-                    <!-- Bookings -->
-                    <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">
+<!--                     <Label class="search-result-title" text="Clients" /> -->
+
+                    <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">                        
                          <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
                              <Label text="{{time}}" class="appointment-time" />
                              <Label text="{{length}}" class="appointment-length" />
@@ -26,27 +28,30 @@
                          </StackLayout>                            
                          <StackLayout verticalAlignment="center">
                             <WrapLayout>
-                                <Label text="{{client_name}}" class="row-client-name" />
-                                <Label text="New" horizontalAlignment="right" class="new-client" />
+                                <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
+                                <Label text="New" class="client-status" />
                             </WrapLayout>
                             <Label text="{{location}}" class="row-appointment-location" />
                          </StackLayout>
                     </StackLayout>
 
                     <!-- Clients -->
-                    <StackLayout orientation="horizontal" class="client-row" visibility="{{type == 'client' ? 'visible' : 'collapse'}}">
-                        <StackLayout width="20%" verticalAlignment="center">
-                            <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-row-thumbnail" />
-                        </StackLayout>
-                        <StackLayout width="55%" orientation="vertical" verticalAlignment="center">
-                            <Label text="{{client_name}}" class="client-row-name" />
-                            <Label text="{{bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{bookings ? 'visible' : 'collapse'}}" />
-                        </StackLayout>
-                        <StackLayout width="25%" verticalAlignment="center">
-                            <Label text="{{status_text}}" class="{{'client-row-status-' + status}}" textWrap="true" />
-                        </StackLayout>
+                    <StackLayout orientation="horizontal" class="client-row" visibility="{{type == 'client' ? 'visible' : 'collapse'}}">                        
+                        <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
+                            <Label class="client-row-thumbnail" col="0" />
+                            <StackLayout col="1" verticalAlignment="center">
+                                <Label text="{{client_name}}" class="client-row-name" />
+                                <Label text="{{num_bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{num_bookings  ? 'visible' : 'collapse'}}" />
+                                <Label text="{{status_text}}" class="client-row-noshow" visibility="{{status == 'noshow' ? 'visible' : 'collapse'}}" />
+                            </StackLayout>
+                            <Label class="client-row-icon-approved" col="2" visibility="{{status == 'approved' ? 'visible' : 'collapse'}}" />
+                            <Label class="client-row-icon-pending" col="2" visibility="{{status == 'pending' ? 'visible' : 'collapse'}}" />
+                            <Label class="client-row-icon-rejected" col="2" visibility="{{status == 'rejected' ? 'visible' : 'collapse'}}" />
+                            <Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" visibility="{{status  == 'blacklist' ? 'visible' : 'collapse'}}" />
+                        </GridLayout>
                     </StackLayout>
                 </StackLayout>
+
             </lv:RadListView.itemTemplate>
         </lv:RadListView>
 

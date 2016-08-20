@@ -35,7 +35,9 @@ var pageData = new Observable({
     selectedStatus: 0,
     selectedTag: 0,
     selectedSortby: 0,
-    isLoading: true
+    isLoading: true,
+    backButtonHidden: true,
+    pageTitle: "CLIENTS"
 });
 
 exports.onLoaded = function(args) {
@@ -62,7 +64,8 @@ exports.onSelectClient = function(args) {
         helpers.navigate({
             moduleName: views.clientDetails,
             context: {
-                id: args.view.screeningId
+                id: args.view.screeningId,
+                name: args.view.clientName
             }
         });
     });

@@ -1,13 +1,10 @@
+.appointment-options {padding:5;}
+
 .send-message-button {
-    font-size:26;
-    color:#fff;
-    background-color:#3EC3D6;
-    height:60;
-    padding:0;
-    margin:0;
+    font-size:21;color:#fff;background-color:#3EC3D6;height:54;margin-left:5;border-radius:3;padding-top:15;text-align:center;
 }
 
-.send-message-textfield {background-color:#fff;border-width:1;border-color:#ddd;height:60;margin:4;margin-right:0;padding:10;}
+.send-message-textfield {background-color:#fff;border-width:1;border-color:#ddd;height:54;border-radius:3;}
 
 .history-content-area {padding:25;}
 

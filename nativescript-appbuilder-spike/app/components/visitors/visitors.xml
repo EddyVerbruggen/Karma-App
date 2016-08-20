@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <TabView id="visitors-tabs" tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
+                <TabView.items>
+                    <TabViewItem title="Traffic" xmlns:Traffic="components/visitors/tabs/traffic">
+                        <TabViewItem.view>
+                            <Traffic:traffic />
+                        </TabViewItem.view>
+                    </TabViewItem>
+                    <TabViewItem title="Top Referrers" xmlns:Referrers="components/visitors/tabs/referrers">
+                        <TabViewItem.view>
+                            <Referrers:referrers />
+                        </TabViewItem.view>
+                    </TabViewItem>
+                </TabView.items>
+            </TabView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>

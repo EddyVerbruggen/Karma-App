@@ -1,6 +1,6 @@
 <ScrollView> 
 	<StackLayout>
-        <Label class="section-title" text="3 references added" />
+        <Label class="section-title" text="3 References Added" />
         <StackLayout class="reference-row" orientation="horizontal">
             <StackLayout class="reference-status-icon" width="75">
                 <Label text="&#xf49a;" class="ionicons-icon reference-status-icon-pending" />

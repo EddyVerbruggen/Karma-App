@@ -1,4 +1,5 @@
 'use strict';
+<<<<<<< HEAD
 
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
@@ -8,6 +9,10 @@ var page;
 
 var settings = new SettingsViewModel();
 var pageData = new Observable({
+    backButtonHidden: false,
+    SideMenuHidden: true,
+    pageTitle: "SETTINGS",
+    SearchButtonHidden: true
     settings: settings,
     isLoading: true
 });
@@ -18,14 +23,14 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
     helpers.platformInit(page);
-    
+
 	settings
 		.load()
 		.catch(function(error) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your settings');
     	})
 		.then(function() {
-        	pageData.set('settings', settings.Result);        
+        	pageData.set('settings', settings.Result);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
 }
