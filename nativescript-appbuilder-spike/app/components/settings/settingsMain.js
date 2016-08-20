@@ -1,5 +1,4 @@
 'use strict';
-<<<<<<< HEAD
 
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
