@@ -1,50 +1,26 @@
 'use strict';
 
-var tabViewModule = require("ui/tab-view");
 var Observable = require('data/observable').Observable;
-var helpers = require('../../../../utils/widgets/helper');
-var view = require("ui/core/view");
-var observableArrayModule = require('data/observable-array').ObservableArray;
-var dialogs = require("ui/dialogs");
-
-var page;
-var isInit = true;
-var parentView;
+var settingUtils = require('../../../../utils/settings');
 var pageData = new Observable({
-    isLoading: true,
     pageTitle: "SCREENING",
     SideMenuHidden: true,
     SearchButtonHidden: true
 });
+var settings;
 
-exports.onLoaded = function(args) {
-    page = args.object;
+exports.onTapDialog = settingUtils.onTapDialog;
+exports.onToggle = settingUtils.onToggle;
+exports.onLoaded = settingUtils.onLoaded;
+exports.onNavigatedTo = function(args) {
+    var page = args.object;
+    pageData.set('settings') = page.navigationContext.pageData.get('settings');
+
     page.bindingContext = pageData;
-	helpers.togglePageLoadingIndicator(true, pageData);
-	parentView = page.getViewById("screening");
 
-    helpers.platformInit(page);
-    if (isInit) {
-        isInit = false;
-    }
-}
+    var newPageData = settingUtils.updateSettingsText('screening', pageData);
+    pageData = newPageData;
 
-exports.onTap = function(){
- 	dialogs.action({
-		message: "Edit",
-      	actions: ["No, never ask for references", "Atleast 1 references", "Atleast 2 references", "3 references"]
-    }).then(function (result) {
-      	if(result) alert(result);
-    });   
-}
-
-exports.toggleCheckbox = function(args){
-    var section = args.object.section;
-    var a = parentView.getViewById(section);
-    
-    if(a.src == "~/images/ic_check_box_outline_blank_white.png"){
-    	a.src = "~/images/ic_check_box_white.png";
-    }else{
-        a.src = "~/images/ic_check_box_outline_blank_white.png";
-    }
+    // Get variables with pageData.get('settings').flag_screening_work_information
+    // In the view, display via <Label text="{{settings.flag_screening_work_information}}" />
 }
