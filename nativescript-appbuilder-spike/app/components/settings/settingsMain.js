@@ -11,7 +11,7 @@ var pageData = new Observable({
     backButtonHidden: false,
     SideMenuHidden: true,
     pageTitle: "SETTINGS",
-    SearchButtonHidden: true
+    SearchButtonHidden: true,
     settings: settings,
     isLoading: true
 });
@@ -32,7 +32,7 @@ exports.onLoaded = function(args) {
         	pageData.set('settings', settings.Result);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
-}
+};
 
 exports.onTap = function(args) {
     try {
@@ -46,4 +46,4 @@ exports.onTap = function(args) {
     } catch(q) {
         alert(q);
     }
-}
+};
