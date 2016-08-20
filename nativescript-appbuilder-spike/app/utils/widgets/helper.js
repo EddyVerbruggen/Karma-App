@@ -26,7 +26,13 @@ exports.platformInit = function(page) {
 
 // TODO: Remove and use utils/navigation
 exports.navigate = function(location) {
+    // alert(JSON.stringify(location));
     frame.topmost().navigate(location);
+    // frame.topmost().navigate({
+    //   	moduleName: location.moduleName,
+    //   	transition: { name: "slide" },
+    //     context: location.context
+    // });
 }
 
 exports.onOpenUrl = function(url) {

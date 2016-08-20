@@ -1,0 +1,25 @@
+<ScrollView>
+    <StackLayout>
+        <WrapLayout class="date-selection">
+            <Label text="&#xf35f;" class="ionicons-icon" />
+            <Label text="July 23 - August 3" />
+        </WrapLayout>
+        <Repeater items="{{visitList}}">
+            <Repeater.itemTemplate>
+                <GridLayout columns="*, 125" rows="auto" class="visitor-row">
+                    <StackLayout col="0" class="visitor-details-left">
+                        <Label text="{{datetime}}" class="visitor-datetime" />
+                        <Label text="{{ip}}" class="visitor-ip" />
+                        <Label text="{{location}}" class="visitor-location" />
+                        <Label text="{{url}}" class="visitor-url" />
+                    </StackLayout>
+                    <StackLayout col="1" class="visitor-details-right">
+                        <Label text="{{duration}}" class="visitor-duration" />
+                        <Label text="{{actionText}}" class="{{'visitor-action ' + action }}" />
+                        <Label text="{{name}}" class="visitor-name" visibility="{{ action == 'booked' ? 'visible' : 'collapse'}}"/>
+                    </StackLayout>
+                </GridLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+    </StackLayout>
+</ScrollView>

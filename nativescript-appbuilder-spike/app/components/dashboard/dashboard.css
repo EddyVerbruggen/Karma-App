@@ -1,4 +1,7 @@
-.dashboard-head {width:100%;padding:20 0 30 0;background-color:#31333F;background-image: url('~/images/pattern-triangle-sm.png');text-align:center;color:#fff;}
+.dashboard-head {width:100%;padding:20 0 30 0;background-color:#222431;background-image: url('~/images/pattern-circles.png');text-align:center;color:#fff;}
 .dashboard-head-title {padding-bottom:5;font-size:21;color:#ADADB2;font-family: 'MyriadPro-Light';}
 .stats-number {font-size:56;font-family: 'MyriadPro-Light';}
 .stats-label {font-size:12;text-transform:uppercase;color:#ADADB2;}
+
+@import url('~/components/appointments/appointments.css');
+@import url('~/components/clients/clients.css');

@@ -1,0 +1,33 @@
+<ScrollView>
+    <Repeater items="{{weekdays}}">
+        <Repeater.itemTemplate>
+            <StackLayout class="day-entry">
+                <WrapLayout class="standard-accordion-header" tap="toggle" section="{{day}}">
+                    <image src="~/images/ic_keyboard_arrow_down.png" class="ionicons-icon arrow-icon" />
+                    <Label text="{{day}}" class="standard-accordion-header-label" />
+                </WrapLayout>
+                <StackLayout class="standard-account" visibility="{{visibility}}" id="{{day}}">
+                    <StackLayout class="standard-accordion-input-row">
+                        <Label text="Availability" class="standard-accordion-label" />
+                        <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{availability}}" class="standard-accordion-textfield" tap="selectTime" />
+                    </StackLayout>
+                    <StackLayout class="standard-accordion-input-row">
+                        <Label text="Location" class="standard-accordion-label" />
+                        <WrapLayout class="standard-accordion-row" tap="toggleCheckbox" section="{{day+'incall'}}">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'incall'}}" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                            <Label text=" Incall" />
+                        </WrapLayout>
+                        <WrapLayout class="standard-accordion-row" tap="toggleCheckbox" section="{{day+'outcall'}}">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'outcall'}}" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                            <Label text=" Outcall" />
+                        </WrapLayout>
+                        <WrapLayout class="standard-accordion-row" tap="toggleCheckbox" section="{{day+'chk'}}">
+                            <image src="~/images/ic_check_box_outline_blank_white.png" id="{{day+'chk'}}" class="ionicons-icon standard-accordion-section-link-icon" width="30" />
+                            <Label text=" Unavailable all day" />
+                        </WrapLayout>                        
+                    </StackLayout>                    
+                </StackLayout>
+			</StackLayout>    
+        </Repeater.itemTemplate>
+    </Repeater>       
+</ScrollView>

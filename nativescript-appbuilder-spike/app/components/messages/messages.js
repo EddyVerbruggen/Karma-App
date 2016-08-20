@@ -10,7 +10,8 @@ var messageList = new MessagesViewModel();
 var pageData = new Observable({
     messageList: messageList,
     isLoading: true,
-    backButtonHidden: true
+    backButtonHidden: true,
+    pageTitle: "MESSAGES"
 });
 
 exports.onLoaded = function(args) {

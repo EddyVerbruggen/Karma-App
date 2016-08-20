@@ -1,30 +1,23 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd"
-      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
       xmlns:widgets="utils/widgets"
-      xmlns:FAB="nativescript-floatingactionbutton">
+      xmlns:FAB="nativescript-floatingactionbutton"
+      loaded="onLoaded">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
-    <drawer:RadSideDrawer id="sideDrawer">
-        <drawer:RadSideDrawer.drawerContent>
-            <widgets:side-drawer />
-		</drawer:RadSideDrawer.drawerContent>
-        <drawer:RadSideDrawer.mainContent>
-            <ScrollView>
-                <StackLayout width="100%">
-                    
-					<StackLayout class="services-account">    
-                        <StackLayout class="services-input-row">
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-							<TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                        </StackLayout>
-                    </StackLayout>
-	                <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" />
-                    
+    <ScrollView>
+        <StackLayout width="100%">
+
+            <StackLayout class="services-account">    
+                <StackLayout class="services-input-row">
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
                 </StackLayout>
-            </ScrollView>
-        </drawer:RadSideDrawer.mainContent>
-	</drawer:RadSideDrawer>
+            </StackLayout>
+            <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" />
+
+        </StackLayout>
+    </ScrollView>
 </Page>

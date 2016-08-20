@@ -1,4 +1,33 @@
+'use strict';
+
+var tabViewModule = require("ui/tab-view");
+var Observable = require('data/observable').Observable;
+var helpers = require('../../../../utils/widgets/helper');
+var view = require("ui/core/view");
+var observableArrayModule = require('data/observable-array').ObservableArray;
 var dialogs = require("ui/dialogs");
+
+var page;
+var isInit = true;
+var parentView;
+var pageData = new Observable({
+    isLoading: true,
+    pageTitle: "SERVICES",
+    SideMenuHidden: true,
+    SearchButtonHidden: true
+});
+
+exports.onLoaded = function(args) {
+    page = args.object;
+    page.bindingContext = pageData;
+	helpers.togglePageLoadingIndicator(true, pageData);
+	parentView = page.getViewById("booking");
+
+    helpers.platformInit(page);
+    if (isInit) {
+        isInit = false;
+    }
+}
 
 exports.edit = function(){
 	dialogs.prompt({

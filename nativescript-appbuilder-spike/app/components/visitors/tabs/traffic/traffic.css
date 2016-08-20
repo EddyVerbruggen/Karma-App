@@ -1,0 +1,11 @@
+.date-selection {padding:15;text-align:center;background-color:#fff;border-width:1;border-color:#ccc;}
+.visitor-row {margin-bottom:1;background-color:#fff;padding:15;width:100%;}
+.visitor-details-right {text-align:right;}
+.visitor-datetime {color: #bbb;font-size: 12;}
+.visitor-ip {font-size: 24;font-family: 'MyriadPro-Light';}
+.visitor-location {font-size: 11;}
+.visitor-url {color: #3EC3D6;font-size: 18;}
+.visitor-duration {font-size: 24;font-family: 'MyriadPro-Light';margin-top:15;}
+.visitor-action {font-size: 13;color: #ccc;}
+.visitor-name {font-size: 13;}
+.booked {color: #85B200;}

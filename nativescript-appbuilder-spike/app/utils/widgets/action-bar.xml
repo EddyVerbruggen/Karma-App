@@ -1,4 +1,4 @@
-<ActionBar>
+<ActionBar class="actionbar">
     <NavigationButton text="Back" android.systemIcon="ic_menu_back"
         tap="onBack" visibility="{{ backButtonHidden ? 'collapse' : 'visible' }}">
     </NavigationButton>
@@ -6,27 +6,30 @@
 
 
     <ActionBar.titleView>
-        <!--<GridLayout columns="auto, 5, *">
-            <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" />
-			<Label col="2" text="{{ pageTitle }}" minWidth="100" />
-        </GridLayout>-->
+        <GridLayout columns="auto, 5, *">
+<!--             <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" /> -->
+            <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ SideMenuHidden ? 'collapse' : 'visible' }}" />
+			<Label col="2" text="{{pageTitle}}" minWidth="100" class="pageTitle" />
+            
+        </GridLayout>
         <!--<android>
             <NavigationButton text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" />
         </android>
         <ios>
             <ActionItem text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" ios.position="left" />
         </ios>-->
-        <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" />
+        
     </ActionBar.titleView>
 
 
     <ActionItem ios.position="right"
         ios.systemIcon="13"
         android.systemIcon="ic_menu_search"
-        tap="onTapSearch" />
-    <ActionItem tap="onDelete"
+        tap="onTapSearch"
+        visibility="{{ SearchButtonHidden ? 'collapse' : 'visible' }}" />
+<!--     <ActionItem tap="onDelete"
         ios.systemIcon="16" ios.position="right"
-        text="Delete" android.position="popup" />
+        text="Delete" android.position="popup" /> -->
     <ActionItem tap="onSetting"
         ios.systemIcon="16" ios.position="right"
         text="Settings" android.position="popup" />

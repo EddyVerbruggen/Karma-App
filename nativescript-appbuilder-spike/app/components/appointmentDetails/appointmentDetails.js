@@ -3,9 +3,11 @@
 var tabViewModule = require("ui/tab-view");
 var AppointmentDetailsViewModel = require('./appointmentDetails-view-model');
 var Observable = require('data/observable').Observable;
-var helpers = require('../../utils/widgets/helper');
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
+var dialogs = require("ui/dialogs");
+var views = require('../../utils/views');
+var helpers = require('../../utils/widgets/helper');
 var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
 
@@ -16,7 +18,10 @@ var pageData = new Observable({
     appointmentDetails: appointmentDetails,
     messageHistory: new observableArrayModule(),
     isLoading: true,
-    LocationVisible: false
+    LocationVisible: false,
+    pageTitle: "APPOINTMENT",
+    SideMenuHidden: true,
+    SearchButtonHidden: true
 });
 
 exports.onLoaded = function(args) {
@@ -24,7 +29,7 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
     var gotData = page.navigationContext;
-       
+
 	appointmentDetails
 		.load(gotData.id)
 		.catch(function(error) {
@@ -33,7 +38,7 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
         
-        	if(pageData.messageHistory.length == 0){
+        	if(pageData.messageHistory.length === 0){
 				appointmentDetails.Result.history.forEach(function(message) {
 					pageData.messageHistory.push(message);
             	})
@@ -50,6 +55,17 @@ exports.onLoaded = function(args) {
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.ClientDetail = function(args){
+	helpers.tapFlash(args.object).then(function() {
+        helpers.navigate({
+            moduleName: views.clientDetails,
+            context: {
+                id: args.view.clientId
+            }
+        });        
+    });
 }
 
 exports.sendMessage = function(args) {
@@ -85,7 +101,7 @@ exports.openDatePicker = function(args){
     };
     
     //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(DateCallback,null,null);
+    PickerManager.init(DateCallback, null, null);
     
     //Show the dialog
     PickerManager.showDatePickerDialog();
@@ -102,14 +118,22 @@ exports.openTimePicker = function(args){
     };
     
     //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(TimeCallback,null,null);
+    PickerManager.init(TimeCallback, null, null);
     
     //Show the dialog
     PickerManager.showTimePickerDialog();
 }
 
-exports.openLocationPopup = function(){
-    openOverlay('LocationPopupBody', 'LocationVisible');
+exports.openLocationPopup = function(args){
+    
+    var modalPageModule = 'components/appointmentDetails/tabs/location/location';
+    var context = args.context;
+    var fullscreen = false;
+    page.showModal(modalPageModule, context, function closeCallback(location, address) {
+    	console.log(location + address);
+    }, fullscreen);
+    
+    // openOverlay('LocationPopupBody', 'LocationVisible');
 }
 
 exports.onTapOverlay = function(args) {
@@ -133,4 +157,61 @@ function closeOverlay(overlayId, visibilityFlag) {
     }).then(function() {
         pageData.set(visibilityFlag, false);
     });
+}
+
+exports.confirm = function(args){
+    dialogs.confirm({
+      	title: "Confirm",
+      	message: "Are you sure?",
+      	okButtonText: "Confirm",
+      	cancelButtonText: "Cancel"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+        updateAppointment(pageData.appointmentDetails);
+    });
+}
+
+exports.cancel = function(args){
+    dialogs.confirm({
+      	title: "Cancel",
+      	message: "Are you sure you want to cancel ?",
+      	okButtonText: "Yes",
+      	cancelButtonText: "No"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+        updateAppointment(pageData.appointmentDetails);
+    });
+}
+
+exports.delete = function(args){
+    dialogs.confirm({
+      	title: "Delete",
+      	message: "Are you sure you want to delete ?",
+      	okButtonText: "Delete",
+      	cancelButtonText: "Cancel"
+    }).then(function (result) {
+      	// result argument is boolean
+      	console.log("Dialog result: " + result);
+        updateAppointment(pageData.appointmentDetails);
+    });
+}
+
+function updateAppointment(postData){
+    appointmentDetails
+		.update(postData)
+		.catch(function(error) {
+        	helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
+    	})
+		.then(function() {
+        	pageData.set('appointmentDetails', appointmentDetails.Result);
+        
+        	if(pageData.messageHistory.length == 0){
+				appointmentDetails.Result.history.forEach(function(message) {
+					pageData.messageHistory.push(message);
+            	})
+            }
+			helpers.togglePageLoadingIndicator(false, pageData);
+		});
 }

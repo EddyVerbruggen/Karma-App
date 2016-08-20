@@ -20,8 +20,9 @@
                             <lv:ListViewLinearLayout scrollDirection="Vertical" />
                         </lv:RadListView.listViewLayout>
                         <lv:RadListView.itemTemplate>
-                            <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}">
-                                <Label style="background-image: url('{{ profile_image }}');" class="client-row-thumbnail" col="0" />
+                            <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
+                                <Label class="client-row-thumbnail" col="0" />
+                                <!--<Label style="background-image: url('{{ profile_image }}');" class="client-row-thumbnail" col="0" />-->
                                 <StackLayout col="1" verticalAlignment="center">
                                     <Label text="{{client_name}}" class="client-row-name" />
                                     <Label text="{{num_bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{num_bookings  ? 'visible' : 'collapse'}}" />
@@ -39,30 +40,30 @@
                     <StackLayout orientation="horizontal" row="2" col="0" class="client-options">
                         <StackLayout width="33%" tap="onTapStatus" class="client-options-button">
                             <Label text="Status" class="client-options-label" />
-                            <WrapLayout horizontalAlignment="center">
+                            
                                 <!-- <Label text="All" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
                                 <dd:DropDown id="dd" class="client-options-text" items="{{ statusList }}" selectedIndex="{{ selectedStatus }}" row="0" colSpan="2" tap="onTapOverlay" />
-                                <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
-                            </WrapLayout>
+                                <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
+                            
                         </StackLayout>
                         <StackLayout width="33%" tap="onTapTags" class="client-options-button">
-                            <Label text="Tag" class="client-options-label" />
-                            <WrapLayout horizontalAlignment="center">
+                            <Label text="Tags" class="client-options-label" />
+                            
                                 <!-- <Label text="{{selectedTag}}" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
                                 <dd:DropDown id="dd" class="client-options-text" items="{{ tagsList }}" selectedIndex="{{ selectedTag }}" row="0" colSpan="2" tap="onTapOverlay" />
-                                <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
-                            </WrapLayout>
+                                <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
+                            
                         </StackLayout>
-                        <StackLayout width="34%" tap="onTapSortby" class="client-options-button">
+                        <StackLayout width="35%" tap="onTapSortby" class="client-options-button">
                             <Label text="Sort by" class="client-options-label" />
-                            <WrapLayout horizontalAlignment="center">
+                            
                                 <!-- <Label text="{{selectedSortby}}" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
                                 <dd:DropDown id="dd" class="client-options-text" items="{{ sortbyList }}" selectedIndex="{{ selectedSortby }}" row="0" colSpan="2" tap="onTapOverlay" />
-                                <Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />
-                            </WrapLayout>
+                                <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
+                            
                         </StackLayout>
                     </StackLayout>
                 </GridLayout>        
