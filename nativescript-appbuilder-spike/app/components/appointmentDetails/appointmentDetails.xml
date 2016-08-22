@@ -1,6 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded">
+<!--       showingModally="onLoaded"> -->
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
