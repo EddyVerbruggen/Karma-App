@@ -12,11 +12,11 @@
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="Require client references from other companions" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{textValues.flag_screening_references}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_references" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_references_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_references" />
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="References required to have an established website" class="screening-label" />
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="At least 1 reference website must be verified" class="screening-textfield" tap="onTapDialog" setting="flag_num_references" />
+                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_reference_website_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_reference_website" />
                 </StackLayout>
             </StackLayout>
 
@@ -27,19 +27,19 @@
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="Require client to upload photo(s)" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for photos from clients" class="screening-textfield" tap="onTapDialog" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_client_photos_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_client_photos" />
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="Client's last name" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Require full last name" class="screening-textfield" tap="onTapDialog" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_last_name_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_last_name" />
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="Year of birth" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Required (to calculate their age)" class="screening-textfield" tap="onTapDialog" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_birth_date_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_birth_date" />
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="City/state of residence" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Don't ask for current residence" class="screening-textfield" tap="onTapDialog" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_residence_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_residence" />
                 </StackLayout>
             </StackLayout>
 
@@ -50,7 +50,7 @@
                 </StackLayout>
                 <StackLayout class="screening-input-row">
                     <Label text="Require work/employment information" class="screening-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="No, never ask for this information" class="screening-textfield" tap="onTapDialog" />
+                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{flag_screening_work_information_label}}" class="screening-textfield" tap="onTapDialog" setting="flag_screening_work_information" />
                 </StackLayout>
             </StackLayout>
 
@@ -62,16 +62,16 @@
                 <StackLayout class="screening-input-row">
                     <Label text="Require work/employment information" class="screening-label" />
                 </StackLayout>
-                <WrapLayout class="screening-all-row" tap="onToggle" section="sec1">
-                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec1" class="" width="30" />
+                <WrapLayout class="screening-all-row" tap="onToggle" setting="flag_screening_skip" checkboxConst="SKIP_SCREENING_USER_WHITELIST">
+                    <image src="" id="SKIP_SCREENING_USER_WHITELIST" class="" width="30" />
                     <Label text="Screened and approved by you in the past, even if they are not on your white-list" class="screening-section-link-label" />
                 </WrapLayout>
-                <WrapLayout class="screening-all-row" tap="onToggle" section="sec2">
-                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec2" class="" width="30" />
+                <WrapLayout class="screening-all-row" tap="onToggle" setting="flag_screening_skip" checkboxConst="SKIP_SCREENING_USER_APPROVED_BOOKING">
+                    <image src="" id="SKIP_SCREENING_USER_APPROVED_BOOKING" class="" width="30" />
                     <Label text="On any other companion's white-list" class="screening-section-link-label" />
                 </WrapLayout>
-                <WrapLayout class="screening-all-row" tap="onToggle" section="sec3">
-                    <image src="~/images/ic_check_box_outline_blank_white.png" id="sec3" class="" width="30" />
+                <WrapLayout class="screening-all-row" tap="onToggle" setting="flag_screening_skip" checkboxConst="SKIP_SCREENING_ANY_APPROVED_BOOKING">
+                    <image src="" id="SKIP_SCREENING_ANY_APPROVED_BOOKING" class="" width="30" />
                     <Label text="Screeened and approved by other companions in the past, even if they are not on their white-list" class="screening-section-link-label" />
                 </WrapLayout>
             </StackLayout>

@@ -2,10 +2,10 @@
 
 var _ = require('underscore');
 var dialogs = require('ui/dialogs');
+var view = require('ui/core/view');
 var config = require('./config');
 var handleResponse = require('./api/helpers').handleResponse;
 
-// List all settings
 var screeningSettingsOptions = {
     flag_screening_work_information: [
         {
@@ -93,10 +93,6 @@ var screeningSettingsOptions = {
 			value: 0
 	    }
     ],
-
-    flag_screening_skip: [
-
-    ],
     flag_required_custom_label_1: [
 
     ],
@@ -148,6 +144,27 @@ var screeningSettingsOptions = {
 	    }
     ]
 };
+
+var screeningSettingsCheckboxes = {
+    flag_screening_skip: [
+        {
+            const: 'SKIP_SCREENING_USER_WHITELIST',
+            value: 1
+        },
+        {
+        	const: 'SKIP_SCREENING_ANY_WHITELIST',
+        	value: 2
+        },
+        {
+            const: 'SKIP_SCREENING_USER_APPROVED_BOOKING',
+            value: 3
+        },
+        {
+            const: 'SKIP_SCREENING_ANY_APPROVED_BOOKING',
+            value: 4
+        }
+    ]
+}
 
 var bookingSettingsOptions = {
     flag_booking: [
@@ -367,41 +384,15 @@ var termsSettingsOptions = {
     ]
 };
 
-exports.onToggle = function(args) {
-    var setting = args.view.setting;
-    var a = parentView.getViewById(section);
-
-    if(a.src == "~/images/ic_check_box_outline_blank_white.png"){
-    	a.src = "~/images/ic_check_box_white.png";
-    }else{
-        a.src = "~/images/ic_check_box_outline_blank_white.png";
-    }
-};
-
-exports.onTapDialog = function(args) {
-    var setting = args.view.setting;
- 	dialogs.action({
-		message: "Edit",
-      	actions: _.map(screeningSettingsOptions[setting], function(currSetting) {
-            return currSetting.label;
-        })
-    }).then(function (result) {
-        // Set in view model
-      	if (result) {
-            alert(result);
-        }
-    });
-};
-
-exports.saveSettings = function(settings) {
+function saveSettings(settings) {
     // If 1 setting pair {flag: value}, convert to a single array
-	if (!settings.isArray() &&
+	if (settings instanceof Array === false &&
         typeof settings === 'object' &&
         typeof settings.flag !== 'undefined') {
             settings = [settings];
     }
 
-    var fetchData = fetch(config.apiUrl + 'settings/updates.json', {
+    var fetchData = fetch(config.apiUrl + 'settings/update.json', {
         method: 'POST',
         headers: {
             Authorization: 'Bearer ' + config.token,
@@ -410,22 +401,105 @@ exports.saveSettings = function(settings) {
         body: JSON.stringify(settings)
     });
 
+    // Figure out why fetchData isn't working
     return fetchData
         .then(handleResponse)
         .then(function(data) {
-            // Update settings model with latest setting
-
+        	// Save in pageData.settings
+        	return true;
     });
 };
 
-exports.updateSettingsText = function(page, pageData) {
+exports.saveSettings = saveSettings;
+
+exports.onToggle = function(args, page, pageData) {
+    var setting = args.view.setting;
+    var checkboxConst = args.view.checkboxConst;
+    
+    // Get value of all boxes (eg. [1, 3, 4])
+    var selectedCheckboxes = pageData.get('settings').get(setting);    
+    
+    // Get array of all options for this checkbox (eg. [{const: 'XXX', value: 1}])
+    var checkboxOptions = eval(page + 'SettingsCheckboxes[setting]');
+    
+    var newCheckboxData = [];
+    var newIsChecked = false;
+    
+    // Check the already checked boxes, and uncheck the selected one if it is checked
+    _.each(checkboxOptions, function(option) {
+        if ((option.const === checkboxConst && selectedCheckboxes.indexOf(option.value) === -1) ||
+            (option.const !== checkboxConst && selectedCheckboxes.indexOf(option.value) !== -1)) {
+			newCheckboxData.push(option.value);
+        }
+        if (option.const === checkboxConst) {
+            newIsChecked = selectedCheckboxes.indexOf(option.value) === -1;
+        }
+    });
+
+	var saveData = {};
+	saveData[setting] = newCheckboxData;
+	saveSettings(saveData);
+    
+    pageData.get('settings').set(setting, newCheckboxData);
+	setCheckbox(view.getViewById(args.object.parent, checkboxConst), newIsChecked);
+};
+
+// Generic function to handle tapping on dialog-based settings for current page
+exports.onTapDialog = function(args, page, pageData) {
+    var setting = args.view.setting;
     var settingsOptions = eval(page + 'SettingsOptions');
+    var selectedSettingsOption = settingsOptions[setting];
+ 	dialogs.action({
+		message: "Edit",
+      	actions: _.map(selectedSettingsOption, function(currSetting) {
+            return currSetting.label;
+        })
+    }).then(function (selectedLabel) {
+      	if (selectedLabel) {
+            var selectedOption = _.findWhere(selectedSettingsOption, {label: selectedLabel});
+            var saveData = {};
+            saveData[setting] = selectedOption.value;
+            saveSettings(saveData);
+            pageData.set(setting + '_label', selectedLabel);
+        }
+    });
+};
+
+// Update all labels for selected options on current page
+exports.updateSettingsLabels = function(page, pageData) {
     var selectedSettings = pageData.get('settings');
-/*
+    var settingsOptions = eval(page + 'SettingsOptions');
     _.each(settingsOptions, function(options, setting) {
         var selectedOption = _.findWhere(options, {value: selectedSettings[setting]});
-        pageData.set(setting, selectedOption);
+        if (selectedOption) {
+        	pageData.set(setting + '_label', selectedOption.label);
+        }
     });
-*/
-    return pageData;
 };
+
+// Update all checkboxes for selected options on current page
+exports.updateSettingsCheckboxes = function(parent, page, pageData) {
+    var selectedSettings = pageData.get('settings');
+    var settingsCheckboxes = eval(page + 'SettingsCheckboxes');
+    
+    // Iterate all checkbox flags for this page and check which ones are checked in pageData
+    _.each(settingsCheckboxes, function(options, setting) {
+        if (selectedSettings[setting]) {
+            _.each(options, function(option) {
+                setCheckbox(view.getViewById(parent, option.const),
+                            selectedSettings[setting].indexOf(option.value) !== -1);
+            });
+        }
+    });
+}
+
+// Helper function that sets checkbox view to a checked/unchecked box
+var setCheckbox = function(checkboxImg, isChecked) {
+    if (checkboxImg) {
+        if (isChecked) {
+            checkboxImg.src = "~/images/ic_check_box_white.png";
+        } else {
+            checkboxImg.src = "~/images/ic_check_box_outline_blank_white.png";
+        }
+    }
+}

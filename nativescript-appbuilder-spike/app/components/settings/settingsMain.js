@@ -29,7 +29,7 @@ exports.onLoaded = function(args) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your settings');
     	})
 		.then(function() {
-        	pageData.set('settings', settings.Result);
+        	pageData.set('settings', settings);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
 };

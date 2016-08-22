@@ -17,7 +17,10 @@ function SettingsViewModel() {
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-                viewModel.set('Result', data.settings);
+            	// Create entry for every userSettings result in viewModel observable
+            	for (var setting in data.userSettings) {
+                    viewModel.set(setting, data.userSettings[setting]);
+                }
             });
     };
 
