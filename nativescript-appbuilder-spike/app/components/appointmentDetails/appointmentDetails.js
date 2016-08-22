@@ -20,6 +20,7 @@ var pageData = new Observable({
     messageHistory: new observableArrayModule(),
     isLoading: true,
     LocationVisible: false,
+    dataEdited: true,
     pageTitle: "APPOINTMENT",
     SideMenuHidden: true,
     SearchButtonHidden: true
@@ -93,50 +94,64 @@ exports.sendMessage = function(args) {
 }
 
 exports.openDatePicker = function(args){
-    var DateCallback = function (result) {
-        if (result) {
-            result = result.split(" ");
-            result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
-            alert(result.format('LLLL'));
-            pageData.appointmentDetails.date = result.format('LLLL');
-        }
-    };
-    
-    //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(DateCallback, null, null);
-    
-    //Show the dialog
-    PickerManager.showDatePickerDialog();
+    if (pageData.appointmentDetails.canEdit) {
+		var DateCallback = function (result) {
+        	if (result) {
+            	result = result.split(" ");
+                result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
+                // alert(result.format('LLLL'));
+                pageData.appointmentDetails.date = result.format('LLLL');
+            }
+		};
+
+        var rawDate = pageData.appointmentDetails.date.split(",");
+		var dt = new Date(rawDate[1].trim() + " " + rawDate[2].trim());
+        
+        //Initialize the PickerManager (.init(yourCallback, title, initialDate))
+        PickerManager.init(DateCallback, null, dt);
+
+        //Show the dialog
+        PickerManager.showDatePickerDialog();   
+    }
 }
 
 exports.openTimePicker = function(args){
-    var TimeCallback = function (result) {
-        if (result) {
-            result = result.split(" ");
-            result = moment(result[3], "HH:mm");
-            alert(result.format('LT'));
-            pageData.appointmentDetails.time = result.format('LT');
-        }
-    };
-    
-    //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-    PickerManager.init(TimeCallback, null, null);
-    
-    //Show the dialog
-    PickerManager.showTimePickerDialog();
+    if (pageData.appointmentDetails.canEdit) {
+        var TimeCallback = function (result) {
+            if (result) {
+                result = result.split(" ");
+                result = moment(result[3], "HH:mm");
+                // alert(result.format('LT'));
+                pageData.appointmentDetails.time = result.format('LT');
+            }
+        };
+
+        var rawTime = pageData.appointmentDetails.time.split(" ");
+		var rawTime2 = rawTime[0].split(":");
+        var rawTime3 = rawTime2[1].substring(0, rawTime2[1].length - 2);
+        var tm = new Date(2011, 0, 1, rawTime2[0], rawTime3, 0, 0);
+        // alert(rawTime3);
+        
+        //Initialize the PickerManager (.init(yourCallback, title, initialDate))
+        PickerManager.init(TimeCallback, null, tm);
+
+        //Show the dialog
+        PickerManager.showTimePickerDialog();
+    }
 }
 
 exports.openLocationPopup = function(args){
-    
-    var modalPageModule = 'components/appointmentDetails/tabs/location/location';
-    var context = {};
-    var fullscreen = false;
-    // root.showModal(modalPageModule, context, function closeCallback(location, address) {
-    page.showModal(modalPageModule, context, function closeCallback(location, address) {
-    	console.log(location + address);
-    }, fullscreen);
-    
-    // openOverlay('LocationPopupBody', 'LocationVisible');
+    if (pageData.appointmentDetails.canEdit) {
+        var modalPageModule = 'components/appointmentDetails/tabs/location/location';
+        var context = {};
+        var fullscreen = false;
+        // root.showModal(modalPageModule, context, function closeCallback(location, address) {
+        page.showModal(modalPageModule, context, function closeCallback(location, address) {
+            console.log(location + address);
+        }, fullscreen);
+
+        // openOverlay('LocationPopupBody', 'LocationVisible');
+    }
 }
 
 exports.onTapOverlay = function(args) {
