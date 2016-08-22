@@ -1,6 +1,5 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd"
-      xmlns:widgets="utils/widgets"
-      loaded="pageLoaded">
+<Page loaded="onLoaded"
+      xmlns:widgets="utils/widgets">
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
@@ -43,7 +42,7 @@
                 <StackLayout>
                     <Label text="All Settings" class="settings-section-header" />
                     <Label class="settings-section-divider" />
-                </StackLayout>             
+                </StackLayout>
                 <WrapLayout class="settings-all-row" section="services" tap="onTap">
                     <Label text="&#xf272;" class="ionicons-icon settings-section-link-icon" />
                     <Label text="Services" class="settings-section-link-label" />
