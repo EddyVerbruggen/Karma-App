@@ -1,18 +1,14 @@
+Page {background-color: #F3F3F3;color:#444;}
 .settings-head {width:100%;padding:18 0;background-color: #222431;background-image: url('~/images/pattern-circles.png');}
 .settings-thumbnail {border-radius: 100;width:100;height:100;border-width:1;border-color:#666;background-repeat:no-repeat;background-size:contain;}
 
-.settings-account {margin:15;}
-.settings-all {margin:15;}
-.settings-url {margin:15;}
+.settings-section-box {}
+.settings-input-row {background-color:#fff;margin-bottom:1;padding:10 15;}
+.settings-section-header {font-size: 16;color: #3EC3D6;text-transform: uppercase;font-weight: bold;padding:20 15;}
+.settings-section-divider {background-color: #3EC3D6;height:1;}
+.settings-label {font-size: 12;color: #bbb;text-transform: uppercase;font-weight: bold;margin-bottom:3;}
+.settings-textfield {font-size:17;}
 
-.settings-section-header {font-size: 14;color: #3EC3D6;text-transform: uppercase;font-weight: bold;margin: 10 0 5 0;}
-.settings-section-divider {background-color: #3EC3D6;height:3;margin-bottom: 5;}
-.settings-input-row {margin: 10 0 0 0;}
-.settings-label {font-size: 12;color: #bbb;text-transform: uppercase;font-weight: bold;margin-left:5;}
-.settings-textfield {font-size:19;}
-
-.settings-all-row {padding:8 0;}
-.settings-all-divider {height:1;background-color:#eee;}
-.settings-section-link-icon {font-size:32;text-align:center;width:45;}
-.settings-section-link-label {font-size: 21;padding:10 0;}
-.settings-section-link-arrow {font-size: 24;text-align: right;color:#ccc;}
+.settings-all-row {background-color:#fff;margin-bottom:1;padding:6 10;}
+.settings-section-link-icon {font-size:32;text-align:center;width:40;}
+.settings-section-link-label {font-size: 19;padding:10 0;}
