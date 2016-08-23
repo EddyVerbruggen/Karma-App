@@ -104,7 +104,7 @@ exports.openDatePicker = function(args){
                 result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
                 pageData.appointmentDetails.date = result.format('LLLL');
                 
-                alert(pageData.appointmentDetails.date);
+                // alert(pageData.appointmentDetails.date);
                 onDataEdited(true);
             }
 		};
@@ -127,7 +127,8 @@ exports.openTimePicker = function(args){
                 result = result.split(" ");
                 result = moment(result[3], "HH:mm");
                 pageData.appointmentDetails.time = result.format('LT');
-				alert(pageData.appointmentDetails.time);
+                
+				// alert(pageData.appointmentDetails.time);
                 onDataEdited(true);
             }
         };
@@ -245,28 +246,24 @@ function updateAppointment(postData){
 }
 
 function onDataEdited(flag) {
-    
     pageData.dataEdited = flag;
-    
-    if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited == false) {
-        pageData.isConfirm = true;
-        pageData.isSaveConfirm = false;
-        pageData.isSave = false;
-    }
+    if (pageData.appointmentDetails.canAccept){
+        if (pageData.appointmentDetails.client_status_text != "Approved" && !pageData.dataEdited) {
+            pageData.isConfirm = true;
+            pageData.isSaveConfirm = false;
+            pageData.isSave = false;
+        }
 
-    if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited == true) {
-        pageData.isConfirm = false;
-        pageData.isSaveConfirm = true;
-        pageData.isSave = false;
-    }
+        if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited) {
+            pageData.isConfirm = false;
+            pageData.isSaveConfirm = true;
+            pageData.isSave = false;
+        }
 
-    if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited == true) {
-        pageData.isConfirm = false;
-        pageData.isSaveConfirm = false;
-        pageData.isSave = true;
-    } else {
-        pageData.isConfirm = false;
-        pageData.isSaveConfirm = false;
-        pageData.isSave = false;
+        if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited) {
+            pageData.isConfirm = false;
+            pageData.isSaveConfirm = false;
+            pageData.isSave = true;
+        }
     }
 }

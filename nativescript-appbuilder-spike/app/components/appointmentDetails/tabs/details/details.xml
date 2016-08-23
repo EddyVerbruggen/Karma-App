@@ -46,7 +46,7 @@
     </ScrollView>
     
     <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options">
-        <StackLayout width="40%" visibility="{{appointmentDetails.canAccept ? visible : collapse}}" >
+        <StackLayout width="40%">
             <Label text="Confirm" class="accept-save-button" tap="confirm" visibility="{{ isConfirm ? 'visible' : 'collapse' }}" />
             <Label text="Save & Confirm" class="accept-save-button" tap="confirm" visibility="{{ isSaveConfirm ? 'visible' : 'collapse' }}" />
             <Label text="Save" class="accept-save-button" tap="confirm" visibility="{{ isSave ? 'visisble' : 'collapse' }}" />
