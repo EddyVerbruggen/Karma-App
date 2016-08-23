@@ -1,11 +1,34 @@
 'use strict';
+var Observable = require('data/observable').Observable;
+var observableArrayModule = require('data/observable-array').ObservableArray;
 
-var page;
-var parentView;
+var page, parentView, location;
+var pageData = new Observable({
+    appointmentDetails: new observableArrayModule(),
+    address: "",
+    incall: false,
+    outcall: false
+});
 
 exports.onLoaded = function(args) {
     page = args.object;
+    page.bindingContext = pageData;
     parentView = page.getViewById("locationModal");
+    
+    pageData.set('appointmentDetails', args.context.appointmentDetails);
+    
+    var locationCall = pageData.appointmentDetails.location.split("-");
+    pageData.address = locationCall[1].trim();
+    locationCall = locationCall[0].trim();
+    
+    if (locationCall.toLowerCase() == "outcall") {
+        pageData.outcall = true;
+        pageData.incall = false;
+    } else {
+        pageData.incall = true;
+        pageData.outcall = false;
+    }
+    
 }
 
 exports.toggleRadio = function(args){
@@ -14,29 +37,26 @@ exports.toggleRadio = function(args){
     var outcall = parentView.getViewById("outcall");
 
     if (section == "incall") {
-        if (incall.src == "~/images/ic_radio_button_checked_white.png") {
-            incall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
-        }
-        
-        if (incall.src == "~/images/ic_radio_button_unchecked_white.png") {
-            outcall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        incall.src = "~/images/ic_radio_button_checked_white.png";   
+        if (pageData.incall == false) {
+            pageData.incall = true;
+            pageData.outcall = false;
         }
     }
     
-    if (section == "outcall") {
-        if (outcall.src == "~/images/ic_radio_button_checked_white.png") {
-            incall.src = "~/images/ic_radio_button_unchecked_white.png";   
-        }
-        
-        if (outcall.src == "~/images/ic_radio_button_unchecked_white.png") {
-            incall.src = "~/images/ic_radio_button_unchecked_white.png";
-	        outcall.src = "~/images/ic_radio_button_checked_white.png";   
+    if (section == "outcall") {      
+        if (pageData.outcall == false) {
+            pageData.incall = false;
+            pageData.outcall = true;
         }
     }
 }
 
 exports.closeModal = function(args){
-    page.closeModal();
+    if (pageData.incall) {
+        pageData.appointmentDetails.location = "Incall - " + pageData.address;
+    } else {
+        pageData.appointmentDetails.location = "Outcall - " + pageData.address;
+    }
+    
+    page.closeModal(pageData.appointmentDetails);
 }

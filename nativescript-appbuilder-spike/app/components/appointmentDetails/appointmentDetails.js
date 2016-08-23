@@ -11,16 +11,18 @@ var helpers = require('../../utils/widgets/helper');
 var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
 
-var page;
-var root;
+var page, root;
 var isInit = true;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
-    appointmentDetails: appointmentDetails,
+    appointmentDetails: new observableArrayModule(),
     messageHistory: new observableArrayModule(),
     isLoading: true,
     LocationVisible: false,
-    dataEdited: true,
+    isConfirm: false,
+    isSaveConfirm: false,
+    isSave: false,
+    dataEdited: false,
     pageTitle: "APPOINTMENT",
     SideMenuHidden: true,
     SearchButtonHidden: true
@@ -47,6 +49,7 @@ exports.onLoaded = function(args) {
             	})
             }
 			helpers.togglePageLoadingIndicator(false, pageData);
+        	onDataEdited(false);
 		});
     
     //Redirect to History tab
@@ -99,8 +102,10 @@ exports.openDatePicker = function(args){
         	if (result) {
             	result = result.split(" ");
                 result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
-                // alert(result.format('LLLL'));
                 pageData.appointmentDetails.date = result.format('LLLL');
+                
+                alert(pageData.appointmentDetails.date);
+                onDataEdited(true);
             }
 		};
 
@@ -121,8 +126,9 @@ exports.openTimePicker = function(args){
             if (result) {
                 result = result.split(" ");
                 result = moment(result[3], "HH:mm");
-                // alert(result.format('LT'));
                 pageData.appointmentDetails.time = result.format('LT');
+				alert(pageData.appointmentDetails.time);
+                onDataEdited(true);
             }
         };
 
@@ -143,11 +149,15 @@ exports.openTimePicker = function(args){
 exports.openLocationPopup = function(args){
     if (pageData.appointmentDetails.canEdit) {
         var modalPageModule = 'components/appointmentDetails/tabs/location/location';
-        var context = {};
+        var context = {
+            appointmentDetails: pageData.appointmentDetails
+        };
         var fullscreen = false;
         // root.showModal(modalPageModule, context, function closeCallback(location, address) {
-        page.showModal(modalPageModule, context, function closeCallback(location, address) {
-            console.log(location + address);
+        page.showModal(modalPageModule, context, function closeCallback(args) {
+            console.log(JSON.stringify(args));
+            pageData.appointmentDetails = args;
+            onDataEdited(true);
         }, fullscreen);
 
         // openOverlay('LocationPopupBody', 'LocationVisible');
@@ -232,4 +242,31 @@ function updateAppointment(postData){
             }
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
+}
+
+function onDataEdited(flag) {
+    
+    pageData.dataEdited = flag;
+    
+    if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited == false) {
+        pageData.isConfirm = true;
+        pageData.isSaveConfirm = false;
+        pageData.isSave = false;
+    }
+
+    if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited == true) {
+        pageData.isConfirm = false;
+        pageData.isSaveConfirm = true;
+        pageData.isSave = false;
+    }
+
+    if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited == true) {
+        pageData.isConfirm = false;
+        pageData.isSaveConfirm = false;
+        pageData.isSave = true;
+    } else {
+        pageData.isConfirm = false;
+        pageData.isSaveConfirm = false;
+        pageData.isSave = false;
+    }
 }
