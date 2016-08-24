@@ -15,7 +15,7 @@ var page, root;
 var isInit = true;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
-    appointmentDetails: new observableArrayModule(),
+    appointmentDetails: appointmentDetails,
     messageHistory: new observableArrayModule(),
     isLoading: true,
     LocationVisible: false,
@@ -155,9 +155,9 @@ exports.openLocationPopup = function(args){
         };
         var fullscreen = false;
         // root.showModal(modalPageModule, context, function closeCallback(location, address) {
-        page.showModal(modalPageModule, context, function closeCallback(args) {
-            console.log(JSON.stringify(args));
-            pageData.appointmentDetails = args;
+        page.showModal(modalPageModule, context, function closeCallback(args1) {
+            if (args1)
+				pageData.appointmentDetails.location = args1;
             onDataEdited(true);
         }, fullscreen);
 

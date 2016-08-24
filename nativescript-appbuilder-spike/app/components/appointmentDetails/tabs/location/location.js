@@ -3,6 +3,7 @@ var Observable = require('data/observable').Observable;
 var observableArrayModule = require('data/observable-array').ObservableArray;
 
 var page, parentView, location;
+var closeCallback;
 var pageData = new Observable({
     appointmentDetails: new observableArrayModule(),
     address: "",
@@ -13,6 +14,9 @@ var pageData = new Observable({
 exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
+    
+    closeCallback = args.closeCallback;
+    alert(closeCallback);
     parentView = page.getViewById("locationModal");
     
     pageData.set('appointmentDetails', args.context.appointmentDetails);
@@ -58,5 +62,6 @@ exports.closeModal = function(args){
         pageData.appointmentDetails.location = "Outcall - " + pageData.address;
     }
     
-    page.closeModal(pageData.appointmentDetails);
+    // page.closeModal(pageData.appointmentDetails);
+    closeCallback(pageData.appointmentDetails.location);
 }
