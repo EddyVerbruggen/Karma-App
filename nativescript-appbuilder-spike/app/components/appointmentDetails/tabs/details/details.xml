@@ -47,12 +47,12 @@
     
     <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options">
         <StackLayout width="40%">
-            <Label text="Confirm" class="accept-save-button" tap="confirm" id="confirmButton" />
+            <Label text="Confirm" class="accept-save-button" tap="confirm" id="confirmButton" visibility="{{ appointmentDetails.canAccept ? 'visible' : 'collapse' }}"/>
         </StackLayout>
-        <StackLayout width="40%" visibility="{{appointmentDetails.canCancel ? visible : collapse}}" >
+        <StackLayout width="40%" visibility="{{ appointmentDetails.canCancel ? visible : collapse }}" >
             <Label text="Cancel" class="cancel-button" tap="cancel" />
         </StackLayout>
-        <StackLayout width="20%" visibility="{{appointmentDetails.canDelete ? visible : collapse}}" >
+        <StackLayout width="20%" visibility="{{ appointmentDetails.canDelete ? visible : collapse }}" >
             <Label text="&#xf4c4;" class="ionicons-icon delete-button" tap="delete" />
         </StackLayout>
     </StackLayout>    

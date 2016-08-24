@@ -19,10 +19,8 @@ var pageData = new Observable({
     messageHistory: new observableArrayModule(),
     isLoading: true,
     LocationVisible: false,
-    isConfirm: false,
-    isSaveConfirm: false,
-    isSave: false,
     dataEdited: false,
+    canAccept: false,
     pageTitle: "APPOINTMENT",
     SideMenuHidden: true,
     SearchButtonHidden: true
@@ -205,7 +203,7 @@ function updateAppointment(postData){
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
         
-        	if(pageData.messageHistory.length == 0){
+        	if (pageData.messageHistory.length == 0) {
 				appointmentDetails.Result.history.forEach(function(message) {
 					pageData.messageHistory.push(message);
             	})
@@ -217,19 +215,39 @@ function updateAppointment(postData){
 function onDataEdited(flag) {
     
     var button = parentView.getViewById("confirmButton");
-    
     pageData.set('dataEdited', flag);
-    if (pageData.appointmentDetails.canAccept){
+    
+    if (pageData.appointmentDetails.canAccept) {
         if (pageData.appointmentDetails.client_status_text != "Approved" && !pageData.dataEdited) { //CONFIRM
-			button.text="CONFIRM";
+			button.text="Confirm";
         }
 
         if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited) { //SAVE&CONFIRM
-            button.text="SAVE & CONFIRM";
+            button.text="Save & Confirm";
+            dialogs.confirm({
+                title: "Save & Confirm",
+                message: "Are you sure you want to Save & Confirm ?",
+                okButtonText: "Save & Confirm",
+                cancelButtonText: "No"
+            }).then(function (result) {
+                // result argument is boolean
+                console.log("Dialog result: " + result);
+                // updateAppointment(pageData.appointmentDetails);
+            });
         }
 
         if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited) { //SAVE
-            button.text="SAVE";
+            button.text="Save";
+            dialogs.confirm({
+                title: "Save",
+                message: "Are you sure you want to Save ?",
+                okButtonText: "Save",
+                cancelButtonText: "No"
+            }).then(function (result) {
+                // result argument is boolean
+                console.log("Dialog result: " + result);
+                // updateAppointment(pageData.appointmentDetails);
+            });
         }
     }
 }
