@@ -41,7 +41,7 @@ exports.onLoaded = function(args) {
         	helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
     	})
 		.then(function() {
-        	pageData.set('appointmentDetails', appointmentDetails.Result);
+        	pageData.set('appointmentDetails', new Observable(appointmentDetails.Result));
         
         	if(pageData.messageHistory.length === 0){
 				appointmentDetails.Result.history.forEach(function(message) {
@@ -102,9 +102,7 @@ exports.openDatePicker = function(args){
         	if (result) {
             	result = result.split(" ");
                 result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
-                pageData.set(appointmentDetails.date, result.format('LLLL'));
-                
-                // alert(pageData.appointmentDetails.date);
+                pageData.get('appointmentDetails').set('date', result.format('LLLL'));
                 onDataEdited(true);
             }
 		};
@@ -114,8 +112,6 @@ exports.openDatePicker = function(args){
         
         //Initialize the PickerManager (.init(yourCallback, title, initialDate))
         PickerManager.init(DateCallback, null, dt);
-
-        //Show the dialog
         PickerManager.showDatePickerDialog();   
     }
 }
@@ -126,9 +122,7 @@ exports.openTimePicker = function(args){
             if (result) {
                 result = result.split(" ");
                 result = moment(result[3], "HH:mm");
-                pageData.appointmentDetails.time = result.format('LT');
-                
-				// alert(pageData.appointmentDetails.time);
+                pageData.get('appointmentDetails').set('time', result.format('LT'));
                 onDataEdited(true);
             }
         };
@@ -137,12 +131,9 @@ exports.openTimePicker = function(args){
 		var rawTime2 = rawTime[0].split(":");
         var rawTime3 = rawTime2[1].substring(0, rawTime2[1].length - 2);
         var tm = new Date(2011, 0, 1, rawTime2[0], rawTime3, 0, 0);
-        // alert(rawTime3);
         
         //Initialize the PickerManager (.init(yourCallback, title, initialDate))
         PickerManager.init(TimeCallback, null, tm);
-
-        //Show the dialog
         PickerManager.showTimePickerDialog();
     }
 }
@@ -155,9 +146,9 @@ exports.openLocationPopup = function(args){
         };
         var fullscreen = false;
         // root.showModal(modalPageModule, context, function closeCallback(location, address) {
-        page.showModal(modalPageModule, context, function closeCallback(args1) {
-            if (args1)
-				pageData.appointmentDetails.location = args1;
+        page.showModal(modalPageModule, context, function closeCallback(args) {
+            if (args)
+                pageData.get('appointmentDetails').set('location', args);
             onDataEdited(true);
         }, fullscreen);
 

@@ -14,9 +14,7 @@ var pageData = new Observable({
 exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
-    
     closeCallback = args.closeCallback;
-    alert(closeCallback);
     parentView = page.getViewById("locationModal");
     
     pageData.set('appointmentDetails', args.context.appointmentDetails);
