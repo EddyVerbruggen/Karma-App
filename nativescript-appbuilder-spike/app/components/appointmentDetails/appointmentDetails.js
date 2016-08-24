@@ -102,7 +102,7 @@ exports.openDatePicker = function(args){
         	if (result) {
             	result = result.split(" ");
                 result = moment(result[1]+"-"+result[0]+"-"+result[2], "MM-DD-YYYY");
-                pageData.appointmentDetails.date = result.format('LLLL');
+                pageData.set(appointmentDetails.date, result.format('LLLL'));
                 
                 // alert(pageData.appointmentDetails.date);
                 onDataEdited(true);
@@ -246,24 +246,33 @@ function updateAppointment(postData){
 }
 
 function onDataEdited(flag) {
-    pageData.dataEdited = flag;
+    pageData.set('dataEdited', flag);
     if (pageData.appointmentDetails.canAccept){
         if (pageData.appointmentDetails.client_status_text != "Approved" && !pageData.dataEdited) {
-            pageData.isConfirm = true;
-            pageData.isSaveConfirm = false;
-            pageData.isSave = false;
+            pageData.set('isConfirm', true);
+            pageData.set('isSaveConfirm', false);
+            pageData.set('isSave', false);
+            // pageData.isConfirm = true;
+            // pageData.isSaveConfirm = false;
+            // pageData.isSave = false;
         }
 
         if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited) {
-            pageData.isConfirm = false;
-            pageData.isSaveConfirm = true;
-            pageData.isSave = false;
+            pageData.set('isConfirm', false);
+            pageData.set('isSaveConfirm', true);
+            pageData.set('isSave', false);
+            // pageData.isConfirm = false;
+            // pageData.isSaveConfirm = true;
+            // pageData.isSave = false;
         }
 
         if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited) {
-            pageData.isConfirm = false;
-            pageData.isSaveConfirm = false;
-            pageData.isSave = true;
+            pageData.set('isConfirm', false);
+            pageData.set('isSaveConfirm', false);
+            pageData.set('isSave', true);
+            // pageData.isConfirm = false;
+            // pageData.isSaveConfirm = false;
+            // pageData.isSave = true;
         }
     }
 }
