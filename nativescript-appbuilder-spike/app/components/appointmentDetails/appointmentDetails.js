@@ -11,7 +11,7 @@ var helpers = require('../../utils/widgets/helper');
 var PickerManager = require("nativescript-timedatepicker");
 var moment = require("moment");
 
-var page, root;
+var page, root, parentView;
 var isInit = true;
 var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
@@ -32,6 +32,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    parentView = page.getViewById("appointments-tabs");
 	// root = args.context.context;
     var gotData = page.navigationContext;
 	
@@ -156,29 +157,6 @@ exports.openLocationPopup = function(args){
     }
 }
 
-exports.onTapOverlay = function(args) {
-    if (pageData.get('LocationVisible')) {
-    	closeOverlay('LocationPopupBody', 'LocationVisible');
-    }
-}
-
-function openOverlay(overlayId, visibilityFlag) {
-    pageData.set(visibilityFlag, true);
-    page.getViewById(overlayId).animate({
-        opacity: 0.95,
-        duration: 300
-    });
-}
-
-function closeOverlay(overlayId, visibilityFlag) {
-    return page.getViewById(overlayId).animate({
-        opacity: 0,
-        duration: 300
-    }).then(function() {
-        pageData.set(visibilityFlag, false);
-    });
-}
-
 exports.confirm = function(args){
     dialogs.confirm({
       	title: "Confirm",
@@ -237,33 +215,21 @@ function updateAppointment(postData){
 }
 
 function onDataEdited(flag) {
+    
+    var button = parentView.getViewById("confirmButton");
+    
     pageData.set('dataEdited', flag);
     if (pageData.appointmentDetails.canAccept){
-        if (pageData.appointmentDetails.client_status_text != "Approved" && !pageData.dataEdited) {
-            pageData.set('isConfirm', true);
-            pageData.set('isSaveConfirm', false);
-            pageData.set('isSave', false);
-            // pageData.isConfirm = true;
-            // pageData.isSaveConfirm = false;
-            // pageData.isSave = false;
+        if (pageData.appointmentDetails.client_status_text != "Approved" && !pageData.dataEdited) { //CONFIRM
+			button.text="CONFIRM";
         }
 
-        if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited) {
-            pageData.set('isConfirm', false);
-            pageData.set('isSaveConfirm', true);
-            pageData.set('isSave', false);
-            // pageData.isConfirm = false;
-            // pageData.isSaveConfirm = true;
-            // pageData.isSave = false;
+        if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited) { //SAVE&CONFIRM
+            button.text="SAVE & CONFIRM";
         }
 
-        if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited) {
-            pageData.set('isConfirm', false);
-            pageData.set('isSaveConfirm', false);
-            pageData.set('isSave', true);
-            // pageData.isConfirm = false;
-            // pageData.isSaveConfirm = false;
-            // pageData.isSave = true;
+        if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited) { //SAVE
+            button.text="SAVE";
         }
     }
 }

@@ -47,9 +47,7 @@
     
     <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options">
         <StackLayout width="40%">
-            <Label text="Confirm" class="accept-save-button" tap="confirm" visibility="{{ isConfirm ? 'visible' : 'collapse' }}" />
-            <Label text="Save & Confirm" class="accept-save-button" tap="confirm" visibility="{{ isSaveConfirm ? 'visible' : 'collapse' }}" />
-            <Label text="Save" class="accept-save-button" tap="confirm" visibility="{{ isSave ? 'visisble' : 'collapse' }}" />
+            <Label text="Confirm" class="accept-save-button" tap="confirm" id="confirmButton" />
         </StackLayout>
         <StackLayout width="40%" visibility="{{appointmentDetails.canCancel ? visible : collapse}}" >
             <Label text="Cancel" class="cancel-button" tap="cancel" />
