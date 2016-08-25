@@ -1,29 +1,55 @@
-body {
-    
+Page {
+    background-color:#222431;
+    color:#fff;
+    text-align:center;
+    font-family: 'MyriadPro-Light';
+    background-image: url('~/images/pattern-circles.png');
 }
 
-.slide-1{
-	background-color: brown;
+.slide-title {
+    padding-top:45;
+    font-size:36;
+    color:#00FFFF;
 }
 
-.slide-2{
-    background-color: brown;
+.slide-logo {
+    margin-top:45;
+    width:225;
+    margin-bottom:15;
 }
 
-.slide-3{
-    background-color: brown;
+.slide-description {
+    font-size:21;
+    padding:8 50 30 50;
 }
 
-.slide-4{
-    background-color: brown;
+.slide-description-main {
+    color:#00FFFF;
 }
 
-.slide-5{
-    background-color: brown;
+.slide-screenshot {
+    margin:0 30;
 }
 
-.nav{
-    position: absolute;
-    top: 90%;
-   	background-color: black;
+.nav {    
+    margin:5;    
+}
+
+.button-login {
+    border-color:#666;
+    border-width:1;
+    border-radius:5;
+    color:#fff;
+    font-size:20;
+    padding:10 0;
+    margin-right:5;
+}
+
+.button-register {
+    border-color:#666;
+    border-width:1;
+    border-radius:5;
+    color:#fff;
+    font-size:20;
+    padding:10 0;
 }
