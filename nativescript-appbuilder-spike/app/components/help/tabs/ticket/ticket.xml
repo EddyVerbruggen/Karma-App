@@ -6,9 +6,10 @@
                 <WrapLayout class="ticket-row">
                     <TextField
                         id="username"
-                        text="{{ user.username }}"
+                        text="{{ userName }}"
                         hint="Username"
                         keyboardType="text"
+                        editable="false"
                         autocorrect="false"
                         autocapitalizationType="none"
                         class="help-ticket-input" />
@@ -17,7 +18,7 @@
                 <WrapLayout class="ticket-row">
                     <TextField
                         id="email"
-                        text="{{ user.email }}"
+                        text="{{ email }}"
                         hint="Email"
                         keyboardType="email"
                         autocorrect="false"

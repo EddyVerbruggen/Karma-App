@@ -3,6 +3,7 @@
 var tabViewModule = require("ui/tab-view");
 var Observable = require('data/observable').Observable;
 var view = require("ui/core/view");
+var appSettings = require("application-settings");
 var observableArrayModule = require('data/observable-array').ObservableArray;
 var helpers = require('../../utils/widgets/helper');
 
@@ -11,6 +12,8 @@ var isInit = true;
 var parentView;
 
 var pageData = new Observable({
+    userName: "",
+    email: "",
     faqs: [{
         "id":"1",
 		"title":"How much does Karma cost?", 
@@ -42,6 +45,9 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
 	parentView = page.getViewById("help-tabs");
+    
+    pageData.set('userName', appSettings.getString('username'));
+    pageData.set('email', appSettings.getString('email'));
     
     helpers.platformInit(page);
     if (isInit) {
