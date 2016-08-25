@@ -7,26 +7,27 @@
 	</Page.actionBar>
     <ScrollView>
         <grid-layout rows="auto,*">
-            <StackLayout row="0" class="subsettings-wrapper">
-                <StackLayout class="subsettings-row">
-                    <Label text="Display" class="subsettings-label" />
-                    <TextField keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="Yes" class="subsettings-textfield" />
+            <StackLayout row="0">
+                <StackLayout class="terms-input-row">
+                    <Label text="Display" class="terms-label" />
+                    <Label text="Yes" class="terms-textfield" textWrap="true" />
                 </StackLayout>
-                <StackLayout class="subsettings-row">
-                    <Label text="Text" class="subsettings-label" />
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="subsettings-textfield" />
+                <StackLayout class="terms-input-row">
+                    <Label text="Text" class="terms-label" />
+                    <Label text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" textWrap="true" />
                 </StackLayout>
             </StackLayout>
-            <StackLayout row="1" class="subsettings-wrapper">
+            <StackLayout row="1">
                 <StackLayout>
-                    <Label text="Terms" class="subsettings-header" />
-                    <Label class="subsettings-divider" />
+                    <Label text="Terms" class="terms-header" />
+                    <Label class="terms-divider" />
                 </StackLayout>
-                <StackLayout class="subsettings-row" id="termsList">
-                    <Label text="The client must accept the following" class="subsettings-label" />
+                <StackLayout id="termsList">
                     <Repeater items="{{terms}}">
                         <Repeater.itemTemplate>
-                            <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="{{def}}" class="subsettings-textfield" />
+                            <StackLayout class="terms-input-row terms-input-row-padding">
+                                <Label text="{{def}}" class="terms-textfield" textWrap="true" />
+                            </StackLayout>
                         </Repeater.itemTemplate>
                     </Repeater>						
                 </StackLayout>

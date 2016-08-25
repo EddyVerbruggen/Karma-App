@@ -7,17 +7,19 @@
 	</Page.actionBar>
     <ScrollView>
         <StackLayout width="100%">
-
-            <StackLayout class="services-account">    
-                <StackLayout class="services-input-row">
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                    <TextView keyboardType="text" autocorrect="false" autocapitalizationType="none" editable="false" text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="services-textfield" tap="edit" />
-                </StackLayout>
+            <StackLayout class="services-input-row" tap="edit">
+                <Label keyboardType="text" text="GFE" class="services-textfield"  textWrap="true" />
             </StackLayout>
+            <StackLayout class="services-input-row" tap="edit">
+                <Label keyboardType="text" text="Dinner and Movie" class="services-textfield" tap="edit" textWrap="true" />
+            </StackLayout>
+            <StackLayout class="services-input-row" tap="edit">
+                <Label keyboardType="text" text="PSE" class="services-textfield" tap="edit" textWrap="true" />
+            </StackLayout>
+            <StackLayout class="services-input-row" tap="edit">
+                <Label keyboardType="text" text="Travel Companion" class="services-textfield" tap="edit" textWrap="true" />
+            </StackLayout>            
             <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" />
-
         </StackLayout>
     </ScrollView>
 </Page>
