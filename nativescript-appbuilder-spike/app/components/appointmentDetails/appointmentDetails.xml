@@ -1,13 +1,11 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
       xmlns:widgets="utils/widgets"
       loaded="onLoaded">
-<!--       showingModally="onLoaded"> -->
     <Page.actionBar>
     	<widgets:action-bar />
 	</Page.actionBar>
     <TabView id="appointments-tabs" tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
         <TabView.items>
-            <!-- Display a tab, and pull contents from external file -->
             <TabViewItem title="Details" xmlns:Details="components/appointmentDetails/tabs/details">
                 <TabViewItem.view>
                     <Details:details />

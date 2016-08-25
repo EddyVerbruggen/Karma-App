@@ -1,37 +1,130 @@
-.appointment-details-head {width:100%;padding:15;background-color:#666;background-image: url('~/images/pattern-circles-light.png');color:#fff;}
-.client-thumbnail {border-radius: 75;width:75;height:75;border-width:1;border-color:#999;margin: 0 20 0 0;background-repeat:no-repeat;background-size:contain;}
-.client-name {font-size:24;margin-right:3;font-family: 'MyriadPro-Light';}
+.appointment-details-head {
+    width:100%;
+    padding:15;
+    background-color:#555;
+    background-image: url('~/images/pattern-circles-light.png');
+    color:#fff;
+}
+
+.client-thumbnail {
+    border-radius: 75;
+    width:75;
+    height:75;
+    border-width:1;
+    border-color:#999;
+    margin: 0 20 0 0;
+    background-repeat:no-repeat;
+    background-size:contain;
+}
+
+.client-name {
+    font-size:24;
+    margin-right:3;
+    font-family: 'MyriadPro-Light';
+}
 
 .client-phone,
-.client-email {font-size:14;color:#ddd;}
-.client-status {font-size:9;background-color:#555;padding:2 8;border-radius:2;color:#fff;}
+.client-email {
+    font-size:14;
+    color:#ddd;
+}
 
-.appointment-details {padding:20;}
-.appointment-input-row {margin: 0 0 20 0;}
-.appointment-label {font-size: 14;color: #888;text-transform: uppercase;font-weight: bold;margin-left:2;}
-.appointment-label-right {font-size: 12;color: #999;text-transform: uppercase;font-weight: bold;margin-left:5;text-align: right;}
-.appointment-textfield {font-size: 18;padding-left:2;}
-.appointment-status {color: #555;padding:2;}
+.client-status {
+    font-size:9;
+    background-color:#777;
+    padding:2 5;
+    border-radius:2;
+    color:#fff;
+}
 
-.appointment-options {padding:5;}
-.accept-save-button {font-size:21;color:#fff;background-color:#3EC3D6;height:44;margin-right:5;border-radius:3;padding-top:6;text-align:center;}
-.cancel-button {font-size:21;height:44;background-color:#999;margin-right:5;border-radius:3;text-align:center;color: #fff;padding-top:6;}
-.delete-button {font-size:26;height:44;color:#fff;background-color:#999;border-radius:3;text-align:center;margin-right:0; padding-top:5;width:100%;}
+.appointment-input-row {
+    background-color:#fff;
+    margin-bottom:1;
+    padding:12 20;
+}
 
-.title-bar {color: #fff;background-color: #858585;text-transform: uppercase;padding:10;}
-.info-table-label {width: 100;padding:15 15 15 15;}
-.popup-wrapper {padding:15;}
+.appointment-label {
+    font-size: 13;
+    color: #bbb;
+    margin-bottom:1;
+    text-transform:uppercase;
+}
 
-.client-row-icon-selected-true{
- 	width:12;
+.appointment-textfield {
+    font-size: 18;
+    color:#444;
+}
+
+.appointment-status {
+    font-size: 17;
+    color:#999;
+}
+
+.appointment-options {
+    padding:0;
+    margin:3;
+}
+
+.accept-save-button {
+    font-size:21;
+    color:#fff;
+    background-color:#3EC3D6;
+    height:44;
+    margin-right:2;
+    border-radius:2;
+    padding-top:9;
+    text-align:center;
+}
+
+.cancel-button {
+    font-size:21;
+    height:44;
+    background-color:#999;
+    margin-right:2;
+    border-radius:2;
+    text-align:center;
+    color: #fff;
+    padding-top:9;
+}
+
+.delete-button {
+    font-size:26;
+    height:44;
+    color:#fff;
+    background-color:#999;
+    border-radius:2;
+    text-align:center;
+    margin-right:0;
+    padding-top:8;
+    width:100%;
+}
+
+.title-bar {
+    color: #fff;
+    background-color: #858585;
+    text-transform: uppercase;
+    padding:10;
+}
+
+.info-table-label {
+    width: 100;
+    padding:15 15 15 15;
+}
+
+.popup-wrapper {
+    padding:15;
+}
+
+.client-row-icon-selected-true {
+    width:12;
     height:12;
     border-radius:20;
     background-color:#dcdcdc;
     padding-right: 15;
 }
 
-.client-row-icon-selected-false{
- 	width:12;
+.client-row-icon-selected-false {
+	width:12;
     height:12;
     border-radius:20;
     border-color: #dcdcdc;
@@ -39,10 +132,10 @@
     padding-right: 15;
 }
 
-.appointment-detail-section-link-icon{
+.appointment-detail-section-link-icon {
     width: 30;
 }
 
-.appointment-detail-poup-all-row{
+.appointment-detail-poup-all-row {
     width:30%;
 }

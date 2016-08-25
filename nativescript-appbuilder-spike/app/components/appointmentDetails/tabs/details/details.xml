@@ -1,7 +1,7 @@
 <GridLayout rows="*, 50" columns="*">
     <ScrollView row="0" col="0">  
         <StackLayout>
-            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:150;" />
             <StackLayout class="appointment-details-head" orientation="horizontal" clientId="{{appointmentDetails.id}}" tap="ClientDetail" visibility="{{ isLoading ? 'collapse' : 'visible' }}">                
                 <StackLayout verticalAlignment="center">
                     <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
@@ -17,27 +17,27 @@
             </StackLayout> 
             <StackLayout class="appointment-details" visibility="{{ isLoading ? 'collapse' : 'visible' }}">      
                 <StackLayout class="white-box">           
-                    <StackLayout class="appointment-input-row">
+                    <StackLayout class="appointment-input-row" tap="openDatePicker">
                         <Label text="Date" class="appointment-label" />
-                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.date}}" editable="false" tap="openDatePicker" />
+                        <Label class="appointment-textfield" text="{{appointmentDetails.date}}" />
                     </StackLayout>
-                    <StackLayout class="appointment-input-row">
+                    <StackLayout class="appointment-input-row" tap="openTimePicker">
                         <Label text="Time" class="appointment-label" />
-                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.time}}" editable="false" tap="openTimePicker" />
+                        <Label class="appointment-textfield" text="{{appointmentDetails.time}}" />
                     </StackLayout>
                     <StackLayout class="appointment-input-row">
                         <Label text="Length" class="appointment-label" />
-                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.length}}" editable="false" />
+                        <Label class="appointment-textfield" text="{{appointmentDetails.length}}" />
                     </StackLayout>
-                    <StackLayout class="appointment-input-row">
+                    <StackLayout class="appointment-input-row" tap="openLocationPopup">
                         <Label text="Location" class="appointment-label" />
-                        <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="false" tap="openLocationPopup" />
+                        <Label class="appointment-textfield" text="{{appointmentDetails.location}}" textWrap="true" />
                     </StackLayout>
                 </StackLayout>
                 <StackLayout class="white-box">
                     <StackLayout class="appointment-input-row">
                         <Label text="Status" class="appointment-label" />
-                        <Label text="{{appointmentDetails.status_text}}" class="appointment-status" />
+                        <Label text="{{appointmentDetails.status_text}}" class="appointment-status" textWrap="true" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>            

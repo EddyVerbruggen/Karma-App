@@ -1,4 +1,4 @@
-<GridLayout rows="*, 60" columns="*">
+<GridLayout rows="*, 58" columns="*">
     <ScrollView row="0" col="0" id="myScroller">
         <StackLayout class="history-content-area">
             <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
