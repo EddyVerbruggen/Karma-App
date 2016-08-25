@@ -20,10 +20,10 @@ exports.onLoaded = function(args) {
     pageData.set('appointmentDetails', args.context.appointmentDetails);
     
     var locationCall = pageData.get('appointmentDetails').get('location').split("-");
-    pageData.address = locationCall[1].trim();
+    pageData.set('address', locationCall[1].trim());
     locationCall = locationCall[0].trim();
     
-    if (locationCall.toLowerCase() == "outcall") {
+    if (locationCall.toLowerCase() === "outcall") {
         pageData.set('outcall', true);
         pageData.set('incall', false);
     } else {

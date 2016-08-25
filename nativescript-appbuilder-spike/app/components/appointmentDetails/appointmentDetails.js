@@ -42,7 +42,7 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('appointmentDetails', new Observable(appointmentDetails.Result));
         
-        	if(pageData.get('messageHistory').length === 0){
+        	if (pageData.get('messageHistory').length === 0) {
 				appointmentDetails.Result.history.forEach(function(message) {
 					pageData.get('messageHistory').push(message);
             	})
@@ -51,8 +51,7 @@ exports.onLoaded = function(args) {
         	onDataEdited(false);
 		});
     
-    //Redirect to History tab
-    if(page.navigationContext.from == "messages"){
+    if (page.navigationContext.from == "messages") {//Redirect to History tab
         page.getViewById("appointments-tabs").selectedIndex = 1;
     }   
     
@@ -62,19 +61,19 @@ exports.onLoaded = function(args) {
     }
 }
 
-exports.ClientDetail = function(args){
-	helpers.tapFlash(args.object).then(function() {
-        helpers.navigate({
-            moduleName: views.clientDetails,
-            context: {
-                id: args.view.clientId
-            }
-        });        
-    });
+exports.ClientDetail = function(args) {
+
+    helpers.navigate({
+        moduleName: views.clientDetails,
+        context: {
+            id: args.view.clientId
+        }
+    });        
+
 }
 
 exports.sendMessage = function(args) {
-    if(page.getViewById("message_box").text){
+    if (page.getViewById("message_box").text) {
         var new_message = {};
         var now = new Date();
         
@@ -95,7 +94,7 @@ exports.sendMessage = function(args) {
     }
 }
 
-exports.openDatePicker = function(args){
+exports.openDatePicker = function(args) {
     if (pageData.get('appointmentDetails').get('canEdit')) {
 		var DateCallback = function (result) {
         	if (result) {
@@ -109,8 +108,7 @@ exports.openDatePicker = function(args){
         var rawDate = pageData.get('appointmentDetails').get('date').split(",");
 		var dt = new Date(rawDate[1].trim() + " " + rawDate[2].trim());
         
-        //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-        PickerManager.init(DateCallback, null, dt);
+        PickerManager.init(DateCallback, null, dt);//Initialize the PickerManager (.init(yourCallback, title, initialDate))
         PickerManager.showDatePickerDialog();   
     }
 }
@@ -131,8 +129,7 @@ exports.openTimePicker = function(args){
         var rawTime3 = rawTime2[1].substring(0, rawTime2[1].length - 2);
         var tm = new Date(2011, 0, 1, rawTime2[0], rawTime3, 0, 0);
         
-        //Initialize the PickerManager (.init(yourCallback, title, initialDate))
-        PickerManager.init(TimeCallback, null, tm);
+        PickerManager.init(TimeCallback, null, tm);//Initialize the PickerManager (.init(yourCallback, title, initialDate))
         PickerManager.showTimePickerDialog();
     }
 }
@@ -150,8 +147,6 @@ exports.openLocationPopup = function(args){
                 pageData.get('appointmentDetails').set('location', args);
             onDataEdited(true);
         }, fullscreen);
-
-        // openOverlay('LocationPopupBody', 'LocationVisible');
     }
 }
 
@@ -161,8 +156,7 @@ exports.confirm = function(args){
       	message: "Are you sure?",
       	okButtonText: "Confirm",
       	cancelButtonText: "Cancel"
-    }).then(function (result) {
-      	// result argument is boolean
+    }).then(function (result) {// result argument is boolean
       	console.log("Dialog result: " + result);
         // updateAppointment(pageData.appointmentDetails);
     });
@@ -174,8 +168,7 @@ exports.cancel = function(args){
       	message: "Are you sure you want to cancel ?",
       	okButtonText: "Yes",
       	cancelButtonText: "No"
-    }).then(function (result) {
-      	// result argument is boolean
+    }).then(function (result) {// result argument is boolean
       	console.log("Dialog result: " + result);
         // updateAppointment(pageData.appointmentDetails);
     });
@@ -187,14 +180,13 @@ exports.delete = function(args){
       	message: "Are you sure you want to delete ?",
       	okButtonText: "Delete",
       	cancelButtonText: "Cancel"
-    }).then(function (result) {
-      	// result argument is boolean
+    }).then(function (result) {// result argument is boolean
       	console.log("Dialog result: " + result);
         // updateAppointment(pageData.appointmentDetails);
     });
 }
 
-function updateAppointment(postData){
+function updateAppointment(postData) {
     appointmentDetails
 		.update(postData)
 		.catch(function(error) {
@@ -203,7 +195,7 @@ function updateAppointment(postData){
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
         
-        	if (pageData.messageHistory.length === 0) {
+        	if (pageData.get('messageHistory').length === 0) {
 				appointmentDetails.Result.history.forEach(function(message) {
 					pageData.messageHistory.push(message);
             	})
@@ -215,36 +207,35 @@ function updateAppointment(postData){
 function onDataEdited(flag) {
     
     var button = parentView.getViewById("confirmButton");
+    var client_status_text = pageData.get('appointmentDetails').get('client_status_text');
     pageData.set('dataEdited', flag);
     
     if (pageData.get('appointmentDetails').get('canAccept')) {
-        if (pageData.get('appointmentDetails').get('client_status_text') != "Approved" && !pageData.get('dataEdited')) { //CONFIRM
+        if (client_status_text != "Approved" && !pageData.get('dataEdited')) { //CONFIRM
 			button.text = "Confirm";
         }
 
-        if (pageData.get('appointmentDetails').get('client_status_text') != "Approved" && pageData.get('dataEdited')) { //SAVE&CONFIRM
+        if (client_status_text != "Approved" && pageData.get('dataEdited')) { //SAVE&CONFIRM
             button.text = "Save & Confirm";
             dialogs.confirm({
                 title: "Save & Confirm",
                 message: "Are you sure you want to Save & Confirm ?",
                 okButtonText: "Save & Confirm",
                 cancelButtonText: "No"
-            }).then(function (result) {
-                // result argument is boolean
+            }).then(function (result) {// result argument is boolean
                 console.log("Dialog result: " + result);
                 // updateAppointment(pageData.appointmentDetails);
             });
         }
 
-        if (pageData.get('appointmentDetails').get('client_status_text') == "Approved" && pageData.get('dataEdited')) { //SAVE
+        if (client_status_text == "Approved" && pageData.get('dataEdited')) { //SAVE
             button.text = "Save";
             dialogs.confirm({
                 title: "Save",
                 message: "Are you sure you want to Save ?",
                 okButtonText: "Save",
                 cancelButtonText: "No"
-            }).then(function (result) {
-                // result argument is boolean
+            }).then(function (result) {// result argument is boolean
                 console.log("Dialog result: " + result);
                 // updateAppointment(pageData.appointmentDetails);
             });
