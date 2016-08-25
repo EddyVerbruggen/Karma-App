@@ -42,9 +42,9 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('appointmentDetails', new Observable(appointmentDetails.Result));
         
-        	if(pageData.messageHistory.length === 0){
+        	if(pageData.get('messageHistory').length === 0){
 				appointmentDetails.Result.history.forEach(function(message) {
-					pageData.messageHistory.push(message);
+					pageData.get('messageHistory').push(message);
             	})
             }
 			helpers.togglePageLoadingIndicator(false, pageData);
@@ -81,7 +81,7 @@ exports.sendMessage = function(args) {
         new_message.type = "message_user";
         new_message.message = page.getViewById("message_box").text;
         new_message.created = now.toLocaleDateString() + " " + now.toTimeString();
-        pageData.messageHistory.push(new_message);
+        pageData.get('messageHistory').push(new_message);
         
 		var mScroller = page.getViewById("myScroller");
         var offset = mScroller.scrollableHeight + parseInt(40); // get the current scroll height
@@ -96,7 +96,7 @@ exports.sendMessage = function(args) {
 }
 
 exports.openDatePicker = function(args){
-    if (pageData.appointmentDetails.canEdit) {
+    if (pageData.get('appointmentDetails').get('canEdit')) {
 		var DateCallback = function (result) {
         	if (result) {
             	result = result.split(" ");
@@ -106,7 +106,7 @@ exports.openDatePicker = function(args){
             }
 		};
 
-        var rawDate = pageData.appointmentDetails.date.split(",");
+        var rawDate = pageData.get('appointmentDetails').get('date').split(",");
 		var dt = new Date(rawDate[1].trim() + " " + rawDate[2].trim());
         
         //Initialize the PickerManager (.init(yourCallback, title, initialDate))
@@ -116,7 +116,7 @@ exports.openDatePicker = function(args){
 }
 
 exports.openTimePicker = function(args){
-    if (pageData.appointmentDetails.canEdit) {
+    if (pageData.get('appointmentDetails').get('canEdit')) {
         var TimeCallback = function (result) {
             if (result) {
                 result = result.split(" ");
@@ -126,7 +126,7 @@ exports.openTimePicker = function(args){
             }
         };
 
-        var rawTime = pageData.appointmentDetails.time.split(" ");
+        var rawTime = pageData.get('appointmentDetails').get('time').split(" ");
 		var rawTime2 = rawTime[0].split(":");
         var rawTime3 = rawTime2[1].substring(0, rawTime2[1].length - 2);
         var tm = new Date(2011, 0, 1, rawTime2[0], rawTime3, 0, 0);
@@ -138,10 +138,10 @@ exports.openTimePicker = function(args){
 }
 
 exports.openLocationPopup = function(args){
-    if (pageData.appointmentDetails.canEdit) {
+    if (pageData.get('appointmentDetails').get('canEdit')) {
         var modalPageModule = 'components/appointmentDetails/tabs/location/location';
         var context = {
-            appointmentDetails: pageData.appointmentDetails
+            appointmentDetails: pageData.get('appointmentDetails')//pageData.appointmentDetails
         };
         var fullscreen = false;
         // root.showModal(modalPageModule, context, function closeCallback(location, address) {
@@ -164,7 +164,7 @@ exports.confirm = function(args){
     }).then(function (result) {
       	// result argument is boolean
       	console.log("Dialog result: " + result);
-        updateAppointment(pageData.appointmentDetails);
+        // updateAppointment(pageData.appointmentDetails);
     });
 }
 
@@ -177,7 +177,7 @@ exports.cancel = function(args){
     }).then(function (result) {
       	// result argument is boolean
       	console.log("Dialog result: " + result);
-        updateAppointment(pageData.appointmentDetails);
+        // updateAppointment(pageData.appointmentDetails);
     });
 }
 
@@ -190,7 +190,7 @@ exports.delete = function(args){
     }).then(function (result) {
       	// result argument is boolean
       	console.log("Dialog result: " + result);
-        updateAppointment(pageData.appointmentDetails);
+        // updateAppointment(pageData.appointmentDetails);
     });
 }
 
@@ -203,7 +203,7 @@ function updateAppointment(postData){
 		.then(function() {
         	pageData.set('appointmentDetails', appointmentDetails.Result);
         
-        	if (pageData.messageHistory.length == 0) {
+        	if (pageData.messageHistory.length === 0) {
 				appointmentDetails.Result.history.forEach(function(message) {
 					pageData.messageHistory.push(message);
             	})
@@ -217,13 +217,13 @@ function onDataEdited(flag) {
     var button = parentView.getViewById("confirmButton");
     pageData.set('dataEdited', flag);
     
-    if (pageData.appointmentDetails.canAccept) {
-        if (pageData.appointmentDetails.client_status_text != "Approved" && !pageData.dataEdited) { //CONFIRM
-			button.text="Confirm";
+    if (pageData.get('appointmentDetails').get('canAccept')) {
+        if (pageData.get('appointmentDetails').get('client_status_text') != "Approved" && !pageData.get('dataEdited')) { //CONFIRM
+			button.text = "Confirm";
         }
 
-        if (pageData.appointmentDetails.client_status_text != "Approved" && pageData.dataEdited) { //SAVE&CONFIRM
-            button.text="Save & Confirm";
+        if (pageData.get('appointmentDetails').get('client_status_text') != "Approved" && pageData.get('dataEdited')) { //SAVE&CONFIRM
+            button.text = "Save & Confirm";
             dialogs.confirm({
                 title: "Save & Confirm",
                 message: "Are you sure you want to Save & Confirm ?",
@@ -236,8 +236,8 @@ function onDataEdited(flag) {
             });
         }
 
-        if (pageData.appointmentDetails.client_status_text == "Approved" && pageData.dataEdited) { //SAVE
-            button.text="Save";
+        if (pageData.get('appointmentDetails').get('client_status_text') == "Approved" && pageData.get('dataEdited')) { //SAVE
+            button.text = "Save";
             dialogs.confirm({
                 title: "Save",
                 message: "Are you sure you want to Save ?",

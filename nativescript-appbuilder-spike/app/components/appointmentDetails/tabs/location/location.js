@@ -19,16 +19,16 @@ exports.onLoaded = function(args) {
     
     pageData.set('appointmentDetails', args.context.appointmentDetails);
     
-    var locationCall = pageData.appointmentDetails.location.split("-");
+    var locationCall = pageData.get('appointmentDetails').get('location').split("-");
     pageData.address = locationCall[1].trim();
     locationCall = locationCall[0].trim();
     
     if (locationCall.toLowerCase() == "outcall") {
-        pageData.outcall = true;
-        pageData.incall = false;
+        pageData.set('outcall', true);
+        pageData.set('incall', false);
     } else {
-        pageData.incall = true;
-        pageData.outcall = false;
+        pageData.set('outcall', false);
+        pageData.set('incall', true);
     }
     
 }
@@ -38,28 +38,28 @@ exports.toggleRadio = function(args){
     var incall = parentView.getViewById("incall");
     var outcall = parentView.getViewById("outcall");
 
-    if (section == "incall") {
+    if (section === "incall") {
         if (pageData.incall == false) {
-            pageData.incall = true;
-            pageData.outcall = false;
+            pageData.set('outcall', false);
+	        pageData.set('incall', true);
         }
     }
     
-    if (section == "outcall") {      
+    if (section === "outcall") {      
         if (pageData.outcall == false) {
-            pageData.incall = false;
-            pageData.outcall = true;
+            pageData.set('outcall', true);
+	        pageData.set('incall', false);
         }
     }
 }
 
 exports.closeModal = function(args){
-    if (pageData.incall) {
-        pageData.appointmentDetails.location = "Incall - " + pageData.address;
+    if (pageData.get('incall')) {
+        pageData.get('appointmentDetails').set('location', "Incall - " + pageData.address);
     } else {
-        pageData.appointmentDetails.location = "Outcall - " + pageData.address;
+        pageData.get('appointmentDetails').set('location', "Outcall - " + pageData.address);        
     }
     
     // page.closeModal(pageData.appointmentDetails);
-    closeCallback(pageData.appointmentDetails.location);
+    closeCallback(pageData.get('appointmentDetails').get('location'));
 }
