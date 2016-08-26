@@ -1,26 +1,21 @@
 <Page xmlns="http://www.nativescript.org/tns.xsd" 
       showingModally="onLoaded">
     <StackLayout id="locationModal" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">          
-        
-        <wrap-layout class="location-header">
-            <label text="EDIT LOCATION" class="location-header-title" />
-            <image src="~/images/ic_clear_white.png" class="location-close-button" tap="closeModal" />
-        </wrap-layout>
-        <wrap-layout class="location-sub-header">
+        <WrapLayout class="location-sub-header">
             <label text="You are travelling in Miami during this time." />
-        </wrap-layout>
+        </WrapLayout>
         <StackLayout class="popup-wrapper">
-            <WrapLayout>
-                <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="incall">
+            <WrapLayout class="location-row">
+                <WrapLayout class="location-option" tap="toggleRadio" section="incall">
                     <image src="{{ incall ? '~/images/ic_radio_button_checked_white.png' : '~/images/ic_radio_button_unchecked_white.png' }}" id="incall" class="ionicons-icon appointment-detail-section-link-icon" />
                     <Label text=" Incall" />
                 </WrapLayout>
-                <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="outcall">
+                <WrapLayout class="location-option" tap="toggleRadio" section="outcall">
                     <image src="{{ outcall ? '~/images/ic_radio_button_checked_white.png' : '~/images/ic_radio_button_unchecked_white.png' }}" id="outcall" class="ionicons-icon appointment-detail-section-link-icon" />
                     <Label text=" Outcall" />
                 </WrapLayout>
             </WrapLayout>
-            <StackLayout>
+            <StackLayout class="location-row">
                 <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{address}}" editable="true" />
             </StackLayout>
             <StackLayout>

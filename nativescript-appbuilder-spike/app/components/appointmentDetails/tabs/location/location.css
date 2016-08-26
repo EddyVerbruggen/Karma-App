@@ -16,8 +16,12 @@
     padding:20;
 }
 
-.location-popup-row {
-    margin-bottom: 10;
+.location-row {
+    margin-bottom: 15;
+}
+
+.location-option {
+    width:100;
 }
 
 .appointment-textlabel{
