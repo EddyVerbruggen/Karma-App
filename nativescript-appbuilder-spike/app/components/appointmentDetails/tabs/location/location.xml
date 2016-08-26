@@ -1,4 +1,5 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="onLoaded">
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      showingModally="onLoaded">
     <StackLayout id="locationModal" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">          
         <!--<wrap-layout class="location-header">
             <label text="EDIT LOCATION" class="location-header-title" />
@@ -8,6 +9,7 @@
             <label text="You are travelling in Miami during this time." />
         </WrapLayout>
         <StackLayout class="popup-wrapper">
+<<<<<<< HEAD
             <WrapLayout class="location-popup-row">
                 <WrapLayout width="100" tap="toggleRadio" section="incall">
                     <image src="~/images/ic_radio_button_checked_white.png" id="incall" class="ionicons-icon appointment-detail-section-link-icon" />
@@ -20,6 +22,20 @@
             </WrapLayout>
             <StackLayout class="location-popup-row">
                 <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" hint="Location details, address, etc." />
+=======
+            <WrapLayout>
+                <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="incall">
+                    <image src="{{ incall ? '~/images/ic_radio_button_checked_white.png' : '~/images/ic_radio_button_unchecked_white.png' }}" id="incall" class="ionicons-icon appointment-detail-section-link-icon" />
+                    <Label text=" Incall" />
+                </WrapLayout>
+                <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="outcall">
+                    <image src="{{ outcall ? '~/images/ic_radio_button_checked_white.png' : '~/images/ic_radio_button_unchecked_white.png' }}" id="outcall" class="ionicons-icon appointment-detail-section-link-icon" />
+                    <Label text=" Outcall" />
+                </WrapLayout>
+            </WrapLayout>
+            <StackLayout>
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{address}}" editable="true" />
+>>>>>>> develop
             </StackLayout>
             <StackLayout>
                 <label class="appointment-textlabel" text="Incall informaiton is only sent to Clayton 24 hours before your appointment." textWrap="true" />

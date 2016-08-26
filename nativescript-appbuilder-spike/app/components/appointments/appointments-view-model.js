@@ -25,7 +25,7 @@ function AppointmentsViewModel() {
             .then(handleResponse)
             .then(function(data) {
             	viewModel.set('types', data.types);
-            	console.log(JSON.stringify(data.booking_dates));
+            	// console.log(JSON.stringify(data.booking_dates));
             	bookingDates.emptyBookings();
             	data.booking_dates.forEach(function(booking) {
             		bookingDates.push(booking);

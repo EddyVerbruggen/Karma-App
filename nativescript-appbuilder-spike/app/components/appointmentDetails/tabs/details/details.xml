@@ -1,4 +1,5 @@
 <GridLayout rows="*, 50" columns="*">
+    
     <ScrollView row="0" col="0">  
         <StackLayout>
             <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:150;" />
@@ -43,42 +44,17 @@
             </StackLayout>            
         </StackLayout>
     </ScrollView>
-
-<!--     <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="LocationPopupBody" verticalAlignment="center" visibility="{{LocationVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-        <StackLayout width="80%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-            
-            <StackLayout class="title-bar" orientation="horizontal">
-                <Label text="EDIT LOCATION" class="LocationPopupBody-title-row" width="90%" />
-                <Label text="X" textWrap="true" width="5%" />
-            </StackLayout>            
-            <StackLayout class="popup-wrapper">
-                <WrapLayout>
-                    <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="incall">
-                        <image src="~/images/ic_radio_button_checked_white.png" id="incall" class="ionicons-icon appointment-detail-section-link-icon" />
-                        <Label text=" Incall" />
-                    </WrapLayout>
-                    <WrapLayout class="appointment-detail-poup-all-row" tap="toggleRadio" section="outcall">
-                        <image src="~/images/ic_radio_button_unchecked_white.png" id="outcall" class="ionicons-icon appointment-detail-section-link-icon" />
-                        <Label text=" Outcall" />
-                    </WrapLayout>
-                </WrapLayout>
-            </StackLayout>
-            
-            <StackLayout class="appointment-input-row">
-                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" text="{{appointmentDetails.location}}" editable="true" />
-            </StackLayout>            
-        </StackLayout>
-    </StackLayout> -->
     
     <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options">
         <StackLayout width="40%">
-            <Label text="Confirm" class="accept-save-button" tap="confirm" />
+            <Label text="Confirm" class="accept-save-button" tap="confirm" id="confirmButton" visibility="{{ appointmentDetails.canAccept ? 'visible' : 'collapse' }}"/>
         </StackLayout>
-        <StackLayout width="40%">
+        <StackLayout width="40%" visibility="{{ appointmentDetails.canCancel ? visible : collapse }}" >
             <Label text="Cancel" class="cancel-button" tap="cancel" />
         </StackLayout>
-        <StackLayout width="20%">
+        <StackLayout width="20%" visibility="{{ appointmentDetails.canDelete ? visible : collapse }}" >
             <Label text="&#xf4c4;" class="ionicons-icon delete-button" tap="delete" />
         </StackLayout>
     </StackLayout>    
+    
 </GridLayout>
