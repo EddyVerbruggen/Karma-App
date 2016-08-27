@@ -14,7 +14,8 @@ function SearchViewModel() {
     viewModel.load = function(searchText) {
         var fetchData = fetch(config.apiUrl + 'search/all.json?q=text', {
 			headers: {
-				Authorization: 'Bearer ' + config.token
+				Authorization: 'Bearer ' + config.token,
+                TestData: config.testData
 			}
         });
 

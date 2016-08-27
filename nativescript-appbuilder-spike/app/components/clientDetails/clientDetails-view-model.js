@@ -11,7 +11,8 @@ function ClientDetailsViewModel() {
     viewModel.load = function(id) {
         var fetchData = fetch(config.apiUrl + 'client/' + id + '.json', {
                 headers: {
-                    Authorization: 'Bearer ' + config.token
+                    Authorization: 'Bearer ' + config.token,
+                    TestData: config.testData
                 }
         	});
 

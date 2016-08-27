@@ -16,7 +16,8 @@ function ClientsViewModel(clients) {
 
         var fetchData = fetch(config.apiUrl + 'clients/index.json', {
                 headers: {
-                    Authorization: 'Bearer ' + config.token
+                    Authorization: 'Bearer ' + config.token,
+                    TestData: config.testData
                 }
         	});
 

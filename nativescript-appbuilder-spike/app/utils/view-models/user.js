@@ -18,7 +18,8 @@ function User(info) {
             // Do a regular form POST instead of JSON body string
             method: "POST",
 			headers: {
-				"Content-Type": "application/x-www-form-urlencoded"
+				"Content-Type": "application/x-www-form-urlencoded",
+                TestData: config.testData
 			},
             body: "username=" + viewModel.get("username") + "&password=" + viewModel.get("password")
         })

@@ -17,7 +17,8 @@ function AppointmentsViewModel() {
 
         var fetchData = fetch(config.apiUrl + 'appointments/index.json' + '?status=' + status, {
                 headers: {
-                    Authorization: 'Bearer ' + config.token
+                    Authorization: 'Bearer ' + config.token,
+                    TestData: config.testData
                 }
             });
         

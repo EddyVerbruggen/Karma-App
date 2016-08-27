@@ -10,7 +10,8 @@ function SettingsViewModel() {
     viewModel.load = function() {
         var fetchData = fetch(config.apiUrl + 'settings/index.json', {
             headers: {
-                Authorization: 'Bearer ' + config.token
+                Authorization: 'Bearer ' + config.token,
+                TestData: config.testData
             }
     	});
 
