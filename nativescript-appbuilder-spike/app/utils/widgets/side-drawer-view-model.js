@@ -1,20 +1,31 @@
 'use strict';
 var appSettings = require("application-settings");
-var observable = require('data/observable');
+var observable = require('data/observable').Observable;
+var config = require('../../utils/config');
+var handleResponse = require('../../utils/api/helpers').handleResponse;
 
 function SideDrawerViewModel(options) {
     options = options || {};
 
-    var viewModel = new observable.Observable({
-        clientsApprovedCount: options.clientsApprovedCount || 0,
-        clientsPendingCount: options.clientsPendingCount || 0,
-        clientsAllCount: options.clientsAllCount || 0,
-        bookingsUpcomingCount: options.bookingsUpcomingCount || 0,
-        bookingsPendingCount: options.bookingsPendingCount || 0,
-        bookingsCancelledCount: options.bookingsAllCount || 0,
-        bookingsAllCount: options.bookingsAllCount || 0,
-        name: appSettings.getString('name')
-    });
+    var viewModel = new observable();
+    
+    viewModel.load = function() {
+        
+        var fetchData = fetch(config.apiUrl + 'users/drawer.json', {
+                headers: {
+                    Authorization: 'Bearer ' + config.token,
+                    TestData: config.testData
+                }
+        	});
+        
+        return fetchData
+            .then(handleResponse)
+            .then(function(data) {
+            	for (var key in data) {
+                    viewModel.set(key, data[key]);
+                }
+            });
+    };
     
     return viewModel;
 }

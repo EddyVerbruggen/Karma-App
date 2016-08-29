@@ -13,7 +13,11 @@
         <drawer:RadSideDrawer.mainContent>
             <GridLayout rows="auto, *, 60" columns="*">
                 <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:150;" />
-                <lv:RadListView items="{{appointmentsList.booking_dates}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                <lv:RadListView items="{{appointmentsList.booking_dates}}" 
+                                row="1" col="0" 
+                                loadOnDemandMode="Manual" 
+                                loadMoreDataRequested="onLoadMoreItemsRequested"
+                                visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                     <lv:RadListView.listViewLayout>
                         <lv:ListViewLinearLayout scrollDirection="Vertical" />
                     </lv:RadListView.listViewLayout>

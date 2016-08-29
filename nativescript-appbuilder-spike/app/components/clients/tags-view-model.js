@@ -5,16 +5,12 @@ var ObservableArray = require('data/observable-array').ObservableArray;
 var handleResponse = require('../../utils/api/helpers').handleResponse;
 var navigation = require('../../utils/navigation');
 
-function ClientsViewModel(clients) {
-    var viewModel = new ObservableArray(clients)
+function TagsViewModel() {
+    var viewModel = new ObservableArray()
     
     // Load all clients
-    viewModel.load = function(status, tag, sortby) {
-        status = status || 'all';
-        tag = tag || 'all';
-        sortby = sortby || 'createddesc';
-
-        var fetchData = fetch(config.apiUrl + 'clients/index.json', {
+    viewModel.load = function() {
+        var fetchData = fetch(config.apiUrl + 'users/tags.json', {
                 headers: {
                     Authorization: 'Bearer ' + config.token,
                     TestData: config.testData
@@ -25,8 +21,8 @@ function ClientsViewModel(clients) {
             .then(handleResponse)
             .then(function(data) {
                 viewModel.empty();
-                data.clients.forEach(function(client) {
-                    viewModel.push(client);
+                data.tags.forEach(function(tag) {
+                    viewModel.push(tag);
                 })
             });
     };
@@ -40,4 +36,4 @@ function ClientsViewModel(clients) {
     return viewModel;
 }
 
-module.exports = ClientsViewModel;
+module.exports = TagsViewModel;

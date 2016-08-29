@@ -22,7 +22,7 @@
                 <Label text="&#xf402;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
             <StackLayout verticalAlignment="center">
-                <Label text="Appointments (6)" class="nav-text" /> 
+                <Label text="{{ sideDrawer.num_bookings, 'Appointments (' + sideDrawer.num_bookings + ')' }}" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
         <StackLayout class="drawer-nav-item" orientation="horizontal" section="clients" type="all" tap="onTap">
@@ -30,7 +30,7 @@
                 <Label text="&#xf47d;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
             <StackLayout verticalAlignment="center">
-                <Label text="Clients (265)" class="nav-text" /> 
+                <Label text="{{ sideDrawer.num_clients, 'Clients (' + sideDrawer.num_clients + ')' }}" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
 <!--         <StackLayout class="drawer-nav-item" orientation="horizontal" section="availability" type="all" tap="onTap">
