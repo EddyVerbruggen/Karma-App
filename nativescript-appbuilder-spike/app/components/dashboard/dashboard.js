@@ -4,7 +4,10 @@ var isInit = true;
 var Observable = require('data/observable').Observable;
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
+var DashboardViewModel = require('./dashboard-view-model');
 
+var page;
+var dashboard = new DashboardViewModel();
 var pageData = new Observable({
     appointmentsList:[
         {
@@ -65,18 +68,26 @@ var pageData = new Observable({
             "status": "pending"
         }
     ],
+    dashboard: dashboard,
     backButtonHidden: true,
     pageTitle: "KARMA"
 });
 
 exports.onLoaded = function(args) {
-    var page = args.object;
+    page = args.object;
     page.bindingContext = pageData;
+	helpers.togglePageLoadingIndicator(true, pageData);
     helpers.platformInit(page);
 
-    if (isInit) {
-        isInit = false;
-    }
+	dashboard
+		.load()
+		.catch(function(error) {
+        	helpers.handleLoadError(error, 'Sorry, we could not load your settings');
+    	})
+		.then(function() {
+        	// pageData.set('Dashboard', Dashboard);
+			helpers.togglePageLoadingIndicator(false, pageData);
+		});
 }
 
 exports.onSelectAppointment = function(args) {

@@ -17,60 +17,53 @@
                     <StackLayout class="dashboard-head">
                         <StackLayout orientation="horizontal">                    
                             <StackLayout width="33%">
-                                <Label text="2" class="stats-number" />
+                                <Label text="{{dashboard.num_bookings}}" class="stats-number" />
                                 <Label text="Appointments" class="stats-label" />
                             </StackLayout>
                             <StackLayout width="33%">
-                                <Label text="4" class="stats-number" />
+                                <Label text="{{dashboard.num_clients}}" class="stats-number" />
                                 <Label text="Clients" class="stats-label" />
                             </StackLayout>
                             <StackLayout width="33%">
-                                <Label text="47" class="stats-number" />
+                                <Label text="{{dashboard.num_visitors}}" class="stats-number" />
                                 <Label text="Visitors" class="stats-label" />
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
 
-                    
-
                     <!-- Appointments -->
+                    <Label text="Appointments" class="appointment-calendar-date" /> 
                     <GridLayout columns="*">
-                        <!-- Insert code for todays appointments here -->
-                        <lv:RadListView items="{{appointmentsList}}" row="1" col="0">
+                        <lv:RadListView items="{{dashboard.bookings}}" row="1" col="0">
                             <lv:RadListView.listViewLayout>
                                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
                             </lv:RadListView.listViewLayout>
                             <lv:RadListView.itemTemplate>
                                 <StackLayout>
-                                    <Label text="{{date}}" class="appointment-calendar-date" /> 
-                                    <Repeater items="{{bookings}}">
-                                        <Repeater.itemsLayout>
-                                            <StackLayout class="appointment-rows" />
-                                        </Repeater.itemsLayout>
-                                        <Repeater.itemTemplate>
-                                            <StackLayout orientation="horizontal" class="appointment-row" tap="onSelectAppointment" bookingId="{{id}}">
-                                                 <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
-                                                     <Label text="{{time}}" class="appointment-time" />
-                                                     <Label text="{{length}}" class="appointment-length" />
-                                                 </StackLayout>                            
-                                                 <StackLayout width="60" verticalAlignment="center">
-                                                     <StackLayout class="appointment-status appointment-confirmed">
-                                                         <Label class="ionicons-icon" text="&#xf122;" />
-                                                     </StackLayout>
-                                                 </StackLayout>                            
-                                                 <StackLayout verticalAlignment="center">
-
-                                                    <WrapLayout>
-                                                        <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
-                                                        <Label text="New" class="client-status" />
-                                                    </WrapLayout>
-
-                                                    <Label text="{{location}}" class="row-appointment-location" />
-                                                 </StackLayout>
-                                             </StackLayout>
-                                        </Repeater.itemTemplate>
-                                    </Repeater>
-                                    </StackLayout>
+                                    <Repeater.itemsLayout>
+                                        <StackLayout class="appointment-rows" />
+                                    </Repeater.itemsLayout>
+                                    <Repeater.itemTemplate>
+                                        <StackLayout orientation="horizontal" class="appointment-row" tap="onSelectAppointment" bookingId="{{id}}">
+                                            <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
+                                                <Label text="{{time}}" class="appointment-time" />
+                                                <Label text="{{length}}" class="appointment-length" />
+                                            </StackLayout>                            
+                                            <StackLayout width="60" verticalAlignment="center">
+                                                <StackLayout class="appointment-status appointment-confirmed">
+                                                    <Label class="ionicons-icon" text="&#xf122;" />
+                                                </StackLayout>
+                                            </StackLayout>                            
+                                            <StackLayout verticalAlignment="center">
+                                                <WrapLayout>
+                                                    <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
+                                                    <Label text="New" class="client-status" />
+                                                </WrapLayout>
+                                                <Label text="{{location}}" class="row-appointment-location" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Repeater.itemTemplate>
+                                </StackLayout>
                             </lv:RadListView.itemTemplate>
                         </lv:RadListView>
                     </GridLayout>
@@ -78,7 +71,7 @@
                     <!-- Clients -->
                     <Label text="New Clients" class="appointment-calendar-date" />
                     <GridLayout columns="*">
-                        <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                        <lv:RadListView items="{{dashboard.clients}}" row="1" col="0">
                             <lv:RadListView.listViewLayout>
                                 <lv:ListViewLinearLayout scrollDirection="Vertical" />
                             </lv:RadListView.listViewLayout>
