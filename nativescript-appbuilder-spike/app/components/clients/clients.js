@@ -1,6 +1,8 @@
 'use strict';
 var Observable = require('data/observable').Observable;
 var timer = require("timer");
+var appSettings = require("application-settings");
+
 var ClientsViewModel = require('./clients-view-model');
 var TagsViewModel = require('./tags-view-model');
 var helpers = require('../../utils/widgets/helper');
@@ -30,6 +32,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'clients');
     
 	clientsList
 		.load()

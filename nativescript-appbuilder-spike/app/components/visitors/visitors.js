@@ -1,8 +1,9 @@
 'use strict';
-
 var tabViewModule = require("ui/tab-view");
 var Observable = require('data/observable').Observable;
 var view = require("ui/core/view");
+var appSettings = require("application-settings");
+
 var observableArrayModule = require('data/observable-array').ObservableArray;
 var helpers = require('../../utils/widgets/helper');
 
@@ -92,12 +93,23 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'visitors');
 	parentView = page.getViewById("visitors-tabs");
     
     helpers.platformInit(page);
     if (isInit) {
         isInit = false;
     }
+}
+
+exports.selectDates = function(args) {
+	var modalPageModule = 'components/visitors/tabs/calendar/calendar';
+    var context = {};
+    var fullscreen = false;
+
+    page.showModal(modalPageModule, context, function closeCallback(args) {
+        
+    }, fullscreen);
 }
 
 exports.toggle = function(args){

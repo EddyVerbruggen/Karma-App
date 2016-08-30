@@ -56,3 +56,7 @@
     height: 1;
     background-color: #CCCCCC;
 }
+
+.isActive {
+    background-color: #1B1C25;
+}

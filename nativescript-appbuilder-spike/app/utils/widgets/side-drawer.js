@@ -3,6 +3,8 @@
 var dialogs = require("ui/dialogs");
 var Observable = require('data/observable').Observable;
 var timer = require("timer");
+var appSettings = require("application-settings");
+
 var SideDrawerViewModel = require('./side-drawer-view-model');
 var helper = require('./helper');
 var views = require('../views');
@@ -10,13 +12,18 @@ var views = require('../views');
 var page;
 var sideDrawer = new SideDrawerViewModel();
 var pageData = new Observable({
-    sideDrawer: sideDrawer
+    sideDrawer: sideDrawer,
+    activeTab: 'dashboard'
 });
 
 exports.onLoad = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     getDrawerData();
+    
+    if (appSettings.getString('activeTab')) {
+        pageData.activeTab = appSettings.getString('activeTab');
+    }
     
     timer.setInterval(() => {
     	getDrawerData();
@@ -36,6 +43,7 @@ function getDrawerData() {
 
 exports.onTap = function(args) {
     var section = args.object.section;
+    appSettings.setString('activeTab', section);
 	helper.tapFlash(args.object, '#333', '#1B1C25').then(function() {
         helper.navigate({
             moduleName: 'components/' + section + '/' + section,
@@ -48,6 +56,7 @@ exports.onTap = function(args) {
 
 exports.onTapDashboard = function(args) {
     var section = args.object.section;
+    appSettings.setString('activeTab', 'dashboard');
 	helper.tapFlash(args.object, '#333', '#1B1C25').then(function() {
         helper.navigate({
             moduleName: views.dashboard,

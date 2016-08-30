@@ -1,6 +1,8 @@
 'use strict';
 var Observable = require('data/observable').Observable;
 var timer = require("timer");
+var appSettings = require("application-settings");
+
 var MessagesViewModel = require('./messages-view-model');
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
@@ -19,6 +21,8 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'messages');
+    
 	messageList
 		.load()
 		.catch(function(error) {

@@ -1,9 +1,9 @@
 'use strict';
-
 var tabViewModule = require("ui/tab-view");
 var Observable = require('data/observable').Observable;
 var view = require("ui/core/view");
 var appSettings = require("application-settings");
+
 var observableArrayModule = require('data/observable-array').ObservableArray;
 var helpers = require('../../utils/widgets/helper');
 
@@ -44,6 +44,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'help');
 	parentView = page.getViewById("help-tabs");
     
     pageData.set('userName', appSettings.getString('username'));

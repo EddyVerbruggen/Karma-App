@@ -1,6 +1,6 @@
 <ScrollView>
     <StackLayout>
-        <WrapLayout class="date-selection">
+        <WrapLayout class="date-selection" tap="selectDates" tab="referrers">
             <Label text="&#xf35f;" class="ionicons-icon" />
             <Label text="July 23 - August 3" />
         </WrapLayout>

@@ -1,6 +1,8 @@
 'use strict';
 var Observable = require('data/observable').Observable;
 var timer = require("timer");
+var appSettings = require("application-settings");
+
 var AppointmentsViewModel = require('./appointments-view-model');
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
@@ -22,6 +24,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'appointments');
 	appointmentsList
 		.load()
 		.catch(function(error) {
