@@ -22,5 +22,5 @@ exports.closeModal = function(args) {
 }
 
 exports.onDateSelected = function(args) {
-    alert(args.date);
+    // alert(args);
 }

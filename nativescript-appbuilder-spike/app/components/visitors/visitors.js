@@ -112,7 +112,7 @@ exports.selectDates = function(args) {
     }, fullscreen);
 }
 
-exports.toggle = function(args){
+exports.toggle = function(args) {
     var section = args.object.section;
     var a = parentView.getViewById(section);
     // var b = parentView.getViewById(section+'arr');

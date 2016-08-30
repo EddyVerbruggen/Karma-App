@@ -3,7 +3,7 @@
       showingModally="onLoaded">
     <StackLayout id="calendarModal" width="90%" height="65%" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
         <StackLayout class="popup-wrapper">
-            <calendar:RadCalendar id="calendar" dateSelected="onDateSelected" />
+            <calendar:RadCalendar id="calendar" dateSelected="onDateSelected" selectionMode="Range" />
         </StackLayout>
     </StackLayout>
 </Page>
