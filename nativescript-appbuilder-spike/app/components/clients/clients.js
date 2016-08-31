@@ -165,16 +165,16 @@ exports.onLoadMoreItemsRequested = function (args) {
     var that = new WeakRef(this);
     timer.setTimeout(function () {
         var listView = args.object;
-        // var initialNumberOfItems = that.get()._numberOfAddedItems;
-        // for (var i = that.get()._numberOfAddedItems; i < initialNumberOfItems + 2; i++) {
-        //     if (i > posts.names.length - 1) {
-        //         listView.loadOnDemandMode = listViewModule.ListViewLoadOnDemandMode[listViewModule.ListViewLoadOnDemandMode.None];
-        //         break;
-        //     }
-        //     var imageUri = application.android ? posts.images[i].toLowerCase() : posts.images[i];
-        //     that.get()._items.push(new DataItem(posts.names[i], posts.titles[i], posts.text[i], "res://" + imageUri));
-        //     that.get()._numberOfAddedItems++;
-        // }
+        
+        clientsList
+            .loadMore()
+            .catch(function(error) {
+                helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
+            })
+            .then(function() {
+
+            });
+        
         listView.notifyLoadOnDemandFinished();
     }, 1000);
     args.returnValue = true;

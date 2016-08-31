@@ -19,7 +19,6 @@ function ClientDetailsViewModel() {
         return fetchData
             .then(handleResponse)
             .then(function(data) {
-            	console.log(JSON.stringify(data.screening));
                 viewModel.set('Result', data.screening);
             });
     };

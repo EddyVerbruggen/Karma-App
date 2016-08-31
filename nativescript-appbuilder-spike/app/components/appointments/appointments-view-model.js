@@ -26,8 +26,27 @@ function AppointmentsViewModel() {
             .then(handleResponse)
             .then(function(data) {
             	viewModel.set('types', data.types);
-            	// console.log(JSON.stringify(data.booking_dates));
             	bookingDates.emptyBookings();
+            	data.booking_dates.forEach(function(booking) {
+            		bookingDates.push(booking);
+            	});
+            	viewModel.set('booking_dates',bookingDates);
+            });
+    };
+    
+    viewModel.loadMore = function(page, pageSize, status) {
+
+        var fetchData = fetch(config.apiUrl + 'appointments/index.json?page=' + page + '&pageSize=' + pageSize + '&status=' + status, {
+            headers: {
+                Authorization: 'Bearer ' + config.token,
+                TestData: config.testData
+            }
+        });
+
+        return fetchData
+            .then(handleResponse)
+            .then(function(data) {
+                viewModel.set('types', data.types);
             	data.booking_dates.forEach(function(booking) {
             		bookingDates.push(booking);
             	});
