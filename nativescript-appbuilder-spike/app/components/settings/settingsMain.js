@@ -33,6 +33,10 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     helpers.platformInit(page);
 
+    var test = pageData.get('settingsInfo');
+    test = new Observable(test);
+    pageData.set('settingsInfo', test);
+    
 	settings
 		.load()
 		.catch(function(error) {
@@ -48,6 +52,7 @@ exports.editText = function(args) {
     var id = args.object.id;
     dialogs.prompt({
 		title: "Edit",
+        // message: "Edit",
       	okButtonText: "Save",
       	cancelButtonText: "Cancel",
       	defaultText: args.object.text,
