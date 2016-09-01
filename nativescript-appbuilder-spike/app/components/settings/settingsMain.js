@@ -50,7 +50,7 @@ exports.onLoaded = function(args) {
 exports.editText = function(args) {
     var id = args.object.id;
     dialogs.prompt({
-		title: "Edit",
+    title: "Edit",
         // message: "Edit",
       	okButtonText: "Save",
       	cancelButtonText: "Cancel",
@@ -58,9 +58,22 @@ exports.editText = function(args) {
       	inputType: dialogs.inputType.text
     }).then(function (response) {
         if (response.result) {
-			pageData.get('settingsInfo').set(args.object.id, response.text);
+    		pageData.get('settingsInfo').set(args.object.id, response.text);
         }
     });
+    
+    // var options = {
+    //     title: "Edit",
+    //     // message: "Login",
+    //     username: args.object.text,
+    //     password: "",
+    //     okButtonText: "Change",
+    // 	cancelButtonText: "Cancel"
+    // };
+    // dialogs.login(options).then(function (loginResult) {
+    //     // true or false.
+    //     console.log(loginResult.result);
+    // });
 }
 
 exports.onTap = function(args) {

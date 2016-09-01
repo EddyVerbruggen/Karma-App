@@ -4,6 +4,10 @@ var tabViewModule = require("ui/tab-view");
 var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var dialogs = require("ui/dialogs");
+var imageCacheModule = require("ui/image-cache");
+var imageSource = require("image-source");
+var fs = require("file-system");
+
 var helpers = require('../../utils/widgets/helper');
 
 var page;
@@ -24,6 +28,13 @@ exports.onLoaded = function(args) {
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
     
+    var cache = new imageCacheModule.Cache();
+    cache.placeholder = imageSource.fromFile(fs.path.join(__dirname, "../../images/placeholder/temp-client-thumb.jpg"));
+    cache.maxRequests = 5;
+    
+    // Enable download while not scrolling
+	cache.enableDownload();
+    
 	clientDetails
 		.load(gotData.id)
 		.catch(function(error) {
@@ -32,6 +43,28 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
+        	var imgSouce = imageSource.ImageSource;
+            var url = pageData.get('clientDetails').get('Result');//.get('images');
+        	url = url.images[0];
+            // Try to read the image from the cache
+            var image = cache.get(url);
+            console.log(JSON.stringify(image));
+            // if (image) {
+            //     // If present -- use it.
+            //     imgSouce = imageSource.fromNativeSource(image);
+            // }
+            // else {
+            //     // If not present -- request its download.
+            //     cache.push({
+            //         key: url,
+            //         url: url,
+            //         completed: (image: any, key: string) => {
+            //             if (url === key) {
+            //                 imgSouce = imageSource.fromNativeSource(image);
+            //             }
+            //         }
+            //     });
+            // }
 		});
 	
     helpers.platformInit(page);

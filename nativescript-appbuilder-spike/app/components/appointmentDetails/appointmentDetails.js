@@ -159,7 +159,7 @@ exports.confirm = function(args){
       	cancelButtonText: "Cancel"
     }).then(function (result) {// result argument is boolean
       	console.log("Dialog result: " + result);
-        // updateAppointment(pageData.appointmentDetails);
+        updateAppointment(pageData.appointmentDetails);
     });
 }
 
@@ -171,7 +171,7 @@ exports.cancel = function(args){
       	cancelButtonText: "No"
     }).then(function (result) {// result argument is boolean
       	console.log("Dialog result: " + result);
-        // updateAppointment(pageData.appointmentDetails);
+        updateAppointment(pageData.appointmentDetails);
     });
 }
 
@@ -183,26 +183,27 @@ exports.delete = function(args){
       	cancelButtonText: "Cancel"
     }).then(function (result) {// result argument is boolean
       	console.log("Dialog result: " + result);
-        // updateAppointment(pageData.appointmentDetails);
+        updateAppointment(pageData.appointmentDetails);
     });
 }
 
 function updateAppointment(postData) {
-    appointmentDetails
-		.update(postData)
-		.catch(function(error) {
-        	helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
-    	})
-		.then(function() {
-        	pageData.set('appointmentDetails', appointmentDetails.Result);
+    pageData.set('dataEdited', false);
+    // appointmentDetails
+    // .update(postData)
+    // .catch(function(error) {
+    //     	helpers.handleLoadError(error, 'Sorry, we could not update your appointments list');
+    // 	})
+    // .then(function() {
+    //     	pageData.set('appointmentDetails', appointmentDetails.Result);
         
-        	if (pageData.get('messageHistory').length === 0) {
-				appointmentDetails.Result.history.forEach(function(message) {
-					pageData.messageHistory.push(message);
-            	})
-            }
-			helpers.togglePageLoadingIndicator(false, pageData);
-		});
+    //     	if (pageData.get('messageHistory').length === 0) {
+    // appointmentDetails.Result.history.forEach(function(message) {
+    // pageData.messageHistory.push(message);
+    //         	})
+    //         }
+    // helpers.togglePageLoadingIndicator(false, pageData);
+    // });
 }
 
 function onDataEdited(flag) {
@@ -212,15 +213,15 @@ function onDataEdited(flag) {
     pageData.set('dataEdited', flag);
     
     if (pageData.get('appointmentDetails').get('canAccept')) {
-        if (client_status_text != "Approved" && !pageData.get('dataEdited')) { //CONFIRM
+        if (client_status_text != "Approved" && !flag) { //CONFIRM
 			button.text = "Confirm";
         }
 
-        if (client_status_text != "Approved" && pageData.get('dataEdited')) { //SAVE&CONFIRM
+        if (client_status_text != "Approved" && flag) { //SAVE&CONFIRM
             button.text = "Save & Confirm";
         }
 
-        if (client_status_text == "Approved" && pageData.get('dataEdited')) { //SAVE
+        if (client_status_text == "Approved" && flag) { //SAVE
             button.text = "Save";
         }
     }
