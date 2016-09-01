@@ -2,41 +2,55 @@
       xmlns:lv="nativescript-telerik-ui-pro/listview"
       shownModally="onShownModally"
       loaded="onLoaded">
-    <GridLayout rows="60, auto, *" columns="*">
+    <GridLayout rows="60, *" columns="*">
         <StackLayout row="0" col="0" orientation="horizontal" id="actionBarLayout" class="search-top">
             <Label class="ionicons-icon return-arrow" text="&#xf2ca;" tap="onClose" />
         </StackLayout>
-        <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" style="margin-top:35%;" />
-        <lv:RadListView id="searchResults" row="2" col="0" items="{{searchResultsList}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult">
-            <lv:RadListView.listViewLayout>
-                <lv:ListViewLinearLayout scrollDirection="Vertical" />
-            </lv:RadListView.listViewLayout>
-            <lv:RadListView.itemTemplate>
+        
+        <StackLayout row="1">
 
-                <StackLayout class="search-wrapper">
-<!--                     <Label class="search-result-title" text="Clients" /> -->
+            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="1" col="0" style="margin-top:35%;" />
 
-                    <StackLayout orientation="horizontal" class="appointment-row" visibility="{{type == 'booking' ? 'visible' : 'collapse'}}">                        
-                         <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
-                             <Label text="{{time}}" class="appointment-time" />
-                             <Label text="{{length}}" class="appointment-length" />
-                         </StackLayout>                            
-                         <StackLayout width="60" verticalAlignment="center">
-                             <StackLayout class="appointment-status appointment-confirmed">
-                                 <Label class="ionicons-icon" text="&#xf122;" />
+            <!-- BOOKINGS -->
+            <Label text="Appointments" class="appointment-calendar-date" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+            <lv:RadListView id="searchResults" col="0" items="{{searchResultsList.bookings}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult"  >
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                </lv:RadListView.listViewLayout>
+
+                <lv:RadListView.itemTemplate>
+                    <StackLayout class="search-wrapper">
+                        <StackLayout orientation="horizontal" class="appointment-row">                        
+                             <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
+                                 <Label text="{{time}}" class="appointment-time" />
+                                 <Label text="{{length}}" class="appointment-length" />
+                             </StackLayout>                            
+                             <StackLayout width="60" verticalAlignment="center">
+                                 <StackLayout class="appointment-status appointment-confirmed">
+                                     <Label class="ionicons-icon" text="&#xf122;" />
+                                 </StackLayout>
+                             </StackLayout>                            
+                             <StackLayout verticalAlignment="center">
+                                <WrapLayout>
+                                    <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
+                                    <Label text="New" class="client-status" />
+                                </WrapLayout>
+                                <Label text="{{location}}" class="row-appointment-location" />
                              </StackLayout>
-                         </StackLayout>                            
-                         <StackLayout verticalAlignment="center">
-                            <WrapLayout>
-                                <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
-                                <Label text="New" class="client-status" />
-                            </WrapLayout>
-                            <Label text="{{location}}" class="row-appointment-location" />
-                         </StackLayout>
+                        </StackLayout>
                     </StackLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
 
-                    <!-- Clients -->
-                    <StackLayout orientation="horizontal" class="client-row" visibility="{{type == 'client' ? 'visible' : 'collapse'}}">                        
+            <!-- CLIENTS -->
+            <Label text="Clients" class="appointment-calendar-date" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
+            <lv:RadListView id="searchResults" col="0" items="{{searchResultsList.clients}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult" >
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                </lv:RadListView.listViewLayout>
+
+                <lv:RadListView.itemTemplate>
+                    <StackLayout orientation="horizontal" class="client-row">                        
                         <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
                             <Label class="client-row-thumbnail" col="0" />
                             <StackLayout col="1" verticalAlignment="center">
@@ -50,10 +64,10 @@
                             <Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" visibility="{{status  == 'blacklist' ? 'visible' : 'collapse'}}" />
                         </GridLayout>
                     </StackLayout>
-                </StackLayout>
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>
 
-            </lv:RadListView.itemTemplate>
-        </lv:RadListView>
-
+        </StackLayout>
+            
     </GridLayout>
 </Page>

@@ -1,5 +1,8 @@
 'use strict';
 var Observable = require('data/observable').Observable;
+var timer = require("timer");
+var appSettings = require("application-settings");
+
 var MessagesViewModel = require('./messages-view-model');
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
@@ -18,6 +21,8 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'messages');
+    
 	messageList
 		.load()
 		.catch(function(error) {
@@ -48,3 +53,21 @@ exports.onSelectMessage  = function(args) {
         }
     });
 }
+
+exports.onLoadMoreItemsRequested = function (args) {
+    timer.setTimeout(function () {
+        var listView = args.object;
+
+        messageList
+            .loadMore()
+            .catch(function(error) {
+                helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
+            })
+            .then(function() {
+                
+            });
+        
+        listView.notifyLoadOnDemandFinished();
+    }, 1000);
+    args.returnValue = true;
+};

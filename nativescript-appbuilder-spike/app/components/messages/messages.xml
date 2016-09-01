@@ -14,7 +14,11 @@
             <GridLayout>
                 <GridLayout rows="auto, *" columns="*">
                     <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
-                    <lv:RadListView items="{{messageList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                    <lv:RadListView items="{{messageList}}" 
+                                    row="1" col="0" 
+                                    loadOnDemandMode="Manual" 
+                                    loadMoreDataRequested="onLoadMoreItemsRequested"
+                                    visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                         <lv:RadListView.listViewLayout>
                             <lv:ListViewLinearLayout scrollDirection="Vertical" />
                         </lv:RadListView.listViewLayout>

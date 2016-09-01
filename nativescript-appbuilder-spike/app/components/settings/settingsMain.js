@@ -10,12 +10,12 @@ var page;
 var settings = new SettingsViewModel();
 var pageData = new Observable({
     settingsInfo: {
-        "userName": "jennycandy07",
-        "name": "Jenny Mathers",
-        "email": "jennycandy857@gmail.com",
-        "mobile": "123-456-7890",
-        "password": "password",
-        "timeZone": "GMT-05:00 Eastern Time (EST)"
+        "user_userName": "jennycandy07",
+        "user_name": "Jenny Mathers",
+        "user_email": "jennycandy857@gmail.com",
+        "user_mobile": "123-456-7890",
+        "user_password": "password",
+        "user_timeZone": "GMT-05:00 Eastern Time (EST)"
     },
     backButtonHidden: false,
     SideMenuHidden: true,
@@ -32,6 +32,10 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     helpers.platformInit(page);
 
+    var test = pageData.get('settingsInfo');
+    test = new Observable(test);
+    pageData.set('settingsInfo', test);
+    
 	settings
 		.load()
 		.catch(function(error) {
@@ -47,13 +51,14 @@ exports.editText = function(args) {
     var id = args.object.id;
     dialogs.prompt({
 		title: "Edit",
+        // message: "Edit",
       	okButtonText: "Save",
       	cancelButtonText: "Cancel",
       	defaultText: args.object.text,
       	inputType: dialogs.inputType.text
-    }).then(function (r) {
-        if (r.result) {
-        	pageData.get('settingsInfo').set(args.object.id, r.text);
+    }).then(function (response) {
+        if (response.result) {
+			pageData.get('settingsInfo').set(args.object.id, response.text);
         }
     });
 }
@@ -61,7 +66,7 @@ exports.editText = function(args) {
 exports.onTap = function(args) {
     var section = args.object.section;
     
-    helpers.tapFlash(args.object, '#333', '#F3F3F3').then(function() {
+    helpers.tapFlash(args.object, '#333', '#FFF').then(function() {
         helpers.navigate({
             moduleName: 'components/settings/subviews/' + section + '/' + section,
             context: {
@@ -69,11 +74,4 @@ exports.onTap = function(args) {
             }
         });
     });
-    
-    // helpers.navigate({
-    //     moduleName: 'components/settings/subviews/' + section + '/' + section,
-    //     context: {
-    //         pageData: pageData
-    //     }
-    // });
 };

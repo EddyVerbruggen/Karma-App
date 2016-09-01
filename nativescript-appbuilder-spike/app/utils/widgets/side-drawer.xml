@@ -1,4 +1,4 @@
-<StackLayout class="drawer-menu-content" loaded="onLoad">
+<StackLayout class="drawer-menu-content" loaded="onLoad" >
     <StackLayout class="drawer-top-area" orientation="horizontal">
         <StackLayout width="60">
             <Label style="background-image: url('~/images/girl-100x100.jpg');" class="profile-thumbnail" />
@@ -9,7 +9,7 @@
         </StackLayout>
     </StackLayout>
     <StackLayout class="drawer-nav-area">
-        <StackLayout class="drawer-nav-item" orientation="horizontal" tap="onTapDashboard">
+        <StackLayout class="{{ activeTab == 'dashboard' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" tap="onTapDashboard">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf447;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
@@ -17,23 +17,23 @@
                 <Label text="Dashboard" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-        <StackLayout class="drawer-nav-item" orientation="horizontal" section="appointments" type="all" tap="onTap">
+        <StackLayout class="{{ activeTab == 'appointments' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="appointments" type="all" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf402;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
             <StackLayout verticalAlignment="center">
-                <Label text="Appointments (6)" class="nav-text" /> 
+                <Label text="{{ sideDrawer.num_bookings, 'Appointments (' + sideDrawer.num_bookings + ')' }}" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-        <StackLayout class="drawer-nav-item" orientation="horizontal" section="clients" type="all" tap="onTap">
+        <StackLayout class="{{ activeTab == 'clients' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="clients" type="all" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf47d;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
             <StackLayout verticalAlignment="center">
-                <Label text="Clients (265)" class="nav-text" /> 
+                <Label text="{{ sideDrawer.num_clients, 'Clients (' + sideDrawer.num_clients + ')' }}" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-<!--         <StackLayout class="drawer-nav-item" orientation="horizontal" section="availability" type="all" tap="onTap">
+<!--         <StackLayout class="{{ activeTab == 'availability' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="availability" type="all" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf3f3;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
@@ -41,7 +41,7 @@
                 <Label text="Availability" class="nav-text" /> 
             </StackLayout>
         </StackLayout> -->
-        <StackLayout class="drawer-nav-item" orientation="horizontal" section="visitors" tap="onTap">
+        <StackLayout class="{{ activeTab == 'visitors' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="visitors" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf274;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
@@ -49,7 +49,7 @@
                 <Label text="Visitors" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-        <StackLayout class="drawer-nav-item" orientation="horizontal" section="messages" tap="onTap">
+        <StackLayout class="{{ activeTab == 'messages' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="messages" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf3f9;" class="ionicons-icon nav-icon" /> 
             </StackLayout>
@@ -57,7 +57,7 @@
                 <Label text="Messages" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-        <StackLayout class="drawer-nav-item" orientation="horizontal" section="help" tap="onTap">
+        <StackLayout class="{{ activeTab == 'help' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="help" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf445;" class="ionicons-icon nav-icon" /> 
             </StackLayout>

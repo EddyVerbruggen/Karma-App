@@ -8,10 +8,7 @@ var navigation = require('../../utils/navigation');
 function MessagesViewModel(clients) {
     var viewModel = new ObservableArray(clients)
 
-    viewModel.load = function(status, tag, sortby) {
-        status = status || 'all';
-        tag = tag || 'all';
-        sortby = sortby || 'createddesc';
+    viewModel.load = function() {
 
         var fetchData = fetch(config.apiUrl + 'messages/index.json', {
             headers: {
@@ -24,6 +21,24 @@ function MessagesViewModel(clients) {
             .then(handleResponse)
             .then(function(data) {
                 viewModel.empty();
+                data.messages.forEach(function(message) {
+                    viewModel.push(message);
+                })
+            });
+    };
+    
+    viewModel.loadMore = function(page, pageSize) {
+
+        var fetchData = fetch(config.apiUrl + 'messages/index.json?page=' + page + '&pageSize=' + pageSize, {
+            headers: {
+                Authorization: 'Bearer ' + config.token,
+                TestData: config.testData
+            }
+        });
+
+        return fetchData
+            .then(handleResponse)
+            .then(function(data) {
                 data.messages.forEach(function(message) {
                     viewModel.push(message);
                 })

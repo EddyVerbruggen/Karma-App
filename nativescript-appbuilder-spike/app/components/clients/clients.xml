@@ -15,7 +15,11 @@
             <GridLayout>
                 <GridLayout rows="auto, *, 60" columns="*">
                     <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
-                    <lv:RadListView items="{{clientsList}}" row="1" col="0" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                    <lv:RadListView items="{{clientsList}}" 
+                                    row="1" col="0" 
+                                    loadOnDemandMode="Manual" 
+                                    loadMoreDataRequested="onLoadMoreItemsRequested"
+                                    visibility="{{ isLoading ? 'collapse' : 'visible' }}">
                         <lv:RadListView.listViewLayout>
                             <lv:ListViewLinearLayout scrollDirection="Vertical" />
                         </lv:RadListView.listViewLayout>
@@ -52,7 +56,7 @@
                             
                                 <!-- <Label text="{{selectedTag}}" class="client-options-text" /> -->
                                 <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
-                                <dd:DropDown id="dd" class="client-options-text" items="{{ tagsList }}" selectedIndex="{{ selectedTag }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ tagList }}" selectedIndex="{{ selectedTag }}" row="0" colSpan="2" tap="onTapOverlay" />
                                 <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
                             
                         </StackLayout>
@@ -67,46 +71,6 @@
                         </StackLayout>
                     </StackLayout>
                 </GridLayout>        
-
-                <!--
-				<GridLayout rows="auto, auto, *" columns="auto, *" backgroundColor="#555" id="statusList" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-                	<dd:DropDown items="{{ statusList }}" selectedIndex="{{ selectedIndex }}" row="0" colSpan="2" />
-             	</GridLayout>
-				-->                    
-
-                <!-- 
-                <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="statusList" verticalAlignment="center" visibility="{{statusVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-                    <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-                        <ListView items="{{statusList}}" itemTap="onSelectStatus">
-                            <ListView.itemTemplate>
-                                <Label text="{{status}}" fontSize="20" color="black" padding="10" margin="10" />
-                            </ListView.itemTemplate>
-                        </ListView>
-                    </StackLayout>
-                </StackLayout>
-				
-
-                <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="tagsList" verticalAlignment="center" visibility="{{tagsVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-                    <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-                        <ListView items="{{tagsList}}" itemTap="onSelectTag">
-                            <ListView.itemTemplate>
-                                <Label text="{{tag}}" fontSize="20" color="black" padding="10" margin="10" />
-                            </ListView.itemTemplate>
-                        </ListView>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout width="100%" height="100%" backgroundColor="#555" opacity="0" id="sortbyList" verticalAlignment="center" visibility="{{sortbyVisible ? 'visible' : 'collapse'}}" tap="onTapOverlay">
-                    <StackLayout width="50%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
-                        <ListView items="{{sortbyList}}" itemTap="onSelectSortby">
-                            <ListView.itemTemplate>
-                                <Label text="{{field}}" fontSize="20" color="black" padding="10" margin="10" />
-                            </ListView.itemTemplate>
-                        </ListView>
-                    </StackLayout>
-                </StackLayout>
-				-->
-
             </GridLayout>
         </drawer:RadSideDrawer.mainContent>
 	</drawer:RadSideDrawer>

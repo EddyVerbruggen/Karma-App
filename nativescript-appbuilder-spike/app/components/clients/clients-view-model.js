@@ -25,8 +25,27 @@ function ClientsViewModel(clients) {
             .then(handleResponse)
             .then(function(data) {
                 viewModel.empty();
-            	console.log(JSON.stringify(data.clients));
-            
+                data.clients.forEach(function(client) {
+                    viewModel.push(client);
+                })
+            });
+    };
+    
+    viewModel.loadMore = function(page, pageSize, status, tag, sortby) {
+        status = status || 'all';
+        tag = tag || 'all';
+        sortby = sortby || 'createddesc';
+
+        var fetchData = fetch(config.apiUrl + 'clients/index.json?page=' + page + '&pageSize=' + pageSize, {
+                headers: {
+                    Authorization: 'Bearer ' + config.token,
+                    TestData: config.testData
+                }
+        	});
+
+        return fetchData
+            .then(handleResponse)
+            .then(function(data) {
                 data.clients.forEach(function(client) {
                     viewModel.push(client);
                 })

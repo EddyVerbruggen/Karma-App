@@ -1,5 +1,8 @@
 'use strict';
 var Observable = require('data/observable').Observable;
+var timer = require("timer");
+var appSettings = require("application-settings");
+
 var AppointmentsViewModel = require('./appointments-view-model');
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
@@ -21,6 +24,7 @@ exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
+    appSettings.setString('activeTab', 'appointments');
 	appointmentsList
 		.load()
 		.catch(function(error) {
@@ -78,3 +82,22 @@ exports.onSelectAppointment = function(args) {
         });        
     });
 }
+
+exports.onLoadMoreItemsRequested = function (args) {
+    var that = new WeakRef(this);
+    timer.setTimeout(function () {
+        var listView = args.object;
+        
+        appointmentsList
+            .loadMore()
+            .catch(function(error) {
+                helpers.handleLoadError(error, 'Sorry, we could not load your appointments list');
+            })
+            .then(function() {
+
+            });
+        
+        listView.notifyLoadOnDemandFinished();
+    }, 1000);
+    args.returnValue = true;
+};

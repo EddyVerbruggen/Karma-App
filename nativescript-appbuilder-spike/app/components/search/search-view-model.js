@@ -22,10 +22,14 @@ function SearchViewModel() {
         return fetchData
             .then(handleResponse)
             .then(function(data) {
+            	console.log(JSON.stringify(data));
             	viewModel.empty();
-                data.results.forEach(function(result) {
-                    viewModel.push(result);
-                });
+            	for (var item in data) {
+            		viewModel.set(item, data[item]);
+            	}
+                // data.bookings.forEach(function(result) {
+                //     viewModel.bookings.push(result);
+                // });
             });
     };
     

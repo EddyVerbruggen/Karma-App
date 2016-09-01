@@ -6,6 +6,7 @@ var Observable = require('data/observable').Observable;
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
 var dialogs = require("ui/dialogs");
+
 var views = require('../../utils/views');
 var helpers = require('../../utils/widgets/helper');
 var PickerManager = require("nativescript-timedatepicker");
@@ -217,28 +218,10 @@ function onDataEdited(flag) {
 
         if (client_status_text != "Approved" && pageData.get('dataEdited')) { //SAVE&CONFIRM
             button.text = "Save & Confirm";
-            dialogs.confirm({
-                title: "Save & Confirm",
-                message: "Are you sure you want to Save & Confirm ?",
-                okButtonText: "Save & Confirm",
-                cancelButtonText: "No"
-            }).then(function (result) {// result argument is boolean
-                console.log("Dialog result: " + result);
-                // updateAppointment(pageData.appointmentDetails);
-            });
         }
 
         if (client_status_text == "Approved" && pageData.get('dataEdited')) { //SAVE
             button.text = "Save";
-            dialogs.confirm({
-                title: "Save",
-                message: "Are you sure you want to Save ?",
-                okButtonText: "Save",
-                cancelButtonText: "No"
-            }).then(function (result) {// result argument is boolean
-                console.log("Dialog result: " + result);
-                // updateAppointment(pageData.appointmentDetails);
-            });
         }
     }
 }
