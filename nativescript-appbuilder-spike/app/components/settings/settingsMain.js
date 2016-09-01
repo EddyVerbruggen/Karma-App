@@ -1,7 +1,6 @@
 'use strict';
 
 var Observable = require('data/observable').Observable;
-var ObservableArray = require('data/observable-array').ObservableArray;
 var helpers = require('../../utils/widgets/helper');
 var SettingsViewModel = require('./settingsMain-view-model');
 var views = require('../../utils/views');
@@ -57,9 +56,9 @@ exports.editText = function(args) {
       	cancelButtonText: "Cancel",
       	defaultText: args.object.text,
       	inputType: dialogs.inputType.text
-    }).then(function (r) {
-        if (r.result) {
-			pageData.get('settingsInfo').set(args.object.id, r.text);
+    }).then(function (response) {
+        if (response.result) {
+			pageData.get('settingsInfo').set(args.object.id, response.text);
         }
     });
 }

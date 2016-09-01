@@ -1,6 +1,5 @@
 'use strict';
 var Observable = require('data/observable').Observable;
-var observableArrayModule = require('data/observable-array').ObservableArray;
 
 var page, parentView, location;
 var closeCallback;
