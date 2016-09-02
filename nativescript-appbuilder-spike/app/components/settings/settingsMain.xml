@@ -20,7 +20,7 @@
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Username" class="settings-label" />
-                    <TextField id="user_userName" editable="false" text="{{settingsInfo.user_userName}}" class="settings-textfield" tap="editText" />
+                    <TextField id="user_userName" editable="false" text="{{settingsInfo.user_userName}}" class="settings-textfield" />
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Name" class="settings-label" />

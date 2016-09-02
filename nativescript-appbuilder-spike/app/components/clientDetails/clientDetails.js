@@ -15,6 +15,7 @@ var isInit = true;
 var clientDetails = new ClientDetailsViewModel();
 var pageData = new Observable({
     clientDetails: clientDetails,
+    profileThumb: '',
     isLoading: true,
     pageTitle: "",
     SideMenuHidden: true,
@@ -43,28 +44,27 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
+        
+        	//IMAGE-CACHE MODULE
         	var imgSouce = imageSource.ImageSource;
             var url = pageData.get('clientDetails').get('Result');//.get('images');
-        	url = url.images[0];
-            // Try to read the image from the cache
-            var image = cache.get(url);
-            console.log(JSON.stringify(image));
-            // if (image) {
-            //     // If present -- use it.
-            //     imgSouce = imageSource.fromNativeSource(image);
-            // }
-            // else {
-            //     // If not present -- request its download.
-            //     cache.push({
-            //         key: url,
-            //         url: url,
-            //         completed: (image: any, key: string) => {
-            //             if (url === key) {
-            //                 imgSouce = imageSource.fromNativeSource(image);
-            //             }
-            //         }
-            //     });
-            // }
+        	url = "http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";//url.images[0];
+            var image = cache.get(url);// Try to read the image from the cache
+            if (image) { // If present -- use it.
+                imgSouce = imageSource.fromNativeSource(image);
+                pageData.set('profileThumb', imgSouce);
+            } else { //If not present -- request its download.
+                cache.push({
+                    key: url,
+                    url: url,
+                    completed: function (image, key) {
+                        if (url === key) {
+                            imgSouce = imageSource.fromNativeSource(image);
+                        }
+                        pageData.set('profileThumb', imgSouce);
+                    }
+                });
+            }
 		});
 	
     helpers.platformInit(page);

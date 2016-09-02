@@ -13,7 +13,11 @@
 
             <!-- BOOKINGS -->
             <Label text="Appointments" class="appointment-calendar-date" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
-            <lv:RadListView id="searchResults" col="0" items="{{searchResultsList.bookings}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult"  >
+            <lv:RadListView id="searchResults" col="0" 
+                            items="{{searchResultsList.bookings}}" 
+                            loadOnDemandMode="Manual" 
+                            loadMoreDataRequested="onLoadMoreItemsRequested"
+                            visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult"  >
                 <lv:RadListView.listViewLayout>
                     <lv:ListViewLinearLayout scrollDirection="Vertical" />
                 </lv:RadListView.listViewLayout>
@@ -44,7 +48,11 @@
 
             <!-- CLIENTS -->
             <Label text="Clients" class="appointment-calendar-date" visibility="{{ isLoading ? 'collapse' : 'visible' }}" />
-            <lv:RadListView id="searchResults" col="0" items="{{searchResultsList.clients}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult" >
+            <lv:RadListView id="searchResults" col="0" 
+                            items="{{searchResultsList.clients}}" 
+                            loadOnDemandMode="Manual" 
+                            loadMoreDataRequested="onLoadMoreItemsRequested"
+                            visibility="{{ isLoading ? 'collapse' : 'visible' }}" itemTap="onTapResult" >
                 <lv:RadListView.listViewLayout>
                     <lv:ListViewLinearLayout scrollDirection="Vertical" />
                 </lv:RadListView.listViewLayout>
