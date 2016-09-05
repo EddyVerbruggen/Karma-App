@@ -11,7 +11,7 @@ var settings = {
     // Android settings
     senderID: '15418821702', // Android: Required setting with the sender/project number
     notificationCallbackAndroid: function(message, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
-        alert(JSON.stringify(message + "hi"));
+        alert(JSON.stringify(message));
     },
 
     // iOS settings
@@ -21,7 +21,7 @@ var settings = {
 
     // Callback to invoke, when a push is received on iOS
     notificationCallbackIOS: function(message) {
-        alert(JSON.stringify(message + "hii"));
+        alert(JSON.stringify(message));
     }
 };
 
@@ -60,7 +60,7 @@ exports.onLoaded = function(args) {
                 pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
             }
 
-            alert('Device registered successfully:' + token);
+            alert('Device registered successfully');
         },
         // Error Callback
         function(error) {
