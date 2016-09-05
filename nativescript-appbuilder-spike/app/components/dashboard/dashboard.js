@@ -5,6 +5,25 @@ var appSettings = require("application-settings");
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
 var DashboardViewModel = require('./dashboard-view-model');
+var pushPlugin = require('nativescript-push-notifications');
+
+var settings = {
+    // Android settings
+    senderID: '15418821702', // Android: Required setting with the sender/project number
+    notificationCallbackAndroid: function(message, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
+        alert(JSON.stringify(message + "hi"));
+    },
+
+    // iOS settings
+    badge: true, // Enable setting badge through Push Notification
+    sound: true, // Enable playing a sound
+    alert: true, // Enable creating a alert
+
+    // Callback to invoke, when a push is received on iOS
+    notificationCallbackIOS: function(message) {
+        alert(JSON.stringify(message + "hii"));
+    }
+};
 
 var page;
 var isInit = true;
@@ -31,6 +50,24 @@ exports.onLoaded = function(args) {
         	// pageData.set('Dashboard', Dashboard);
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
+    
+    pushPlugin.register(settings,
+        // Success callback
+        function(token) {
+            // if we're on android device we have the onMessageReceived function to subscribe
+            // for push notifications
+            if(pushPlugin.onMessageReceived) {
+                pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
+            }
+
+            alert('Device registered successfully:' + token);
+        },
+        // Error Callback
+        function(error) {
+            alert(error);
+        }
+    );
+    
 }
 
 exports.onSelectAppointment = function(args) {
