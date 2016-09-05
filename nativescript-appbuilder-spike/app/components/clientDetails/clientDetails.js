@@ -4,18 +4,17 @@ var tabViewModule = require("ui/tab-view");
 var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var dialogs = require("ui/dialogs");
-var imageCacheModule = require("ui/image-cache");
-var imageSource = require("image-source");
-var fs = require("file-system");
 
 var helpers = require('../../utils/widgets/helper');
+var imageCache = require('../../utils/image-cache');
 
 var page;
 var isInit = true;
+var img;
 var clientDetails = new ClientDetailsViewModel();
 var pageData = new Observable({
     clientDetails: clientDetails,
-    profileThumb: '',
+    profileThumb: "",
     isLoading: true,
     pageTitle: "",
     SideMenuHidden: true,
@@ -28,14 +27,7 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
-    
-    var cache = new imageCacheModule.Cache();
-    cache.placeholder = imageSource.fromFile(fs.path.join(__dirname, "../../images/placeholder/temp-client-thumb.jpg"));
-    cache.maxRequests = 5;
-    
-    // Enable download while not scrolling
-	cache.enableDownload();
-    
+        
 	clientDetails
 		.load(gotData.id)
 		.catch(function(error) {
@@ -44,27 +36,35 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
+
+        	img = imageCache.getImage("http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg");
         
-        	//IMAGE-CACHE MODULE
-        	var imgSouce = imageSource.ImageSource;
-            var url = pageData.get('clientDetails').get('Result');//.get('images');
-        	url = "http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";//url.images[0];
-            var image = cache.get(url);// Try to read the image from the cache
-            if (image) { // If present -- use it.
-                imgSouce = imageSource.fromNativeSource(image);
-                pageData.set('profileThumb', imgSouce);
-            } else { //If not present -- request its download.
-                cache.push({
-                    key: url,
-                    url: url,
-                    completed: function (image, key) {
-                        if (url === key) {
-                            imgSouce = imageSource.fromNativeSource(image);
-                        }
-                        pageData.set('profileThumb', imgSouce);
-                    }
-                });
-            }
+            setTimeout(function(){ 
+                alert(img);
+				pageData.set('profileThumb', img);
+            }, 10000);
+        
+        	
+        	// //IMAGE-CACHE MODULE
+        	// var imgSouce = imageSource.ImageSource;
+        	// var url = pageData.get('clientDetails').get('Result');//.get('images');
+        	// url = "http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";//url.images[0];
+        	// var image = cache.get(url);// Try to read the image from the cache
+        	// if (image) { // If present -- use it.
+        	// imgSouce = imageSource.fromNativeSource(image);
+        	// pageData.set('profileThumb', imgSouce);
+        	// } else { //If not present -- request its download.
+        	// cache.push({
+        	// key: url,
+        	// url: url,
+        	// completed: function (image, key) {
+        	// if (url === key) {
+        	// imgSouce = imageSource.fromNativeSource(image);
+        	// }
+        	// pageData.set('profileThumb', imgSouce);
+        	// }
+        	// });
+        	// }
 		});
 	
     helpers.platformInit(page);

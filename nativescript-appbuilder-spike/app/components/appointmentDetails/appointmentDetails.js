@@ -158,7 +158,6 @@ exports.confirm = function(args){
       	okButtonText: "Confirm",
       	cancelButtonText: "Cancel"
     }).then(function (result) {// result argument is boolean
-      	console.log("Dialog result: " + result);
         updateAppointment(pageData.appointmentDetails);
     });
 }
@@ -170,7 +169,6 @@ exports.cancel = function(args){
       	okButtonText: "Yes",
       	cancelButtonText: "No"
     }).then(function (result) {// result argument is boolean
-      	console.log("Dialog result: " + result);
         updateAppointment(pageData.appointmentDetails);
     });
 }
@@ -182,7 +180,6 @@ exports.delete = function(args){
       	okButtonText: "Delete",
       	cancelButtonText: "Cancel"
     }).then(function (result) {// result argument is boolean
-      	console.log("Dialog result: " + result);
         updateAppointment(pageData.appointmentDetails);
     });
 }

@@ -148,11 +148,11 @@
     </ScrollView>
 
     <StackLayout orientation="horizontal" row="1" col="0" class="client-options">
-        <StackLayout width="40%">
-            <Label text="Approve" class="approve-button" tap="approve" />
+        <StackLayout width="80%">
+            <Label text="Approve" class="approve-button" tap="approve" visibility="{{ clientDetails.Result.screening.screening.status_text == 'Rejected' ? 'visible' : 'collapse' }}" />
         </StackLayout>
-        <StackLayout width="40%">
-            <Label text="Reject" class="reject-button" tap="reject" />
+        <StackLayout width="80%">
+            <Label text="Reject" class="reject-button" tap="reject" visibility="{{ clientDetails.Result.screening.screening.status_text == 'Approved' ? 'visible' : 'collapse' }}" />
         </StackLayout>
         <StackLayout width="20%">
             <Label text="&#xf4c4;" class="ionicons-icon delete-button" tap="delete" />
