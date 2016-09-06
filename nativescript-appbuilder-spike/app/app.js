@@ -1,5 +1,5 @@
-var application = require('application'),
-    navigation = require('./utils/navigation');
+var application = require('application');
+var navigation = require('./utils/navigation');
 var appSettings = require("application-settings");
 
 application.start({
