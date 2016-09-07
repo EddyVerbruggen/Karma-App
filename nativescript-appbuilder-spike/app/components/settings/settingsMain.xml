@@ -28,15 +28,15 @@
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Email" class="settings-label" />
-                    <TextField id="user_email" editable="false" text="{{settingsInfo.user_email}}" class="settings-textfield" tap="editText" />
+                    <TextField id="user_email" editable="false" text="{{settingsInfo.user_email}}" class="settings-textfield" tap="editWithPass" />
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Mobile Number" class="settings-label" />
-                    <TextField id="user_mobile" editable="false" text="{{settingsInfo.user_mobile}}" class="settings-textfield" tap="editText" />
+                    <TextField id="user_mobile" editable="false" text="{{settingsInfo.user_mobile}}" class="settings-textfield" tap="editWithPass" />
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Password" class="settings-label" />
-                    <TextField id="user_password" secure="true" editable="false" text="{{settingsInfo.user_password}}" class="settings-textfield" tap="editText" />
+                    <TextField id="user_password" secure="true" editable="false" text="{{settingsInfo.user_password}}" class="settings-textfield" tap="editWithPass" />
                 </StackLayout>
                 <StackLayout class="settings-input-row">
                     <Label text="Timezone" class="settings-label" />

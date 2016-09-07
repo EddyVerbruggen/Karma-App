@@ -11,8 +11,8 @@ var helpers = require('../../utils/widgets/helper');
 var imageCacheModule = require("ui/image-cache");
 var imageSource = require("image-source");
 var fs = require("file-system");
-var image;
-var imgSouce;
+var cache = new imageCacheModule.Cache();
+var image, imgSource;
 
 var page;
 var isInit = true;
@@ -34,8 +34,7 @@ exports.onLoaded = function(args) {
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
     
-    var cache = new imageCacheModule.Cache();
-    cache.placeholder = imageSource.fromFile(fs.path.join(__dirname, "../images/placeholder/temp-client-thumb.jpg"));
+    cache.placeholder = imageSource.fromFile("../../images/placeholder/temp-client-thumb.jpg");
     cache.maxRequests = 5;
 
     cache.enableDownload();
@@ -49,34 +48,25 @@ exports.onLoaded = function(args) {
         	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
 
-        	// img = imageCache.getImage("http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg");
-        	// setTimeout(function(){ 
-        	// alert(img);
+        	// img = imageCache.getImage("http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg"));
         	// pageData.set('profileThumb', img);
-        	// }, 10000);
-        
         	
         	//IMAGE-CACHE MODULE
-        	imgSouce: imageSource.ImageSource;
         	var url = pageData.get('clientDetails').get('Result');//.get('images');
         	url = "http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";//url.images[0];
         	image = cache.get(url);// Try to read the image from the cache
         	if (image) { // If present -- use it.
-        		imgSouce = imageSource.fromNativeSource(image);
-        		pageData.set('profileThumb', imgSouce);
-                alert(JSON.stringify(pageData.get('profileThumb')));
+        		imgSource = imageSource.fromNativeSource(image);
+        		pageData.set('profileThumb', imgSource);
         	} else { //If not present -- request its download.
                 cache.push({
                     key: url,
                     url: url,
                     completed: function (image, key) {
-                        // alert(url === key ? 'true' : 'false');
                         if (url === key) {
-                            // alert(JSON.stringify(imageSource.fromNativeSource(image)));
-	                        imgSouce = imageSource.fromNativeSource(image);
+                        	imgSource = imageSource.fromNativeSource(image);
                         }
-    	                pageData.set('profileThumb', imgSouce);
-                        alert(JSON.stringify(pageData.get('profileThumb')));
+                    	pageData.set('profileThumb', imgSource);
                     }
                 });
         	}

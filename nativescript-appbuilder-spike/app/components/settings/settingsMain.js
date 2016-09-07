@@ -47,7 +47,7 @@ exports.onLoaded = function(args) {
 		});
 };
 
-exports.editText = function(args) {
+var editText = function(args) {
     var id = args.object.id;
     dialogs.prompt({
     title: "Edit",
@@ -61,19 +61,57 @@ exports.editText = function(args) {
     		pageData.get('settingsInfo').set(args.object.id, response.text);
         }
     });
-    
-    // var options = {
-    //     title: "Edit",
-    //     // message: "Login",
-    //     username: args.object.text,
-    //     password: "",
-    //     okButtonText: "Change",
-    // 	cancelButtonText: "Cancel"
-    // };
-    // dialogs.login(options).then(function (loginResult) {
-    //     // true or false.
-    //     console.log(loginResult.result);
-    // });
+}
+
+exports.editText = editText;
+
+exports.editWithPass = function(args) {
+    editWithPass(args);
+}
+
+function editWithPass(args0) {
+    var passwordPageModule = 'components/settings/dialogs/password/password';
+    var context = {
+        args: args0
+    };
+    var fullscreen = false;
+    page.showModal(passwordPageModule, context, function closeCallback(args) {
+        if (args) {
+            if (args && args == pageData.get('settingsInfo').get('user_password')) {
+                if (args0.object.id == 'user_password') {
+                    changePass(args0);
+                } else {
+                    editText(args0);   
+                }
+            } else {
+                incorrectPass(args0);
+            }   
+        }
+    }, false);
+}
+
+function incorrectPass(args0) {
+    var incorrectPageModule = 'components/settings/dialogs/incorrect/incorrect';
+    var context = {
+        args: args0
+    };
+    page.showModal(incorrectPageModule, context, function closeCallback(args) {
+        if (args == "TRY_AGAIN") {
+            editWithPass(args0);
+        }
+    }, false);  
+}
+
+function changePass(args0) {
+    var changePageModule = 'components/settings/dialogs/edit/edit';
+    var context = {
+        args: args0
+    };
+    page.showModal(changePageModule, context, function closeCallback(args) {
+        if (args) {
+            pageData.get('settingsInfo').set('user_password', args);
+        }
+    }, false); 
 }
 
 exports.onTap = function(args) {

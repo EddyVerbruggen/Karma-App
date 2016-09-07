@@ -9,7 +9,7 @@ var pushPlugin = require('nativescript-push-notifications');
 
 var settings = {
     // Android settings
-    senderID: '15418821702', // Android: Required setting with the sender/project number
+    senderID: '805278853835', // Android: Required setting with the sender/project number
     notificationCallbackAndroid: function(message, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
         alert(JSON.stringify(message));
     },
@@ -51,23 +51,23 @@ exports.onLoaded = function(args) {
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
     
-    pushPlugin.register(settings,
-        // Success callback
-        function(token) {
-            // if we're on android device we have the onMessageReceived function to subscribe
-            // for push notifications
-            if(pushPlugin.onMessageReceived) {
-                pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
-            }
-
-            alert('Device registered successfully');
-        },
-        // Error Callback
-        function(error) {
-            alert(error);
-        }
-    );
-    
+    // pushPlugin.register(settings,
+    //     // Success callback
+    //     function(token) {
+    //         // if we're on android device we have the onMessageReceived function to subscribe
+    //         // for push notifications
+    //         if(pushPlugin.onMessageReceived) {
+    //             pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
+    //         }
+    // console.log(token);
+    //         // alert('Device registered successfully');
+    //     },
+    //     // Error Callback
+    //     function(error) {
+    //         alert(error);
+    //     }
+    // );
+        
 }
 
 exports.onSelectAppointment = function(args) {
