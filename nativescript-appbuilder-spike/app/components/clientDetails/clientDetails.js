@@ -34,9 +34,11 @@ exports.onLoaded = function(args) {
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
     
-    cache.placeholder = imageSource.fromFile("../../images/placeholder/temp-client-thumb.jpg");
+    cache.placeholder = imageSource.fromFile("~/images/placeholder/temp-client-thumb.jpg");
     cache.maxRequests = 5;
 
+    pageData.set('profileThumb', cache.placeholder);
+    
     cache.enableDownload();
         
 	clientDetails
@@ -53,7 +55,7 @@ exports.onLoaded = function(args) {
         	
         	//IMAGE-CACHE MODULE
         	var url = pageData.get('clientDetails').get('Result');//.get('images');
-        	url = "http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";//url.images[0];
+        	url = url.images[0];//"http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";
         	image = cache.get(url);// Try to read the image from the cache
         	if (image) { // If present -- use it.
         		imgSource = imageSource.fromNativeSource(image);
