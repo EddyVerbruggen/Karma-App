@@ -5,7 +5,8 @@
             <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:150;" />
             <StackLayout class="appointment-details-head" orientation="horizontal" clientId="{{appointmentDetails.id}}" tap="ClientDetail" visibility="{{ isLoading ? 'collapse' : 'visible' }}">                
                 <StackLayout verticalAlignment="center">
-                    <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" />
+                    <image src="{{profileThumb}}" class="client-thumbnail" />
+<!--                     <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-thumbnail" /> -->
                 </StackLayout>
                 <StackLayout verticalAlignment="center">
                     <WrapLayout>

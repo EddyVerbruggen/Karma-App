@@ -18,6 +18,7 @@ var appointmentDetails = new AppointmentDetailsViewModel();
 var pageData = new Observable({
     appointmentDetails: appointmentDetails,
     messageHistory: new observableArrayModule(),
+    profileThumb: '~/images/placeholder/temp-client-thumb.jpg',
     isLoading: true,
     LocationVisible: false,
     dataEdited: false,
