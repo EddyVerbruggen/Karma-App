@@ -8,12 +8,6 @@ var dialogs = require("ui/dialogs");
 var helpers = require('../../utils/widgets/helper');
 var imageCache = require('../../utils/image-cache');
 
-// var imageCacheModule = require("ui/image-cache");
-// var imageSource = require("image-source");
-// var fs = require("file-system");
-// var cache = new imageCacheModule.Cache();
-// var image, imgSource;
-
 var page;
 var isInit = true;
 var clientDetails = new ClientDetailsViewModel();
@@ -32,11 +26,6 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
-    
-    // cache.placeholder = imageSource.fromFile("~/images/placeholder/temp-client-thumb.jpg");
-    // cache.maxRequests = 5;
-    // pageData.set('profileThumb', cache.placeholder);
-    // cache.enableDownload();
         
 	clientDetails
 		.load(gotData.id)
@@ -49,27 +38,7 @@ exports.onLoaded = function(args) {
 
         	var url = pageData.get('clientDetails').get('Result');//.get('images');
         	url = url.images[0].href;
-   			imageCache.getImage(url, pageData);
-        	        	
-        	//IMAGE-CACHE MODULE
-        	// var url = pageData.get('clientDetails').get('Result');//.get('images');
-        	// url = url.images[0];//"http://images.nationalgeographic.com/wpf/media-live/photos/000/576/overrides/space207-trifid-nebula_57668_600x450.jpg";
-        	// image = cache.get(url);// Try to read the image from the cache
-        	// if (image) { // If present -- use it.
-        	// 	imgSource = imageSource.fromNativeSource(image);
-        	// 	pageData.set('profileThumb', imgSource);
-        	// } else { //If not present -- request its download.
-        	// cache.push({
-        	// key: url,
-        	// url: url,
-        	// completed: function (image, key) {
-        	// if (url === key) {
-        	// imgSource = imageSource.fromNativeSource(image);
-        	// }
-        	// pageData.set('profileThumb', imgSource);
-        	// }
-        	// });
-        	// }
+   			imageCache.getImage("http://ultraimg.com/images/2016/07/29/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg", pageData);
 		});
 	
     helpers.platformInit(page);

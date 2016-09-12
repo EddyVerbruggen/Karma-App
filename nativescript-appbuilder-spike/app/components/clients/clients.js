@@ -42,9 +42,9 @@ exports.onLoaded = function(args) {
     	})
 		.then(function() {
         	helpers.togglePageLoadingIndicator(false, pageData);
-        	imageCache.getImages(pageData);
+        	imageCache.getImages(pageData);//CACHE IMAGES
 		});
-        
+	
     tagList
 		.load()
 		.catch(function(error) {
