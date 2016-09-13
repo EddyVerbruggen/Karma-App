@@ -40,18 +40,17 @@ function getImage (url, pageData) {
 
 exports.getImage = getImage;
 
-function getImages (pageData) {
-    
+function getImages (url) {
+    // console.log(url);
     cache.placeholder = imageSource.fromFile("~/images/placeholder/temp-client-thumb.jpg");
-    cache.maxRequests = 5;
-    imgSource = cache.placeholder;
-    
-    cache.enableDownload();
-        
-    _.each(pageData.get('clientsList'), function(element, index, list) {
-        console.log(element + index + list);
-        ImageCache(url)
-    });
+    if (url) {
+	    cache.maxRequests = 5;
+    	imgSource = cache.placeholder;
+    	cache.enableDownload();
+		return ImageCache(url);
+    } else {
+        return cache.placeholder;
+    }
 }
 
 exports.getImages = getImages;

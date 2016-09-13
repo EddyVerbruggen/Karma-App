@@ -40,7 +40,7 @@
   margin-right:10;
   background-repeat:no-repeat;
   background-size:contain;   
-    background-image: url('~/images/default-thumbnail.jpg')
+/*     background-image: url('~/images/default-thumbnail.jpg') */
 }
 
 .client-row-name {
