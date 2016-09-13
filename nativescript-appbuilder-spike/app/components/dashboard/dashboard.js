@@ -10,8 +10,43 @@ var pushPlugin = require('nativescript-push-notifications');
 var settings = {
     // Android settings
     senderID: '805278853835', // Android: Required setting with the sender/project number
-    notificationCallbackAndroid: function(message, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
-        alert(JSON.stringify(message));
+    notificationCallbackAndroid: function(data, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
+        var payload = JSON.parse(JSON.parse(pushNotificationObject).data);
+        if (appSettings.getBoolean('AppForground') === false){
+            switch (payload.action) {
+
+                case "APPOINTMENT_DETAIL":
+                    helpers.navigate({
+                        moduleName: views.appointmentDetails,
+                        context: {
+                            id: payload.id
+                        }
+                    });  
+                    break;
+
+                case "MESSAGE":
+                    helpers.navigate({
+                        moduleName: views.appointmentDetails,
+                        context: {
+                            id: payload.id,
+                            from: "messages"
+                        }
+                    });
+                    break;
+
+                case "REFERENCES":
+                    helpers.navigate({
+                        moduleName: views.clientDetails,
+                        context: {
+                            id: payload.id,
+                            name: ""
+                        }
+                    });
+                    break;
+
+                default: 
+            }
+        }
     },
 
     // iOS settings
@@ -51,22 +86,22 @@ exports.onLoaded = function(args) {
 			helpers.togglePageLoadingIndicator(false, pageData);
 		});
     
-    // pushPlugin.register(settings,
-    //     // Success callback
-    //     function(token) {
-    //         // if we're on android device we have the onMessageReceived function to subscribe
-    //         // for push notifications
-    //         if(pushPlugin.onMessageReceived) {
-    //             pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
-    //         }
-    // console.log(token);
-    //         // alert('Device registered successfully');
-    //     },
-    //     // Error Callback
-    //     function(error) {
-    //         alert(error);
-    //     }
-    // );
+    pushPlugin.register(settings,
+        // Success callback
+        function(token) {
+            // if we're on android device we have the onMessageReceived function to subscribe
+            // for push notifications
+            if(pushPlugin.onMessageReceived) {
+                pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
+            }
+    		// console.log(token);
+            // alert('Device registered successfully');
+        },
+        // Error Callback
+        function(error) {
+            alert(error);
+        }
+    );
         
 }
 
