@@ -3,12 +3,33 @@
 var frameModule = require('ui/frame');
 var view = require('ui/core/view');
 var observable = require('data/observable');
+var dialogs = require("ui/dialogs");
+
 var views = require('../views');
 var navigation = require('../navigation');
 
-exports.onBack = function() {
-    // Android only
-    frameModule.topmost().goBack();
+exports.onBack = function(args) {
+    var dataEdited = args.object.dataEdited;
+    
+    if (dataEdited == 'true') {
+        dialogs.confirm({
+            title: "Warning",
+            message: "There are unsaved changes. Do you want to save ?",
+            okButtonText: "Save",
+            cancelButtonText: "Discard"
+        }).then(function (result) {// result argument is boolean
+            if (result) {
+                alert("Changes Saved");
+                frameModule.topmost().goBack();
+            } else {
+                frameModule.topmost().goBack();
+            }
+        });
+    } else {
+	    // Android only
+        frameModule.topmost().goBack();
+    }
+    
 }
 
 exports.toggleDrawer = function() {

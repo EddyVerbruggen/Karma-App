@@ -65,3 +65,21 @@ function search(searchText) {
             helpers.togglePageLoadingIndicator(false, pageData)
         });
 }
+
+exports.onLoadMoreItemsRequested = function(args) {
+    timer.setTimeout(function () {
+        var listView = args.object;
+
+        // messageList
+        //     .loadMore()
+        //     .catch(function(error) {
+        //         helpers.handleLoadError(error, 'Sorry, we could not load your clients list');
+        //     })
+        //     .then(function() {
+                
+        //     });
+        
+        listView.notifyLoadOnDemandFinished();
+    }, 1000);
+    args.returnValue = true;
+}

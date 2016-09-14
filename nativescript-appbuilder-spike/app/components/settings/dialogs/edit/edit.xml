@@ -1,0 +1,21 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      showingModally="onLoaded">
+    <StackLayout id="passwordModal" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+        <WrapLayout class="password-header">
+            <label text="Edit Password" />
+        </WrapLayout>
+        <StackLayout class="popup-wrapper">
+            <StackLayout class="password-row">
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="New Password" secure="true" editable="true" id="npassword" />
+            </StackLayout>
+            <StackLayout class="password-row">
+                <TextField class="appointment-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Confirm New Password" secure="true" editable="true" id="cpassword" />
+            </StackLayout>
+        </StackLayout>
+        <wrap-layout class="footer-buttons">
+            <label class="footer-button-cancel" text="CANCEL" tap="dismiss" />
+            <label class="footer-button-submit" text="SAVE" tap="save" />
+        </wrap-layout>
+
+    </StackLayout>
+</Page>

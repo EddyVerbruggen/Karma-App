@@ -4,13 +4,16 @@ var tabViewModule = require("ui/tab-view");
 var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var dialogs = require("ui/dialogs");
+
 var helpers = require('../../utils/widgets/helper');
+var imageCache = require('../../utils/image-cache');
 
 var page;
 var isInit = true;
 var clientDetails = new ClientDetailsViewModel();
 var pageData = new Observable({
     clientDetails: clientDetails,
+    profileThumb: '',
     isLoading: true,
     pageTitle: "",
     SideMenuHidden: true,
@@ -23,7 +26,7 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
-    
+        
 	clientDetails
 		.load(gotData.id)
 		.catch(function(error) {
@@ -32,6 +35,10 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	pageData.set('clientDetails', clientDetails);
 			helpers.togglePageLoadingIndicator(false, pageData);
+
+        	var url = pageData.get('clientDetails').get('Result');//.get('images');
+        	url = url.images[0].href;
+   			imageCache.getImage("http://ultraimg.com/images/2016/07/29/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg", pageData);
 		});
 	
     helpers.platformInit(page);

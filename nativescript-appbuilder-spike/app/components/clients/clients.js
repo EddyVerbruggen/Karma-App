@@ -7,6 +7,7 @@ var ClientsViewModel = require('./clients-view-model');
 var TagsViewModel = require('./tags-view-model');
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
+var imageCache = require('../../utils/image-cache');
 
 var page;
 var isInit = true;

@@ -4,6 +4,7 @@ var config = require('../../utils/config');
 var ObservableArray = require('data/observable-array').ObservableArray;
 var handleResponse = require('../../utils/api/helpers').handleResponse;
 var navigation = require('../../utils/navigation');
+var imageCache = require('../../utils/image-cache');
 
 function ClientsViewModel(clients) {
     var viewModel = new ObservableArray(clients)
@@ -25,8 +26,11 @@ function ClientsViewModel(clients) {
             .then(handleResponse)
             .then(function(data) {
                 viewModel.empty();
-                data.clients.forEach(function(client) {
-                    viewModel.push(client);
+            	data.clients.forEach(function(client) {
+                    setTimeout(function(){ 
+                    	client.profile_image = imageCache.getImages(client.profile_image);
+                    	viewModel.push(client);
+                    }, 100);
                 })
             });
     };

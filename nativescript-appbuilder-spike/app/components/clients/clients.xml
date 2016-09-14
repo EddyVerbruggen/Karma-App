@@ -25,7 +25,8 @@
                         </lv:RadListView.listViewLayout>
                         <lv:RadListView.itemTemplate>
                             <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
-                                <Label class="client-row-thumbnail" col="0" />
+                                <image src="{{profile_image}}" class="client-row-thumbnail" col="0" />
+                                <!--<Label class="client-row-thumbnail" col="0" /> -->
                                 <!--<Label style="background-image: url('{{ profile_image }}');" class="client-row-thumbnail" col="0" />-->
                                 <StackLayout col="1" verticalAlignment="center">
                                     <Label text="{{client_name}}" class="client-row-name" />
