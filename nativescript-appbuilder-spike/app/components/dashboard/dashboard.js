@@ -9,7 +9,7 @@ var pushPlugin = require('nativescript-push-notifications');
 
 var settings = {
     // Android settings
-    senderID: '805278853835', // Android: Required setting with the sender/project number
+    senderID: '935398670281', // Android: Required setting with the sender/project number
     notificationCallbackAndroid: function(data, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
         var payload = JSON.parse(JSON.parse(pushNotificationObject).data);
         if (appSettings.getBoolean('AppForground') === false){
