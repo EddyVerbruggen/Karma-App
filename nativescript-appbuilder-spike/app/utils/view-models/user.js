@@ -10,7 +10,9 @@ function User(info) {
 
 	var viewModel = new Observable({
 		username: info.username || "",
-		password: info.password || ""
+		password: info.password || "",
+        device_id: info.device_id || "",
+        platform: info.platform || ""
 	});
 
 	viewModel.login = function() {
@@ -21,7 +23,7 @@ function User(info) {
 				"Content-Type": "application/x-www-form-urlencoded",
                 TestData: config.testData
 			},
-            body: "username=" + viewModel.get("username") + "&password=" + viewModel.get("password")
+            body: "username=" + viewModel.get("username") + "&password=" + viewModel.get("password") + "&device_id=" + viewModel.get("device_id") + "&platform=" + viewModel.get("platform")
         })
         .then(function(response) {
             return response.json().then(function(data) {
