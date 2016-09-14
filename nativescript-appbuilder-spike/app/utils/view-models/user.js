@@ -16,6 +16,7 @@ function User(info) {
 	});
 
 	viewModel.login = function() {
+        console.log(JSON.stringify(viewModel));
         return fetch(config.apiUrl + "users/token.json", {
             // Do a regular form POST instead of JSON body string
             method: "POST",

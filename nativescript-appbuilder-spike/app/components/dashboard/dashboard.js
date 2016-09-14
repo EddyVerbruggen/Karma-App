@@ -1,6 +1,7 @@
 'use strict';
 var Observable = require('data/observable').Observable;
 var appSettings = require("application-settings");
+var platform = require('platform');
 
 var helpers = require('../../utils/widgets/helper');
 var views = require('../../utils/views');
@@ -21,6 +22,12 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
 	appSettings.setString('activeTab', 'dashboard');
     helpers.platformInit(page);
+    
+    if (platform.device.os === platform.platformNames.android) { 
+    	helpers.registerAndroid();
+    } else {
+        helpers.registerIOS();
+    }
     
 	dashboard
 		.load()
