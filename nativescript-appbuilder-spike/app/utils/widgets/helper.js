@@ -88,10 +88,12 @@ exports.registerAndroid = function() {
         senderID: '935398670281', // Android: Required setting with the sender/project number
         notificationCallbackAndroid: function(data, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
             var payload = JSON.parse(JSON.parse(pushNotificationObject).data);
-            // if (appSettings.getBoolean('AppForground') === false){
+            alert(appSettings.getBoolean('AppForground'));
+			if (appSettings.getBoolean('AppForground') === false){
                 switch (payload.action) {
 
                     case "APPOINTMENT_DETAIL":
+                        appSettings.setBoolean('AppForground', false);
                         frame.topmost().navigate({
                             moduleName: views.appointmentDetails,
                             context: {
@@ -101,6 +103,7 @@ exports.registerAndroid = function() {
                         break;
 
                     case "MESSAGE":
+                        appSettings.setBoolean('AppForground', false);
                         frame.topmost().navigate({
                             moduleName: views.appointmentDetails,
                             context: {
@@ -111,6 +114,7 @@ exports.registerAndroid = function() {
                         break;
 
                     case "REFERENCES":
+                        appSettings.setBoolean('AppForground', false);
                         frame.topmost().navigate({
                             moduleName: views.clientDetails,
                             context: {
@@ -122,7 +126,8 @@ exports.registerAndroid = function() {
 
                     default: 
                 }
-            // }
+            }
+            
         },
 
         // iOS settings
@@ -149,6 +154,7 @@ exports.registerAndroid = function() {
             alert(error);
         }
     );
+    appSettings.setBoolean('AppForground', true);
 }
 
 exports.registerIOS = function() {
@@ -183,12 +189,12 @@ exports.registerIOS = function() {
     };
     pushPlugin.register(iosSettings, function (data) {
         // Register the interactive settings
-            if(iosSettings.interactiveSettings) {
-                pushPlugin.registerUserNotificationSettings(function() {
-                    alert('Successfully registered for interactive push.');
-                }, function(err) {
-                    alert('Error registering for interactive push: ' + JSON.stringify(err));
-                });
-            }
+        if(iosSettings.interactiveSettings) {
+            pushPlugin.registerUserNotificationSettings(function() {
+                alert('Successfully registered for interactive push.');
+            }, function(err) {
+                alert('Error registering for interactive push: ' + JSON.stringify(err));
+            });
+        }
     }, function() { });
 }

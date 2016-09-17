@@ -35,6 +35,7 @@ function User(info) {
             });
         })
         .then(function(resp) {
+            console.log(JSON.stringify(resp));
             if (resp.status === 200 && resp.data && resp.data.token) {
                 config.token = resp.data.token;
                 appSettings.setNumber('id', resp.data.id);

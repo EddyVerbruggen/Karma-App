@@ -37,7 +37,7 @@ exports.onLoaded = function(args) {
 		.then(function() {
         	// pageData.set('Dashboard', Dashboard);
 			helpers.togglePageLoadingIndicator(false, pageData);
-		});    
+		});
 }
 
 exports.onSelectAppointment = function(args) {

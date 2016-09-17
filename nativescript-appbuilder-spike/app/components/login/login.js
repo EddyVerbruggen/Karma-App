@@ -3,7 +3,6 @@ var Observable = require('data/observable').Observable;
 var platform = require('platform');
 var pushPlugin = require('nativescript-push-notifications');
 var platform = require('platform');
-var appSettings = require("application-settings");
 
 var UserViewModel = require('../../utils/view-models/user');
 var navigation = require('../../utils/navigation');
@@ -18,7 +17,9 @@ var submitButton;
 var settings = {
     // Android settings
     senderID: '935398670281', // Android: Required setting with the sender/project number
-    notificationCallbackAndroid: function(data, pushNotificationObject) { },
+    notificationCallbackAndroid: function(data, pushNotificationObject) {
+    	console.log(JSON.stringify(JSON.parse(JSON.stringify(pushNotificationObject))));
+    },
 
     // iOS settings
     badge: true, // Enable setting badge through Push Notification
