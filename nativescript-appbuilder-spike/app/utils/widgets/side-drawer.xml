@@ -49,6 +49,14 @@
                 <Label text="Visitors" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
+         <StackLayout class="{{ activeTab == 'users' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="users" tap="onTap">
+            <StackLayout width="50" verticalAlignment="center">
+                <Label text="&#xf47d;" class="ionicons-icon nav-icon" /> 
+            </StackLayout>
+            <StackLayout verticalAlignment="center">
+                <Label text="Users" class="nav-text" /> 
+            </StackLayout>
+        </StackLayout>
         <StackLayout class="{{ activeTab == 'messages' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="messages" tap="onTap">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf3f9;" class="ionicons-icon nav-icon" /> 
