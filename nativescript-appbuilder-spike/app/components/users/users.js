@@ -46,5 +46,14 @@ exports.toggleActive = function(args) {
 }
 
 exports.fabTap = function(args) {
-    console.log('tapped');
+    var NewUserModule = 'components/users/dialogs/new';
+    var context = {
+        args: args
+    };
+    var fullscreen = false;
+    page.showModal(NewUserModule, context, function closeCallback(args) {
+        if (args) {
+            
+        }
+    }, false);
 }

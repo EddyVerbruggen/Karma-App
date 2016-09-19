@@ -1,0 +1,50 @@
+@import url('~/components/settings/settingsMain.css');
+
+.password-header{
+    background-color: #FFF;
+    padding: 12;
+    font-size: 13;
+    color: #3EC3D6;
+}
+
+.settings-input-row {
+    background-color:#fff;
+    margin-bottom:1;
+    padding:10 15;
+}
+
+.settings-label {
+    font-size: 12;
+    color: #bbb;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom:3;
+}
+
+.settings-textfield {
+    font-size:17;
+}
+
+.settings-section-link-icon {
+    font-size:32;
+    text-align:center;
+    width:40;
+}
+
+.settings-section-link-label {
+    font-size: 19;
+    padding:10 0;
+}
+
+.footer-button-cancel{
+    padding:15;
+    width: 50%;
+    text-align: center;
+}
+
+.footer-button-submit{
+    padding:15;
+    width: 50%;
+    text-align: center;
+    color: #3EC3D6;
+}

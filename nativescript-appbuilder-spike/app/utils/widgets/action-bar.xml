@@ -1,4 +1,5 @@
-<ActionBar class="actionbar">
+<ActionBar class="actionbar"
+           xmlns:dd="nativescript-drop-down">
     <NavigationButton text="Back" android.systemIcon="ic_menu_back"
         tap="onBack" visibility="{{ backButtonHidden ? 'collapse' : 'visible' }}" dataEdited="{{ dataEdited ? 'true' : 'false' }}">
     </NavigationButton>
@@ -7,6 +8,7 @@
         <GridLayout columns="auto, 5, *">
             <!-- <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" /> -->
             <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ SideMenuHidden ? 'collapse' : 'visible' }}" />
+<!--             <dd:DropDown id="dd" class="client-options-text" items="{{ usersList }}" selectedIndex="{{ selectedTag }}" row="1" tap="onTapOverlay" /> -->
 			<Label col="2" text="{{pageTitle}}" minWidth="100" class="pageTitle" />
         </GridLayout>
         <!-- <android>
