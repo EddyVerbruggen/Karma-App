@@ -8,7 +8,7 @@
         <GridLayout columns="auto, 5, *">
             <!-- <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" /> -->
             <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ SideMenuHidden ? 'collapse' : 'visible' }}" />
-<!--             <dd:DropDown id="dd" class="client-options-text" items="{{ usersList }}" selectedIndex="{{ selectedTag }}" row="1" tap="onTapOverlay" /> -->
+            <dd:DropDown id="dda" class="client-options-text" items="{{ usersList }}" selectedIndex="{{ selectedTag }}" row="1" colSpan="2" tap="onTapOverlay" />
 			<Label col="2" text="{{pageTitle}}" minWidth="100" class="pageTitle" />
         </GridLayout>
         <!-- <android>

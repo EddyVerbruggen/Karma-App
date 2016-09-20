@@ -12,6 +12,7 @@ var isInit = true;
 var dashboard = new DashboardViewModel();
 var pageData = new Observable({
     dashboard: dashboard,
+    usersList: ['Jenny Taylor', 'Amber', 'Kandy Land', 'Pamela Anderson', 'Jenna Jameson', 'Lilly'],
     backButtonHidden: true,
     pageTitle: "KARMA"
 });

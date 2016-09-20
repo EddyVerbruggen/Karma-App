@@ -144,3 +144,16 @@ ActionBar {background-color:#272936;color:#fff;opacity:1;}
 
 .pageTitle { font-size: 21; text-align: center; color:#fff;font-family: 'MyriadPro-Light';}
 
+#dda{
+    font-size:16;
+    padding: 3 0;
+    padding-top:0;
+    color:#333;
+    margin-left: 90;
+}
+
+#dda-default-text{
+    padding-bottom: 3;
+    color: #000;
+    font-size:15;
+}
