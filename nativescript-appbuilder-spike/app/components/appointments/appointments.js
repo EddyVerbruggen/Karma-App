@@ -17,7 +17,8 @@ var pageData = new Observable({
     selectPendingFilter: false,
     selectCanceledFilter: false,
     backButtonHidden: true,
-    pageTitle: "APPOINTMENTS"
+    pageTitle: "APPOINTMENTS",
+    user_role: ''
 });
 
 exports.onLoaded = function(args) {
@@ -25,6 +26,9 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
     appSettings.setString('activeTab', 'appointments');
+
+    pageData.set('user_role', appSettings.getString('role'));
+
 	appointmentsList
 		.load()
 		.catch(function(error) {

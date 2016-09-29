@@ -4,6 +4,7 @@ var tabViewModule = require("ui/tab-view");
 var ClientDetailsViewModel = require('./clientDetails-view-model');
 var Observable = require('data/observable').Observable;
 var dialogs = require("ui/dialogs");
+var appSettings = require("application-settings");
 
 var helpers = require('../../utils/widgets/helper');
 var imageCache = require('../../utils/image-cache');
@@ -17,7 +18,8 @@ var pageData = new Observable({
     isLoading: true,
     pageTitle: "",
     SideMenuHidden: true,
-    SearchButtonHidden: true
+    SearchButtonHidden: true,
+    user_role: ''
 });
 
 exports.onLoaded = function(args) {
@@ -26,6 +28,8 @@ exports.onLoaded = function(args) {
 	helpers.togglePageLoadingIndicator(true, pageData);
     var gotData = page.navigationContext;
 	pageData.set('pageTitle', gotData.name);
+
+    pageData.set('user_role', appSettings.getString('role'));
         
 	clientDetails
 		.load(gotData.id)

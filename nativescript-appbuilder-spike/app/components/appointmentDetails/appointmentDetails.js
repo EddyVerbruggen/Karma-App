@@ -6,6 +6,7 @@ var Observable = require('data/observable').Observable;
 var view = require("ui/core/view");
 var observableArrayModule = require('data/observable-array').ObservableArray;
 var dialogs = require("ui/dialogs");
+var appSettings = require("application-settings");
 
 var views = require('../../utils/views');
 var helpers = require('../../utils/widgets/helper');
@@ -25,7 +26,8 @@ var pageData = new Observable({
     canAccept: false,
     pageTitle: "APPOINTMENT",
     SideMenuHidden: true,
-    SearchButtonHidden: true
+    SearchButtonHidden: true,
+    user_role: ''
 });
 
 exports.onLoaded = function(args) {
@@ -33,6 +35,9 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
 	helpers.togglePageLoadingIndicator(true, pageData);
     parentView = page.getViewById("appointments-tabs");
+
+    pageData.set('user_role', appSettings.getString('role'));
+
 	// root = args.context.context;
     var gotData = page.navigationContext;
 	

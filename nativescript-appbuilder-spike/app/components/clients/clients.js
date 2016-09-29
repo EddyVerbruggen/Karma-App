@@ -26,7 +26,8 @@ var pageData = new Observable({
     selectedSortby: 0,
     isLoading: true,
     backButtonHidden: true,
-    pageTitle: "CLIENTS"
+    pageTitle: "CLIENTS",
+    user_role: ''
 });
 
 exports.onLoaded = function(args) {
@@ -34,6 +35,8 @@ exports.onLoaded = function(args) {
     page.bindingContext = pageData;
     helpers.togglePageLoadingIndicator(true, pageData);
     appSettings.setString('activeTab', 'clients');
+
+    pageData.set('user_role', appSettings.getString('role'));
     
 	clientsList
 		.load()
