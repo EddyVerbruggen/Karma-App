@@ -5,7 +5,6 @@ var dialogsModule = require('ui/dialogs');
 var platform = require('platform');
 var colorModule = require('color');
 var timer = require('timer');
-var pushPlugin = require('nativescript-push-notifications');
 var appSettings = require("application-settings");
 
 var views = require('~/utils/views');
@@ -83,118 +82,8 @@ exports.tapFlash = function(targetView, fromBgColor, toBgColor) {
 
 exports.registerAndroid = function() {
 
-    var settings = {
-        // Android settings
-        senderID: '935398670281', // Android: Required setting with the sender/project number
-        notificationCallbackAndroid: function(data, pushNotificationObject) { // Android: Callback to invoke when a new push is received.
-            var payload = JSON.parse(JSON.parse(pushNotificationObject).data);
-            alert(appSettings.getBoolean('AppForground'));
-			if (appSettings.getBoolean('AppForground') === false){
-                switch (payload.action) {
-
-                    case "APPOINTMENT_DETAIL":
-                        appSettings.setBoolean('AppForground', false);
-                        frame.topmost().navigate({
-                            moduleName: views.appointmentDetails,
-                            context: {
-                                id: payload.id
-                            }
-                        });  
-                        break;
-
-                    case "MESSAGE":
-                        appSettings.setBoolean('AppForground', false);
-                        frame.topmost().navigate({
-                            moduleName: views.appointmentDetails,
-                            context: {
-                                id: payload.id,
-                                from: "messages"
-                            }
-                        });
-                        break;
-
-                    case "REFERENCES":
-                        appSettings.setBoolean('AppForground', false);
-                        frame.topmost().navigate({
-                            moduleName: views.clientDetails,
-                            context: {
-                                id: payload.id,
-                                name: ""
-                            }
-                        });
-                        break;
-
-                    default: 
-                }
-            }
-            
-        },
-
-        // iOS settings
-        badge: true, // Enable setting badge through Push Notification
-        sound: true, // Enable playing a sound
-        alert: true, // Enable creating a alert
-
-        // Callback to invoke, when a push is received on iOS
-        notificationCallbackIOS: function(message) {
-            alert(JSON.stringify(message));
-        }
-    };
-    pushPlugin.register(settings,
-        // Success callback
-        function(token) {
-            // if we're on android device we have the onMessageReceived function to subscribe
-            // for push notifications
-            if(pushPlugin.onMessageReceived) {
-                pushPlugin.onMessageReceived(settings.notificationCallbackAndroid);
-            }
-        },
-        // Error Callback
-        function(error) {
-            alert(error);
-        }
-    );
-    appSettings.setBoolean('AppForground', true);
 }
 
 exports.registerIOS = function() {
-    
-    var iosSettings = {
-        badge: true,
-        sound: true,
-        alert: true,
-        interactiveSettings: {
-            actions: [{
-                identifier: 'READ_IDENTIFIER',
-                title: 'Read',
-                activationMode: "foreground",
-                destructive: false,
-                authenticationRequired: true
-            }, {
-                identifier: 'CANCEL_IDENTIFIER',
-                title: 'Cancel',
-                activationMode: "foreground",
-                destructive: true,
-                authenticationRequired: true
-            }],
-            categories: [{
-                identifier: 'READ_CATEGORY',
-                actionsForDefaultContext: ['READ_IDENTIFIER', 'CANCEL_IDENTIFIER'],
-                actionsForMinimalContext: ['READ_IDENTIFIER', 'CANCEL_IDENTIFIER']
-            }]
-        },
-        notificationCallbackIOS: function (data) {
-            alert("message", "" + JSON.stringify(data));
-        }
-    };
-    pushPlugin.register(iosSettings, function (data) {
-        // Register the interactive settings
-        if(iosSettings.interactiveSettings) {
-            pushPlugin.registerUserNotificationSettings(function() {
-                alert('Successfully registered for interactive push.');
-            }, function(err) {
-                alert('Error registering for interactive push: ' + JSON.stringify(err));
-            });
-        }
-    }, function() { });
+
 }

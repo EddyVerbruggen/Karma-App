@@ -49,7 +49,7 @@
                 <Label text="Visitors" class="nav-text" /> 
             </StackLayout>
         </StackLayout>
-         <StackLayout class="{{ activeTab == 'users' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="users" tap="onTap">
+         <StackLayout class="{{ activeTab == 'users' ? 'drawer-nav-item isActive' : 'drawer-nav-item' }}" orientation="horizontal" section="users" tap="onTap" visibility="{{ user_role == 'agency' ? 'visible' : 'collapse' }}">
             <StackLayout width="50" verticalAlignment="center">
                 <Label text="&#xf47d;" class="ionicons-icon nav-icon" /> 
             </StackLayout>

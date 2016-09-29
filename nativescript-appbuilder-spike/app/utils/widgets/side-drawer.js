@@ -13,7 +13,8 @@ var page;
 var sideDrawer = new SideDrawerViewModel();
 var pageData = new Observable({
     sideDrawer: sideDrawer,
-    activeTab: 'dashboard'
+    activeTab: 'dashboard',
+    user_role: ''
 });
 
 exports.onLoad = function(args) {
@@ -21,6 +22,8 @@ exports.onLoad = function(args) {
     page.bindingContext = pageData;
     getDrawerData();
     
+    pageData.set(user_role, appSettings.getString('role'));
+
     if (appSettings.getString('activeTab')) {
         pageData.activeTab = appSettings.getString('activeTab');
     }

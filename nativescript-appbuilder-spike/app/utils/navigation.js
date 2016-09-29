@@ -30,6 +30,8 @@ module.exports = {
         appSettings.remove('email');
         appSettings.remove('profile_image');
         appSettings.remove('name');
+        appSettings.remove('role');
+        appSettings.remove('agency_id');
         appSettings.remove('timezone');
 		frameModule.topmost().navigate({
 			moduleName: views.login,

@@ -41,6 +41,16 @@ function User(info) {
                 appSettings.setNumber('id', resp.data.id);
                 appSettings.setString('username', resp.data.username);
                 appSettings.setString('email', resp.data.email);
+                
+                if (resp.data.role === 'agency' && resp.data.agency_id) {
+                    appSettings.setString('role', 'agency_user');
+                    appSettings.setString('agency_id', resp.data.agency_id);
+                } else if (resp.data.role === 'agency' && !resp.data.agency_id) {
+                    appSettings.setString('role', 'agency');
+                } else {
+                    appSettings.setString('role', 'user');
+                }
+                
                 appSettings.setString('profile_image', resp.data.profile_image);
                 appSettings.setString('name', resp.data.name);
                 appSettings.setString('timezone', resp.data.timezone);
