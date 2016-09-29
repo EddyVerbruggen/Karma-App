@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "935398670281",
+    "firebase_url": "https://karmascreen-55bc5.firebaseio.com",
+    "project_id": "karmascreen-55bc5",
+    "storage_bucket": "karmascreen-55bc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935398670281:android:f7f6dd9116319b95",
+        "android_client_info": {
+          "package_name": "com.telerik.nativescriptappbuilderspike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935398670281-7ips90v2mmc4i5akt1djk1rti3b21h3j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2axmNb0jq3726YGJWXkRTj-sf5pvaUXY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

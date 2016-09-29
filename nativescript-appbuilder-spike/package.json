@@ -10,7 +10,8 @@
         "moment": "2.14.1",
         "nativescript-slides": "1.7.1",
         "nativescript-floatingactionbutton": "2.2.4",
-        "underscore": "1.8.3"
+        "underscore": "1.8.3",
+        "nativescript-plugin-firebase": "3.6.3"
     },
     "devDependencies": {}
 }

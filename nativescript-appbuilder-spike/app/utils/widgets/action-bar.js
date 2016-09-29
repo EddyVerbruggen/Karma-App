@@ -10,7 +10,7 @@ var navigation = require('../navigation');
 
 exports.onBack = function(args) {
     var dataEdited = args.object.dataEdited;
-    if (dataEdited) {
+    if (args.object.dataEdited) {
         if (dataEdited == 'true') {
             dialogs.confirm({
                 title: "Warning",

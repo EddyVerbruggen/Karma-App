@@ -1,6 +1,20 @@
 var application = require('application');
 var navigation = require('./utils/navigation');
 var appSettings = require("application-settings");
+// var firebase = require("nativescript-plugin-firebase");
+
+// firebase.init({
+//   // Optionally pass in properties for database, authentication and cloud messaging,
+//   // see their respective docs.
+// }).then(
+//   function (instance) {
+//     console.log("firebase.init done");
+//   },
+//   function (error) {
+//     console.log("firebase.init error: " + error);
+//   }
+// );
+
 
 application.start({
     moduleName: navigation.startingPage()
@@ -8,25 +22,4 @@ application.start({
 
 application.on(application.launchEvent, function (args) {
     appSettings.setString('activeTab', 'dashboard');
-    // appSettings.setBoolean('AppForground', true);
 });
-
-application.on(application.suspendEvent, function (args) {
-    appSettings.setBoolean('AppForground', false);
-});
-
-// application.on(application.resumeEvent, function (args) {
-//     appSettings.setBoolean('AppForground', true);
-// });
-
-// application.on(application.exitEvent, function (args) {
-//     appSettings.setBoolean('AppForground', false);
-// });
-
-// application.on(application.lowMemoryEvent, function (args) {
-//     appSettings.setBoolean('AppForground', false);
-// });
-
-// application.on(application.uncaughtErrorEvent, function (args) {
-//     appSettings.setBoolean('AppForground', false);
-// });

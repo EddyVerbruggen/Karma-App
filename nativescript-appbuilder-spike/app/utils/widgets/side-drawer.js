@@ -22,7 +22,7 @@ exports.onLoad = function(args) {
     page.bindingContext = pageData;
     getDrawerData();
     
-    pageData.set(user_role, appSettings.getString('role'));
+    pageData.set('user_role', appSettings.getString('role'));
 
     if (appSettings.getString('activeTab')) {
         pageData.activeTab = appSettings.getString('activeTab');

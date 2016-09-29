@@ -9,8 +9,8 @@
         <GridLayout columns="40, auto, 90, *">
             <!-- <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" /> -->
             <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ SideMenuHidden ? 'collapse' : 'visible' }}" />
-            <image src="~/images/default-thumbnail.jpg" class="actionbar-client-thumb" row="1" />
-            <dd:DropDown id="dda" class="client-options-text" items="{{ usersList }}" selectedIndex="{{ selectedTag }}" row="2" colSpan="2" tap="onTapOverlay" />
+            <image src="~/images/default-thumbnail.jpg" class="actionbar-client-thumb" row="1" visibility="{{ user_role == 'agency' ? 'visible' : 'collapse' }}" />
+            <dd:DropDown id="dda" class="client-options-text" items="{{ usersList }}" selectedIndex="{{ selectedTag }}" row="2" colSpan="2" tap="onTapOverlay" visibility="{{ user_role == 'agency' ? 'visible' : 'collapse' }}" />
 			<Label col="2" text="{{pageTitle}}" minWidth="100" class="pageTitle" />
         </GridLayout>
         <!-- <android>

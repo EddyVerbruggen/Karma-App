@@ -14,12 +14,16 @@ var pageData = new Observable({
     dashboard: dashboard,
     usersList: ['Jenny Taylor', 'Amber', 'Kandy Land', 'Pamela Anderson', 'Jenna Jameson', 'Lilly'],
     backButtonHidden: true,
-    pageTitle: "KARMA"
+    pageTitle: "KARMA",
+    user_role: ''
 });
 
 exports.onLoaded = function(args) {
     page = args.object;
     page.bindingContext = pageData;
+
+    pageData.set('user_role', appSettings.getString('role'));
+
 	helpers.togglePageLoadingIndicator(true, pageData);
 	appSettings.setString('activeTab', 'dashboard');
     helpers.platformInit(page);
