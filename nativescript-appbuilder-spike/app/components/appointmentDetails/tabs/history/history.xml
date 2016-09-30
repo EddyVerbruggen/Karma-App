@@ -52,7 +52,7 @@
         </StackLayout>
     </ScrollView>
 
-    <StackLayout orientation="horizontal" row="1" col="0" class="send-message-bar">
+    <StackLayout orientation="horizontal" row="1" col="0" class="send-message-bar" visibility="{{ user_role == 'agency_user' ? 'collapse' : 'visibile' }}">
         <StackLayout width="70%">
             <TextView id="message_box" class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message..." textWrap="true" />
         </StackLayout>

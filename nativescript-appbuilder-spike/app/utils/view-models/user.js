@@ -42,7 +42,7 @@ function User(info) {
                 appSettings.setString('username', resp.data.username);
                 appSettings.setString('email', resp.data.email);
                 
-                if (resp.data.role === 'agency' && resp.data.agency_id) {
+                if (resp.data.role === 'user' && resp.data.agency_id) {
                     appSettings.setString('role', 'agency_user');
                     appSettings.setString('agency_id', resp.data.agency_id);
                 } else if (resp.data.role === 'agency' && !resp.data.agency_id) {
@@ -50,7 +50,7 @@ function User(info) {
                 } else {
                     appSettings.setString('role', 'user');
                 }
-                
+                console.log(appSettings.getString('role'));
                 appSettings.setString('profile_image', resp.data.profile_image);
                 appSettings.setString('name', resp.data.name);
                 appSettings.setString('timezone', resp.data.timezone);

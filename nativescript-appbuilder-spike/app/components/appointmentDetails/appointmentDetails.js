@@ -102,7 +102,7 @@ exports.sendMessage = function(args) {
 }
 
 exports.openDatePicker = function(args) {
-    if (pageData.get('appointmentDetails').get('canEdit')) {
+    if (pageData.get('appointmentDetails').get('canEdit') && pageData.get('user_role') != 'agency_user') {
 		var DateCallback = function (result) {
         	if (result) {
             	result = result.split(" ");
@@ -121,7 +121,7 @@ exports.openDatePicker = function(args) {
 }
 
 exports.openTimePicker = function(args){
-    if (pageData.get('appointmentDetails').get('canEdit')) {
+    if (pageData.get('appointmentDetails').get('canEdit') && pageData.get('user_role') != 'agency_user') {
         var TimeCallback = function (result) {
             if (result) {
                 result = result.split(" ");
@@ -142,7 +142,7 @@ exports.openTimePicker = function(args){
 }
 
 exports.openLocationPopup = function(args){
-    if (pageData.get('appointmentDetails').get('canEdit')) {
+    if (pageData.get('appointmentDetails').get('canEdit') && pageData.get('user_role') != 'agency_user') {
         var modalPageModule = 'components/appointmentDetails/tabs/location/location';
         var context = {
             appointmentDetails: pageData.get('appointmentDetails')//pageData.appointmentDetails

@@ -46,7 +46,7 @@
         </StackLayout>
     </ScrollView>
     
-    <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options">
+    <StackLayout orientation="horizontal" row="1" col="0" class="appointment-options" visibility="{{ user_role == 'agency_user' ? 'collapse' : 'visibile' }}">
         <StackLayout width="40%">
             <Label text="Confirm" class="accept-save-button" tap="confirm" id="confirmButton" visibility="{{ appointmentDetails.canAccept ? 'visible' : 'collapse' }}"/>
         </StackLayout>

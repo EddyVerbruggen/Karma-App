@@ -4,8 +4,8 @@
             <Label style="background-image: url('~/images/girl-100x100.jpg');" class="profile-thumbnail" />
         </StackLayout>
         <StackLayout verticalAlignment="center">
-            <Label text="Jenny Smith" class="" />
-            <!--<Label text="{{name}}" class="" />-->
+            <!--<Label text="Jenny Smith" class="" />-->
+            <Label text="{{name}}" class="" />
         </StackLayout>
     </StackLayout>
     <StackLayout class="drawer-nav-area">
