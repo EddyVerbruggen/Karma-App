@@ -147,7 +147,7 @@
 	    </StackLayout>
     </ScrollView>
 
-    <StackLayout orientation="horizontal" row="1" col="0" class="client-options">
+    <StackLayout orientation="horizontal" row="1" col="0" class="client-options" visibility="{{ user_role == 'agency_user' ? 'collapse' : 'visibile' }}">
         <StackLayout width="80%">
             <Label text="Approve" class="approve-button" tap="approve" visibility="{{ clientDetails.Result.screening.screening.status_text == 'Rejected' ? 'visible' : 'collapse' }}" />
         </StackLayout>

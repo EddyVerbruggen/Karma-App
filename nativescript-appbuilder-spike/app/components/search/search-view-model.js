@@ -9,36 +9,32 @@ var navigation = require('../../utils/navigation');
 
 function SearchViewModel() {
     var viewModel = new ObservableArray();
-    
-    // Load all clients
-    viewModel.load = function(searchText) {
-        var fetchData = fetch(config.apiUrl + 'search/all.json?q=text', {
-			headers: {
-				Authorization: 'Bearer ' + config.token,
+
+    // Load all search results
+    viewModel.load = function (searchText, pageIndex, pageSize) {
+        var fetchData = fetch(config.apiUrl + 'search/all.json?q=' + searchText + '&page=' + pageIndex + '&pageSize=' + pageSize, {
+            headers: {
+                Authorization: 'Bearer ' + config.token,
                 TestData: config.testData
-			}
+            }
         });
 
         return fetchData
             .then(handleResponse)
-            .then(function(data) {
-            	console.log(JSON.stringify(data));
-            	viewModel.empty();
-            	for (var item in data) {
-            		viewModel.set(item, data[item]);
-            	}
-                // data.bookings.forEach(function(result) {
-                //     viewModel.bookings.push(result);
-                // });
+            .then(function (data) {
+                // viewModel.empty();
+                for (var item in data) {
+                    viewModel.set(item, data[item]);
+                }
             });
     };
-    
-    viewModel.empty = function() {
+
+    viewModel.empty = function () {
         while (viewModel.length) {
             viewModel.pop();
         }
     };
-    
+
     return viewModel;
 }
 

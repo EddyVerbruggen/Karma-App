@@ -33,6 +33,7 @@ module.exports = {
         appSettings.remove('role');
         appSettings.remove('agency_id');
         appSettings.remove('timezone');
+        appSettings.setString('activeTab', 'dashboard');
 		frameModule.topmost().navigate({
 			moduleName: views.login,
 			animated: false,

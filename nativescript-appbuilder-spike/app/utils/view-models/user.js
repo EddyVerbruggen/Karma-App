@@ -50,7 +50,7 @@ function User(info) {
                 } else {
                     appSettings.setString('role', 'user');
                 }
-                console.log(appSettings.getString('role'));
+                
                 appSettings.setString('profile_image', resp.data.profile_image);
                 appSettings.setString('name', resp.data.name);
                 appSettings.setString('timezone', resp.data.timezone);
