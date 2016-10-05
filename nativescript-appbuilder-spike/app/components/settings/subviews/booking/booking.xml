@@ -1,0 +1,39 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <ScrollView>
+        <StackLayout width="100%" id="booking">
+            <StackLayout class="booking-input-row">
+                <Label text="Require appointment information" class="booking-label" />
+                <Label text="Yes, client must select date, time and location" class="booking-textfield" textWrap="true" />
+            </StackLayout>
+
+            <StackLayout>
+                <Label text="Appointments" class="booking-header" />
+                <Label class="booking-divider" />
+            </StackLayout>
+            <StackLayout class="booking-input-row">
+                <Label text="Minimum length" class="booking-label" />
+                <Label text="None" class="booking-textfield" textWrap="true" />
+            </StackLayout>
+            <StackLayout class="booking-input-row">
+                <Label text="Default text for appointment notes" class="booking-label" />
+                <Label text="Please enter your address here" class="booking-textfield" textWrap="true" />
+            </StackLayout>
+            <StackLayout class="booking-input-row">
+                <Label text="I offer" class="booking-label" />
+                <WrapLayout class="settings-all-row" section="screening" tap="toggleCheckbox" section="incall">
+                    <image src="~/images/ic_check_box_outline_blank_white.png" id="incall" class="ionicons-icon settings-section-link-icon" width="30" />
+                    <Label text="Incalls" class="settings-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="settings-all-row" section="screening" tap="toggleCheckbox" section="outcall">
+                    <image src="~/images/ic_check_box_white.png" id="outcall" class="ionicons-icon settings-section-link-icon" width="30" />
+                    <Label text="Outcalls" class="settings-section-link-label" />
+                </WrapLayout>
+            </StackLayout>
+        </StackLayout>        
+    </ScrollView>
+</Page>

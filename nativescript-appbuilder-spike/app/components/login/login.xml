@@ -1,0 +1,47 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      actionBarHidden="true"
+      backgroundSpanUnderStatusBar="true"
+      loaded="onLoaded">
+    <StackLayout id="container" class="login-area" verticalAlignment="center">
+    <Image src="~/images/karma-logo-light.png" class="login-logo" />
+        <GridLayout rows="auto, auto" id="form-controls">
+            <TextField
+                id="username"
+                text="{{ user.username }}"
+                hint="Username"
+                keyboardType="email"
+                returnKeyType="next"
+                returnPress="focusPassword"
+                autocorrect="false"
+                autocapitalizationType="none"
+                row="0"
+                color="{{ isLogin ? 'white' : 'white' }}"
+                class="login-input" />
+            <TextField
+                id="password"
+                secure="true"
+                text="{{ user.password }}"
+                hint="Password"
+                returnKeyType="done"
+                returnPress="signIn"
+                row="1"
+                color="{{ isLogin ? 'white' : 'white' }}" 
+                class="login-input"/>
+            <ActivityIndicator busy="{{ authenticating }}" rowSpan="2" />
+        </GridLayout>        
+        <Button text="Login" id="submit-button" tap="submit" class="login-button" />
+        
+        <StackLayout class="login-bottom-area">
+            <Label text="Forget your password?" class="login-forget-password" />
+            <Label text="Register" class="login-register" />
+            <StackLayout class="social-icons" orientation="horizontal" horizontalAlignment="center">
+                <StackLayout>
+                    <Label text="&#xf231;" class="ionicons-icon" />
+                </StackLayout>
+                <StackLayout>
+                    <Label text="&#xf243;" class="ionicons-icon" />
+                </StackLayout>     
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</Page>

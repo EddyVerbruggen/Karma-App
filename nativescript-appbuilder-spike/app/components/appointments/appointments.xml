@@ -1,0 +1,88 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:widgets="utils/widgets"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      loaded="onLoaded"
+      xmlns:lv="nativescript-telerik-ui-pro/listview">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <GridLayout rows="auto, *, 60" columns="*">
+                <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:150;" />
+                <lv:RadListView items="{{appointmentsList.booking_dates}}" 
+                                row="1" col="0" 
+                                loadOnDemandMode="Manual" 
+                                loadMoreDataRequested="onLoadMoreItemsRequested"
+                                visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                    <lv:RadListView.listViewLayout>
+                        <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                    </lv:RadListView.listViewLayout>
+                    <lv:RadListView.itemTemplate>
+                        <StackLayout>
+                            <Label text="{{date}}" class="appointment-calendar-date" />
+                            <Repeater items="{{bookings}}">
+                                <Repeater.itemsLayout>
+                                    <StackLayout class="appointment-rows" />
+                                </Repeater.itemsLayout>
+                                <Repeater.itemTemplate>
+                                    <StackLayout orientation="horizontal" class="appointment-row" tap="onSelectAppointment" bookingId="{{id}}">
+                                         <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
+                                             <Label text="{{time}}" class="appointment-time" />
+                                             <Label text="{{length}}" class="appointment-length" />
+                                         </StackLayout>                            
+                                         <StackLayout width="60" verticalAlignment="center">
+                                             <StackLayout class="appointment-status appointment-confirmed">
+                                                 <Label class="ionicons-icon" text="&#xf122;" />
+                                             </StackLayout>
+                                         </StackLayout>                            
+                                         <StackLayout verticalAlignment="center">
+
+                                            <!-- NEW CLIENT-->
+                                            <WrapLayout>
+                                                <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
+                                                <Label text="New" class="client-status" />
+                                            </WrapLayout>
+
+                                            <!-- APPROVED CLIENT
+                                            <Label text="{{client_name}}" class="row-client-name row-client-name-approved" /> -->
+
+                                            <!-- REJECTED CLIENT
+                                            <Label text="{{client_name}}" class="row-client-name row-client-name-rejected" /> -->
+
+                                            <!-- NEW CLIENT
+                                            <WrapLayout>
+                                                <Label text="{{client_name}}" class="row-client-name row-client-name-blacklisted" />
+                                                <Label text="&#xf3bc;" class="ionicons-icon blacklisted-client" />
+                                            </WrapLayout>-->                                  
+
+                                            <Label text="{{location}}" class="row-appointment-location" />
+                                         </StackLayout>
+                                     </StackLayout>
+                                </Repeater.itemTemplate>
+                            </Repeater>
+                        </StackLayout>
+                    </lv:RadListView.itemTemplate>
+                </lv:RadListView>
+
+                <StackLayout orientation="horizontal" row="2" col="0" class="appointment-filtering">
+                    <StackLayout class="{{ selectConfirmedFilter ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="33%" tap="onTapStatusFilter" status="Confirmed">
+                        <Label class="ionicons-icon appointment-filter-icon" text="&#xf122;" />
+                        <Label text="{{appointmentsList.types.confirmed, 'Confirmed (' + appointmentsList.types.confirmed + ')'}}" />
+                    </StackLayout>
+                    <StackLayout class="{{ selectPendingFilter ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="33%" tap="onTapStatusFilter" status="Pending">
+                        <Label class="ionicons-icon appointment-filter-icon" text="&#xf396;" />
+                        <Label text="{{appointmentsList.types.pending, 'Pending (' + appointmentsList.types.pending + ')'}}" />
+                    </StackLayout>
+                    <StackLayout class="{{ selectCanceledFilter ? 'appointment-filter-button button-active' : 'appointment-filter-button' }}" width="34%" tap="onTapStatusFilter" status="Canceled">
+                        <Label class="ionicons-icon appointment-filter-icon" text="&#xf129;" />
+                        <Label text="{{appointmentsList.types.cancelled, 'Cancelled (' + appointmentsList.types.cancelled + ')'}}" />
+                    </StackLayout>
+                </StackLayout>
+            </GridLayout>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>

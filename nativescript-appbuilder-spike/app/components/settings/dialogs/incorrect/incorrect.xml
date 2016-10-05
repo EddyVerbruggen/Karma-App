@@ -1,0 +1,16 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      showingModally="onLoaded">
+    <StackLayout id="incorrectModal" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+        <WrapLayout class="password-header">
+            <label text="Verify Account" />
+        </WrapLayout>
+        <WrapLayout class="password-sub-header">
+            <label class="password-textlabel" text="The password you entered is incorrect." />
+        </WrapLayout>
+        <wrap-layout class="footer-buttons">
+            <label class="footer-button-cancel" text="CANCEL" tap="dismiss" />
+            <label class="footer-button-submit" text="TRY AGAIN" tap="tryAgain" />
+        </wrap-layout>
+
+    </StackLayout>
+</Page>

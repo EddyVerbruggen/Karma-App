@@ -1,0 +1,43 @@
+@import url('~/components/settings/settingsMain.css');
+
+.password-header{
+    background-color: #FFF;
+    padding: 12;
+    font-size: 13;
+}
+
+.password-sub-header{
+    background-color: #FFF;
+    padding: 12;
+    font-size: 13;
+}
+
+.popup-wrapper {
+    padding:10;
+}
+
+.password-row {
+    margin-bottom: 15;
+}
+
+.footer-buttons{
+    width: 100%;
+}
+
+.footer-button-cancel{
+    padding:15;
+    width: 50%;
+    text-align: center;
+}
+
+.footer-button-submit{
+    padding:15;
+    width: 50%;
+    text-align: center;
+    color: #3EC3D6;
+}
+
+.password-textlabel{
+    font-size: 12;
+    color: #CCC;
+}

@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:Slides="nativescript-slides" loaded="pageLoaded">
+    <GridLayout rows="* auto">
+		<Slides:SlideContainer id="slides" row="0" pageIndicators="true" velocityScrolling="true" interval="10000" loop="false">
+			<Slides:Slide class="slide-1">
+                <Image src="~/images/karma-logo-light.png" class="slide-logo" />
+                <Label class="slide-description slide-description-main" text="Karma is an all-in-one suite that makes screening and booking new dates extremely easy and painless."  textWrap="true" />
+                <Image src="~/images/splash-slide01.png" class="slide-screenshot" />                
+			</Slides:Slide>
+			<Slides:Slide class="slide-2">
+				<Label class="slide-title" text="Simplified Bookings" />
+                <Label class="slide-description" text="Use Karma to screen and book new clients in a secure manner."  textWrap="true" />
+                <Image src="~/images/splash-slide01.png" class="slide-screenshot" />                
+			</Slides:Slide>
+			<Slides:Slide class="slide-3">
+				<Label class="slide-title" text="Date Management" />
+                <Label class="slide-description" text="Use Karma to store all your dates for easy access. Search your clients by name, number or email."  textWrap="true" />
+                <Image src="~/images/splash-slide01.png" class="slide-screenshot" />                
+			</Slides:Slide>
+            <Slides:Slide class="slide-4">
+				<Label class="slide-title" text="Messaging" />
+                <Label class="slide-description" text="Instead of bouncing between websites and your email, Karma makes it easy and keeps it all in one secure place." textWrap="true" />
+                <Image src="~/images/splash-slide01.png" class="slide-screenshot" />                
+			</Slides:Slide>
+		</Slides:SlideContainer>
+        <StackLayout orientation="horizontal" class="nav" row="1" rows="auto" columns="auto, auto">
+            <StackLayout width="50%">
+                <Button text="Login" class="button-login" tap="login" />
+            </StackLayout>
+            <StackLayout width="50%">
+                <Button text="Register" class="button-register" tap="register" />
+            </StackLayout>
+        </StackLayout>
+	</GridLayout>
+</Page>

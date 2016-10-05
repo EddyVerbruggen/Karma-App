@@ -4,9 +4,23 @@
     horizontal-align: center;
 }
 
-page {
-    background-color: #fff;
+.ionicons-icon {
+    font-family: 'ionicons';
+    vertical-align: center;
+    horizontal-align: center;
 }
+
+.hidden {
+    visibility: collapse;
+}
+
+page {
+    background-color: #F3F3F3;
+    font-family: 'MyriadPro-SemiCn';
+    font-size:15;
+}
+
+.actionbar {background-color:#2A2C38;color:#fff;}
 
 button {
     horizontal-align: stretch;
@@ -126,11 +140,34 @@ switch {
     font-size: 8;
 }
 
+ActionBar {background-color:#272936;color:#fff;opacity:1;}  
 
-/* START_CUSTOM_CODE_nativeScriptApp */
+.pageTitle { font-size: 21; text-align: center; color:#fff;font-family: 'MyriadPro-Light';}
 
+#dda{
+    font-size:16;
+    padding: 3 0;
+    padding-top:0;
+    color:#333;
+    margin-left: 100;
+    text-align:center;
+    padding:3;
+}
 
-/* Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes */
+#dda-default-text{
+    text-align:center;
+    color: #000;
+    font-size:15;
+}
 
-
-/* END_CUSTOM_CODE_nativeScriptApp */
+.actionbar-client-thumb{
+    margin-left: 90;
+    border-radius: 100;
+    width:33;
+    height:33;  
+    border-width:1;
+    border-color:#ddd; 
+    margin-right:10;
+    background-repeat:no-repeat;
+    background-size:contain;   
+}

@@ -1,0 +1,48 @@
+<GridLayout rows="*" columns="*">
+    <ScrollView>
+        <grid-layout rows="auto,*" id="gridview">
+           
+            <StackLayout class="">
+                <WrapLayout class="ticket-row">
+                    <TextField
+                        id="username"
+                        text="{{ userName }}"
+                        hint="Username"
+                        keyboardType="text"
+                        editable="false"
+                        autocorrect="false"
+                        autocapitalizationType="none"
+                        class="help-ticket-input" />
+                </WrapLayout>
+                
+                <WrapLayout class="ticket-row">
+                    <TextField
+                        id="email"
+                        text="{{ email }}"
+                        hint="Email"
+                        keyboardType="email"
+                        autocorrect="false"
+                        autocapitalizationType="none"
+                        class="help-ticket-input" />
+                </WrapLayout>
+                
+                <WrapLayout class="ticket-row">
+                    <TextField
+                        id="message"
+                        text="{{ user.message }}"
+                        hint="Enter your message..."
+                        keyboardType="text"
+                        autocorrect="true"
+                        autocapitalizationType="none"
+                        textWrap="true"
+                        class="help-ticket-input-area" />
+                </WrapLayout>
+
+                <StackLayout class="ticket-btn-row">
+                    <button class="help-ticket-btn-send" text="Send" />
+                </StackLayout>
+            </StackLayout>    
+                    
+        </grid-layout>
+    </ScrollView>
+</GridLayout>

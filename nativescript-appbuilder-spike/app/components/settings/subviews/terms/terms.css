@@ -1,0 +1,8 @@
+.terms-header {font-size: 16;color: #3EC3D6;text-transform: uppercase;font-weight: bold;padding:20 15;}
+.terms-divider {background-color: #3EC3D6;height:2;}
+.terms-input-row {background-color:#fff;margin-bottom:1;padding:10 15;}
+.terms-input-row-padding {padding:15;}
+.terms-label {font-size: 13;color: #bbb;margin-bottom:3;}
+.terms-textfield {font-size:17;color:#444;}
+
+.fab-button {height: 70;margin: 15;background-color: #3EC3D6; horizontal-align: right;vertical-align: bottom;}

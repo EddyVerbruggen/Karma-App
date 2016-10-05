@@ -1,0 +1,73 @@
+<Page navigatedTo="onNavigatedTo"
+      xmlns:widgets="utils/widgets">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <ScrollView>
+        <StackLayout width="100%">
+            
+                <StackLayout>
+                    <Label text="References" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_references">
+                    <Label text="Requirements" class="screening-label" textWrap="true" />
+                    <Label text="{{flag_screening_references_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_reference_website">
+                    <Label text="Reference websites" class="screening-label" textWrap="true" />
+                    <Label text="{{flag_screening_reference_website_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+            
+
+            
+                <StackLayout>
+                    <Label text="Client Information" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_client_photos">
+                    <Label text="Client photo(s)" class="screening-label" textWrap="true" />
+                    <Label text="{{flag_screening_client_photos_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_last_name">
+                    <Label text="Client's last name" class="screening-label" textWrap="true" />
+                    <Label text="{{flag_screening_last_name_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_birth_date">
+                    <Label text="Year of birth" class="screening-label" textWrap="true" />
+                    <Label text="{{flag_screening_birth_date_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_residence">
+                    <Label text="City/state of residence" class="screening-label" textWrap="true" />
+                    <Label text="{{flag_screening_residence_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+            
+
+            
+                <StackLayout>
+                    <Label text="Work Information" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>
+                <StackLayout class="screening-input-row" tap="onTapDialog" setting="flag_screening_work_information">
+                    <Label text="Requirements" class="screening-label" />
+                    <Label text="{{flag_screening_work_information_label}}" class="screening-textfield" textWrap="true" />
+                </StackLayout>
+           
+            
+                <StackLayout>
+                    <Label text="Skip Screening if client is:" class="screening-section-header" />
+                    <Label class="screening-section-divider" />
+                </StackLayout>
+                <WrapLayout class="screening-input-row" tap="onToggle" setting="flag_screening_skip" checkboxConst="SKIP_SCREENING_USER_WHITELIST">
+                    <image src="" id="SKIP_SCREENING_USER_WHITELIST" class="checkbox-image" width="30" />
+                    <Label text="Already screened and approved by me in the past" class="screening-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="screening-input-row" tap="onToggle" setting="flag_screening_skip" checkboxConst="SKIP_SCREENING_USER_APPROVED_BOOKING">
+                    <image src="" id="SKIP_SCREENING_USER_APPROVED_BOOKING" class="checkbox-image" width="30" />
+                    <Label text="Approved by any other companion" class="screening-section-link-label" />
+                </WrapLayout>
+            
+
+        </StackLayout>
+    </ScrollView>
+</Page>

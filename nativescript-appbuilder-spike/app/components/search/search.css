@@ -1,0 +1,9 @@
+@import url('~/components/appointments/appointments.css');
+@import url('~/components/clients/clients.css');
+
+Page {background-color: #F3F3F3;}
+
+.search-result-title {font-size:15;margin:20; color:#999;text-transform:uppercase;}
+
+.search-top {background-color:#393D51;padding:10;color:#fff;}
+.return-arrow {font-size:30;margin-left:5;margin-right:15;}

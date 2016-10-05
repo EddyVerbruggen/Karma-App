@@ -1,0 +1,63 @@
+<GridLayout rows="*, 58" columns="*">
+    <ScrollView row="0" col="0" id="myScroller">
+        <StackLayout class="history-content-area">
+            <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+            <Repeater items="{{messageHistory}}" visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                <Repeater.itemTemplate>
+                    <StackLayout>
+                        <!-- system message -->
+                        <StackLayout orientation="horizontal" class="status-update" visibility="{{type == 'system' ? 'visible' : 'collapse'}}">
+                            <StackLayout>
+                                <Label text="&#xf3b3;" class="ionicons-icon status-update-icon" />
+                            </StackLayout>
+                            <StackLayout>
+                                <Label text="{{title}}" class="status-update-text" textWrap="true" />
+                                <Label text="{{created}}" class="status-update-date" />
+                            </StackLayout> 
+                        </StackLayout> 
+
+                        <GridLayout rows="*" columns="80,*" class="client-message" visibility="{{type == 'message_client' ? 'visible' : 'collapse'}}">
+                            <StackLayout row="0" col="0">
+                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="client-message-thumbnail" />
+                            </StackLayout>
+                            <StackLayout row="0" col="1" class="client-message-bubble">
+                                <Label text="{{message}}" class="client-message-text" textWrap="true" />
+                                <Label text="{{created}}" class="client-message-date" />
+                            </StackLayout>
+                        </GridLayout>
+
+                        <GridLayout rows="*" columns="*,80" class="my-message" visibility="{{type == 'message_user' ? 'visible' : 'collapse'}}">                
+                            <StackLayout row="0" col="0" class="my-message-bubble">
+                                <Label text="{{message}}" class="my-message-text" textWrap="true" />
+                                <Label text="{{created}}" class="my-message-date" />
+                            </StackLayout>
+                            <StackLayout row="0" col="1">
+                                <Label style="background-image: url('~/images/placeholder/temp-client-thumb.jpg');" class="my-message-thumbnail" />
+                            </StackLayout>
+                        </GridLayout>
+
+                        <StackLayout orientation="horizontal" class="status-update" visibility="{{type == 'edit' ? 'visible' : 'collapse'}}">
+                            <StackLayout>
+                                <Label text="&#xf3b3;" class="ionicons-icon status-update-icon" />
+                            </StackLayout>
+                            <StackLayout>
+                                <Label text="{{title}}" class="status-update-text" textWrap="true" />
+                                <Label text="{{message}}" class="status-update-text-new" textWrap="true" />
+                                <Label text="{{created}}" class="status-update-date" />
+                            </StackLayout> 
+                        </StackLayout>
+                    </StackLayout>
+                </Repeater.itemTemplate>
+            </Repeater>
+        </StackLayout>
+    </ScrollView>
+
+    <StackLayout orientation="horizontal" row="1" col="0" class="send-message-bar" visibility="{{ user_role == 'agency_user' ? 'collapse' : 'visibile' }}">
+        <StackLayout width="70%">
+            <TextView id="message_box" class="send-message-textfield" keyboardType="text" autocorrect="false" autocapitalizationType="none" hint="Type a message..." textWrap="true" />
+        </StackLayout>
+        <StackLayout width="30%">
+            <Label text="Send" class="send-message-button" tap="sendMessage" />
+        </StackLayout>
+    </StackLayout>    
+</GridLayout>

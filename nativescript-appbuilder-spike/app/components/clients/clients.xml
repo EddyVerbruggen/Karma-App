@@ -1,0 +1,78 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:lv="nativescript-telerik-ui-pro/listview"
+      xmlns:widgets="utils/widgets"
+      xmlns:dd="nativescript-drop-down"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <GridLayout>
+                <GridLayout rows="auto, *, 60" columns="*">
+                    <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+                    <lv:RadListView items="{{clientsList}}" 
+                                    row="1" col="0" 
+                                    loadOnDemandMode="Manual" 
+                                    loadMoreDataRequested="onLoadMoreItemsRequested"
+                                    visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate>
+                            <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
+                                <image src="{{profile_image}}" class="client-row-thumbnail" col="0" />
+                                <!--<Label class="client-row-thumbnail" col="0" /> -->
+                                <!--<Label style="background-image: url('{{ profile_image }}');" class="client-row-thumbnail" col="0" />-->
+                                <StackLayout col="1" verticalAlignment="center">
+                                    <Label text="{{client_name}}" class="client-row-name" />
+                                    <Label text="{{num_bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{num_bookings  ? 'visible' : 'collapse'}}" />
+                                    <Label text="{{status_text}}" class="client-row-noshow" visibility="{{status == 'noshow' ? 'visible' : 'collapse'}}" />
+                                </StackLayout>
+                                <Label class="client-row-icon-approved" col="2" visibility="{{status == 'approved' ? 'visible' : 'collapse'}}" />
+                                <Label class="client-row-icon-pending" col="2" visibility="{{status == 'pending' ? 'visible' : 'collapse'}}" />
+                                <Label class="client-row-icon-rejected" col="2" visibility="{{status == 'rejected' ? 'visible' : 'collapse'}}" />
+                                <Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" visibility="{{status  == 'blacklist' ? 'visible' : 'collapse'}}" />
+                                <!-- <Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" /> -->
+                            </GridLayout>
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>            
+
+                    <StackLayout orientation="horizontal" row="2" col="0" class="client-options">
+                        <StackLayout width="33%" tap="onTapStatus" class="client-options-button">
+                            <Label text="Status" class="client-options-label" />
+                            
+                                <!-- <Label text="All" class="client-options-text" /> -->
+                                <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ statusList }}" selectedIndex="{{ selectedStatus }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
+                            
+                        </StackLayout>
+                        <StackLayout width="33%" tap="onTapTags" class="client-options-button">
+                            <Label text="Tags" class="client-options-label" />
+                            
+                                <!-- <Label text="{{selectedTag}}" class="client-options-text" /> -->
+                                <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ tagList }}" selectedIndex="{{ selectedTag }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
+                            
+                        </StackLayout>
+                        <StackLayout width="35%" tap="onTapSortby" class="client-options-button">
+                            <Label text="Sort by" class="client-options-label" />
+                            
+                                <!-- <Label text="{{selectedSortby}}" class="client-options-text" /> -->
+                                <!-- <Label class="ionicons-icon client-options-arrow" text=" &#xf35f;" /> -->
+                                <dd:DropDown id="dd" class="client-options-text" items="{{ sortbyList }}" selectedIndex="{{ selectedSortby }}" row="0" colSpan="2" tap="onTapOverlay" />
+                                <!--<Label id="dd-arrow" class="ionicons-icon client-options-arrow" text=" &#xf35f;" />-->
+                            
+                        </StackLayout>
+                    </StackLayout>
+                </GridLayout>        
+            </GridLayout>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>

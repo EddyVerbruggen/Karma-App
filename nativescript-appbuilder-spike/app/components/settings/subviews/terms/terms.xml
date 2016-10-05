@@ -1,0 +1,39 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded"
+      xmlns:FAB="nativescript-floatingactionbutton">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <ScrollView>
+        <grid-layout rows="auto,*">
+            <StackLayout row="0">
+                <StackLayout class="terms-input-row">
+                    <Label text="Display" class="terms-label" />
+                    <Label text="Yes" class="terms-textfield" textWrap="true" />
+                </StackLayout>
+                <StackLayout class="terms-input-row">
+                    <Label text="Text" class="terms-label" />
+                    <Label text="You are atleast 18 years of age and you enter into legally binding contract under aplicable law." class="terms-textfield" textWrap="true" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout row="1">
+                <StackLayout>
+                    <Label text="Terms" class="terms-header" />
+                    <Label class="terms-divider" />
+                </StackLayout>
+                <StackLayout id="termsList">
+                    <Repeater items="{{terms}}">
+                        <Repeater.itemTemplate>
+                            <StackLayout class="terms-input-row terms-input-row-padding">
+                                <Label text="{{def}}" class="terms-textfield" textWrap="true" />
+                            </StackLayout>
+                        </Repeater.itemTemplate>
+                    </Repeater>						
+                </StackLayout>
+            </StackLayout>
+            <FAB:fab tap="fabTap" row="1" icon="~/images/ic_add_white.png" rippleColor="#f1f1f1" class="fab-button" hideOnSwipeOfView="termsList" />
+
+        </grid-layout>
+    </ScrollView>
+</Page>

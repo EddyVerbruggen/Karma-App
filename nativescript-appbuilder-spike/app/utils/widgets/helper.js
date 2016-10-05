@@ -1,8 +1,15 @@
 'use strict';
-var frame = require('ui/frame'),
-    platform = require('platform');
 
-function platformInit(page) {
+var frame = require('ui/frame');
+var dialogsModule = require('ui/dialogs');
+var platform = require('platform');
+var colorModule = require('color');
+var timer = require('timer');
+var appSettings = require("application-settings");
+
+var views = require('~/utils/views');
+
+exports.platformInit = function(page) {
     var top = frame.topmost(),
         ios = top.ios,
         android = top.android;
@@ -20,15 +27,18 @@ function platformInit(page) {
     }
 }
 
-function back() {
-    frame.topmost().goBack();
-}
-
-function navigate(location) {
+// TODO: Remove and use utils/navigation
+exports.navigate = function(location) {
+    // alert(JSON.stringify(location));
     frame.topmost().navigate(location);
+    // frame.topmost().navigate({
+    //   	moduleName: location.moduleName,
+    //   	transition: { name: "slide" },
+    //     context: location.context
+    // });
 }
 
-function onOpenUrl(url) {
+exports.onOpenUrl = function(url) {
     if (!url) {
         return;
     }
@@ -48,7 +58,32 @@ function onOpenUrl(url) {
     }
 }
 
-exports.back = back;
-exports.navigate = navigate;
-exports.platformInit = platformInit;
-exports.onOpenUrl = onOpenUrl;
+exports.togglePageLoadingIndicator = function(toggleValue, pageData) {
+    pageData.set("isLoading", toggleValue);
+}
+
+exports.handleLoadError = function(error, errorMessage) {
+    errorMessage = errorMessage || 'Sorry, there was an error loading information.'
+    dialogsModule.alert({
+        message: errorMessage,
+        okButtonText: "OK"
+    });
+}
+
+exports.tapFlash = function(targetView, fromBgColor, toBgColor) {
+    toBgColor = toBgColor || '#fcfcfc';
+    fromBgColor = fromBgColor || '#eee';
+    targetView.backgroundColor = new colorModule.Color(fromBgColor);
+    return targetView.animate({
+        duration: 200,
+        backgroundColor: new colorModule.Color(toBgColor)
+    });
+}
+
+exports.registerAndroid = function() {
+
+}
+
+exports.registerIOS = function() {
+
+}

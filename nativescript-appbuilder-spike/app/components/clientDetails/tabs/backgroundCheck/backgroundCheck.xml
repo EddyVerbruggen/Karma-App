@@ -1,0 +1,38 @@
+<ScrollView> 
+	<StackLayout class="background-wrapper">
+        <Label class="section-title" text="3 Potential Sex Offender Matches" />        
+        <StackLayout orientation="horizontal" class="sex-offender-row">
+            <StackLayout class="sex-offender-photo" verticalAlignment="center">
+                <Image src="~/images/placeholder/placeholder-offender.jpg" />    
+            </StackLayout>
+            <StackLayout class="sex-offender-information" verticalAlignment="center">
+                <Label text="Robert Grant Smith" class="sex-offender-name" />
+                <Label text="Saratoga, FL" class="sex-offender-location" />
+                <Label text="3 charges found" class="sex-offender-charges" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal" class="sex-offender-row">
+            <StackLayout class="sex-offender-photo" verticalAlignment="center">
+                <Image src="~/images/placeholder/placeholder-offender.jpg" />    
+            </StackLayout>
+            <StackLayout class="sex-offender-information" verticalAlignment="center">
+                <Label text="Robert Grant Smith" class="sex-offender-name" />
+                <Label text="Saratoga, FL" class="sex-offender-location" />
+                <Label text="3 charges found" class="sex-offender-charges" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout orientation="horizontal" class="sex-offender-row">
+            <StackLayout class="sex-offender-photo" verticalAlignment="center">
+                <Image src="~/images/placeholder/placeholder-offender.jpg" />    
+            </StackLayout>
+            <StackLayout class="sex-offender-information" verticalAlignment="center">
+                <Label text="Robert Grant Smith" class="sex-offender-name" />
+                <Label text="Saratoga, FL" class="sex-offender-location" />
+                <Label text="3 charges found" class="sex-offender-charges" />
+            </StackLayout>
+        </StackLayout> 
+
+	</StackLayout>
+</ScrollView>

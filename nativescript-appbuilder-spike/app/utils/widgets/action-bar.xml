@@ -1,18 +1,39 @@
-<ActionBar title="Title">
-    <NavigationButton text="Back" android.systemIcon="ic_menu_back"
-        tap="onBack" visibility="{{ backButtonHidden ? 'collapsed' : 'visible' }}">
+<ActionBar class="actionbar"
+           xmlns:dd="nativescript-drop-down">
+    <NavigationButton text="Back" android.systemIcon="ic_menu_back" 
+                      tap="onBack" visibility="{{ backButtonHidden ? 'collapse' : 'visible' }}" 
+                      dataEdited="{{ dataEdited ? 'true' : 'false' }}">
     </NavigationButton>
 
-    <ActionBar.actionItems>
-        <ActionItem text="Index" ios.position="right"
-            tap="onIndex" visibility="{{ backButtonHidden ? 'collapsed' : 'visible' }}">
-        </ActionItem>
-    </ActionBar.actionItems>
-
     <ActionBar.titleView>
-        <GridLayout columns="auto, 5, *">
-          <Image src="~/images/nativescript_logo.png" width="36" height="36" />
-          <Label col="2" text="{{ pageTitle }}" minWidth="100" />
+        <GridLayout columns="40, auto, 90, *">
+            <!-- <Button backgroundColor="white" text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="36" /> -->
+            <Label text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" visibility="{{ SideMenuHidden ? 'collapse' : 'visible' }}" />
+            <image src="~/images/default-thumbnail.jpg" class="actionbar-client-thumb" row="1" visibility="{{ user_role == 'agency' ? 'visible' : 'collapse' }}" />
+            <dd:DropDown id="dda" class="client-options-text" items="{{ usersList }}" selectedIndex="{{ selectedTag }}" row="2" colSpan="2" tap="onTapOverlay" visibility="{{ user_role == 'agency' ? 'visible' : 'collapse' }}" />
+			<Label col="2" text="{{pageTitle}}" minWidth="100" class="pageTitle" />
         </GridLayout>
+        <!-- <android>
+            <NavigationButton text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" />
+        </android>
+        <ios>
+            <ActionItem text="&#xf394;" tap="toggleDrawer" class="ionicons-icon" fontSize="30" ios.position="left" />
+        </ios> -->
     </ActionBar.titleView>
+
+    <ActionItem ios.position="right"
+        ios.systemIcon="13"
+        android.systemIcon="ic_menu_search"
+        tap="onTapSearch"
+        visibility="{{ SearchButtonHidden ? 'collapse' : 'visible' }}" />
+        <!-- <ActionItem tap="onDelete"
+        ios.systemIcon="16" ios.position="right"
+        text="Delete" android.position="popup" /> -->
+    <ActionItem tap="onSetting"
+        ios.systemIcon="16" ios.position="right"
+        text="Settings" android.position="popup" />
+    <ActionItem tap="onLogout"
+        ios.systemIcon="16" ios.position="right"
+        text="Logout" android.position="popup" />
+
 </ActionBar>

@@ -1,0 +1,16 @@
+.reference-row {background-color:#fff;margin-bottom:1;padding:20;font-size:15;}
+
+.reference-status-icon {text-align:center;}
+.reference-status-icon-pending {font-size:75;color:#ccc;height:65;}
+.reference-status-icon-verified {font-size:45;color:#5BB98C;height:45;}
+.reference-status-icon-denied {font-size:45;color:#FC4545;height:45;}
+.reference-status-text {font-size:11;color:#999;text-transform:uppercase;}
+
+.reference-name {font-size:21;font-family: 'MyriadPro-Light';}
+.reference-phone {padding:2 0;margin-top:6;}
+.reference-email {padding:2 0;}
+.reference-website {padding:2 0;margin-bottom:4;}
+
+.reference-comments-label {font-size:11;margin-bottom:2;margin-top:10;text-transform: uppercase;opacity:0.65;}
+
+.reference-warning {font-size:13;margin:25 20;color:#999;}

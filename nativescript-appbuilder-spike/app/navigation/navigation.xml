@@ -1,14 +1,25 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" xmlns:widgets="utils/widgets" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer" 
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded"
+      navigatingTo="onNavigatingTo">
     <Page.actionBar>
         <widgets:action-bar />
     </Page.actionBar>
-
-    <ListView class="list" items="{{ menuItems }}" itemTap="menuItemTap">
-        <ListView.itemTemplate>
-            <GridLayout cssClass="list-item" columns="auto, *">
-                <Label cssClass="list-icon km-icon" text="{{ icon }}" />
-                <Label cssClass="list-title" col="1" text="{{ title }}" textWrap="true" />
-            </GridLayout>
-        </ListView.itemTemplate>
-    </ListView>
+    
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <ListView class="list" items="{{ navigationViewModel.menuItems }}" itemTap="menuItemTap">
+                <ListView.itemTemplate>
+                    <GridLayout cssClass="list-item" columns="auto, *">
+                        <Label cssClass="list-icon km-icon" text="{{ icon }}" />
+                        <Label cssClass="list-title" col="1" text="{{ title }}" textWrap="true" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
 </Page>

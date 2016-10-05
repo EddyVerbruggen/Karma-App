@@ -1,0 +1,9 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      xmlns:calendar="nativescript-telerik-ui-pro/calendar"
+      showingModally="onLoaded">
+    <StackLayout id="calendarModal" width="90%" height="65%" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+        <StackLayout class="popup-wrapper">
+            <calendar:RadCalendar id="calendar" dateSelected="onDateSelected" selectionMode="Range" />
+        </StackLayout>
+    </StackLayout>
+</Page>

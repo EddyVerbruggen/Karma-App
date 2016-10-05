@@ -1,0 +1,94 @@
+<Page loaded="onLoaded"
+      xmlns:widgets="utils/widgets">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <ScrollView>
+        <StackLayout width="100%">
+            <StackLayout horizontalAlignment="center" class="settings-head">
+                <Label style="background-image: url('~/images/girl-100x100.jpg');" class="settings-thumbnail" />
+            </StackLayout>
+
+            <StackLayout class="settings-section-box">
+                <StackLayout>
+                    <Label text="My Account" class="settings-section-header" />
+                    <Label class="settings-section-divider" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Status" class="settings-label" />
+                    <Label keyboardType="text" text="Active - Live" class="settings-textfield" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Username" class="settings-label" />
+                    <TextField id="user_userName" editable="false" text="{{settingsInfo.user_userName}}" class="settings-textfield" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Name" class="settings-label" />
+                    <TextField id="user_name" editable="false" text="{{settingsInfo.user_name}}" class="settings-textfield" tap="editText" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Email" class="settings-label" />
+                    <TextField id="user_email" editable="false" text="{{settingsInfo.user_email}}" class="settings-textfield" tap="editWithPass" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Mobile Number" class="settings-label" />
+                    <TextField id="user_mobile" editable="false" text="{{settingsInfo.user_mobile}}" class="settings-textfield" tap="editWithPass" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Password" class="settings-label" />
+                    <TextField id="user_password" secure="true" editable="false" text="{{settingsInfo.user_password}}" class="settings-textfield" tap="editWithPass" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Timezone" class="settings-label" />
+                    <TextField id="user_timeZone" editable="false" text="{{settingsInfo.user_timeZone}}" class="settings-textfield" tap="editText" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout class="settings-section-box">
+                <StackLayout>
+                    <Label text="All Settings" class="settings-section-header" />
+                    <Label class="settings-section-divider" />
+                </StackLayout>
+                <WrapLayout class="settings-all-row" section="services" tap="onTap">
+                    <Label text="&#xf272;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="Services" class="settings-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="settings-all-row" section="notification" tap="onTap">
+                    <Label text="&#xf3e2;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="Notifications" class="settings-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="settings-all-row" section="screening" tap="onTap">
+                    <Label text="&#xf2f5;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="Screening" class="settings-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="settings-all-row" section="booking" tap="onTap">
+                    <Label text="&#xf3f4;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="Booking" class="settings-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="settings-all-row" section="landing" tap="onTap">
+                    <Label text="&#xf37b;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="Landing Page" class="settings-section-link-label" />
+                </WrapLayout>
+                <WrapLayout class="settings-all-row" section="terms" tap="onTap">
+                    <Label text="&#xf3bc;" class="ionicons-icon settings-section-link-icon" />
+                    <Label text="Terms & Conditions" class="settings-section-link-label" />
+                </WrapLayout>
+            </StackLayout>
+
+            <StackLayout class="settings-section-box">
+                <StackLayout>
+                    <Label text="My URLs" class="settings-section-header" />
+                    <Label class="settings-section-divider" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Web" class="settings-label" />
+                    <Label text="https://www.screeningmate.com/jenny" class="settings-textfield" />
+                </StackLayout>
+                <StackLayout class="settings-input-row">
+                    <Label text="Short/Mobile" class="settings-label" />
+                    <Label text="http://scrnmt.com/47556" class="settings-textfield" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

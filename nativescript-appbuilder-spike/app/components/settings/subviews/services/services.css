@@ -1,0 +1,16 @@
+.services-input-row {
+	background-color:#fff;
+    margin-bottom:1;
+    padding:15;
+    font-size:17;
+    color:#444;
+}
+
+
+.fab-button {
+    height: 70;
+    margin: 15;
+    background-color: #3EC3D6; 
+    horizontal-align: right; 
+    vertical-align: bottom; 
+}

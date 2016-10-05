@@ -1,10 +1,25 @@
-var application = require('application'),
-    mainModule = 'navigation/navigation';
+var application = require('application');
+var navigation = require('./utils/navigation');
+var appSettings = require("application-settings");
+// var firebase = require("nativescript-plugin-firebase");
 
-// START_CUSTOM_CODE_nativeScriptApp
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+// firebase.init({
+//   // Optionally pass in properties for database, authentication and cloud messaging,
+//   // see their respective docs.
+// }).then(
+//   function (instance) {
+//     console.log("firebase.init done");
+//   },
+//   function (error) {
+//     console.log("firebase.init error: " + error);
+//   }
+// );
 
-// END_CUSTOM_CODE_nativeScriptApp
+
 application.start({
-    moduleName: mainModule
+    moduleName: navigation.startingPage()
+});
+
+application.on(application.launchEvent, function (args) {
+    appSettings.setString('activeTab', 'dashboard');
 });

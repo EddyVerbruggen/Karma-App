@@ -1,0 +1,30 @@
+@import url('~/components/appointmentDetails/tabs/details/details.css');
+
+.location-header{
+    background-color: #555;
+    width: 100%;
+    padding: 5;
+}
+
+.location-sub-header{
+    background-color: #C7F1F4;
+    padding: 12;
+    font-size: 13;
+}
+
+.popup-wrapper {
+    padding:20;
+}
+
+.location-row {
+    margin-bottom: 15;
+}
+
+.location-option {
+    width:100;
+}
+
+.appointment-textlabel{
+    font-size: 12;
+    color: #CCC;
+}

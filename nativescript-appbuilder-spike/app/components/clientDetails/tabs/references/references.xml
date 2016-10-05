@@ -1,0 +1,80 @@
+<ScrollView> 
+	<StackLayout>
+        <Label class="section-title" text="3 References Added" />
+        
+        <Repeater items="{{clientDetails.Result.references}}">
+            <Repeater.itemTemplate>
+                <StackLayout class="reference-row" orientation="horizontal">
+                    <StackLayout class="reference-status-icon" width="75" visibility="{{status=='approved' ? 'visible' : 'collapse'}}">
+                        <Label text="&#xf121;" class="ionicons-icon reference-status-icon-verified" />
+                        <Label text="Verified" class="reference-status-text" />
+                    </StackLayout>
+                    <StackLayout class="reference-status-icon" width="75" visibility="{{status=='pending' ? 'visible' : 'collapse'}}">
+                        <Label text="&#xf49a;" class="ionicons-icon reference-status-icon-pending" />
+                        <Label text="Awaiting" class="reference-status-text" />
+                    </StackLayout>
+                    <StackLayout class="reference-status-icon" width="75" visibility="{{status=='rejected' ? 'visible' : 'collapse'}}">
+                        <Label text="&#xf129;" class="ionicons-icon reference-status-icon-denied" />
+                        <Label text="Denied" class="reference-status-text" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label text="{{name}}" class="reference-name" />
+                        <Label text="{{phone}}" class="reference-phone" />
+                        <Label text="{{email}}" class="reference-email" />
+                        <Label text="{{website}}" class="reference-website" />
+                        <Label text="{{name,'Comments about ' + name}}" class="reference-comments-label" />
+                        <Label text="{{comments}}" class="reference-comments-text" />
+                    </StackLayout>
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </Repeater>
+        
+<!--         <StackLayout class="reference-row" orientation="horizontal">
+            <StackLayout class="reference-status-icon" width="75">
+                <Label text="&#xf49a;" class="ionicons-icon reference-status-icon-pending" />
+                <Label text="Awaiting" class="reference-status-text" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Candy Kane" class="reference-name" />            
+                <Label text="(586) 687-6077" class="reference-phone" />
+                <Label text="candykanedancer@gmail.com" class="reference-email" />
+                <Label text="http://www.candykane.com" class="reference-website" />
+                <Label text="Comments about John: " class="reference-comments-label" />
+                <Label text="N/A" class="reference-comments-text" textWrap="true" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout class="reference-row" orientation="horizontal">
+            <StackLayout class="reference-status-icon" width="75">
+                <Label text="&#xf121;" class="ionicons-icon reference-status-icon-verified" />
+                <Label text="Verified" class="reference-status-text" />
+            </StackLayout>          
+            <StackLayout>
+                <Label text="Candy Kane" class="reference-name" />
+                <Label text="(586) 687-6077" class="reference-phone" />
+                <Label text="candykanedancer@gmail.com" class="reference-email" />
+                <Label text="http://www.candykane.com" class="reference-website" />
+                <Label text="Comments about John: " class="reference-comments-label" />
+                <Label text="N/A" class="reference-comments-text" />
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout class="reference-row" orientation="horizontal">
+            <StackLayout class="reference-status-icon" width="75">
+                <Label text="&#xf129;" class="ionicons-icon reference-status-icon-denied" />
+                <Label text="Denied" class="reference-status-text" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Candy Kane" class="reference-name" />
+                <Label text="(586) 687-6077" class="reference-phone" />
+                <Label text="candykanedancer@gmail.com" class="reference-email" />
+                <Label text="http://www.candykane.com" class="reference-website" />
+                <Label text="Comments about John: " class="reference-comments-label" />
+                <Label text="N/A" class="reference-comments-text" textWrap="true" />
+            </StackLayout>
+        </StackLayout> -->
+
+        <Label text="Each reference is automatically emailed when a client enters it. Even if the reference is marked as VERIFIED, it is important to make sure the email address actually belongs to the correct reference." class="reference-warning" textWrap="true" /> 
+
+	</StackLayout>
+</ScrollView>

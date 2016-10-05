@@ -1,0 +1,108 @@
+.appointment-calendar-date {font-size:15;margin:20 0;text-align:center;color:#999;text-transform:uppercase;}
+
+.appointment-row {
+    vertical-align: center;
+    background-color: #fcfcfc;
+    padding: 12 0;
+    margin:0 0 1 0;
+    
+}
+
+.appointment-status {
+    border-radius:100;
+    width:30;
+    height:30;
+    padding:7;
+    font-size:16;
+}
+
+.appointment-confirmed {
+    background-color:#5BB98C;
+    color:#fff;
+}
+
+.appointment-pending {
+    background-color:#fafafa;
+    color:#aaa;
+}
+
+.appointment-cancelled {
+    background-color:#FC4545;
+    color:#fff;
+}
+
+.appointment-time-details {
+    horizontal-align: center;
+}
+.appointment-time {
+    font-size: 18;
+    text-align: right;
+}
+
+.appointment-length {
+    font-size: 12;
+    text-align: right;
+}
+
+.row-client-name {
+    font-size: 20;
+    
+}
+
+.row-client-name-new {
+    
+}
+
+.row-client-name-approved {
+    color:#5BB98C;
+}
+
+.row-client-name-rejected {
+    color:#FC4545;
+}
+
+.row-client-name-blacklisted {
+    color:000;
+}
+
+
+
+
+.row-appointment-location {
+    font-size: 14;
+    color:#bbb;
+}
+
+.client-status {
+    font-size: 10;
+    background-color:#bbb;
+    margin-left:3;
+    padding:1 3;
+    border-radius:3;
+    color:#fff;
+}
+
+.blacklisted-client {margin-left:3;color:#000;}
+
+.appointment-filtering {
+    background-color:#ddd;
+    padding-top:1;
+}
+
+.appointment-filter-button {
+    text-align:center;
+    padding-top:11;
+      background-color:#fff;
+    color:#aaa;
+    height:60;
+}
+
+.button-active {
+    color:#3EC3D6;
+    opacity:1;
+}
+
+.appointment-filter-icon {
+    font-size:20;
+    opacity:0.4;
+}

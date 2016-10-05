@@ -1,0 +1,36 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <TabView tabsBackgroundColor="#ccc" selectedColor="#3EC3D6">
+        <TabView.items>
+            <TabViewItem title="Info" xmlns:PersonalDetails="components/clientDetails/tabs/personalDetails">
+                <TabViewItem.view>
+                    <PersonalDetails:personalDetails />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Screening" xmlns:Screening="components/clientDetails/tabs/screening">
+                <TabViewItem.view>
+                    <Screening:screening />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="References" xmlns:References="components/clientDetails/tabs/references">
+                <TabViewItem.view>
+                    <References:references />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Background" xmlns:BackgroundCheck="components/clientDetails/tabs/backgroundCheck">
+                <TabViewItem.view>
+                    <BackgroundCheck:backgroundCheck />
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="History" xmlns:History="components/clientDetails/tabs/history">
+                <TabViewItem.view>
+                    <History:history />
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+</Page>

@@ -1,0 +1,33 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      showingModally="onLoaded">
+    <StackLayout id="newUserModal" width="100%" height="auto" horizontalAlignment="center" verticalAlignment="center" backgroundColor="white" opacity="1">
+        <WrapLayout class="password-header">
+            <label text="New User" />
+        </WrapLayout>
+       <StackLayout class="settings-input-row">
+            <Label text="Name" class="settings-label" />
+            <TextField id="user_Name" editable="false" text="" class="settings-textfield" />
+        </StackLayout>
+        <StackLayout class="settings-input-row">
+            <Label text="Email" class="settings-label" />
+            <TextField id="user_Email" editable="false" text="" class="settings-textfield" />
+        </StackLayout>
+        <StackLayout class="settings-input-row">
+            <Label text="Username" class="settings-label" />
+            <TextField id="user_userName" editable="false" text="" class="settings-textfield" />
+        </StackLayout>
+        <StackLayout class="settings-input-row">
+            <Label text="Password" class="settings-label" />
+            <TextField id="user_Password" editable="false" text="" class="settings-textfield" />
+        </StackLayout>
+        <WrapLayout class="settings-input-row" section="screening" tap="toggleCheckbox" section="email">
+            <image src="~/images/ic_check_box_white.png" id="email" class="ionicons-icon settings-section-link-icon" width="30" />
+            <Label text="Email this information to user" class="settings-section-link-label" />
+        </WrapLayout>
+        <wrap-layout class="footer-buttons">
+            <label class="footer-button-cancel" text="CANCEL" tap="dismiss" />
+            <label class="footer-button-submit" text="SUBMIT" tap="submit" />
+        </wrap-layout>
+
+    </StackLayout>
+</Page>

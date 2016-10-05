@@ -1,0 +1,145 @@
+<ScrollView>
+    <StackLayout>
+        
+        <StackLayout orientation="horizontal" class="screening-summary">
+            <StackLayout width="33%">
+                <Label class="screening-stat-number" text="5" />
+                <Label class="screening-stat-label" text="Approvals" />
+            </StackLayout>
+            <StackLayout width="33%">
+                <Label class="screening-stat-number" text="0" />
+                <Label class="screening-stat-label" text="Rejections" />
+            </StackLayout>
+            <StackLayout width="34%">
+                <Label class="screening-stat-number" text="0" />
+                <Label class="screening-stat-label" text="Blacklists" />
+            </StackLayout>
+        </StackLayout>
+
+       	<StackLayout class="screening-wrapper">
+            <Label class="info-box-title" text="Employment" />
+            <StackLayout class="info-table">
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Company:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Apple" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />            
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Occupation:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Mobile App Developer" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Phone:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="(568) 567-4568" />
+                    </StackLayout>                
+                </StackLayout>                
+            </StackLayout>
+
+            <Label class="info-box-title" text="Client's Device" />
+            <StackLayout class="info-table">
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Type:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="MS Windows Desktop" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />            
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="IP Address:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="99.240.206.35" />
+                        <Label text="(CPE20aa4b737577-CM0c473d01ad20.cpe.net.cable.rogers.com)" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Anonymous Connection:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="No" />
+                    </StackLayout>                
+                </StackLayout>
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Country:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Canada" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="City:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Ottawa" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="State/Province:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Ontario" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" /> 
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Zip/Postal Code:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="K1C" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Timezone:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="America/Toronto (America/Toronto)" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" />
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Internet Connection:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Residential" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>            
+                <Label class="info-table-divider" /> 
+                <StackLayout orientation="horizontal" class="info-table-row">
+                    <StackLayout class="info-table-label">
+                        <Label text="Internet Provider:" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout class="info-table-text">
+                        <Label text="Rogers Cable (rogers.com)" textWrap="true" />
+                    </StackLayout>                
+                </StackLayout>        
+            </StackLayout>
+		</StackLayout>
+    </StackLayout>
+</ScrollView>

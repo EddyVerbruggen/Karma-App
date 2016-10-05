@@ -1,0 +1,101 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:widgets="utils/widgets"
+      loaded="onLoaded"
+      xmlns:lv="nativescript-telerik-ui-pro/listview">
+    <Page.actionBar>
+        <widgets:action-bar />
+    </Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <ScrollView>
+                <StackLayout>
+                    
+                    <StackLayout class="dashboard-head">
+                        <StackLayout orientation="horizontal">                    
+                            <StackLayout width="33%">
+                                <Label text="{{dashboard.num_bookings}}" class="stats-number" />
+                                <Label text="Appointments" class="stats-label" />
+                            </StackLayout>
+                            <StackLayout width="33%">
+                                <Label text="{{dashboard.num_clients}}" class="stats-number" />
+                                <Label text="Clients" class="stats-label" />
+                            </StackLayout>
+                            <StackLayout width="33%">
+                                <Label text="{{dashboard.num_visitors}}" class="stats-number" />
+                                <Label text="Visitors" class="stats-label" />
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Appointments -->
+                    <Label text="Appointments" class="appointment-calendar-date" /> 
+                    <GridLayout columns="*">
+                        <lv:RadListView items="{{dashboard.bookings}}" row="1" col="0">
+                            <lv:RadListView.listViewLayout>
+                                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                            </lv:RadListView.listViewLayout>
+                            <lv:RadListView.itemTemplate>
+                                <StackLayout>
+                                    <Repeater.itemsLayout>
+                                        <StackLayout class="appointment-rows" />
+                                    </Repeater.itemsLayout>
+                                    <Repeater.itemTemplate>
+                                        <StackLayout orientation="horizontal" class="appointment-row" tap="onSelectAppointment" bookingId="{{id}}">
+                                            <StackLayout width="85" verticalAlignment="center" class="appointment-time-details">
+                                                <Label text="{{time}}" class="appointment-time" />
+                                                <Label text="{{length}}" class="appointment-length" />
+                                            </StackLayout>                            
+                                            <StackLayout width="60" verticalAlignment="center">
+                                                <StackLayout class="appointment-status appointment-confirmed">
+                                                    <Label class="ionicons-icon" text="&#xf122;" />
+                                                </StackLayout>
+                                            </StackLayout>                            
+                                            <StackLayout verticalAlignment="center">
+                                                <WrapLayout>
+                                                    <Label text="{{client_name}}" class="row-client-name row-client-name-new" />
+                                                    <Label text="New" class="client-status" />
+                                                </WrapLayout>
+                                                <Label text="{{location}}" class="row-appointment-location" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Repeater.itemTemplate>
+                                </StackLayout>
+                            </lv:RadListView.itemTemplate>
+                        </lv:RadListView>
+                    </GridLayout>
+                    
+                    <!-- Clients -->
+                    <Label text="New Clients" class="appointment-calendar-date" />
+                    <GridLayout columns="*">
+                        <lv:RadListView items="{{dashboard.clients}}" row="1" col="0">
+                            <lv:RadListView.listViewLayout>
+                                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                            </lv:RadListView.listViewLayout>
+                            <lv:RadListView.itemTemplate>
+                                <GridLayout columns="70, *, 25" rows="auto" class="client-row" tap="onSelectClient" screeningId="{{screening_id}}" clientName="{{client_name}}">
+                                    <Label class="client-row-thumbnail" col="0" />
+                                    <!--<Label style="background-image: url('~/{{ profile_image }}');" class="client-row-thumbnail" col="0" />-->
+                                    <StackLayout col="1" verticalAlignment="center">
+                                        <Label text="{{client_name}}" class="client-row-name" />
+                                        <Label text="{{num_bookings + ' Appointment Pending'}}" class="client-row-appointment" visibility="{{num_bookings  ? 'visible' : 'collapse'}}" />
+                                        <Label text="{{status_text}}" class="client-row-noshow" visibility="{{status == 'noshow' ? 'visible' : 'collapse'}}" />
+                                    </StackLayout>
+                                    <Label class="client-row-icon-approved" col="2" visibility="{{status == 'approved' ? 'visible' : 'collapse'}}" />
+                                    <Label class="client-row-icon-pending" col="2" visibility="{{status == 'pending' ? 'visible' : 'collapse'}}" />
+                                    <Label class="client-row-icon-rejected" col="2" visibility="{{status == 'rejected' ? 'visible' : 'collapse'}}" />
+                                    <Label text="&#xf3bc;" class="ionicons-icon client-row-icon-blacklisted" col="2" visibility="{{status  == 'blacklist' ? 'visible' : 'collapse'}}" />
+                                    <!-- <Label text="{{status_text}}" class="{{'client-row-status-' + status}}" col="2" horizontalAlignment="right" /> -->
+                                </GridLayout>
+                            </lv:RadListView.itemTemplate>
+                        </lv:RadListView>
+                    </GridLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>

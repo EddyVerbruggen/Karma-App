@@ -1,0 +1,35 @@
+<ScrollView> 
+	<StackLayout class="history-wrapper">
+        <Label class="section-title" text="3 Appointments Found" />
+        <StackLayout orientation="horizontal" class="history-row">
+            <StackLayout>
+                <Label text="&#xf3b3;" class="ionicons-icon history-row-icon" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Incall Appointment - 2 Hours" class="history-row-text" textWrap="true" />
+                <Label text="Monday, June 21 - 6:00 PM (PST)" class="history-row-date" />
+            </StackLayout> 
+        </StackLayout>     
+
+        <StackLayout orientation="horizontal" class="history-row">
+            <StackLayout>
+                <Label text="&#xf3b3;" class="ionicons-icon history-row-icon" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Incall Appointment - 2 Hours" class="history-row-text" textWrap="true" />
+                <Label text="Monday, June 21 - 6:00 PM (PST)" class="history-row-date" />
+            </StackLayout> 
+        </StackLayout>
+
+        <StackLayout orientation="horizontal" class="history-row">
+            <StackLayout>
+                <Label text="&#xf3b3;" class="ionicons-icon history-row-icon" />
+            </StackLayout>
+            <StackLayout>
+                <Label text="Incall Appointment - 2 Hours" class="history-row-text" textWrap="true" />
+                <Label text="Monday, June 21 - 6:00 PM (PST)" class="history-row-date" />
+            </StackLayout> 
+        </StackLayout>    
+
+	</StackLayout>
+</ScrollView>

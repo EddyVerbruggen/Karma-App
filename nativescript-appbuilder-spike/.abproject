@@ -23,6 +23,6 @@
   ],
   "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
-  "FrameworkVersion": "2.0.0",
+  "FrameworkVersion": "2.3.0",
   "Framework": "NativeScript"
 }

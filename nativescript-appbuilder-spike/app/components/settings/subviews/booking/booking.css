@@ -1,0 +1,22 @@
+
+.booking-header {
+    font-size: 16;color: #3EC3D6;text-transform: uppercase;font-weight: bold;padding:20 15;
+}
+
+.booking-divider {
+    background-color: #3EC3D6;
+    height:1;
+}
+
+.booking-input-row {
+	background-color:#fff;margin-bottom:1;padding:10 15;
+}
+
+.booking-label {
+    font-size: 13;color: #bbb;margin-bottom:3;
+}
+
+.booking-textfield {
+    font-size:17;
+    color:#444;
+}

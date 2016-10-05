@@ -1,0 +1,53 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" 
+      xmlns:drawer="nativescript-telerik-ui-pro/sidedrawer"
+      xmlns:lv="nativescript-telerik-ui-pro/listview"
+      xmlns:widgets="utils/widgets"
+      xmlns:FAB="nativescript-floatingactionbutton"
+      loaded="onLoaded">
+    <Page.actionBar>
+    	<widgets:action-bar />
+	</Page.actionBar>
+    <drawer:RadSideDrawer id="sideDrawer">
+        <drawer:RadSideDrawer.drawerContent>
+            <widgets:side-drawer />
+		</drawer:RadSideDrawer.drawerContent>
+        <drawer:RadSideDrawer.mainContent>
+            <GridLayout>
+                <GridLayout rows="auto, *" columns="*">
+                    <ActivityIndicator busy="{{ isLoading }}" class="{{ isLoading ? '' : 'hidden' }}" row="0" col="0" style="margin-top:35%;" />
+                    
+                    <lv:RadListView items="{{usersList}}" 
+                                    row="1" col="0" 
+                                    loadOnDemandMode="Manual" 
+                                    loadMoreDataRequested="onLoadMoreItemsRequested"
+                                    visibility="{{ isLoading ? 'collapse' : 'visible' }}">
+                        <lv:RadListView.listViewLayout>
+                            <lv:ListViewLinearLayout scrollDirection="Vertical" />
+                        </lv:RadListView.listViewLayout>
+                        <lv:RadListView.itemTemplate>
+                            
+                            <GridLayout columns="60, 190, 60, 60" rows="auto" class="message-row" tap="onSelectMessage" screeningId="{{screening_id}}">
+                                <Label style="background-image: url('~/images/placeholder/profile-client.png');" class="message-row-thumbnail" col="0" />
+                                <StackLayout col="1" verticalAlignment="center">
+                                    <Label text="{{client_name}}" class="message-row-name" />
+                                    <GridLayout columns="*, 75" rows="auto" visibility="{{ last_login ? 'visible' : 'collapse' }}">
+ 	                                   <Label text="{{last_login, 'Last Login: ' + last_login}}" class="message-row-message" />
+                                    </GridLayout>
+                                </StackLayout>
+                                <Switch col="2" checked="{{isactive}}" class="notification-switch" />
+                                <Label col="3" text="&#xf4c4;" class="ionicons-icon nav-icon" tap="toggleActive" screeningId="{{screening_id}}" />
+                            </GridLayout>
+                            
+                        </lv:RadListView.itemTemplate>
+                    </lv:RadListView>
+                    
+                </GridLayout>
+                <FAB:fab tap="fabTap"
+                     row="1"
+                     icon="~/images/ic_add_white.png"
+                     rippleColor="#f1f1f1"
+                     class="fab-button" />
+            </GridLayout>
+        </drawer:RadSideDrawer.mainContent>
+	</drawer:RadSideDrawer>
+</Page>
